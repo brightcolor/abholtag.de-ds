@@ -1,6 +1,22 @@
 from django.contrib import admin
 
-from .models import AddressKey, City, District, Street, StreetAlias, StreetAssignment
+from .models import (
+    AddressKey,
+    City,
+    District,
+    HouseNumber,
+    Street,
+    StreetAlias,
+    StreetAssignment,
+)
+
+
+@admin.register(HouseNumber)
+class HouseNumberAdmin(admin.ModelAdmin):
+    list_display = ("street", "text", "bms_location_id", "origin")
+    search_fields = ("street__name", "text", "bms_location_id")
+    autocomplete_fields = ("street",)
+    list_filter = ("origin",)
 
 
 @admin.register(City)
@@ -29,7 +45,7 @@ class StreetAssignmentInline(admin.TabularInline):
 
 @admin.register(Street)
 class StreetAdmin(admin.ModelAdmin):
-    list_display = ("name", "district", "city", "is_active", "origin")
+    list_display = ("name", "district", "city", "is_active", "origin", "bms_street_id")
     list_filter = ("is_active", "district", "origin")
     search_fields = ("name", "normalized_name", "aliases__name")
     inlines = [StreetAliasInline, StreetAssignmentInline]

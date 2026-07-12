@@ -62,6 +62,26 @@ def resolve(request):
     return redirect(url)
 
 
+BMS_CALENDAR_URL = "https://insert-it.de/BMSAbfallkalenderLuebeck"
+
+
+def _official_calendar_url(address_key, years) -> str:
+    """Direct link to the EBL online calendar for a resolved address (BMS ids)."""
+    street = address_key.street
+    if not street.bms_street_id or address_key.house_number is None:
+        return ""
+    house = street.house_numbers.filter(
+        number=address_key.house_number, suffix=address_key.suffix or ""
+    ).first()
+    if house is None:
+        return ""
+    year = years[-1] if years else date_cls.today().year
+    return (
+        f"{BMS_CALENDAR_URL}?bmsStreetId={street.bms_street_id}"
+        f"&bmsLocationId={house.bms_location_id}&year={year}"
+    )
+
+
 def address_schedule(request, public_id):
     address_key = get_object_or_404(
         AddressKey.objects.select_related("street", "street__district", "street__city"),
@@ -99,6 +119,7 @@ def address_schedule(request, public_id):
             "years": years,
             "today": today,
             "status": data_status(),
+            "official_calendar_url": _official_calendar_url(address_key, years),
         },
     )
 

@@ -1,0 +1,10378 @@
+[
+  {
+    "id": 11904,
+    "name": "19/Anschlussstelle Sereetz"
+  },
+  {
+    "id": 12172,
+    "name": "20/Autobahndreieck Bad Schwartau"
+  },
+  {
+    "id": 11907,
+    "name": "21/Anschlussstelle Bad Schwartau"
+  },
+  {
+    "id": 5158,
+    "name": "22"
+  },
+  {
+    "id": 5109,
+    "name": "23"
+  },
+  {
+    "id": 5215,
+    "name": "24"
+  },
+  {
+    "id": 5159,
+    "name": "2A"
+  },
+  {
+    "id": 11769,
+    "name": "2B"
+  },
+  {
+    "id": 3130,
+    "name": "A1"
+  },
+  {
+    "id": 3131,
+    "name": "A20"
+  },
+  {
+    "id": 11770,
+    "name": "A20"
+  },
+  {
+    "id": 3132,
+    "name": "A226"
+  },
+  {
+    "id": 3133,
+    "name": "Abendrot"
+  },
+  {
+    "id": 3134,
+    "name": "Absalonshorster Weg"
+  },
+  {
+    "id": 3135,
+    "name": "Achatweg"
+  },
+  {
+    "id": 12207,
+    "name": "Achtelkamp"
+  },
+  {
+    "id": 3136,
+    "name": "Achterdeck"
+  },
+  {
+    "id": 3137,
+    "name": "Achtern Dörp"
+  },
+  {
+    "id": 11936,
+    "name": "Achtern Höven"
+  },
+  {
+    "id": 3138,
+    "name": "Achternhof"
+  },
+  {
+    "id": 3139,
+    "name": "Achternkaten"
+  },
+  {
+    "id": 3140,
+    "name": "Achterum"
+  },
+  {
+    "id": 3141,
+    "name": "Ackerweg"
+  },
+  {
+    "id": 3142,
+    "name": "Adalbert-Stifter-Straße"
+  },
+  {
+    "id": 5130,
+    "name": "ADLER-GANG"
+  },
+  {
+    "id": 3143,
+    "name": "Adlerstraße"
+  },
+  {
+    "id": 3146,
+    "name": "Adolf-Ehrtmann-Straße"
+  },
+  {
+    "id": 3144,
+    "name": "Adolfplatz"
+  },
+  {
+    "id": 3145,
+    "name": "Adolfstraße"
+  },
+  {
+    "id": 5071,
+    "name": "AEGIDIENHOF"
+  },
+  {
+    "id": 3147,
+    "name": "Aegidienkirchhof"
+  },
+  {
+    "id": 3148,
+    "name": "Aegidienstraße"
+  },
+  {
+    "id": 3149,
+    "name": "Aegidienstraße 69/"
+  },
+  {
+    "id": 11997,
+    "name": "Ahornstraße"
+  },
+  {
+    "id": 12124,
+    "name": "Ahornweg"
+  },
+  {
+    "id": 3150,
+    "name": "Ahrensböker Straße"
+  },
+  {
+    "id": 12187,
+    "name": "Ahrensböker Straße/Segeberger Straße"
+  },
+  {
+    "id": 12057,
+    "name": "Akazienweg"
+  },
+  {
+    "id": 3151,
+    "name": "Albert-Einstein-Straße"
+  },
+  {
+    "id": 3152,
+    "name": "Albert-Lezius-Straße"
+  },
+  {
+    "id": 3153,
+    "name": "Albert-Schweitzer-Straße"
+  },
+  {
+    "id": 11590,
+    "name": "Albert-Schweizer-Straße"
+  },
+  {
+    "id": 5195,
+    "name": "ALBRECHTS GANG"
+  },
+  {
+    "id": 3154,
+    "name": "Aldermannweg"
+  },
+  {
+    "id": 3155,
+    "name": "Alemannenweg"
+  },
+  {
+    "id": 3157,
+    "name": "Alexander-Fleming-Straße"
+  },
+  {
+    "id": 3156,
+    "name": "Alexanderstraße"
+  },
+  {
+    "id": 3158,
+    "name": "Alfred-Hagelstein-Straße"
+  },
+  {
+    "id": 3159,
+    "name": "Alfstraße"
+  },
+  {
+    "id": 3160,
+    "name": "Alsenstraße"
+  },
+  {
+    "id": 3161,
+    "name": "Alsheide"
+  },
+  {
+    "id": 3162,
+    "name": "Alt Herrenwyk"
+  },
+  {
+    "id": 11944,
+    "name": "Alt Rensefeld"
+  },
+  {
+    "id": 5131,
+    "name": "ALT-LAUENHOF"
+  },
+  {
+    "id": 3172,
+    "name": "Alt-Lauerhof"
+  },
+  {
+    "id": 3163,
+    "name": "Alte Heidkoppel"
+  },
+  {
+    "id": 11755,
+    "name": "Alte Landstrasse"
+  },
+  {
+    "id": 3164,
+    "name": "Alte Meierei"
+  },
+  {
+    "id": 3165,
+    "name": "Alte Mühle"
+  },
+  {
+    "id": 12107,
+    "name": "Alte Schule"
+  },
+  {
+    "id": 3166,
+    "name": "Alte Werft"
+  },
+  {
+    "id": 3167,
+    "name": "Altenfeld"
+  },
+  {
+    "id": 3168,
+    "name": "Altengammer Straße"
+  },
+  {
+    "id": 12175,
+    "name": "Alter Badesteig"
+  },
+  {
+    "id": 3169,
+    "name": "Alter Faulenhoop"
+  },
+  {
+    "id": 12087,
+    "name": "Alter Kirchweg"
+  },
+  {
+    "id": 3170,
+    "name": "Alter Kühlturm"
+  },
+  {
+    "id": 5132,
+    "name": "ALTER POSTHOF"
+  },
+  {
+    "id": 11854,
+    "name": "Alter Wasserturm"
+  },
+  {
+    "id": 12038,
+    "name": "Altes Ende"
+  },
+  {
+    "id": 12160,
+    "name": "Altes Wasserwerk"
+  },
+  {
+    "id": 3174,
+    "name": "Am Bach"
+  },
+  {
+    "id": 3175,
+    "name": "Am Bahnhof"
+  },
+  {
+    "id": 3176,
+    "name": "Am Behnckenhof"
+  },
+  {
+    "id": 12147,
+    "name": "Am Berg"
+  },
+  {
+    "id": 3177,
+    "name": "Am Bertramshof"
+  },
+  {
+    "id": 3178,
+    "name": "Am Binsenhorst"
+  },
+  {
+    "id": 11925,
+    "name": "Am Bormbrook"
+  },
+  {
+    "id": 11977,
+    "name": "Am Brahmberg"
+  },
+  {
+    "id": 3180,
+    "name": "Am Brink"
+  },
+  {
+    "id": 3181,
+    "name": "Am Brook"
+  },
+  {
+    "id": 3182,
+    "name": "Am Brügmanngarten"
+  },
+  {
+    "id": 3183,
+    "name": "Am Bullenkrooch"
+  },
+  {
+    "id": 3184,
+    "name": "Am Burgfeld"
+  },
+  {
+    "id": 3179,
+    "name": "Am Bökenbarg"
+  },
+  {
+    "id": 11937,
+    "name": "Am Capellshof"
+  },
+  {
+    "id": 3185,
+    "name": "Am Dachsbau"
+  },
+  {
+    "id": 3186,
+    "name": "Am Distelberg"
+  },
+  {
+    "id": 11942,
+    "name": "Am Distelkamp"
+  },
+  {
+    "id": 12002,
+    "name": "Am Dorfplatz"
+  },
+  {
+    "id": 3187,
+    "name": "Am Dorfteich"
+  },
+  {
+    "id": 3188,
+    "name": "Am Dornbusch"
+  },
+  {
+    "id": 3189,
+    "name": "Am Dovensee"
+  },
+  {
+    "id": 3190,
+    "name": "Am Dreilingsberg"
+  },
+  {
+    "id": 3191,
+    "name": "Am Dreworp"
+  },
+  {
+    "id": 3192,
+    "name": "Am Fahrenberg"
+  },
+  {
+    "id": 3193,
+    "name": "Am Feldrain"
+  },
+  {
+    "id": 3194,
+    "name": "Am Fischereihafen"
+  },
+  {
+    "id": 3195,
+    "name": "Am Fleet"
+  },
+  {
+    "id": 12203,
+    "name": "Am Flinthang"
+  },
+  {
+    "id": 3196,
+    "name": "Am Flugplatz"
+  },
+  {
+    "id": 11861,
+    "name": "Am Flugplatz 4/"
+  },
+  {
+    "id": 11886,
+    "name": "Am Flutgraben"
+  },
+  {
+    "id": 12025,
+    "name": "Am Fuchsberg"
+  },
+  {
+    "id": 3197,
+    "name": "Am Gertrudenkirchhof"
+  },
+  {
+    "id": 3198,
+    "name": "Am Graben"
+  },
+  {
+    "id": 3199,
+    "name": "Am Grenzwall"
+  },
+  {
+    "id": 3200,
+    "name": "Am Güterbahnhof"
+  },
+  {
+    "id": 3201,
+    "name": "Am Hang"
+  },
+  {
+    "id": 3202,
+    "name": "Am Heck"
+  },
+  {
+    "id": 3203,
+    "name": "Am Heidkoppelgraben"
+  },
+  {
+    "id": 11940,
+    "name": "Am Hochkamp"
+  },
+  {
+    "id": 11924,
+    "name": "Am Hoppenhof"
+  },
+  {
+    "id": 11929,
+    "name": "Am Händelplatz"
+  },
+  {
+    "id": 3204,
+    "name": "Am Hörn"
+  },
+  {
+    "id": 5173,
+    "name": "AM INSTITUT"
+  },
+  {
+    "id": 3205,
+    "name": "Am Kattegatt"
+  },
+  {
+    "id": 11938,
+    "name": "Am Kirchhof"
+  },
+  {
+    "id": 12162,
+    "name": "Am Kirchhof/Am Papenmoor"
+  },
+  {
+    "id": 12146,
+    "name": "Am Kleikamp"
+  },
+  {
+    "id": 3206,
+    "name": "Am Klosterhof"
+  },
+  {
+    "id": 12190,
+    "name": "Am Klosterlauf"
+  },
+  {
+    "id": 3207,
+    "name": "Am Kontor"
+  },
+  {
+    "id": 3209,
+    "name": "Am Krautacker"
+  },
+  {
+    "id": 3210,
+    "name": "Am Kurgarten"
+  },
+  {
+    "id": 12134,
+    "name": "Am Kurpark"
+  },
+  {
+    "id": 3208,
+    "name": "Am Königsberg"
+  },
+  {
+    "id": 3211,
+    "name": "Am Kücknitzer Sandberg"
+  },
+  {
+    "id": 3212,
+    "name": "Am Küsterberg"
+  },
+  {
+    "id": 11933,
+    "name": "Am Küsterholz"
+  },
+  {
+    "id": 3213,
+    "name": "Am Landgraben"
+  },
+  {
+    "id": 3214,
+    "name": "Am Langen Berg"
+  },
+  {
+    "id": 3215,
+    "name": "Am Lauerhofberg"
+  },
+  {
+    "id": 3216,
+    "name": "Am Lauerholz"
+  },
+  {
+    "id": 3217,
+    "name": "Am Leuchtenfeld"
+  },
+  {
+    "id": 3218,
+    "name": "Am Lotsenberg"
+  },
+  {
+    "id": 3219,
+    "name": "Am Mailand"
+  },
+  {
+    "id": 3220,
+    "name": "Am Moislinger Baum"
+  },
+  {
+    "id": 3221,
+    "name": "Am Moor"
+  },
+  {
+    "id": 3222,
+    "name": "Am Mühlenbach"
+  },
+  {
+    "id": 11771,
+    "name": "Am Mühlenbach"
+  },
+  {
+    "id": 11961,
+    "name": "Am Mühlenberg"
+  },
+  {
+    "id": 11973,
+    "name": "Am Mühlenteich"
+  },
+  {
+    "id": 3223,
+    "name": "Am Müllerberg"
+  },
+  {
+    "id": 3224,
+    "name": "Am Neuhof"
+  },
+  {
+    "id": 11591,
+    "name": "Am Nordlandkai"
+  },
+  {
+    "id": 3226,
+    "name": "Am Nöltingshof"
+  },
+  {
+    "id": 3227,
+    "name": "Am Petroleumhafen"
+  },
+  {
+    "id": 3228,
+    "name": "Am Pohl"
+  },
+  {
+    "id": 3229,
+    "name": "Am Priwallhafen"
+  },
+  {
+    "id": 3230,
+    "name": "Am Rande"
+  },
+  {
+    "id": 12018,
+    "name": "Am Redder"
+  },
+  {
+    "id": 3231,
+    "name": "AM RING"
+  },
+  {
+    "id": 11772,
+    "name": "Am Ring"
+  },
+  {
+    "id": 3232,
+    "name": "Am Ringwall"
+  },
+  {
+    "id": 3233,
+    "name": "Am Rittbrook"
+  },
+  {
+    "id": 3234,
+    "name": "Am Rugenberg"
+  },
+  {
+    "id": 3235,
+    "name": "Am Rund"
+  },
+  {
+    "id": 3236,
+    "name": "Am Rusch"
+  },
+  {
+    "id": 3237,
+    "name": "Am Schaar"
+  },
+  {
+    "id": 3238,
+    "name": "Am Schellbruch"
+  },
+  {
+    "id": 3239,
+    "name": "Am Schlutuper Markt"
+  },
+  {
+    "id": 3240,
+    "name": "Am Schwarzen Berg"
+  },
+  {
+    "id": 3241,
+    "name": "Am Spargelhof"
+  },
+  {
+    "id": 3242,
+    "name": "Am Sportplatz"
+  },
+  {
+    "id": 11592,
+    "name": "Am Stadtgraben"
+  },
+  {
+    "id": 3244,
+    "name": "Am Stadtrand"
+  },
+  {
+    "id": 3245,
+    "name": "Am Stau"
+  },
+  {
+    "id": 3246,
+    "name": "Am Steilhang"
+  },
+  {
+    "id": 3247,
+    "name": "Am Steven"
+  },
+  {
+    "id": 3248,
+    "name": "Am Strukbach"
+  },
+  {
+    "id": 3249,
+    "name": "Am Teich"
+  },
+  {
+    "id": 11773,
+    "name": "Am Teich"
+  },
+  {
+    "id": 3250,
+    "name": "Am Teichberg"
+  },
+  {
+    "id": 3251,
+    "name": "Am Teichrand"
+  },
+  {
+    "id": 3252,
+    "name": "Am Teufelsmoor"
+  },
+  {
+    "id": 3253,
+    "name": "Am Traveeck"
+  },
+  {
+    "id": 3254,
+    "name": "Am Waldsaum"
+  },
+  {
+    "id": 3255,
+    "name": "Am Wallberg"
+  },
+  {
+    "id": 3256,
+    "name": "Am Wasserbau"
+  },
+  {
+    "id": 11892,
+    "name": "Am Wasserlauf"
+  },
+  {
+    "id": 5234,
+    "name": "AM WAßERTURM"
+  },
+  {
+    "id": 12206,
+    "name": "Am Wasserturm/Segeberger Landstraße"
+  },
+  {
+    "id": 5072,
+    "name": "AM WAßERWERK"
+  },
+  {
+    "id": 3173,
+    "name": "Am Ährenfeld"
+  },
+  {
+    "id": 12045,
+    "name": "Amandus-Voigt-Straße"
+  },
+  {
+    "id": 3257,
+    "name": "Amethystweg"
+  },
+  {
+    "id": 11593,
+    "name": "Amrumstraße"
+  },
+  {
+    "id": 3259,
+    "name": "Amselweg"
+  },
+  {
+    "id": 11774,
+    "name": "Amselweg"
+  },
+  {
+    "id": 12142,
+    "name": "An de Wisch"
+  },
+  {
+    "id": 3260,
+    "name": "An den Schießständen"
+  },
+  {
+    "id": 3261,
+    "name": "An den Werkstätten"
+  },
+  {
+    "id": 12122,
+    "name": "An der Au"
+  },
+  {
+    "id": 12006,
+    "name": "An der Aue"
+  },
+  {
+    "id": 12155,
+    "name": "An der Bundesstraße"
+  },
+  {
+    "id": 3262,
+    "name": "An der Bäk"
+  },
+  {
+    "id": 3263,
+    "name": "An der Dänischburg"
+  },
+  {
+    "id": 3264,
+    "name": "An der Falkenwiese"
+  },
+  {
+    "id": 3265,
+    "name": "An der Hansehalle"
+  },
+  {
+    "id": 3266,
+    "name": "An der Hülshorst"
+  },
+  {
+    "id": 5133,
+    "name": "AN DER KEGELBAHN"
+  },
+  {
+    "id": 3267,
+    "name": "An der Kehre"
+  },
+  {
+    "id": 3268,
+    "name": "An der Landesgrenze"
+  },
+  {
+    "id": 3269,
+    "name": "An der Logleine"
+  },
+  {
+    "id": 12165,
+    "name": "An der Lohe"
+  },
+  {
+    "id": 3270,
+    "name": "An der Mauer"
+  },
+  {
+    "id": 3271,
+    "name": "An der Mauer 12/"
+  },
+  {
+    "id": 3272,
+    "name": "An der Mauer 146/"
+  },
+  {
+    "id": 3274,
+    "name": "An der Obertrave"
+  },
+  {
+    "id": 3273,
+    "name": "An der Obertrave 20/"
+  },
+  {
+    "id": 3275,
+    "name": "An der Obertrave 29/"
+  },
+  {
+    "id": 3276,
+    "name": "An der Obertrave 37/"
+  },
+  {
+    "id": 3277,
+    "name": "An der Obertrave 40/"
+  },
+  {
+    "id": 3278,
+    "name": "An der Obertrave 46/"
+  },
+  {
+    "id": 3281,
+    "name": "An der Rothebek"
+  },
+  {
+    "id": 12193,
+    "name": "An der Sandkuhle"
+  },
+  {
+    "id": 12174,
+    "name": "An der Sporthalle"
+  },
+  {
+    "id": 3282,
+    "name": "An der Stadtfreiheit"
+  },
+  {
+    "id": 3283,
+    "name": "An der Tränke"
+  },
+  {
+    "id": 12034,
+    "name": "An der Ulme"
+  },
+  {
+    "id": 3284,
+    "name": "An der Untertrave"
+  },
+  {
+    "id": 3285,
+    "name": "An der Untertrave 19/"
+  },
+  {
+    "id": 3288,
+    "name": "Andersenring"
+  },
+  {
+    "id": 3289,
+    "name": "André-Ampère-Straße"
+  },
+  {
+    "id": 3290,
+    "name": "Angelnweg"
+  },
+  {
+    "id": 11908,
+    "name": "Anschlussstelle Bad Schwartau"
+  },
+  {
+    "id": 5073,
+    "name": "ANSCHLUßSTELLE LÜBECK-DÄNISCHBURG"
+  },
+  {
+    "id": 5074,
+    "name": "ANSCHLUßSTELLE LÜBECK-GENIN"
+  },
+  {
+    "id": 5075,
+    "name": "ANSCHLUßSTELLE LÜBECK-KÜCKNITZ"
+  },
+  {
+    "id": 5134,
+    "name": "ANSCHLUßSTELLE LÜBECK-MOISLING"
+  },
+  {
+    "id": 5076,
+    "name": "ANSCHLUßSTELLE LÜBECK-SIEMS"
+  },
+  {
+    "id": 11775,
+    "name": "Anschlussstelle Lübeck-Süd"
+  },
+  {
+    "id": 5077,
+    "name": "ANSCHLUßSTELLE LÜBECK-ZENTRUM"
+  },
+  {
+    "id": 11903,
+    "name": "Anschlussstelle Sereetz"
+  },
+  {
+    "id": 5078,
+    "name": "ANSCHLUßSTELLE TRAVEMÜNDE"
+  },
+  {
+    "id": 3291,
+    "name": "Anschützstraße"
+  },
+  {
+    "id": 11985,
+    "name": "Anton-Baumann-Straße"
+  },
+  {
+    "id": 3292,
+    "name": "Antonistraße"
+  },
+  {
+    "id": 11756,
+    "name": "Apfelallee"
+  },
+  {
+    "id": 12022,
+    "name": "Apfelgarten"
+  },
+  {
+    "id": 3293,
+    "name": "Aquamarinweg"
+  },
+  {
+    "id": 3294,
+    "name": "Arfrader Straße"
+  },
+  {
+    "id": 12037,
+    "name": "Arfrader Weg"
+  },
+  {
+    "id": 11594,
+    "name": "Arkaden"
+  },
+  {
+    "id": 3295,
+    "name": "Arndtstraße"
+  },
+  {
+    "id": 3296,
+    "name": "Arnimstraße"
+  },
+  {
+    "id": 3297,
+    "name": "Artlenburger Straße"
+  },
+  {
+    "id": 3298,
+    "name": "Aschenputtelweg"
+  },
+  {
+    "id": 3299,
+    "name": "Asmus-Witte-Weg"
+  },
+  {
+    "id": 3300,
+    "name": "Attendornstraße"
+  },
+  {
+    "id": 11920,
+    "name": "Aublick"
+  },
+  {
+    "id": 3301,
+    "name": "Aueblick"
+  },
+  {
+    "id": 3302,
+    "name": "Auf dem Baggersand"
+  },
+  {
+    "id": 11889,
+    "name": "Auf dem Hügel"
+  },
+  {
+    "id": 3303,
+    "name": "Auf dem Kiekeberg"
+  },
+  {
+    "id": 3304,
+    "name": "Auf dem Ruhm"
+  },
+  {
+    "id": 3305,
+    "name": "Auf dem Sande"
+  },
+  {
+    "id": 3306,
+    "name": "Auf dem Schild"
+  },
+  {
+    "id": 3307,
+    "name": "Auf dem Vorbeck"
+  },
+  {
+    "id": 3308,
+    "name": "Auf der Domkoppel"
+  },
+  {
+    "id": 3309,
+    "name": "Auf der Heide"
+  },
+  {
+    "id": 3310,
+    "name": "Auf der Höhe"
+  },
+  {
+    "id": 3311,
+    "name": "Auf der Kuppe"
+  },
+  {
+    "id": 3312,
+    "name": "Auf der Reihe"
+  },
+  {
+    "id": 3313,
+    "name": "Auf der Wallhalbinsel"
+  },
+  {
+    "id": 11970,
+    "name": "Auf der Wasch"
+  },
+  {
+    "id": 3316,
+    "name": "August-Bebel-Straße"
+  },
+  {
+    "id": 3315,
+    "name": "Auguste-Schmidt-Straße"
+  },
+  {
+    "id": 3314,
+    "name": "Augustenstraße"
+  },
+  {
+    "id": 11962,
+    "name": "Auguststraße"
+  },
+  {
+    "id": 12179,
+    "name": "Auguststraße/Eutiner Ring"
+  },
+  {
+    "id": 3317,
+    "name": "Aurikelweg"
+  },
+  {
+    "id": 3318,
+    "name": "Ausbau"
+  },
+  {
+    "id": 11891,
+    "name": "Ausblick"
+  },
+  {
+    "id": 3319,
+    "name": "Außenallee"
+  },
+  {
+    "id": 5160,
+    "name": "AUTOBAHNDREIECK BAD SCHWARTAU"
+  },
+  {
+    "id": 5277,
+    "name": "B 207 Ab.-/Auffahrt"
+  },
+  {
+    "id": 3320,
+    "name": "B104"
+  },
+  {
+    "id": 5110,
+    "name": "B207"
+  },
+  {
+    "id": 11776,
+    "name": "B207"
+  },
+  {
+    "id": 3322,
+    "name": "B75"
+  },
+  {
+    "id": 3323,
+    "name": "B76"
+  },
+  {
+    "id": 12091,
+    "name": "Baareneichkoppel"
+  },
+  {
+    "id": 3324,
+    "name": "Backbord"
+  },
+  {
+    "id": 12183,
+    "name": "Bahndamm"
+  },
+  {
+    "id": 5235,
+    "name": "BAHNHOFSBRÜCKE"
+  },
+  {
+    "id": 11986,
+    "name": "Bahnhofstraße"
+  },
+  {
+    "id": 3325,
+    "name": "Bahnweg"
+  },
+  {
+    "id": 3326,
+    "name": "Balauerfohr"
+  },
+  {
+    "id": 5175,
+    "name": "BALHORNS GANG"
+  },
+  {
+    "id": 3327,
+    "name": "Ballastkuhle"
+  },
+  {
+    "id": 3328,
+    "name": "Baltische Allee"
+  },
+  {
+    "id": 5276,
+    "name": "Baltische Allee Kreisverkehr"
+  },
+  {
+    "id": 3329,
+    "name": "Bardowieker Weg"
+  },
+  {
+    "id": 12055,
+    "name": "Bareneck"
+  },
+  {
+    "id": 11980,
+    "name": "Barger Weg"
+  },
+  {
+    "id": 12071,
+    "name": "Bargerbrück"
+  },
+  {
+    "id": 12103,
+    "name": "Bargerhof"
+  },
+  {
+    "id": 11878,
+    "name": "Barkentinenstraße"
+  },
+  {
+    "id": 3330,
+    "name": "Barkhof"
+  },
+  {
+    "id": 3331,
+    "name": "Barlachweg"
+  },
+  {
+    "id": 3332,
+    "name": "Bartelsholz"
+  },
+  {
+    "id": 3333,
+    "name": "Bauernweg"
+  },
+  {
+    "id": 11873,
+    "name": "Baumschulweg"
+  },
+  {
+    "id": 3336,
+    "name": "Beckergrube"
+  },
+  {
+    "id": 3337,
+    "name": "Beerenweg"
+  },
+  {
+    "id": 3338,
+    "name": "Beetenwiese"
+  },
+  {
+    "id": 3339,
+    "name": "Beethovenstraße"
+  },
+  {
+    "id": 3340,
+    "name": "Behaimring"
+  },
+  {
+    "id": 3341,
+    "name": "Behnkai"
+  },
+  {
+    "id": 5216,
+    "name": "BEHRENDS HOF"
+  },
+  {
+    "id": 3342,
+    "name": "Behringstraße"
+  },
+  {
+    "id": 3343,
+    "name": "Bei den Obstgärten"
+  },
+  {
+    "id": 3344,
+    "name": "Bei den Pappeln"
+  },
+  {
+    "id": 3345,
+    "name": "Bei den Tannen"
+  },
+  {
+    "id": 3346,
+    "name": "Bei der Gasanstalt"
+  },
+  {
+    "id": 3347,
+    "name": "Bei der Lohmühle"
+  },
+  {
+    "id": 3348,
+    "name": "Bei der Schafbrücke"
+  },
+  {
+    "id": 3349,
+    "name": "Bei der Wasserkunst"
+  },
+  {
+    "id": 3351,
+    "name": "Bei St. Johannis"
+  },
+  {
+    "id": 11876,
+    "name": "Beidendorfer Haupstr. 32"
+  },
+  {
+    "id": 3352,
+    "name": "Beidendorfer Hauptstraße"
+  },
+  {
+    "id": 3353,
+    "name": "Beidendorfer Weg"
+  },
+  {
+    "id": 11777,
+    "name": "Beidendorfer Weg"
+  },
+  {
+    "id": 3354,
+    "name": "Beim Drögenvorwerk"
+  },
+  {
+    "id": 3355,
+    "name": "Beim Meilenstein"
+  },
+  {
+    "id": 3356,
+    "name": "Beim Retteich"
+  },
+  {
+    "id": 3357,
+    "name": "Beim Rosenwasser"
+  },
+  {
+    "id": 3358,
+    "name": "Beim Stadthof"
+  },
+  {
+    "id": 3359,
+    "name": "Beim Sumpfkrug"
+  },
+  {
+    "id": 3360,
+    "name": "Beim Tannenhof"
+  },
+  {
+    "id": 12033,
+    "name": "Beim Teich"
+  },
+  {
+    "id": 3361,
+    "name": "Benzstraße"
+  },
+  {
+    "id": 3362,
+    "name": "Bergedorfer Straße"
+  },
+  {
+    "id": 3363,
+    "name": "Bergenstraße"
+  },
+  {
+    "id": 3364,
+    "name": "Bergiusweg"
+  },
+  {
+    "id": 3365,
+    "name": "Bergkoppel"
+  },
+  {
+    "id": 3366,
+    "name": "Bergstraße"
+  },
+  {
+    "id": 3367,
+    "name": "Berliner Allee"
+  },
+  {
+    "id": 3368,
+    "name": "Berliner Platz"
+  },
+  {
+    "id": 3369,
+    "name": "Berliner Straße"
+  },
+  {
+    "id": 3370,
+    "name": "Bernhardswinkel"
+  },
+  {
+    "id": 3371,
+    "name": "Bernsteindreherweg"
+  },
+  {
+    "id": 3372,
+    "name": "Bernt-Notke-Straße"
+  },
+  {
+    "id": 3373,
+    "name": "Berta-Wirthel-Ring"
+  },
+  {
+    "id": 11595,
+    "name": "Bertha-von Suttner-Platz"
+  },
+  {
+    "id": 3374,
+    "name": "Bertha-von-Suttner-Platz"
+  },
+  {
+    "id": 11596,
+    "name": "Bertha-Wirthel-Ring"
+  },
+  {
+    "id": 3375,
+    "name": "Bertlingstraße"
+  },
+  {
+    "id": 3376,
+    "name": "Besenkamp"
+  },
+  {
+    "id": 3377,
+    "name": "Bessemerstraße"
+  },
+  {
+    "id": 5070,
+    "name": "Betriebshof Malmöstraße"
+  },
+  {
+    "id": 3378,
+    "name": "Biberbau"
+  },
+  {
+    "id": 11857,
+    "name": "Bierspünderstraße"
+  },
+  {
+    "id": 3380,
+    "name": "Billerbäckweg"
+  },
+  {
+    "id": 3381,
+    "name": "Billrothstraße"
+  },
+  {
+    "id": 3382,
+    "name": "Binnenland"
+  },
+  {
+    "id": 11743,
+    "name": "Biomassewerk"
+  },
+  {
+    "id": 12011,
+    "name": "Birkenplatz"
+  },
+  {
+    "id": 3383,
+    "name": "Birkenstraße"
+  },
+  {
+    "id": 3384,
+    "name": "Birkenweg"
+  },
+  {
+    "id": 11778,
+    "name": "Birkenweg"
+  },
+  {
+    "id": 11779,
+    "name": "Bismarcksiedlung"
+  },
+  {
+    "id": 3385,
+    "name": "Bismarckstraße"
+  },
+  {
+    "id": 12000,
+    "name": "Björnsenplatz"
+  },
+  {
+    "id": 3386,
+    "name": "Blanckstraße"
+  },
+  {
+    "id": 3387,
+    "name": "Blankenseer Dorfplatz"
+  },
+  {
+    "id": 3388,
+    "name": "Blankenseer Straße"
+  },
+  {
+    "id": 5236,
+    "name": "BLANKENSEER WEG"
+  },
+  {
+    "id": 3389,
+    "name": "Blasfeld"
+  },
+  {
+    "id": 11897,
+    "name": "Blauentorn"
+  },
+  {
+    "id": 3391,
+    "name": "Bleichenweg"
+  },
+  {
+    "id": 3392,
+    "name": "Blessensahl"
+  },
+  {
+    "id": 11597,
+    "name": "Blockbinnenhof Agidienstr. NR. 25"
+  },
+  {
+    "id": 11599,
+    "name": "Blockbinnenhof Krähenstr."
+  },
+  {
+    "id": 11600,
+    "name": "Blockbinnenhof Kupferschmiedestraße"
+  },
+  {
+    "id": 11598,
+    "name": "Blockbinnenhof Königstr. 2x"
+  },
+  {
+    "id": 11601,
+    "name": "Blockbinnenhof Lederstraße"
+  },
+  {
+    "id": 11602,
+    "name": "Blockbinnenhof unterer Wehdehof"
+  },
+  {
+    "id": 11603,
+    "name": "Blockbinnenhof unterer Whedehof"
+  },
+  {
+    "id": 11604,
+    "name": "Blockbinnenhof( mitlere) Agidienstr. NR. 25"
+  },
+  {
+    "id": 11605,
+    "name": "Blockbinnenhof(obere) Aegidienstr, Nr. 1"
+  },
+  {
+    "id": 3393,
+    "name": "Blocksquerstraße"
+  },
+  {
+    "id": 5079,
+    "name": "BLOHMS GANG"
+  },
+  {
+    "id": 3394,
+    "name": "Blumenfeld"
+  },
+  {
+    "id": 3395,
+    "name": "Blücherstraße"
+  },
+  {
+    "id": 3396,
+    "name": "Blütenweg"
+  },
+  {
+    "id": 3397,
+    "name": "Bochstraße"
+  },
+  {
+    "id": 3398,
+    "name": "Boddenweg"
+  },
+  {
+    "id": 3399,
+    "name": "Bodenort"
+  },
+  {
+    "id": 3400,
+    "name": "Boelckestraße"
+  },
+  {
+    "id": 3401,
+    "name": "Bogenstraße"
+  },
+  {
+    "id": 3402,
+    "name": "Bohlkamp"
+  },
+  {
+    "id": 12059,
+    "name": "Bohnrader Weg"
+  },
+  {
+    "id": 5069,
+    "name": "Bohrhammerstraße"
+  },
+  {
+    "id": 12112,
+    "name": "Bollbrüch"
+  },
+  {
+    "id": 3403,
+    "name": "Bollbrügg"
+  },
+  {
+    "id": 3404,
+    "name": "Boltenhagenweg"
+  },
+  {
+    "id": 3405,
+    "name": "Bonhoefferstraße"
+  },
+  {
+    "id": 3406,
+    "name": "Bonninguesstraße"
+  },
+  {
+    "id": 11780,
+    "name": "Bonninguesstrasse"
+  },
+  {
+    "id": 3407,
+    "name": "Bonnusstraße"
+  },
+  {
+    "id": 3408,
+    "name": "Bordesholmer Straße"
+  },
+  {
+    "id": 5080,
+    "name": "BORDSTRAßE"
+  },
+  {
+    "id": 3409,
+    "name": "Borkumstraße"
+  },
+  {
+    "id": 12094,
+    "name": "Bormhoop"
+  },
+  {
+    "id": 3410,
+    "name": "Borndiek"
+  },
+  {
+    "id": 3411,
+    "name": "Bornholmring"
+  },
+  {
+    "id": 3413,
+    "name": "Bornhövedstraße"
+  },
+  {
+    "id": 3414,
+    "name": "Bornkamp"
+  },
+  {
+    "id": 3415,
+    "name": "Bornkoppel"
+  },
+  {
+    "id": 3416,
+    "name": "Bornmühle"
+  },
+  {
+    "id": 11781,
+    "name": "Bornmühle"
+  },
+  {
+    "id": 3417,
+    "name": "Borsigstraße"
+  },
+  {
+    "id": 3418,
+    "name": "Borstelweg"
+  },
+  {
+    "id": 3419,
+    "name": "Bosauer Straße"
+  },
+  {
+    "id": 3421,
+    "name": "Bothenhorster Weg"
+  },
+  {
+    "id": 11948,
+    "name": "Botterstieg"
+  },
+  {
+    "id": 3428,
+    "name": "Bracheweg"
+  },
+  {
+    "id": 12191,
+    "name": "Brahmberg"
+  },
+  {
+    "id": 3429,
+    "name": "Brahmsstraße"
+  },
+  {
+    "id": 12135,
+    "name": "Brahmsweg"
+  },
+  {
+    "id": 3430,
+    "name": "Brailleweg"
+  },
+  {
+    "id": 3431,
+    "name": "Brandenbaumer Landstraße"
+  },
+  {
+    "id": 11839,
+    "name": "Brandenbaumer Landstraße Nebenfahrbahn"
+  },
+  {
+    "id": 12208,
+    "name": "Brandenbrooker Weg"
+  },
+  {
+    "id": 3432,
+    "name": "Brandenweg"
+  },
+  {
+    "id": 5111,
+    "name": "BRANDES HOF"
+  },
+  {
+    "id": 5081,
+    "name": "BRANNTWEINBRENNER GANG"
+  },
+  {
+    "id": 3433,
+    "name": "Braunstraße"
+  },
+  {
+    "id": 3434,
+    "name": "Breden"
+  },
+  {
+    "id": 11913,
+    "name": "Bredenbeksweg"
+  },
+  {
+    "id": 3435,
+    "name": "Brehmerstraße"
+  },
+  {
+    "id": 3436,
+    "name": "Breite Straße"
+  },
+  {
+    "id": 3437,
+    "name": "Breitenhees"
+  },
+  {
+    "id": 12009,
+    "name": "Breitenrehm"
+  },
+  {
+    "id": 3439,
+    "name": "Brennerstraße"
+  },
+  {
+    "id": 11967,
+    "name": "Breslauer Straße"
+  },
+  {
+    "id": 3440,
+    "name": "Breslaustraße"
+  },
+  {
+    "id": 11877,
+    "name": "Brigantinenweg"
+  },
+  {
+    "id": 3441,
+    "name": "Briggstraße"
+  },
+  {
+    "id": 5196,
+    "name": "BRIGITTENHOF"
+  },
+  {
+    "id": 12184,
+    "name": "Brinkenholz"
+  },
+  {
+    "id": 3442,
+    "name": "Brinkweg"
+  },
+  {
+    "id": 3443,
+    "name": "Brockesstraße"
+  },
+  {
+    "id": 3444,
+    "name": "Brockkamp"
+  },
+  {
+    "id": 3445,
+    "name": "Brodtener Hauptstraße"
+  },
+  {
+    "id": 3446,
+    "name": "Brodtener Kirchsteig"
+  },
+  {
+    "id": 5161,
+    "name": "BRODTENER STEILUFER"
+  },
+  {
+    "id": 3447,
+    "name": "Brolingplatz"
+  },
+  {
+    "id": 3448,
+    "name": "Brolingstraße"
+  },
+  {
+    "id": 3451,
+    "name": "Bruchsalstraße"
+  },
+  {
+    "id": 3452,
+    "name": "Bruchweg"
+  },
+  {
+    "id": 3453,
+    "name": "Brucknerstraße"
+  },
+  {
+    "id": 3454,
+    "name": "Brunhildweg"
+  },
+  {
+    "id": 11855,
+    "name": "Brunnenstube"
+  },
+  {
+    "id": 3455,
+    "name": "Brunshorster Weg"
+  },
+  {
+    "id": 5197,
+    "name": "BRUSKAUS GANG"
+  },
+  {
+    "id": 3449,
+    "name": "Brömbsenmühle"
+  },
+  {
+    "id": 3450,
+    "name": "Brömbsenstraße"
+  },
+  {
+    "id": 3457,
+    "name": "Brückenweg"
+  },
+  {
+    "id": 3459,
+    "name": "Brüder-Grimm-Ring"
+  },
+  {
+    "id": 3458,
+    "name": "Brüderstraße"
+  },
+  {
+    "id": 3460,
+    "name": "Brüggestraße"
+  },
+  {
+    "id": 11757,
+    "name": "Buchenbergweg"
+  },
+  {
+    "id": 12015,
+    "name": "Buchengrund"
+  },
+  {
+    "id": 5283,
+    "name": "Buchenstücken"
+  },
+  {
+    "id": 3461,
+    "name": "Buchenweg"
+  },
+  {
+    "id": 3462,
+    "name": "Bugenhagenstraße"
+  },
+  {
+    "id": 3463,
+    "name": "Bunsenweg"
+  },
+  {
+    "id": 3464,
+    "name": "Buntekuhweg"
+  },
+  {
+    "id": 3465,
+    "name": "Burgkoppel"
+  },
+  {
+    "id": 3466,
+    "name": "Burgtorbrücke"
+  },
+  {
+    "id": 11606,
+    "name": "Burgtortreppe"
+  },
+  {
+    "id": 3467,
+    "name": "Burgtreppe"
+  },
+  {
+    "id": 3469,
+    "name": "Busekiststraße"
+  },
+  {
+    "id": 11607,
+    "name": "Busparkplatz Beim Retteich"
+  },
+  {
+    "id": 11716,
+    "name": "Buswendeschleife"
+  },
+  {
+    "id": 5231,
+    "name": "Buswendeschleife Arnimstraße"
+  },
+  {
+    "id": 3470,
+    "name": "Butenhof"
+  },
+  {
+    "id": 3471,
+    "name": "Butterstieg"
+  },
+  {
+    "id": 3472,
+    "name": "Buurdiekstraße"
+  },
+  {
+    "id": 3473,
+    "name": "Buxtehudeweg"
+  },
+  {
+    "id": 3334,
+    "name": "Bäckereistraße"
+  },
+  {
+    "id": 5174,
+    "name": "BÄCKERGANG"
+  },
+  {
+    "id": 3335,
+    "name": "Bäckerstraße"
+  },
+  {
+    "id": 3422,
+    "name": "Böckenrad"
+  },
+  {
+    "id": 3423,
+    "name": "Böckmannweg"
+  },
+  {
+    "id": 3424,
+    "name": "Bögengang"
+  },
+  {
+    "id": 3425,
+    "name": "Böhmskamp"
+  },
+  {
+    "id": 3426,
+    "name": "Bökenkoppel"
+  },
+  {
+    "id": 3427,
+    "name": "Böttcherstraße"
+  },
+  {
+    "id": 3474,
+    "name": "Bülowstraße"
+  },
+  {
+    "id": 3475,
+    "name": "Bürgerweide"
+  },
+  {
+    "id": 12064,
+    "name": "Calvenstraße"
+  },
+  {
+    "id": 3476,
+    "name": "Calvinweg"
+  },
+  {
+    "id": 3478,
+    "name": "Carl-Bosch-Weg"
+  },
+  {
+    "id": 11960,
+    "name": "Carl-Diem-Straße"
+  },
+  {
+    "id": 3479,
+    "name": "Carl-Gauß-Straße"
+  },
+  {
+    "id": 3480,
+    "name": "Carl-Georg-Heise-Weg"
+  },
+  {
+    "id": 3481,
+    "name": "Carl-Mühlenpfordt-Straße"
+  },
+  {
+    "id": 3477,
+    "name": "Carlower Weg"
+  },
+  {
+    "id": 11782,
+    "name": "Carlower Weg"
+  },
+  {
+    "id": 3482,
+    "name": "Celsiusweg"
+  },
+  {
+    "id": 11898,
+    "name": "Charlotte-Landau-Mühsam-Platz"
+  },
+  {
+    "id": 3483,
+    "name": "Charlottenstraße"
+  },
+  {
+    "id": 3484,
+    "name": "Chasotstraße"
+  },
+  {
+    "id": 3485,
+    "name": "Christian-Doppler-Ring"
+  },
+  {
+    "id": 4506,
+    "name": "Clara-Schumann-Straße"
+  },
+  {
+    "id": 3486,
+    "name": "Clara-Zetkin-Weg"
+  },
+  {
+    "id": 3487,
+    "name": "Claudiusring"
+  },
+  {
+    "id": 3488,
+    "name": "Clemensstraße"
+  },
+  {
+    "id": 11992,
+    "name": "Clever Berg"
+  },
+  {
+    "id": 12182,
+    "name": "Clever Höhe"
+  },
+  {
+    "id": 11979,
+    "name": "Clever Landstraße"
+  },
+  {
+    "id": 11974,
+    "name": "Clever Tannen"
+  },
+  {
+    "id": 11915,
+    "name": "Cleverbrücker Straße"
+  },
+  {
+    "id": 11978,
+    "name": "Cleverhof"
+  },
+  {
+    "id": 11976,
+    "name": "Cleverhofer Weg"
+  },
+  {
+    "id": 3489,
+    "name": "Cornelia-Schorer-Straße"
+  },
+  {
+    "id": 3490,
+    "name": "Cranachweg"
+  },
+  {
+    "id": 12007,
+    "name": "Curauer Dorfstraße"
+  },
+  {
+    "id": 12210,
+    "name": "Curauer Dorfstraße/Siedlung"
+  },
+  {
+    "id": 11911,
+    "name": "Curauer Straße"
+  },
+  {
+    "id": 3491,
+    "name": "Curtiusstraße"
+  },
+  {
+    "id": 5162,
+    "name": "DACHBAUSTRAßE"
+  },
+  {
+    "id": 3492,
+    "name": "Dahliensteg"
+  },
+  {
+    "id": 11995,
+    "name": "Dahlienweg"
+  },
+  {
+    "id": 3493,
+    "name": "Daimlerstraße"
+  },
+  {
+    "id": 12096,
+    "name": "Dakendorfer Gründen"
+  },
+  {
+    "id": 12008,
+    "name": "Dakendorfer Weg"
+  },
+  {
+    "id": 3495,
+    "name": "Damaschkestraße"
+  },
+  {
+    "id": 3496,
+    "name": "Dampfpfeife"
+  },
+  {
+    "id": 3497,
+    "name": "Dankwartsbrücke"
+  },
+  {
+    "id": 3498,
+    "name": "Dankwartsgrube"
+  },
+  {
+    "id": 3499,
+    "name": "Dankwartsgrube 31/"
+  },
+  {
+    "id": 3500,
+    "name": "Dankwartsgrube 70/"
+  },
+  {
+    "id": 3501,
+    "name": "Dankwartsgrube 9/"
+  },
+  {
+    "id": 3502,
+    "name": "Danziger Straße"
+  },
+  {
+    "id": 12104,
+    "name": "Danziger Weg"
+  },
+  {
+    "id": 3503,
+    "name": "Danzmannstraße"
+  },
+  {
+    "id": 3504,
+    "name": "Darßer Schwelle"
+  },
+  {
+    "id": 3505,
+    "name": "Dassower Weg"
+  },
+  {
+    "id": 3508,
+    "name": "Depenau"
+  },
+  {
+    "id": 3510,
+    "name": "Depenhörn"
+  },
+  {
+    "id": 11744,
+    "name": "Deponie"
+  },
+  {
+    "id": 3511,
+    "name": "Diamantweg"
+  },
+  {
+    "id": 3512,
+    "name": "Diemengang"
+  },
+  {
+    "id": 3513,
+    "name": "Dieselstraße"
+  },
+  {
+    "id": 12019,
+    "name": "Dissauer Dorfstraße"
+  },
+  {
+    "id": 3514,
+    "name": "Dissauer Straße"
+  },
+  {
+    "id": 3515,
+    "name": "Distelkrog"
+  },
+  {
+    "id": 12109,
+    "name": "Distelweg"
+  },
+  {
+    "id": 3516,
+    "name": "Doberanweg"
+  },
+  {
+    "id": 3517,
+    "name": "Dockstraße"
+  },
+  {
+    "id": 12023,
+    "name": "Doerpstraat"
+  },
+  {
+    "id": 3518,
+    "name": "Dohlenweg"
+  },
+  {
+    "id": 3519,
+    "name": "Doktor-Claus-Voß-Allee"
+  },
+  {
+    "id": 3520,
+    "name": "Domkirchhof"
+  },
+  {
+    "id": 5217,
+    "name": "DONATS GANG"
+  },
+  {
+    "id": 12151,
+    "name": "Dorfallee"
+  },
+  {
+    "id": 12061,
+    "name": "Dorfplatz"
+  },
+  {
+    "id": 12060,
+    "name": "Dorfplatz/Dorfstraße"
+  },
+  {
+    "id": 3521,
+    "name": "Dorfstraße"
+  },
+  {
+    "id": 11783,
+    "name": "Dorfstrasse"
+  },
+  {
+    "id": 3522,
+    "name": "Dornbreite"
+  },
+  {
+    "id": 5198,
+    "name": "DORNES HOF"
+  },
+  {
+    "id": 3523,
+    "name": "Dornestraße"
+  },
+  {
+    "id": 3524,
+    "name": "Dornierstraße"
+  },
+  {
+    "id": 3525,
+    "name": "Dornröschenweg"
+  },
+  {
+    "id": 3526,
+    "name": "Dorothea-Erxleben-Straße"
+  },
+  {
+    "id": 3527,
+    "name": "Dorotheenstraße"
+  },
+  {
+    "id": 3528,
+    "name": "Dorpatstraße"
+  },
+  {
+    "id": 3537,
+    "name": "Dr.-Elisabeth-Selbert-Ring"
+  },
+  {
+    "id": 11608,
+    "name": "Dr.-Elisabeth-Selbert-Ring"
+  },
+  {
+    "id": 3538,
+    "name": "Dr.-Heinrich-Dräger-Straße"
+  },
+  {
+    "id": 11609,
+    "name": "Dr.-Heinrich-Dräger-Straße"
+  },
+  {
+    "id": 3540,
+    "name": "Dr.-Julius-Leber-Str. 37/"
+  },
+  {
+    "id": 3539,
+    "name": "Dr.-Julius-Leber-Straße"
+  },
+  {
+    "id": 3541,
+    "name": "Dr.-Lena-Ohnesorge-Weg"
+  },
+  {
+    "id": 3542,
+    "name": "Dr.-Luise-Klinsmann-Straße"
+  },
+  {
+    "id": 12138,
+    "name": "Dr.-Rudolf-Schütz-Straße"
+  },
+  {
+    "id": 3530,
+    "name": "Drechslerstraße"
+  },
+  {
+    "id": 3531,
+    "name": "Dreeblöcken"
+  },
+  {
+    "id": 5082,
+    "name": "DREHBRÜCKE"
+  },
+  {
+    "id": 3532,
+    "name": "Dreifelderweg"
+  },
+  {
+    "id": 11853,
+    "name": "Dritte Düne"
+  },
+  {
+    "id": 3533,
+    "name": "Drosselbartweg"
+  },
+  {
+    "id": 3534,
+    "name": "Drosselweg"
+  },
+  {
+    "id": 11784,
+    "name": "Drosselweg"
+  },
+  {
+    "id": 3529,
+    "name": "Drägerweg"
+  },
+  {
+    "id": 3535,
+    "name": "Drögeneck"
+  },
+  {
+    "id": 3536,
+    "name": "Drögestraße"
+  },
+  {
+    "id": 3543,
+    "name": "Dummersdorfer Scheide"
+  },
+  {
+    "id": 3544,
+    "name": "Dummersdorfer Straße"
+  },
+  {
+    "id": 5112,
+    "name": "DUNKELGRÜNER GANG"
+  },
+  {
+    "id": 5113,
+    "name": "DURCHGANG"
+  },
+  {
+    "id": 11610,
+    "name": "Durchgang Wahmstr.-Aegidienstr."
+  },
+  {
+    "id": 3545,
+    "name": "Duvennester Weg"
+  },
+  {
+    "id": 3506,
+    "name": "Dänemarkstraße"
+  },
+  {
+    "id": 3507,
+    "name": "Dänischburger Landstraße"
+  },
+  {
+    "id": 3546,
+    "name": "Dünenpark"
+  },
+  {
+    "id": 3547,
+    "name": "Dünenweg"
+  },
+  {
+    "id": 3548,
+    "name": "Düppelstraße"
+  },
+  {
+    "id": 3549,
+    "name": "Dürerstraße"
+  },
+  {
+    "id": 3550,
+    "name": "Dürrstraße"
+  },
+  {
+    "id": 3551,
+    "name": "Düstere Querstraße"
+  },
+  {
+    "id": 3552,
+    "name": "Düvekenstraße"
+  },
+  {
+    "id": 3555,
+    "name": "Ebner-Eschenbach-Straße"
+  },
+  {
+    "id": 3556,
+    "name": "Eckbusch"
+  },
+  {
+    "id": 3557,
+    "name": "Eckenerstraße"
+  },
+  {
+    "id": 3558,
+    "name": "Eckholdtweg"
+  },
+  {
+    "id": 11914,
+    "name": "Eckhorster Dorfstraße"
+  },
+  {
+    "id": 3559,
+    "name": "Eckhorster Straße"
+  },
+  {
+    "id": 3560,
+    "name": "Edelsteinstraße"
+  },
+  {
+    "id": 3561,
+    "name": "Edisonstraße"
+  },
+  {
+    "id": 3562,
+    "name": "Eduard-Müller-Weg"
+  },
+  {
+    "id": 3563,
+    "name": "Edvard-Munch-Straße"
+  },
+  {
+    "id": 3564,
+    "name": "Effengrube"
+  },
+  {
+    "id": 3565,
+    "name": "Effengrube 14/"
+  },
+  {
+    "id": 3566,
+    "name": "Effengrube 20/"
+  },
+  {
+    "id": 3567,
+    "name": "Eggersstraße"
+  },
+  {
+    "id": 3568,
+    "name": "Egon-Nickel-Straße"
+  },
+  {
+    "id": 12205,
+    "name": "Ehlershof"
+  },
+  {
+    "id": 3569,
+    "name": "Eichenallee"
+  },
+  {
+    "id": 3570,
+    "name": "Eichenweg"
+  },
+  {
+    "id": 3571,
+    "name": "Eichhörnchenweg"
+  },
+  {
+    "id": 3572,
+    "name": "Eigene Scholle"
+  },
+  {
+    "id": 3573,
+    "name": "Einhäuschen Querstraße"
+  },
+  {
+    "id": 3574,
+    "name": "Einsiedelstraße"
+  },
+  {
+    "id": 11838,
+    "name": "Einsiedelstraße Sackgassenteilstück"
+  },
+  {
+    "id": 3575,
+    "name": "Eisenbahnstraße"
+  },
+  {
+    "id": 3576,
+    "name": "Eisenstraße"
+  },
+  {
+    "id": 3577,
+    "name": "Elbingstraße"
+  },
+  {
+    "id": 3578,
+    "name": "Eldeweg"
+  },
+  {
+    "id": 3579,
+    "name": "Elfenrain"
+  },
+  {
+    "id": 3580,
+    "name": "Elisabeth-Haseloff-Straße"
+  },
+  {
+    "id": 11988,
+    "name": "Elisabethstraße"
+  },
+  {
+    "id": 3582,
+    "name": "Elise-Bartels-Straße"
+  },
+  {
+    "id": 3581,
+    "name": "Elisenstraße"
+  },
+  {
+    "id": 3583,
+    "name": "Ellerbrook"
+  },
+  {
+    "id": 11926,
+    "name": "Ellernbrook"
+  },
+  {
+    "id": 12123,
+    "name": "Elli-Wigger-Weg"
+  },
+  {
+    "id": 3584,
+    "name": "Elly-Linden-Straße"
+  },
+  {
+    "id": 3585,
+    "name": "Elmar-Limberg-Platz"
+  },
+  {
+    "id": 3587,
+    "name": "Elsterweide"
+  },
+  {
+    "id": 3588,
+    "name": "Elswigstraße"
+  },
+  {
+    "id": 3586,
+    "name": "Elsässer Straße"
+  },
+  {
+    "id": 3589,
+    "name": "Emilienstraße"
+  },
+  {
+    "id": 3590,
+    "name": "Emmy-Noether-Straße"
+  },
+  {
+    "id": 3591,
+    "name": "Engelsgrube"
+  },
+  {
+    "id": 3593,
+    "name": "Engelsgrube 26/"
+  },
+  {
+    "id": 3594,
+    "name": "Engelsgrube 31/"
+  },
+  {
+    "id": 3595,
+    "name": "Engelsgrube 32/"
+  },
+  {
+    "id": 3596,
+    "name": "Engelsgrube 43/"
+  },
+  {
+    "id": 3597,
+    "name": "Engelsgrube 48/"
+  },
+  {
+    "id": 3598,
+    "name": "Engelsgrube 61/"
+  },
+  {
+    "id": 3599,
+    "name": "Engelsgrube 67/"
+  },
+  {
+    "id": 3600,
+    "name": "Engelsgrube 73/"
+  },
+  {
+    "id": 3601,
+    "name": "Engelsgrube 77/"
+  },
+  {
+    "id": 3602,
+    "name": "Engelswisch"
+  },
+  {
+    "id": 3603,
+    "name": "Engelswisch 20/"
+  },
+  {
+    "id": 3604,
+    "name": "Engelswisch 33/"
+  },
+  {
+    "id": 3607,
+    "name": "Eric-Warburg-Brücke"
+  },
+  {
+    "id": 3605,
+    "name": "Erich-Klann-Straße"
+  },
+  {
+    "id": 3606,
+    "name": "Erich-Mühsam-Weg"
+  },
+  {
+    "id": 3609,
+    "name": "Erika-Gerstung-Straße"
+  },
+  {
+    "id": 12185,
+    "name": "Erika-Tyska-Straße"
+  },
+  {
+    "id": 3608,
+    "name": "Erikaweg"
+  },
+  {
+    "id": 3610,
+    "name": "Erlenkamp"
+  },
+  {
+    "id": 12052,
+    "name": "Erlenweg"
+  },
+  {
+    "id": 3611,
+    "name": "Ernestinenstraße"
+  },
+  {
+    "id": 3613,
+    "name": "Ernst-Abbe-Straße"
+  },
+  {
+    "id": 3614,
+    "name": "Ernst-Deecke-Weg"
+  },
+  {
+    "id": 5135,
+    "name": "ERNST-RUSKA-STRAßE"
+  },
+  {
+    "id": 3612,
+    "name": "Ernststraße"
+  },
+  {
+    "id": 3615,
+    "name": "Ernteweg"
+  },
+  {
+    "id": 11851,
+    "name": "Erste Düne"
+  },
+  {
+    "id": 3616,
+    "name": "Erste Ochsenkoppel"
+  },
+  {
+    "id": 3617,
+    "name": "Erster Querweg"
+  },
+  {
+    "id": 3618,
+    "name": "Erzstraße"
+  },
+  {
+    "id": 3619,
+    "name": "Eschenburgstraße"
+  },
+  {
+    "id": 3620,
+    "name": "Estlandring"
+  },
+  {
+    "id": 11899,
+    "name": "Eulenflucht"
+  },
+  {
+    "id": 12001,
+    "name": "Eulenruf"
+  },
+  {
+    "id": 3621,
+    "name": "Eulenspiegelweg"
+  },
+  {
+    "id": 12178,
+    "name": "Europaplatz"
+  },
+  {
+    "id": 3622,
+    "name": "Europaweg"
+  },
+  {
+    "id": 12177,
+    "name": "Eutiner Ring"
+  },
+  {
+    "id": 3623,
+    "name": "Eutiner Straße"
+  },
+  {
+    "id": 11758,
+    "name": "Evershof"
+  },
+  {
+    "id": 3624,
+    "name": "Ewerstraße"
+  },
+  {
+    "id": 11746,
+    "name": "EZL"
+  },
+  {
+    "id": 11952,
+    "name": "Faaschweg"
+  },
+  {
+    "id": 3625,
+    "name": "Fabrikstraße"
+  },
+  {
+    "id": 3626,
+    "name": "Fackenburger Allee"
+  },
+  {
+    "id": 3627,
+    "name": "Fahlenkampsweg"
+  },
+  {
+    "id": 3628,
+    "name": "Fahrenheitweg"
+  },
+  {
+    "id": 3629,
+    "name": "Falkenfelder Moor"
+  },
+  {
+    "id": 3630,
+    "name": "Falkenhusener Weg"
+  },
+  {
+    "id": 3631,
+    "name": "Falkenplatz"
+  },
+  {
+    "id": 3632,
+    "name": "Falkenstraße"
+  },
+  {
+    "id": 3633,
+    "name": "Fallreep"
+  },
+  {
+    "id": 3634,
+    "name": "Falsterring"
+  },
+  {
+    "id": 3635,
+    "name": "Farnstieg"
+  },
+  {
+    "id": 3637,
+    "name": "Fasanenweg"
+  },
+  {
+    "id": 3640,
+    "name": "Feenwiese"
+  },
+  {
+    "id": 3641,
+    "name": "Fegefeuer"
+  },
+  {
+    "id": 3642,
+    "name": "Fehlingstraße"
+  },
+  {
+    "id": 3643,
+    "name": "Fehmarnring"
+  },
+  {
+    "id": 3644,
+    "name": "Feldstraße"
+  },
+  {
+    "id": 3645,
+    "name": "Festwiesenweg"
+  },
+  {
+    "id": 12027,
+    "name": "Fichtenstraße"
+  },
+  {
+    "id": 5237,
+    "name": "FIETES GANG"
+  },
+  {
+    "id": 3647,
+    "name": "Finkenberg"
+  },
+  {
+    "id": 3648,
+    "name": "Finkenstraße"
+  },
+  {
+    "id": 3649,
+    "name": "Finnlandstraße"
+  },
+  {
+    "id": 3651,
+    "name": "Fischergrube"
+  },
+  {
+    "id": 3652,
+    "name": "Fischergrube 26/"
+  },
+  {
+    "id": 3653,
+    "name": "Fischergrube 38/"
+  },
+  {
+    "id": 3654,
+    "name": "Fischergrube 44/"
+  },
+  {
+    "id": 3655,
+    "name": "Fischerweg"
+  },
+  {
+    "id": 3656,
+    "name": "Fischstraße"
+  },
+  {
+    "id": 3657,
+    "name": "Flachsröße"
+  },
+  {
+    "id": 3658,
+    "name": "Flandernstraße"
+  },
+  {
+    "id": 3659,
+    "name": "Fleischhauerstraße"
+  },
+  {
+    "id": 3660,
+    "name": "Flenderplatz"
+  },
+  {
+    "id": 3661,
+    "name": "Flenderstraße"
+  },
+  {
+    "id": 3662,
+    "name": "Fliederstraße"
+  },
+  {
+    "id": 12200,
+    "name": "Fliederweg"
+  },
+  {
+    "id": 3663,
+    "name": "Fliegerweg"
+  },
+  {
+    "id": 3664,
+    "name": "Flindthof"
+  },
+  {
+    "id": 3665,
+    "name": "Flintenbreite"
+  },
+  {
+    "id": 12050,
+    "name": "Flurstraße"
+  },
+  {
+    "id": 3666,
+    "name": "Folke-Bernadotte-Straße"
+  },
+  {
+    "id": 3668,
+    "name": "Forstmeisterweg"
+  },
+  {
+    "id": 3669,
+    "name": "Forstweg"
+  },
+  {
+    "id": 3671,
+    "name": "Frankenkrogweg"
+  },
+  {
+    "id": 3672,
+    "name": "Frankfurter Straße"
+  },
+  {
+    "id": 3673,
+    "name": "Fraunhoferstraße"
+  },
+  {
+    "id": 3674,
+    "name": "Fredenhagenweg"
+  },
+  {
+    "id": 3675,
+    "name": "Fregattenstraße"
+  },
+  {
+    "id": 11612,
+    "name": "Fregattenstraße Verbindungsweg Mois.A."
+  },
+  {
+    "id": 3676,
+    "name": "Freibeuterweg"
+  },
+  {
+    "id": 11613,
+    "name": "Fridtjof - Nansen - Str."
+  },
+  {
+    "id": 3677,
+    "name": "Fridtjof-Nansen-Straße"
+  },
+  {
+    "id": 3678,
+    "name": "Friedenstraße"
+  },
+  {
+    "id": 3679,
+    "name": "Friedhofsallee"
+  },
+  {
+    "id": 3681,
+    "name": "Friedrich-Ebert-Hof"
+  },
+  {
+    "id": 3682,
+    "name": "Friedrich-Ewers-Straße"
+  },
+  {
+    "id": 12137,
+    "name": "Friedrich-Ritzmann-Straße"
+  },
+  {
+    "id": 3683,
+    "name": "Friedrich-Wilhelm-Platz"
+  },
+  {
+    "id": 3680,
+    "name": "Friedrichstraße"
+  },
+  {
+    "id": 3684,
+    "name": "Friesenweg"
+  },
+  {
+    "id": 3685,
+    "name": "Frische Brise"
+  },
+  {
+    "id": 3686,
+    "name": "Fritz-Endres-Weg"
+  },
+  {
+    "id": 3687,
+    "name": "Fritz-Reuter-Straße"
+  },
+  {
+    "id": 3688,
+    "name": "Fritz-Rörig-Weg"
+  },
+  {
+    "id": 3689,
+    "name": "Fruchtweg"
+  },
+  {
+    "id": 3690,
+    "name": "Fuchssprung"
+  },
+  {
+    "id": 11614,
+    "name": "Fußgängerbrücke zwischen kleine Wallstr. und an der Obertrave"
+  },
+  {
+    "id": 3638,
+    "name": "Fährbergweg"
+  },
+  {
+    "id": 3639,
+    "name": "Fährstraße"
+  },
+  {
+    "id": 11740,
+    "name": "Fährvorplatz"
+  },
+  {
+    "id": 3670,
+    "name": "Föhrenholz"
+  },
+  {
+    "id": 5083,
+    "name": "FÜCHTINGS HOF"
+  },
+  {
+    "id": 3691,
+    "name": "Füchtingstraße"
+  },
+  {
+    "id": 5136,
+    "name": "FÜNFBUDENGANG"
+  },
+  {
+    "id": 3692,
+    "name": "Fünfhausen"
+  },
+  {
+    "id": 3699,
+    "name": "Gadebuschweg"
+  },
+  {
+    "id": 3700,
+    "name": "Galeonenweg"
+  },
+  {
+    "id": 3701,
+    "name": "Galgenberg"
+  },
+  {
+    "id": 3702,
+    "name": "Galileiweg"
+  },
+  {
+    "id": 3703,
+    "name": "Garbenweg"
+  },
+  {
+    "id": 5163,
+    "name": "GARBEREITER-GANG"
+  },
+  {
+    "id": 3704,
+    "name": "Gartengang"
+  },
+  {
+    "id": 3705,
+    "name": "Gartenstraße"
+  },
+  {
+    "id": 11785,
+    "name": "Gartenweg"
+  },
+  {
+    "id": 3707,
+    "name": "Gebhardweg"
+  },
+  {
+    "id": 3708,
+    "name": "Geesthachter Straße"
+  },
+  {
+    "id": 3709,
+    "name": "Geibelplatz"
+  },
+  {
+    "id": 11987,
+    "name": "Geibelstraße"
+  },
+  {
+    "id": 3710,
+    "name": "Geleitweg"
+  },
+  {
+    "id": 5176,
+    "name": "GEMEINSCHAFTS-GANG"
+  },
+  {
+    "id": 3711,
+    "name": "Geniner Dorfstraße"
+  },
+  {
+    "id": 3712,
+    "name": "Geniner Straße"
+  },
+  {
+    "id": 3713,
+    "name": "Geniner Ufer"
+  },
+  {
+    "id": 3715,
+    "name": "Georg-Kerschensteiner-Straße"
+  },
+  {
+    "id": 12073,
+    "name": "Georg-Ohm-Straße"
+  },
+  {
+    "id": 3714,
+    "name": "Georgstraße"
+  },
+  {
+    "id": 3716,
+    "name": "Gerade Querstraße"
+  },
+  {
+    "id": 3717,
+    "name": "Gerberstraße"
+  },
+  {
+    "id": 12159,
+    "name": "Gerhard-Hilgendorf-Straße"
+  },
+  {
+    "id": 3718,
+    "name": "Germanenweg"
+  },
+  {
+    "id": 3719,
+    "name": "Gernotweg"
+  },
+  {
+    "id": 3720,
+    "name": "Gerstenfeld"
+  },
+  {
+    "id": 12127,
+    "name": "Gertrud-Groth-Ring"
+  },
+  {
+    "id": 3721,
+    "name": "Gertrudenstraße"
+  },
+  {
+    "id": 3722,
+    "name": "Gerty-Cori-Straße"
+  },
+  {
+    "id": 11725,
+    "name": "Geschwister-Scholl-Weg"
+  },
+  {
+    "id": 5238,
+    "name": "GESELLENWEG"
+  },
+  {
+    "id": 3724,
+    "name": "Geverdesstraße"
+  },
+  {
+    "id": 3726,
+    "name": "Gichterstraße"
+  },
+  {
+    "id": 3727,
+    "name": "Gildenhörn"
+  },
+  {
+    "id": 12092,
+    "name": "Gillwisch"
+  },
+  {
+    "id": 3728,
+    "name": "Ginsterweg"
+  },
+  {
+    "id": 3729,
+    "name": "Giselherweg"
+  },
+  {
+    "id": 5114,
+    "name": "GLANDORPS GANG"
+  },
+  {
+    "id": 5177,
+    "name": "GLANDORPS HOF"
+  },
+  {
+    "id": 3730,
+    "name": "Glandorpstraße"
+  },
+  {
+    "id": 3731,
+    "name": "Glashüttenweg"
+  },
+  {
+    "id": 3732,
+    "name": "Gleisweg"
+  },
+  {
+    "id": 12080,
+    "name": "Gleiwitzstraße"
+  },
+  {
+    "id": 3734,
+    "name": "Glindhorn"
+  },
+  {
+    "id": 5239,
+    "name": "GLOCKENGIEßER HOF"
+  },
+  {
+    "id": 3737,
+    "name": "Glockengießerstr 38/"
+  },
+  {
+    "id": 3738,
+    "name": "Glockengießerstr 49/"
+  },
+  {
+    "id": 3739,
+    "name": "Glockengießerstr 52/"
+  },
+  {
+    "id": 3742,
+    "name": "Glockengießerstr 77/"
+  },
+  {
+    "id": 3743,
+    "name": "Glockengießerstr 83/"
+  },
+  {
+    "id": 3735,
+    "name": "Glockengießerstraße"
+  },
+  {
+    "id": 3746,
+    "name": "Gloxinstraße"
+  },
+  {
+    "id": 3747,
+    "name": "Gluckstraße"
+  },
+  {
+    "id": 3748,
+    "name": "Gneisenaustraße"
+  },
+  {
+    "id": 3749,
+    "name": "Gneversdorfer Kamp"
+  },
+  {
+    "id": 3750,
+    "name": "Gneversdorfer Weg"
+  },
+  {
+    "id": 3751,
+    "name": "Godetietweg"
+  },
+  {
+    "id": 3752,
+    "name": "Godewind"
+  },
+  {
+    "id": 3753,
+    "name": "Goebenstraße"
+  },
+  {
+    "id": 3754,
+    "name": "Goerdelerstraße"
+  },
+  {
+    "id": 3755,
+    "name": "Goethestraße"
+  },
+  {
+    "id": 3756,
+    "name": "Goldberg"
+  },
+  {
+    "id": 12116,
+    "name": "Goldhafer"
+  },
+  {
+    "id": 11982,
+    "name": "Gorch-Fock-Straße"
+  },
+  {
+    "id": 3757,
+    "name": "Gotenweg"
+  },
+  {
+    "id": 3758,
+    "name": "Gothlandstraße"
+  },
+  {
+    "id": 3759,
+    "name": "Gothmunder Weg"
+  },
+  {
+    "id": 11615,
+    "name": "Gr. Klosterkoppel"
+  },
+  {
+    "id": 3762,
+    "name": "Grace-Hopper-Straße"
+  },
+  {
+    "id": 3763,
+    "name": "Granatweg"
+  },
+  {
+    "id": 3764,
+    "name": "Grapengießerstraße"
+  },
+  {
+    "id": 3765,
+    "name": "Grasweg"
+  },
+  {
+    "id": 5180,
+    "name": "GRATHS GANG"
+  },
+  {
+    "id": 3766,
+    "name": "Gravensteinstraße"
+  },
+  {
+    "id": 3768,
+    "name": "Grenzweg"
+  },
+  {
+    "id": 3769,
+    "name": "Gretelweg"
+  },
+  {
+    "id": 3770,
+    "name": "Greveradenstraße"
+  },
+  {
+    "id": 3771,
+    "name": "Grevesmühlenweg"
+  },
+  {
+    "id": 3772,
+    "name": "Grillenweg"
+  },
+  {
+    "id": 3773,
+    "name": "Grimbartweg"
+  },
+  {
+    "id": 3774,
+    "name": "Grootkoppel"
+  },
+  {
+    "id": 11918,
+    "name": "Groß Parin"
+  },
+  {
+    "id": 3778,
+    "name": "Große Altefähre"
+  },
+  {
+    "id": 3779,
+    "name": "Große Burgstraße"
+  },
+  {
+    "id": 3780,
+    "name": "Große Burgstraße 41/"
+  },
+  {
+    "id": 3781,
+    "name": "Große Gröpelgrube"
+  },
+  {
+    "id": 3782,
+    "name": "Große Gröpelgrube 22/"
+  },
+  {
+    "id": 3783,
+    "name": "Große Gröpelgrube 37/"
+  },
+  {
+    "id": 3784,
+    "name": "Große Gröpelgrube 45/"
+  },
+  {
+    "id": 3786,
+    "name": "Große Kiesau"
+  },
+  {
+    "id": 3787,
+    "name": "Große Kiesau 16/"
+  },
+  {
+    "id": 3788,
+    "name": "Große Kiesau 20/"
+  },
+  {
+    "id": 3789,
+    "name": "Große Kiesau 5/"
+  },
+  {
+    "id": 3790,
+    "name": "Große Kiesau 8/"
+  },
+  {
+    "id": 3791,
+    "name": "Große Klosterkoppel"
+  },
+  {
+    "id": 3792,
+    "name": "Große Petersgrube"
+  },
+  {
+    "id": 3793,
+    "name": "Großenhof"
+  },
+  {
+    "id": 3794,
+    "name": "Großer Bauhof"
+  },
+  {
+    "id": 3795,
+    "name": "Großer Belt"
+  },
+  {
+    "id": 11996,
+    "name": "Großer Krug"
+  },
+  {
+    "id": 3796,
+    "name": "Großer Vogelsang"
+  },
+  {
+    "id": 3775,
+    "name": "Grote Bleeken"
+  },
+  {
+    "id": 11895,
+    "name": "Groter Langensegen"
+  },
+  {
+    "id": 3797,
+    "name": "Grubenweg"
+  },
+  {
+    "id": 5137,
+    "name": "GRUBES HOF"
+  },
+  {
+    "id": 3776,
+    "name": "Grönauer Baum"
+  },
+  {
+    "id": 3777,
+    "name": "Grönlandstraße"
+  },
+  {
+    "id": 11844,
+    "name": "Grüne Fuge"
+  },
+  {
+    "id": 5178,
+    "name": "GRÜNER GANG"
+  },
+  {
+    "id": 3798,
+    "name": "Grüner Weg"
+  },
+  {
+    "id": 11786,
+    "name": "Grüner Weg"
+  },
+  {
+    "id": 3799,
+    "name": "GRÜNER WEG / KRUMMESSE"
+  },
+  {
+    "id": 3800,
+    "name": "Grünewaldstraße"
+  },
+  {
+    "id": 11885,
+    "name": "Grünfeldt-Ring"
+  },
+  {
+    "id": 5179,
+    "name": "GRÜTZMACHER HOF"
+  },
+  {
+    "id": 3801,
+    "name": "Guerickestraße"
+  },
+  {
+    "id": 3802,
+    "name": "Guntherweg"
+  },
+  {
+    "id": 3803,
+    "name": "Gustav-Adolf-Straße"
+  },
+  {
+    "id": 3804,
+    "name": "Gustav-Falke-Straße"
+  },
+  {
+    "id": 3805,
+    "name": "Gustav-Radbruch-Platz"
+  },
+  {
+    "id": 3806,
+    "name": "Gutenbergstraße"
+  },
+  {
+    "id": 3807,
+    "name": "Gutsweg"
+  },
+  {
+    "id": 3706,
+    "name": "Gärtnergasse"
+  },
+  {
+    "id": 5258,
+    "name": "Gärtnerweg"
+  },
+  {
+    "id": 11882,
+    "name": "Gärtnerweg"
+  },
+  {
+    "id": 3760,
+    "name": "Gödertskoppel"
+  },
+  {
+    "id": 12082,
+    "name": "Görlitzer Weg"
+  },
+  {
+    "id": 3808,
+    "name": "Güldene Straße"
+  },
+  {
+    "id": 5275,
+    "name": "Günther-Quandt-Platz "
+  },
+  {
+    "id": 3810,
+    "name": "Gürtlerweg"
+  },
+  {
+    "id": 3811,
+    "name": "Güterschlag"
+  },
+  {
+    "id": 5240,
+    "name": "HAASENHOF"
+  },
+  {
+    "id": 3812,
+    "name": "Habichthöhe"
+  },
+  {
+    "id": 3813,
+    "name": "Hachstraße"
+  },
+  {
+    "id": 3814,
+    "name": "Hafenstraße"
+  },
+  {
+    "id": 3815,
+    "name": "Haferkoppel"
+  },
+  {
+    "id": 3816,
+    "name": "Hagebuttenweg"
+  },
+  {
+    "id": 3817,
+    "name": "Hagedorn"
+  },
+  {
+    "id": 3818,
+    "name": "Hagenowweg"
+  },
+  {
+    "id": 3819,
+    "name": "Hagenskoppel"
+  },
+  {
+    "id": 3820,
+    "name": "Hagenstraße"
+  },
+  {
+    "id": 3821,
+    "name": "Hahnenkamp"
+  },
+  {
+    "id": 11787,
+    "name": "Hainbuchenring"
+  },
+  {
+    "id": 3822,
+    "name": "Hainbuchenweg"
+  },
+  {
+    "id": 3823,
+    "name": "Hainholt"
+  },
+  {
+    "id": 3824,
+    "name": "Haler Ort"
+  },
+  {
+    "id": 3825,
+    "name": "Halmweg"
+  },
+  {
+    "id": 3826,
+    "name": "Hamburger Straße"
+  },
+  {
+    "id": 3827,
+    "name": "Hamsterweg"
+  },
+  {
+    "id": 5115,
+    "name": "HANDWERKSTRAßE"
+  },
+  {
+    "id": 3828,
+    "name": "Hannah-Arendt-Weg"
+  },
+  {
+    "id": 3832,
+    "name": "Hans-Blumenberg-Weg"
+  },
+  {
+    "id": 3833,
+    "name": "Hans-Böckler-Straße"
+  },
+  {
+    "id": 11953,
+    "name": "Hans-Evers-Straße"
+  },
+  {
+    "id": 3834,
+    "name": "Hans-Sachs-Straße"
+  },
+  {
+    "id": 5164,
+    "name": "HANSE-HOF"
+  },
+  {
+    "id": 3829,
+    "name": "Hanseplatz"
+  },
+  {
+    "id": 3830,
+    "name": "Hansering"
+  },
+  {
+    "id": 3831,
+    "name": "Hansestraße"
+  },
+  {
+    "id": 3835,
+    "name": "Hardenbergpfad"
+  },
+  {
+    "id": 3837,
+    "name": "Hartengrube"
+  },
+  {
+    "id": 3838,
+    "name": "Hartengrube 13/"
+  },
+  {
+    "id": 3839,
+    "name": "Hartengrube 14/"
+  },
+  {
+    "id": 3840,
+    "name": "Hartengrube 18/"
+  },
+  {
+    "id": 3842,
+    "name": "Hartengrube 36/"
+  },
+  {
+    "id": 3843,
+    "name": "Hartengrube 44/"
+  },
+  {
+    "id": 3844,
+    "name": "Hartengrube 52/"
+  },
+  {
+    "id": 3845,
+    "name": "Hartengrube 9/"
+  },
+  {
+    "id": 11869,
+    "name": "Haselmausweg"
+  },
+  {
+    "id": 3846,
+    "name": "Haselnußweg"
+  },
+  {
+    "id": 11916,
+    "name": "Haselredder"
+  },
+  {
+    "id": 3847,
+    "name": "Hasenweg"
+  },
+  {
+    "id": 3848,
+    "name": "Hasselbreite"
+  },
+  {
+    "id": 3849,
+    "name": "Hasselbruchweg"
+  },
+  {
+    "id": 5199,
+    "name": "HAUDELS GANG"
+  },
+  {
+    "id": 5138,
+    "name": "HAUPTBAHNHOF LUEBECK"
+  },
+  {
+    "id": 11999,
+    "name": "Hauptstraße"
+  },
+  {
+    "id": 3851,
+    "name": "Hauskoppel"
+  },
+  {
+    "id": 3852,
+    "name": "Havelstraße"
+  },
+  {
+    "id": 3853,
+    "name": "Havemeisterweg"
+  },
+  {
+    "id": 11930,
+    "name": "Haydnring"
+  },
+  {
+    "id": 3854,
+    "name": "Haydnstraße"
+  },
+  {
+    "id": 3859,
+    "name": "Hebbelstraße"
+  },
+  {
+    "id": 3860,
+    "name": "Hegelweg"
+  },
+  {
+    "id": 3861,
+    "name": "Heidberg"
+  },
+  {
+    "id": 3862,
+    "name": "Heidebrink"
+  },
+  {
+    "id": 11735,
+    "name": "Heidenkoppel"
+  },
+  {
+    "id": 3863,
+    "name": "Heidstraße"
+  },
+  {
+    "id": 3864,
+    "name": "Heiligen-Geist-Kamp"
+  },
+  {
+    "id": 3865,
+    "name": "Heimgasse"
+  },
+  {
+    "id": 3866,
+    "name": "Heimstätten"
+  },
+  {
+    "id": 3868,
+    "name": "Heinrich-Behrens-Weg"
+  },
+  {
+    "id": 11870,
+    "name": "Heinrich-Gaedertz-Weg"
+  },
+  {
+    "id": 3869,
+    "name": "Heinrich-Lenz-Weg"
+  },
+  {
+    "id": 3870,
+    "name": "Heinrich-Mann-Ring"
+  },
+  {
+    "id": 5139,
+    "name": "HEINRICH-MEIBOM-STRAßE"
+  },
+  {
+    "id": 3867,
+    "name": "Heinrichstraße"
+  },
+  {
+    "id": 3871,
+    "name": "Heinzelmännchengasse"
+  },
+  {
+    "id": 11919,
+    "name": "Heischbrook"
+  },
+  {
+    "id": 3872,
+    "name": "Heisenbergweg"
+  },
+  {
+    "id": 3873,
+    "name": "Heisterbrook"
+  },
+  {
+    "id": 12173,
+    "name": "Heisterbusch"
+  },
+  {
+    "id": 3874,
+    "name": "Heiweg"
+  },
+  {
+    "id": 3878,
+    "name": "Helen-Keller-Weg"
+  },
+  {
+    "id": 3877,
+    "name": "Helene-Lange-Straße"
+  },
+  {
+    "id": 3876,
+    "name": "Helenenstraße"
+  },
+  {
+    "id": 3879,
+    "name": "Helgolandstraße"
+  },
+  {
+    "id": 3880,
+    "name": "Helldahl"
+  },
+  {
+    "id": 5085,
+    "name": "HELLGRÜNER GANG"
+  },
+  {
+    "id": 3881,
+    "name": "Helling"
+  },
+  {
+    "id": 3882,
+    "name": "Hellkamp"
+  },
+  {
+    "id": 3883,
+    "name": "Helmholtzstraße"
+  },
+  {
+    "id": 3884,
+    "name": "Henriette-Hirschfeld-Str."
+  },
+  {
+    "id": 3885,
+    "name": "Henry-Koch-Straße"
+  },
+  {
+    "id": 3886,
+    "name": "Henschelstraße"
+  },
+  {
+    "id": 3887,
+    "name": "Herbartweg"
+  },
+  {
+    "id": 3888,
+    "name": "Herderplatz"
+  },
+  {
+    "id": 3889,
+    "name": "Herderstraße"
+  },
+  {
+    "id": 3891,
+    "name": "Hermann-Hesse-Weg"
+  },
+  {
+    "id": 3892,
+    "name": "Hermann-Lange-Straße"
+  },
+  {
+    "id": 3893,
+    "name": "Hermann-Löns-Weg"
+  },
+  {
+    "id": 3890,
+    "name": "Hermannshöhe"
+  },
+  {
+    "id": 12101,
+    "name": "Hermannstraße"
+  },
+  {
+    "id": 3894,
+    "name": "Herrendamm"
+  },
+  {
+    "id": 12056,
+    "name": "Herrengartenweg"
+  },
+  {
+    "id": 3895,
+    "name": "Herrenholz"
+  },
+  {
+    "id": 3897,
+    "name": "Herreninsel Am Busch"
+  },
+  {
+    "id": 3898,
+    "name": "Herreninsel am Seglerheim"
+  },
+  {
+    "id": 3899,
+    "name": "Herreninsel am Wasser"
+  },
+  {
+    "id": 3900,
+    "name": "Herreninsel Hasenweg"
+  },
+  {
+    "id": 3901,
+    "name": "Herreninsel Hauptweg"
+  },
+  {
+    "id": 3902,
+    "name": "Herreninsel Sandweg"
+  },
+  {
+    "id": 3903,
+    "name": "Herreninsel Tannenweg"
+  },
+  {
+    "id": 3904,
+    "name": "Herreninsel Wiesensteig"
+  },
+  {
+    "id": 3905,
+    "name": "Herrenwyker Straße"
+  },
+  {
+    "id": 3906,
+    "name": "Herrnburger Weg"
+  },
+  {
+    "id": 3907,
+    "name": "Hertzweg"
+  },
+  {
+    "id": 5219,
+    "name": "HEYNATS GANG"
+  },
+  {
+    "id": 3908,
+    "name": "Hiddenseering"
+  },
+  {
+    "id": 3909,
+    "name": "Hindenburgplatz"
+  },
+  {
+    "id": 11975,
+    "name": "Hindenburgstraße"
+  },
+  {
+    "id": 12097,
+    "name": "Hingstbarg"
+  },
+  {
+    "id": 3910,
+    "name": "Hinter den Kirschkaten"
+  },
+  {
+    "id": 3911,
+    "name": "Hinter der Burg"
+  },
+  {
+    "id": 12041,
+    "name": "Hinter der Schmiede"
+  },
+  {
+    "id": 3912,
+    "name": "Hintern Höfen"
+  },
+  {
+    "id": 12079,
+    "name": "Hirschbergstraße"
+  },
+  {
+    "id": 3914,
+    "name": "Hirschpaß"
+  },
+  {
+    "id": 3915,
+    "name": "Hirtenbergweg"
+  },
+  {
+    "id": 3916,
+    "name": "Hirtengang"
+  },
+  {
+    "id": 3917,
+    "name": "Hirtenstraße"
+  },
+  {
+    "id": 11949,
+    "name": "Hirtenweg"
+  },
+  {
+    "id": 3918,
+    "name": "Hochofenstraße"
+  },
+  {
+    "id": 3919,
+    "name": "Hochstraße"
+  },
+  {
+    "id": 11616,
+    "name": "Hochstraße von Josephinenstr. b.  Einsiedelstraße"
+  },
+  {
+    "id": 3972,
+    "name": "Hoeschstraße"
+  },
+  {
+    "id": 3920,
+    "name": "Hof Dänischburg"
+  },
+  {
+    "id": 5253,
+    "name": "Hoffmannskoppel"
+  },
+  {
+    "id": 5259,
+    "name": "Hoffmannskoppel"
+  },
+  {
+    "id": 3921,
+    "name": "Hofland"
+  },
+  {
+    "id": 3922,
+    "name": "Hofweg"
+  },
+  {
+    "id": 3924,
+    "name": "Hohe Wende"
+  },
+  {
+    "id": 3923,
+    "name": "Hohe Ähren"
+  },
+  {
+    "id": 3925,
+    "name": "Hohelandstraße"
+  },
+  {
+    "id": 11893,
+    "name": "Hohen Ellersberg"
+  },
+  {
+    "id": 3926,
+    "name": "Hohenstaufenstraße"
+  },
+  {
+    "id": 3927,
+    "name": "Hohenstern"
+  },
+  {
+    "id": 3928,
+    "name": "Hohenstiege"
+  },
+  {
+    "id": 3929,
+    "name": "Hoher Weg"
+  },
+  {
+    "id": 3930,
+    "name": "Hohes Liet"
+  },
+  {
+    "id": 3933,
+    "name": "Hohewarte 2 Apfelweg"
+  },
+  {
+    "id": 3938,
+    "name": "Hohewarte 2 Dahlienweg"
+  },
+  {
+    "id": 3944,
+    "name": "Hohewarte 2 Kirschweg"
+  },
+  {
+    "id": 3949,
+    "name": "Hohewarte 2 Pflaumenweg"
+  },
+  {
+    "id": 3952,
+    "name": "Hohewarte 2 Wakenitzweg"
+  },
+  {
+    "id": 3953,
+    "name": "Hohewarter Weg"
+  },
+  {
+    "id": 12063,
+    "name": "Hohlweg"
+  },
+  {
+    "id": 3954,
+    "name": "Holbeinstraße"
+  },
+  {
+    "id": 3955,
+    "name": "Holderbusch"
+  },
+  {
+    "id": 3957,
+    "name": "Hollbeck"
+  },
+  {
+    "id": 11759,
+    "name": "Holländer-Schneise"
+  },
+  {
+    "id": 3956,
+    "name": "Holländerkoppel"
+  },
+  {
+    "id": 12047,
+    "name": "Holsteiner Straße"
+  },
+  {
+    "id": 3958,
+    "name": "Holstenbrücke"
+  },
+  {
+    "id": 11617,
+    "name": "Holstenhafen"
+  },
+  {
+    "id": 5220,
+    "name": "HOLSTENHAFEN-BRÜCKE"
+  },
+  {
+    "id": 3959,
+    "name": "Holstenstraße"
+  },
+  {
+    "id": 3960,
+    "name": "Holstentorplatz"
+  },
+  {
+    "id": 3961,
+    "name": "Holunderweg"
+  },
+  {
+    "id": 3962,
+    "name": "Holzfällerweg"
+  },
+  {
+    "id": 3963,
+    "name": "Holzkampweg"
+  },
+  {
+    "id": 3964,
+    "name": "Holzkoppel"
+  },
+  {
+    "id": 3965,
+    "name": "Holzvogtweg"
+  },
+  {
+    "id": 5140,
+    "name": "HOMANNS GANG"
+  },
+  {
+    "id": 3966,
+    "name": "Hopfenhof"
+  },
+  {
+    "id": 3967,
+    "name": "Hopfenschlag"
+  },
+  {
+    "id": 3968,
+    "name": "Hornkamp"
+  },
+  {
+    "id": 12093,
+    "name": "Horsdorfer Felde"
+  },
+  {
+    "id": 12106,
+    "name": "Horsdorfer Totenweg"
+  },
+  {
+    "id": 3969,
+    "name": "Howingsbrook"
+  },
+  {
+    "id": 3974,
+    "name": "Hubbrücke"
+  },
+  {
+    "id": 3975,
+    "name": "Huberstraße"
+  },
+  {
+    "id": 3976,
+    "name": "Hudekamp"
+  },
+  {
+    "id": 3977,
+    "name": "Hudestraße"
+  },
+  {
+    "id": 3979,
+    "name": "Hugo-Distler-Straße"
+  },
+  {
+    "id": 3980,
+    "name": "Humboldtstraße"
+  },
+  {
+    "id": 3981,
+    "name": "Hundestraße"
+  },
+  {
+    "id": 3982,
+    "name": "Hundestraße 19-23/"
+  },
+  {
+    "id": 3983,
+    "name": "Hundestraße 30/"
+  },
+  {
+    "id": 3984,
+    "name": "Hundestraße 31/"
+  },
+  {
+    "id": 3985,
+    "name": "Hundestraße 43/"
+  },
+  {
+    "id": 3986,
+    "name": "Hundestraße 50/"
+  },
+  {
+    "id": 3988,
+    "name": "Hundestraße 83/"
+  },
+  {
+    "id": 3989,
+    "name": "Hungerpohl"
+  },
+  {
+    "id": 3990,
+    "name": "Huntenhorster Weg"
+  },
+  {
+    "id": 3998,
+    "name": "Hußweg"
+  },
+  {
+    "id": 3991,
+    "name": "Hutmacherring"
+  },
+  {
+    "id": 12133,
+    "name": "Huuskoppel"
+  },
+  {
+    "id": 3855,
+    "name": "Hägerpohl"
+  },
+  {
+    "id": 12157,
+    "name": "Hähnenkamp"
+  },
+  {
+    "id": 3856,
+    "name": "Händelweg"
+  },
+  {
+    "id": 3857,
+    "name": "Hänselweg"
+  },
+  {
+    "id": 3858,
+    "name": "Hävenkamp"
+  },
+  {
+    "id": 3970,
+    "name": "Höfenkoppel"
+  },
+  {
+    "id": 11991,
+    "name": "Höhenweg"
+  },
+  {
+    "id": 3971,
+    "name": "Höhlfeld"
+  },
+  {
+    "id": 5218,
+    "name": "HÖLLE"
+  },
+  {
+    "id": 5084,
+    "name": "HÖPPNERS GANG"
+  },
+  {
+    "id": 11618,
+    "name": "Höschstraße"
+  },
+  {
+    "id": 3973,
+    "name": "Hövelnstraße"
+  },
+  {
+    "id": 3992,
+    "name": "Hüttenstraße"
+  },
+  {
+    "id": 3993,
+    "name": "Hüxstraße"
+  },
+  {
+    "id": 3994,
+    "name": "Hüxstraße 70/"
+  },
+  {
+    "id": 3995,
+    "name": "Hüxterdamm"
+  },
+  {
+    "id": 3996,
+    "name": "Hüxtertorallee"
+  },
+  {
+    "id": 11722,
+    "name": "Ida-Boy-Ed-Garten"
+  },
+  {
+    "id": 4000,
+    "name": "Ihlwisch"
+  },
+  {
+    "id": 4001,
+    "name": "Ilsebillweg"
+  },
+  {
+    "id": 4002,
+    "name": "Iltisweg"
+  },
+  {
+    "id": 4003,
+    "name": "Im Beiboot"
+  },
+  {
+    "id": 12202,
+    "name": "Im Birkengrund"
+  },
+  {
+    "id": 4004,
+    "name": "Im Block"
+  },
+  {
+    "id": 4005,
+    "name": "Im Brandenbaumer Feld"
+  },
+  {
+    "id": 4006,
+    "name": "Im Brunskroog"
+  },
+  {
+    "id": 12088,
+    "name": "Im Dorfe"
+  },
+  {
+    "id": 4007,
+    "name": "Im Eichholz"
+  },
+  {
+    "id": 4008,
+    "name": "Im Ende"
+  },
+  {
+    "id": 4009,
+    "name": "Im Eulennest"
+  },
+  {
+    "id": 4010,
+    "name": "Im Fuchsloch"
+  },
+  {
+    "id": 4011,
+    "name": "Im Gleisdreieck"
+  },
+  {
+    "id": 4012,
+    "name": "Im Grund"
+  },
+  {
+    "id": 4013,
+    "name": "Im Keil"
+  },
+  {
+    "id": 12158,
+    "name": "Im Moor"
+  },
+  {
+    "id": 4014,
+    "name": "Im Musennest"
+  },
+  {
+    "id": 5086,
+    "name": "IM REINFELD"
+  },
+  {
+    "id": 4016,
+    "name": "Im Schlag"
+  },
+  {
+    "id": 4017,
+    "name": "IM SOHL"
+  },
+  {
+    "id": 11788,
+    "name": "Im Sohl"
+  },
+  {
+    "id": 4018,
+    "name": "Im Trentsaal"
+  },
+  {
+    "id": 4019,
+    "name": "Im Winkel"
+  },
+  {
+    "id": 4020,
+    "name": "Immengarten"
+  },
+  {
+    "id": 12132,
+    "name": "In de Röth"
+  },
+  {
+    "id": 5241,
+    "name": "IN DER WILDBACHAUE"
+  },
+  {
+    "id": 4021,
+    "name": "Isaac-Newton-Straße"
+  },
+  {
+    "id": 4022,
+    "name": "Isegrimstraße"
+  },
+  {
+    "id": 4023,
+    "name": "Islandstraße"
+  },
+  {
+    "id": 4024,
+    "name": "Ivendorfer Landstraße"
+  },
+  {
+    "id": 4025,
+    "name": "Jahnstraße"
+  },
+  {
+    "id": 4026,
+    "name": "Jahrmarktstraße"
+  },
+  {
+    "id": 4027,
+    "name": "Jakobikirchhof"
+  },
+  {
+    "id": 4028,
+    "name": "Jakobstraße"
+  },
+  {
+    "id": 12186,
+    "name": "Jebsen-Ring"
+  },
+  {
+    "id": 4030,
+    "name": "Jerusalemsberg"
+  },
+  {
+    "id": 11959,
+    "name": "Jesse-Owens-Straße"
+  },
+  {
+    "id": 4031,
+    "name": "Joachim-Jungius-Straße"
+  },
+  {
+    "id": 4037,
+    "name": "Johann-Sebastian-Bach-Str"
+  },
+  {
+    "id": 4038,
+    "name": "Johann-Soherr-Straße"
+  },
+  {
+    "id": 4039,
+    "name": "Johann-Wallbaum-Weg"
+  },
+  {
+    "id": 4032,
+    "name": "Johannes-Baltzer-Straße"
+  },
+  {
+    "id": 12141,
+    "name": "Johannes-Grevsen-Straße"
+  },
+  {
+    "id": 4033,
+    "name": "Johannes-Klöcking-Weg"
+  },
+  {
+    "id": 4034,
+    "name": "Johannes-Rebmann-Straße"
+  },
+  {
+    "id": 4035,
+    "name": "Johannes-Scherbeck-Weg"
+  },
+  {
+    "id": 4036,
+    "name": "Johannes-Stelling-Straße"
+  },
+  {
+    "id": 4040,
+    "name": "Jonny-Felgenhauer-Straße"
+  },
+  {
+    "id": 4041,
+    "name": "Josephinenstraße"
+  },
+  {
+    "id": 4042,
+    "name": "Josephstraße"
+  },
+  {
+    "id": 11862,
+    "name": "Juistweg"
+  },
+  {
+    "id": 4043,
+    "name": "Julius-Brecht-Straße"
+  },
+  {
+    "id": 4044,
+    "name": "Julius-Milde-Weg"
+  },
+  {
+    "id": 4045,
+    "name": "Jungborn"
+  },
+  {
+    "id": 4046,
+    "name": "Junoring"
+  },
+  {
+    "id": 4047,
+    "name": "Jupiterstraße"
+  },
+  {
+    "id": 4029,
+    "name": "Jägersteig"
+  },
+  {
+    "id": 4048,
+    "name": "Jürgen-Wullenwever-Straße"
+  },
+  {
+    "id": 11714,
+    "name": "K 13"
+  },
+  {
+    "id": 4049,
+    "name": "K1"
+  },
+  {
+    "id": 4050,
+    "name": "K10"
+  },
+  {
+    "id": 11768,
+    "name": "K13"
+  },
+  {
+    "id": 11990,
+    "name": "K18"
+  },
+  {
+    "id": 4051,
+    "name": "K20"
+  },
+  {
+    "id": 4052,
+    "name": "K26"
+  },
+  {
+    "id": 12090,
+    "name": "K28"
+  },
+  {
+    "id": 4054,
+    "name": "K3"
+  },
+  {
+    "id": 12004,
+    "name": "K37"
+  },
+  {
+    "id": 4055,
+    "name": "K39"
+  },
+  {
+    "id": 4056,
+    "name": "K4"
+  },
+  {
+    "id": 4057,
+    "name": "K47"
+  },
+  {
+    "id": 12031,
+    "name": "K52"
+  },
+  {
+    "id": 4058,
+    "name": "K6"
+  },
+  {
+    "id": 5142,
+    "name": "K7"
+  },
+  {
+    "id": 4059,
+    "name": "K8"
+  },
+  {
+    "id": 12136,
+    "name": "K85"
+  },
+  {
+    "id": 4060,
+    "name": "K9"
+  },
+  {
+    "id": 4061,
+    "name": "Kabelort"
+  },
+  {
+    "id": 4062,
+    "name": "Kadetrinne"
+  },
+  {
+    "id": 4063,
+    "name": "Kahlhorststraße"
+  },
+  {
+    "id": 4064,
+    "name": "Kaiserallee"
+  },
+  {
+    "id": 4065,
+    "name": "Kaiserstraße"
+  },
+  {
+    "id": 4066,
+    "name": "Kajüte"
+  },
+  {
+    "id": 4067,
+    "name": "Kakenbarch"
+  },
+  {
+    "id": 5181,
+    "name": "KALANDS GANG"
+  },
+  {
+    "id": 4068,
+    "name": "Kalandstraße"
+  },
+  {
+    "id": 4069,
+    "name": "Kalkbrennerstraße"
+  },
+  {
+    "id": 4070,
+    "name": "Kalkhorster Weg"
+  },
+  {
+    "id": 11767,
+    "name": "Kalmarwende"
+  },
+  {
+    "id": 11909,
+    "name": "Kaltenhöfer Straße"
+  },
+  {
+    "id": 5201,
+    "name": "KAMELBRÜCKE"
+  },
+  {
+    "id": 11931,
+    "name": "Kammannsweg"
+  },
+  {
+    "id": 4072,
+    "name": "Kampstraße"
+  },
+  {
+    "id": 4073,
+    "name": "Kampweg"
+  },
+  {
+    "id": 4074,
+    "name": "Kanalstraße"
+  },
+  {
+    "id": 11827,
+    "name": "Kanalstraße Parkplatz"
+  },
+  {
+    "id": 4075,
+    "name": "Kaninchenbergweg"
+  },
+  {
+    "id": 4076,
+    "name": "Kaninchenborn"
+  },
+  {
+    "id": 11766,
+    "name": "Kaninchenweg"
+  },
+  {
+    "id": 4077,
+    "name": "Kantstraße"
+  },
+  {
+    "id": 4078,
+    "name": "Kapellenkamp"
+  },
+  {
+    "id": 4079,
+    "name": "Kapitelsdörfer Kirchweg"
+  },
+  {
+    "id": 4080,
+    "name": "Kapitelstraße"
+  },
+  {
+    "id": 4081,
+    "name": "Karavellenstraße"
+  },
+  {
+    "id": 12201,
+    "name": "Karberg"
+  },
+  {
+    "id": 4082,
+    "name": "Karkbrede"
+  },
+  {
+    "id": 4083,
+    "name": "Karkfeld"
+  },
+  {
+    "id": 4087,
+    "name": "Karl-Loewe-Weg"
+  },
+  {
+    "id": 4088,
+    "name": "Karl-Müllenhoff-Weg"
+  },
+  {
+    "id": 4089,
+    "name": "Karl-Roß-Weg"
+  },
+  {
+    "id": 4084,
+    "name": "Karlsruher Platz"
+  },
+  {
+    "id": 4085,
+    "name": "Karlsruher Straße"
+  },
+  {
+    "id": 4086,
+    "name": "Karlstraße"
+  },
+  {
+    "id": 4090,
+    "name": "Karoline-Herschel-Straße"
+  },
+  {
+    "id": 4091,
+    "name": "Karpfenbruchwiese"
+  },
+  {
+    "id": 4092,
+    "name": "Karpfenstraße"
+  },
+  {
+    "id": 11765,
+    "name": "Karshöfer-Schneise"
+  },
+  {
+    "id": 4093,
+    "name": "Kastanienallee"
+  },
+  {
+    "id": 4094,
+    "name": "Kastanienstraße"
+  },
+  {
+    "id": 12058,
+    "name": "Kastanienweg"
+  },
+  {
+    "id": 4095,
+    "name": "Kastorpstraße"
+  },
+  {
+    "id": 4096,
+    "name": "Katenland"
+  },
+  {
+    "id": 11945,
+    "name": "Katenstücken"
+  },
+  {
+    "id": 4097,
+    "name": "Katerstieg"
+  },
+  {
+    "id": 4098,
+    "name": "Katharinenstieg"
+  },
+  {
+    "id": 4099,
+    "name": "Katharinenstraße"
+  },
+  {
+    "id": 10319,
+    "name": "Katharinenstraße - Karlstraße"
+  },
+  {
+    "id": 5242,
+    "name": "KATTUNDRUCKERGANG"
+  },
+  {
+    "id": 4100,
+    "name": "Kaufhof"
+  },
+  {
+    "id": 5116,
+    "name": "KELLINGS GANG"
+  },
+  {
+    "id": 4103,
+    "name": "Keplerweg"
+  },
+  {
+    "id": 4104,
+    "name": "Kerckringstraße"
+  },
+  {
+    "id": 5182,
+    "name": "KETTENGANG"
+  },
+  {
+    "id": 5222,
+    "name": "KETTNERS GANG"
+  },
+  {
+    "id": 4105,
+    "name": "Kiebitzberg"
+  },
+  {
+    "id": 4106,
+    "name": "Kiebitzgasse"
+  },
+  {
+    "id": 4107,
+    "name": "Kiefernholz"
+  },
+  {
+    "id": 4108,
+    "name": "Kieler Straße"
+  },
+  {
+    "id": 4109,
+    "name": "Kieperhorst"
+  },
+  {
+    "id": 4110,
+    "name": "Kieselgrund"
+  },
+  {
+    "id": 4111,
+    "name": "Kiesweg"
+  },
+  {
+    "id": 4112,
+    "name": "Kimbernweg"
+  },
+  {
+    "id": 5183,
+    "name": "KINDERHÜSCHENGANG"
+  },
+  {
+    "id": 5202,
+    "name": "KINDTS GANG"
+  },
+  {
+    "id": 4113,
+    "name": "Kirchenstraße"
+  },
+  {
+    "id": 4114,
+    "name": "Kirchplatz"
+  },
+  {
+    "id": 4115,
+    "name": "Kirchweg"
+  },
+  {
+    "id": 4116,
+    "name": "Kirchwerderstraße"
+  },
+  {
+    "id": 11935,
+    "name": "Kirschblütenweg"
+  },
+  {
+    "id": 4117,
+    "name": "Kirschenallee"
+  },
+  {
+    "id": 4118,
+    "name": "Kiwittredder"
+  },
+  {
+    "id": 4119,
+    "name": "Klappenstraße"
+  },
+  {
+    "id": 4120,
+    "name": "Klaus-Groth-Straße"
+  },
+  {
+    "id": 4121,
+    "name": "Kleeanger"
+  },
+  {
+    "id": 12110,
+    "name": "Klein Mühlen"
+  },
+  {
+    "id": 4122,
+    "name": "Kleine Altefähre"
+  },
+  {
+    "id": 4123,
+    "name": "Kleine Altefähre 13/"
+  },
+  {
+    "id": 4124,
+    "name": "Kleine Burgstraße"
+  },
+  {
+    "id": 4126,
+    "name": "Kleine Burgstraße 31/"
+  },
+  {
+    "id": 4127,
+    "name": "Kleine Gröpelgrube"
+  },
+  {
+    "id": 4128,
+    "name": "Kleine Gröpelgrube 18/"
+  },
+  {
+    "id": 4129,
+    "name": "Kleine Gröpelgrube 26/"
+  },
+  {
+    "id": 4130,
+    "name": "Kleine Kiesau"
+  },
+  {
+    "id": 4131,
+    "name": "Kleine Klosterkoppel"
+  },
+  {
+    "id": 4132,
+    "name": "Kleine Petersgrube"
+  },
+  {
+    "id": 4134,
+    "name": "Kleinensee"
+  },
+  {
+    "id": 4135,
+    "name": "Kleiner Bauhof"
+  },
+  {
+    "id": 4136,
+    "name": "Kleiner Belt"
+  },
+  {
+    "id": 4137,
+    "name": "Kleiner Schiefberg"
+  },
+  {
+    "id": 4138,
+    "name": "Kleiner Vogelsang"
+  },
+  {
+    "id": 11736,
+    "name": "Kleines Haff"
+  },
+  {
+    "id": 12169,
+    "name": "Kleingarten-Asternweg"
+  },
+  {
+    "id": 4139,
+    "name": "Kleiststraße"
+  },
+  {
+    "id": 4140,
+    "name": "Klempauer Strasse"
+  },
+  {
+    "id": 11790,
+    "name": "Klempauer Straße"
+  },
+  {
+    "id": 4141,
+    "name": "Klettenweg"
+  },
+  {
+    "id": 4142,
+    "name": "Klingenberg"
+  },
+  {
+    "id": 4143,
+    "name": "Klipperstraße"
+  },
+  {
+    "id": 11791,
+    "name": "Klosterredder"
+  },
+  {
+    "id": 4144,
+    "name": "Klosterstraße"
+  },
+  {
+    "id": 12044,
+    "name": "Klosterweg"
+  },
+  {
+    "id": 5087,
+    "name": "KLUGHAFEN-BRÜCKE"
+  },
+  {
+    "id": 11619,
+    "name": "Klughafenbrücke"
+  },
+  {
+    "id": 4146,
+    "name": "Klützer Weg"
+  },
+  {
+    "id": 4147,
+    "name": "Knappenkoppel"
+  },
+  {
+    "id": 11946,
+    "name": "Knickrehm"
+  },
+  {
+    "id": 4148,
+    "name": "Knickweg"
+  },
+  {
+    "id": 4149,
+    "name": "Knud-Rasmussen-Straße"
+  },
+  {
+    "id": 4150,
+    "name": "Knusperhäuschen"
+  },
+  {
+    "id": 4151,
+    "name": "Kobaltstraße"
+  },
+  {
+    "id": 4152,
+    "name": "Koberg"
+  },
+  {
+    "id": 4153,
+    "name": "Koberg 8/"
+  },
+  {
+    "id": 4154,
+    "name": "Koggenweg"
+  },
+  {
+    "id": 4155,
+    "name": "Kohlbreite"
+  },
+  {
+    "id": 4156,
+    "name": "Kohlenhof"
+  },
+  {
+    "id": 11723,
+    "name": "Kohlenmühle"
+  },
+  {
+    "id": 12029,
+    "name": "Kohlhorstredder"
+  },
+  {
+    "id": 4158,
+    "name": "Kohlmarkt"
+  },
+  {
+    "id": 4159,
+    "name": "Kokerstraße"
+  },
+  {
+    "id": 4160,
+    "name": "Kolberger Platz"
+  },
+  {
+    "id": 4161,
+    "name": "Kolberger Straße"
+  },
+  {
+    "id": 4162,
+    "name": "Kolk"
+  },
+  {
+    "id": 5279,
+    "name": "Kometenweg"
+  },
+  {
+    "id": 4164,
+    "name": "Konrad-Adenauer-Straße"
+  },
+  {
+    "id": 4163,
+    "name": "Konradstraße"
+  },
+  {
+    "id": 4166,
+    "name": "Konstinstraße"
+  },
+  {
+    "id": 4167,
+    "name": "Kopernikusweg"
+  },
+  {
+    "id": 4168,
+    "name": "Koppelbarg"
+  },
+  {
+    "id": 12040,
+    "name": "Koppeldiek"
+  },
+  {
+    "id": 4169,
+    "name": "Koppelstraße"
+  },
+  {
+    "id": 12115,
+    "name": "Kornrade"
+  },
+  {
+    "id": 4170,
+    "name": "Kornweg"
+  },
+  {
+    "id": 4171,
+    "name": "Korvettenstraße"
+  },
+  {
+    "id": 4172,
+    "name": "Kottwitzstraße"
+  },
+  {
+    "id": 4173,
+    "name": "Kowitzberg"
+  },
+  {
+    "id": 4177,
+    "name": "Krambreed"
+  },
+  {
+    "id": 11620,
+    "name": "Kranzberg"
+  },
+  {
+    "id": 4178,
+    "name": "Krausestraße"
+  },
+  {
+    "id": 4182,
+    "name": "Kreienkoppel"
+  },
+  {
+    "id": 11733,
+    "name": "Kreisverkehr"
+  },
+  {
+    "id": 11715,
+    "name": "Kreisverkehr Lohmühle"
+  },
+  {
+    "id": 11718,
+    "name": "Kreisverkehr Ziegelstraße"
+  },
+  {
+    "id": 4183,
+    "name": "Krempelsdorfer Allee"
+  },
+  {
+    "id": 5184,
+    "name": "KREUZ LÜBECK"
+  },
+  {
+    "id": 5088,
+    "name": "KREUZGANG"
+  },
+  {
+    "id": 4184,
+    "name": "Kreuzweg"
+  },
+  {
+    "id": 11721,
+    "name": "Kreuzweg Brücke"
+  },
+  {
+    "id": 4185,
+    "name": "Kriemhildweg"
+  },
+  {
+    "id": 4186,
+    "name": "Krog"
+  },
+  {
+    "id": 12042,
+    "name": "Krogdiek"
+  },
+  {
+    "id": 4187,
+    "name": "Krokusweg"
+  },
+  {
+    "id": 4188,
+    "name": "Kronsforder Allee"
+  },
+  {
+    "id": 4189,
+    "name": "Kronsforder Hauptstraße"
+  },
+  {
+    "id": 4190,
+    "name": "Kronsforder Koppel"
+  },
+  {
+    "id": 4191,
+    "name": "Kronsforder Landstraße"
+  },
+  {
+    "id": 4192,
+    "name": "Krugkoppel"
+  },
+  {
+    "id": 12100,
+    "name": "Krumbecker Hof"
+  },
+  {
+    "id": 4193,
+    "name": "Krumme Furche"
+  },
+  {
+    "id": 4194,
+    "name": "Krumme Stücke"
+  },
+  {
+    "id": 4195,
+    "name": "Krummeck"
+  },
+  {
+    "id": 4196,
+    "name": "Krummer Weg"
+  },
+  {
+    "id": 5165,
+    "name": "KRUMMESSE LANGE REIHE"
+  },
+  {
+    "id": 11792,
+    "name": "Krummesse Lange Reihe"
+  },
+  {
+    "id": 4197,
+    "name": "Krummesser Landstraße"
+  },
+  {
+    "id": 4198,
+    "name": "Krummesser Moorweg"
+  },
+  {
+    "id": 11793,
+    "name": "Krummesser Moorweg"
+  },
+  {
+    "id": 4199,
+    "name": "Krummesser Mühlenweg"
+  },
+  {
+    "id": 4201,
+    "name": "Kruppstraße"
+  },
+  {
+    "id": 5117,
+    "name": "KRUSEN HOF"
+  },
+  {
+    "id": 5089,
+    "name": "KRUSES HOF"
+  },
+  {
+    "id": 4179,
+    "name": "Krähenstraße"
+  },
+  {
+    "id": 4180,
+    "name": "Krähenstraße 22/"
+  },
+  {
+    "id": 4181,
+    "name": "Krämerwende"
+  },
+  {
+    "id": 4202,
+    "name": "Krügerstraße"
+  },
+  {
+    "id": 4203,
+    "name": "Krümmling"
+  },
+  {
+    "id": 4204,
+    "name": "Kuckucksruf"
+  },
+  {
+    "id": 11764,
+    "name": "Kuhbrookmoorweg"
+  },
+  {
+    "id": 11994,
+    "name": "Kuhlkamp"
+  },
+  {
+    "id": 4205,
+    "name": "Kulenkampstraße"
+  },
+  {
+    "id": 4206,
+    "name": "Kumulusstraße"
+  },
+  {
+    "id": 4207,
+    "name": "Kupferschmiedestraße"
+  },
+  {
+    "id": 4208,
+    "name": "Kupferstraße"
+  },
+  {
+    "id": 4209,
+    "name": "Kurauer Straße"
+  },
+  {
+    "id": 4210,
+    "name": "Kurgartenstraße"
+  },
+  {
+    "id": 11858,
+    "name": "Kurgartenstraße 127"
+  },
+  {
+    "id": 4212,
+    "name": "Kurgartenstraße 45 Haus"
+  },
+  {
+    "id": 4213,
+    "name": "Kurt-Schumacher-Straße"
+  },
+  {
+    "id": 12197,
+    "name": "Kurt-Unruh-Ring"
+  },
+  {
+    "id": 4214,
+    "name": "Kurzer Hagen"
+  },
+  {
+    "id": 4215,
+    "name": "Kurzer Weg"
+  },
+  {
+    "id": 4216,
+    "name": "Kutterweg"
+  },
+  {
+    "id": 4101,
+    "name": "Kählstorfer Weg"
+  },
+  {
+    "id": 11789,
+    "name": "Kählstorfer Weg"
+  },
+  {
+    "id": 5200,
+    "name": "KÄSELAUS GANG"
+  },
+  {
+    "id": 4102,
+    "name": "Käthe-Kollwitz-Weg"
+  },
+  {
+    "id": 5221,
+    "name": "KÖNIG-PAßAGE"
+  },
+  {
+    "id": 12085,
+    "name": "Königsberger Ring"
+  },
+  {
+    "id": 4174,
+    "name": "Königsberger Straße"
+  },
+  {
+    "id": 12113,
+    "name": "Königskerze"
+  },
+  {
+    "id": 4175,
+    "name": "Königstraße"
+  },
+  {
+    "id": 4176,
+    "name": "Körnerstraße"
+  },
+  {
+    "id": 4217,
+    "name": "Kücknitzer Hauptstraße"
+  },
+  {
+    "id": 4218,
+    "name": "Kücknitzer Scheide"
+  },
+  {
+    "id": 4219,
+    "name": "Kücknitzer Weg"
+  },
+  {
+    "id": 4220,
+    "name": "Kürschnerwende"
+  },
+  {
+    "id": 4221,
+    "name": "Küsterkoppel"
+  },
+  {
+    "id": 11794,
+    "name": "Küsterkoppel"
+  },
+  {
+    "id": 5141,
+    "name": "KÜTER GANG"
+  },
+  {
+    "id": 4222,
+    "name": "Küterstraße"
+  },
+  {
+    "id": 11905,
+    "name": "L181"
+  },
+  {
+    "id": 11910,
+    "name": "L184"
+  },
+  {
+    "id": 12099,
+    "name": "L185"
+  },
+  {
+    "id": 11795,
+    "name": "L221"
+  },
+  {
+    "id": 5118,
+    "name": "L309"
+  },
+  {
+    "id": 5092,
+    "name": "L331"
+  },
+  {
+    "id": 4224,
+    "name": "Labradorweg"
+  },
+  {
+    "id": 4225,
+    "name": "Lachswehrallee"
+  },
+  {
+    "id": 12086,
+    "name": "Landwehr"
+  },
+  {
+    "id": 5206,
+    "name": "LANG'S TORWEG"
+  },
+  {
+    "id": 4226,
+    "name": "Lange Reihe"
+  },
+  {
+    "id": 11796,
+    "name": "Lange Reihe"
+  },
+  {
+    "id": 4227,
+    "name": "LANGE REIHE / KRUM"
+  },
+  {
+    "id": 11881,
+    "name": "LANGE REIHE /KRUM"
+  },
+  {
+    "id": 4228,
+    "name": "Langelandring"
+  },
+  {
+    "id": 4229,
+    "name": "Langeneßallee"
+  },
+  {
+    "id": 4230,
+    "name": "Langenfelde"
+  },
+  {
+    "id": 4231,
+    "name": "Langenfelde"
+  },
+  {
+    "id": 4233,
+    "name": "Langenreem"
+  },
+  {
+    "id": 11887,
+    "name": "Langensahl"
+  },
+  {
+    "id": 11894,
+    "name": "Langensegenwiese "
+  },
+  {
+    "id": 4234,
+    "name": "Langer Bogen"
+  },
+  {
+    "id": 4235,
+    "name": "Langer Lohberg"
+  },
+  {
+    "id": 4236,
+    "name": "Langer Lohberg 21/"
+  },
+  {
+    "id": 4237,
+    "name": "Langer Lohberg 24/"
+  },
+  {
+    "id": 4238,
+    "name": "Langer Lohberg 33/"
+  },
+  {
+    "id": 4240,
+    "name": "Langjohrd"
+  },
+  {
+    "id": 4241,
+    "name": "Lastadie "
+  },
+  {
+    "id": 11836,
+    "name": "Lastadie Parkplatz Bus"
+  },
+  {
+    "id": 11830,
+    "name": "Lastadie Parkplatz P 1"
+  },
+  {
+    "id": 11832,
+    "name": "Lastadie Parkplatz P 2"
+  },
+  {
+    "id": 11833,
+    "name": "Lastadie Parkplatz P 3"
+  },
+  {
+    "id": 11835,
+    "name": "Lastadie Parkplatz P 4 "
+  },
+  {
+    "id": 11837,
+    "name": "Lastadie Parkplatz P 5"
+  },
+  {
+    "id": 11829,
+    "name": "Lastadie Parkplatz Sand"
+  },
+  {
+    "id": 4242,
+    "name": "Laubenweg"
+  },
+  {
+    "id": 4243,
+    "name": "Lauer Weg"
+  },
+  {
+    "id": 4244,
+    "name": "Lauerhofstraße"
+  },
+  {
+    "id": 12081,
+    "name": "Lausitzer Weg"
+  },
+  {
+    "id": 11884,
+    "name": "Lbg.-Krummesse"
+  },
+  {
+    "id": 12139,
+    "name": "Le-Portel-Ring"
+  },
+  {
+    "id": 4247,
+    "name": "Lederstraße"
+  },
+  {
+    "id": 4248,
+    "name": "Leegerwall"
+  },
+  {
+    "id": 5223,
+    "name": "LEGAN"
+  },
+  {
+    "id": 5143,
+    "name": "LEGANEN-GANG"
+  },
+  {
+    "id": 4249,
+    "name": "Leganer Weg"
+  },
+  {
+    "id": 5144,
+    "name": "LEHMANNKAI 2"
+  },
+  {
+    "id": 4251,
+    "name": "Lehmkatenweg"
+  },
+  {
+    "id": 4252,
+    "name": "Lehmkuhlenweg"
+  },
+  {
+    "id": 4253,
+    "name": "Leibnizweg"
+  },
+  {
+    "id": 4254,
+    "name": "Leimsiede"
+  },
+  {
+    "id": 4255,
+    "name": "Leinweberstraße"
+  },
+  {
+    "id": 4256,
+    "name": "Lembkestraße"
+  },
+  {
+    "id": 4258,
+    "name": "Lenschower Weg"
+  },
+  {
+    "id": 11998,
+    "name": "Lerchenstraße"
+  },
+  {
+    "id": 4259,
+    "name": "Lerchenweg"
+  },
+  {
+    "id": 11797,
+    "name": "Lerchenweg"
+  },
+  {
+    "id": 4260,
+    "name": "Lessingstraße"
+  },
+  {
+    "id": 4261,
+    "name": "Leuschnerstraße"
+  },
+  {
+    "id": 4262,
+    "name": "Libellenweg"
+  },
+  {
+    "id": 11901,
+    "name": "Lichtbogen"
+  },
+  {
+    "id": 4263,
+    "name": "Lichte Querstraße"
+  },
+  {
+    "id": 12114,
+    "name": "Lichtnelke"
+  },
+  {
+    "id": 12053,
+    "name": "Lilienkuhl"
+  },
+  {
+    "id": 4266,
+    "name": "Lilienstraße"
+  },
+  {
+    "id": 4267,
+    "name": "Lilienthalstraße"
+  },
+  {
+    "id": 4268,
+    "name": "Lindenallee"
+  },
+  {
+    "id": 4269,
+    "name": "Lindenplatz"
+  },
+  {
+    "id": 4270,
+    "name": "Lindenstraße"
+  },
+  {
+    "id": 4271,
+    "name": "Lindenweg"
+  },
+  {
+    "id": 4272,
+    "name": "Lindwurmstraße"
+  },
+  {
+    "id": 5166,
+    "name": "LINHÖFS GANG"
+  },
+  {
+    "id": 4273,
+    "name": "Lise-Meitner-Weg"
+  },
+  {
+    "id": 4274,
+    "name": "Lockwischer Weg"
+  },
+  {
+    "id": 4275,
+    "name": "Lofotenweg"
+  },
+  {
+    "id": 4276,
+    "name": "Loggerstraße"
+  },
+  {
+    "id": 4277,
+    "name": "Lohgerberstraße"
+  },
+  {
+    "id": 12192,
+    "name": "Lohstieg"
+  },
+  {
+    "id": 12049,
+    "name": "Lohstraße"
+  },
+  {
+    "id": 12209,
+    "name": "Lohstraße/Werner-Lüdtke-Straße"
+  },
+  {
+    "id": 4278,
+    "name": "Loignystraße"
+  },
+  {
+    "id": 4279,
+    "name": "Lollandring"
+  },
+  {
+    "id": 12144,
+    "name": "Loog"
+  },
+  {
+    "id": 4280,
+    "name": "Loreleiweg"
+  },
+  {
+    "id": 4281,
+    "name": "Lortzingstraße"
+  },
+  {
+    "id": 4282,
+    "name": "Lothringer Straße"
+  },
+  {
+    "id": 12078,
+    "name": "Lottiner Straße"
+  },
+  {
+    "id": 4283,
+    "name": "Louise-Schroeder-Weg"
+  },
+  {
+    "id": 11958,
+    "name": "Ludwig-Böttcher-Straße"
+  },
+  {
+    "id": 12171,
+    "name": "Ludwig-Jahn-Straße"
+  },
+  {
+    "id": 5257,
+    "name": "Ludwig-Suhl-Ring"
+  },
+  {
+    "id": 4285,
+    "name": "Ludwigstraße"
+  },
+  {
+    "id": 4289,
+    "name": "Luise-Albertz-Weg"
+  },
+  {
+    "id": 4290,
+    "name": "Luise-Otto-Peters-Straße"
+  },
+  {
+    "id": 5093,
+    "name": "LUISENBRÜCKE"
+  },
+  {
+    "id": 4287,
+    "name": "Luisenhof"
+  },
+  {
+    "id": 4288,
+    "name": "Luisenstraße"
+  },
+  {
+    "id": 4291,
+    "name": "Lupinenweg"
+  },
+  {
+    "id": 4292,
+    "name": "Lutherstraße"
+  },
+  {
+    "id": 4293,
+    "name": "Luzernefeld"
+  },
+  {
+    "id": 4245,
+    "name": "Lämmerstieg"
+  },
+  {
+    "id": 5205,
+    "name": "LÖDINGS HOF"
+  },
+  {
+    "id": 4284,
+    "name": "Löwigtstraße"
+  },
+  {
+    "id": 12069,
+    "name": "Lübbersstraße"
+  },
+  {
+    "id": 5090,
+    "name": "LÜBECK-HELSINKI"
+  },
+  {
+    "id": 5091,
+    "name": "LÜBECK-SANKT PETERSBURG"
+  },
+  {
+    "id": 12153,
+    "name": "Lübecker Landstraße"
+  },
+  {
+    "id": 4294,
+    "name": "Lübecker Straße"
+  },
+  {
+    "id": 11798,
+    "name": "Lübecker Strasse"
+  },
+  {
+    "id": 4296,
+    "name": "Lübschenfeld"
+  },
+  {
+    "id": 5203,
+    "name": "LÜCKS GANG"
+  },
+  {
+    "id": 4297,
+    "name": "Lüderitzstraße"
+  },
+  {
+    "id": 4298,
+    "name": "Lüdersdorfer Weg"
+  },
+  {
+    "id": 4299,
+    "name": "Lüneburgstraße"
+  },
+  {
+    "id": 5204,
+    "name": "LÜNGREENS GANG"
+  },
+  {
+    "id": 11896,
+    "name": "Lütten Langensegen"
+  },
+  {
+    "id": 4300,
+    "name": "Lützowstraße"
+  },
+  {
+    "id": 4301,
+    "name": "Maiblumenstraße"
+  },
+  {
+    "id": 4302,
+    "name": "Maienweg"
+  },
+  {
+    "id": 4304,
+    "name": "Maikuhlenweg"
+  },
+  {
+    "id": 4303,
+    "name": "Maikäferstieg"
+  },
+  {
+    "id": 4305,
+    "name": "Malenter Straße"
+  },
+  {
+    "id": 12149,
+    "name": "Malkendorfer Straße"
+  },
+  {
+    "id": 11912,
+    "name": "Malkendorfer Weg"
+  },
+  {
+    "id": 4306,
+    "name": "Malmöstraße"
+  },
+  {
+    "id": 4307,
+    "name": "Marderweg"
+  },
+  {
+    "id": 4308,
+    "name": "Margaretha-Jenisch-Ring"
+  },
+  {
+    "id": 4309,
+    "name": "Margarethenstraße"
+  },
+  {
+    "id": 4310,
+    "name": "Maria-Agnesi-Straße"
+  },
+  {
+    "id": 4311,
+    "name": "Maria-Goeppert-Straße"
+  },
+  {
+    "id": 4312,
+    "name": "Maria-Mitchell-Straße"
+  },
+  {
+    "id": 4313,
+    "name": "Maria-Sibylla-Merian-Weg"
+  },
+  {
+    "id": 5145,
+    "name": "MARIE-CURIE-STRAßE"
+  },
+  {
+    "id": 4316,
+    "name": "Marie-Juchacz-Weg"
+  },
+  {
+    "id": 5094,
+    "name": "Marienbrücke"
+  },
+  {
+    "id": 11965,
+    "name": "Marienburger Straße"
+  },
+  {
+    "id": 12048,
+    "name": "Marienburgstraße"
+  },
+  {
+    "id": 11966,
+    "name": "Marienholm"
+  },
+  {
+    "id": 4314,
+    "name": "Marienkirchhof"
+  },
+  {
+    "id": 4315,
+    "name": "Marienstraße"
+  },
+  {
+    "id": 12054,
+    "name": "Mariental"
+  },
+  {
+    "id": 4317,
+    "name": "Markt"
+  },
+  {
+    "id": 11963,
+    "name": "Markt/Rensefelder Straße"
+  },
+  {
+    "id": 4318,
+    "name": "Markttwiete"
+  },
+  {
+    "id": 4319,
+    "name": "Marlesgrube"
+  },
+  {
+    "id": 4320,
+    "name": "Marlesgrube 55/"
+  },
+  {
+    "id": 4321,
+    "name": "Marlesgrube 56/"
+  },
+  {
+    "id": 4322,
+    "name": "Marliring"
+  },
+  {
+    "id": 4323,
+    "name": "Marlistraße"
+  },
+  {
+    "id": 4324,
+    "name": "Marquardplatz"
+  },
+  {
+    "id": 4325,
+    "name": "Marquardstraße"
+  },
+  {
+    "id": 11622,
+    "name": "Marstallsteg"
+  },
+  {
+    "id": 4326,
+    "name": "Marstallweg"
+  },
+  {
+    "id": 4327,
+    "name": "Marsweg"
+  },
+  {
+    "id": 4328,
+    "name": "Masselbett"
+  },
+  {
+    "id": 4329,
+    "name": "Masurenstraße"
+  },
+  {
+    "id": 4330,
+    "name": "Matthäistraße"
+  },
+  {
+    "id": 12046,
+    "name": "Max-Hamerich-Straße"
+  },
+  {
+    "id": 4331,
+    "name": "Max-Linde-Weg"
+  },
+  {
+    "id": 4332,
+    "name": "Max-Planck-Straße"
+  },
+  {
+    "id": 4333,
+    "name": "Max-Reger-Straße"
+  },
+  {
+    "id": 12121,
+    "name": "Max-Steen-Weg"
+  },
+  {
+    "id": 4334,
+    "name": "Max-Wartemann-Straße"
+  },
+  {
+    "id": 4335,
+    "name": "Maybachstraße"
+  },
+  {
+    "id": 11745,
+    "name": "MBA"
+  },
+  {
+    "id": 4337,
+    "name": "Mecklenburger Landstraße"
+  },
+  {
+    "id": 4338,
+    "name": "Mecklenburger Straße"
+  },
+  {
+    "id": 4339,
+    "name": "Medebekstraße"
+  },
+  {
+    "id": 4340,
+    "name": "Medenbreite"
+  },
+  {
+    "id": 5243,
+    "name": "MEDINGS GANG"
+  },
+  {
+    "id": 4341,
+    "name": "Meeresrauschen"
+  },
+  {
+    "id": 5185,
+    "name": "MEESENPLATZ"
+  },
+  {
+    "id": 4342,
+    "name": "Meesenring"
+  },
+  {
+    "id": 4343,
+    "name": "Mehlbekweg"
+  },
+  {
+    "id": 4344,
+    "name": "Mehrleinweg"
+  },
+  {
+    "id": 4345,
+    "name": "Meierstraße"
+  },
+  {
+    "id": 4346,
+    "name": "Meisensteg"
+  },
+  {
+    "id": 11799,
+    "name": "Meisenweg"
+  },
+  {
+    "id": 4347,
+    "name": "Melanchthonstraße"
+  },
+  {
+    "id": 4348,
+    "name": "Melkerstieg"
+  },
+  {
+    "id": 4349,
+    "name": "Melleweg"
+  },
+  {
+    "id": 4350,
+    "name": "Melli-Beese-Weg"
+  },
+  {
+    "id": 4351,
+    "name": "Memelstraße"
+  },
+  {
+    "id": 4352,
+    "name": "Memlingstraße"
+  },
+  {
+    "id": 4353,
+    "name": "Mendelweg"
+  },
+  {
+    "id": 4355,
+    "name": "Mengstraße"
+  },
+  {
+    "id": 4356,
+    "name": "Mercatorweg"
+  },
+  {
+    "id": 4357,
+    "name": "Merkurstraße"
+  },
+  {
+    "id": 5186,
+    "name": "MERTENS GANG"
+  },
+  {
+    "id": 12145,
+    "name": "Meyers Tannen"
+  },
+  {
+    "id": 4358,
+    "name": "Mierendorffstraße"
+  },
+  {
+    "id": 4359,
+    "name": "Milbreed"
+  },
+  {
+    "id": 4360,
+    "name": "Mittelschlag"
+  },
+  {
+    "id": 4361,
+    "name": "Mittelstraße"
+  },
+  {
+    "id": 4362,
+    "name": "MITTELWEG"
+  },
+  {
+    "id": 11800,
+    "name": "Mittelweg"
+  },
+  {
+    "id": 4363,
+    "name": "Mittschiffs"
+  },
+  {
+    "id": 4364,
+    "name": "Moenring"
+  },
+  {
+    "id": 4365,
+    "name": "Mohnsteg"
+  },
+  {
+    "id": 4366,
+    "name": "Moislinger Allee"
+  },
+  {
+    "id": 11623,
+    "name": "Moislinger Baum"
+  },
+  {
+    "id": 4367,
+    "name": "Moislinger Berg"
+  },
+  {
+    "id": 4368,
+    "name": "Moislinger Mühlenweg"
+  },
+  {
+    "id": 4369,
+    "name": "Mollwostraße"
+  },
+  {
+    "id": 5225,
+    "name": "MOLTKEBRÜCKE"
+  },
+  {
+    "id": 4370,
+    "name": "Moltkeplatz"
+  },
+  {
+    "id": 4371,
+    "name": "Moltkestraße"
+  },
+  {
+    "id": 5280,
+    "name": "Mondweg"
+  },
+  {
+    "id": 11890,
+    "name": "Moorbekstraße"
+  },
+  {
+    "id": 4372,
+    "name": "Moorgartener Straße"
+  },
+  {
+    "id": 4373,
+    "name": "Moorredder"
+  },
+  {
+    "id": 4374,
+    "name": "Moorweg"
+  },
+  {
+    "id": 11801,
+    "name": "Moorweg"
+  },
+  {
+    "id": 12119,
+    "name": "Moosglöckchen"
+  },
+  {
+    "id": 4375,
+    "name": "Moosweg"
+  },
+  {
+    "id": 4377,
+    "name": "Morgensonne"
+  },
+  {
+    "id": 4379,
+    "name": "Morier Kamp"
+  },
+  {
+    "id": 4380,
+    "name": "Morier Straße"
+  },
+  {
+    "id": 4381,
+    "name": "Moristeig"
+  },
+  {
+    "id": 4382,
+    "name": "Moritz-Neumark-Straße"
+  },
+  {
+    "id": 4383,
+    "name": "Morkerkestraße"
+  },
+  {
+    "id": 4384,
+    "name": "Morseweg"
+  },
+  {
+    "id": 4376,
+    "name": "Moränenweg"
+  },
+  {
+    "id": 4385,
+    "name": "Mozartstraße"
+  },
+  {
+    "id": 4388,
+    "name": "Muschelweg"
+  },
+  {
+    "id": 4389,
+    "name": "Musterbahn"
+  },
+  {
+    "id": 11879,
+    "name": "Musterstraße"
+  },
+  {
+    "id": 4390,
+    "name": "Mustiner Weg"
+  },
+  {
+    "id": 4336,
+    "name": "Märkische Straße"
+  },
+  {
+    "id": 12120,
+    "name": "Märzenbecher"
+  },
+  {
+    "id": 4386,
+    "name": "Möllerung"
+  },
+  {
+    "id": 4387,
+    "name": "Mönkhofer Weg"
+  },
+  {
+    "id": 12194,
+    "name": "Mörikestraße"
+  },
+  {
+    "id": 5224,
+    "name": "MÖVENGAßE"
+  },
+  {
+    "id": 11624,
+    "name": "Mövenstein"
+  },
+  {
+    "id": 4392,
+    "name": "Müggenbuschweg"
+  },
+  {
+    "id": 11625,
+    "name": "Mühlbachtal"
+  },
+  {
+    "id": 4393,
+    "name": "Mühlenberg"
+  },
+  {
+    "id": 4394,
+    "name": "Mühlenbrücke"
+  },
+  {
+    "id": 4395,
+    "name": "Mühlendamm"
+  },
+  {
+    "id": 10704,
+    "name": "Mühlendamm - Wallstraße"
+  },
+  {
+    "id": 12111,
+    "name": "Mühlengrund"
+  },
+  {
+    "id": 4396,
+    "name": "Mühlenhörn"
+  },
+  {
+    "id": 4397,
+    "name": "Mühlenkamp"
+  },
+  {
+    "id": 4398,
+    "name": "Mühlensteig"
+  },
+  {
+    "id": 4399,
+    "name": "Mühlenstraße"
+  },
+  {
+    "id": 4400,
+    "name": "Mühlenstraße 62/"
+  },
+  {
+    "id": 4401,
+    "name": "Mühlenstraße 79/"
+  },
+  {
+    "id": 4402,
+    "name": "Mühlenstraße 91/"
+  },
+  {
+    "id": 4403,
+    "name": "Mühlentorplatz"
+  },
+  {
+    "id": 4404,
+    "name": "Mühlenweg"
+  },
+  {
+    "id": 11849,
+    "name": "Müllergarten"
+  },
+  {
+    "id": 4405,
+    "name": "Müllergrund"
+  },
+  {
+    "id": 4406,
+    "name": "Mümmelmannspfad"
+  },
+  {
+    "id": 12188,
+    "name": "Münzplatz/Rathausmarkt"
+  },
+  {
+    "id": 4407,
+    "name": "Müritzweg"
+  },
+  {
+    "id": 4408,
+    "name": "Nachtigallensteg"
+  },
+  {
+    "id": 5167,
+    "name": "NAGELS GANG"
+  },
+  {
+    "id": 5245,
+    "name": "NAGELSCHMIEDS GANG"
+  },
+  {
+    "id": 4409,
+    "name": "Narzissenweg"
+  },
+  {
+    "id": 4410,
+    "name": "Nebenhofstraße"
+  },
+  {
+    "id": 4411,
+    "name": "Neißestraße"
+  },
+  {
+    "id": 4412,
+    "name": "Nelkenstraße"
+  },
+  {
+    "id": 12066,
+    "name": "Nelkenweg"
+  },
+  {
+    "id": 4413,
+    "name": "Neptunstraße"
+  },
+  {
+    "id": 4414,
+    "name": "Nernstweg"
+  },
+  {
+    "id": 4415,
+    "name": "Nesselweg"
+  },
+  {
+    "id": 4416,
+    "name": "Nettelbeckstraße"
+  },
+  {
+    "id": 4417,
+    "name": "Netzestraße"
+  },
+  {
+    "id": 4418,
+    "name": "Neue Hafenstraße"
+  },
+  {
+    "id": 4419,
+    "name": "Neue Querstraße"
+  },
+  {
+    "id": 4420,
+    "name": "Neuengammer Straße"
+  },
+  {
+    "id": 4421,
+    "name": "Neuenteilsredder"
+  },
+  {
+    "id": 4422,
+    "name": "Neuer Faulenhoop"
+  },
+  {
+    "id": 4423,
+    "name": "Neuer Schlag"
+  },
+  {
+    "id": 4424,
+    "name": "Neuland"
+  },
+  {
+    "id": 4425,
+    "name": "Neustraße"
+  },
+  {
+    "id": 4426,
+    "name": "Nibelungenstraße"
+  },
+  {
+    "id": 4427,
+    "name": "Niederbüssauer Weg"
+  },
+  {
+    "id": 4428,
+    "name": "Niedernstraße"
+  },
+  {
+    "id": 4429,
+    "name": "Niederweg"
+  },
+  {
+    "id": 12143,
+    "name": "Nieland"
+  },
+  {
+    "id": 4430,
+    "name": "Niels-Bohr-Ring"
+  },
+  {
+    "id": 5146,
+    "name": "NIEMARKER MÜLLSCHÜTTE"
+  },
+  {
+    "id": 4431,
+    "name": "Niemarker Weg"
+  },
+  {
+    "id": 4432,
+    "name": "Niendorfer Hauptstraße"
+  },
+  {
+    "id": 4434,
+    "name": "Niendorfer Mühlenweg"
+  },
+  {
+    "id": 4435,
+    "name": "Niendorfer Straße"
+  },
+  {
+    "id": 4436,
+    "name": "Nienhüsener Straße"
+  },
+  {
+    "id": 4437,
+    "name": "Nietzscheweg"
+  },
+  {
+    "id": 4438,
+    "name": "Nikolaistraße"
+  },
+  {
+    "id": 11968,
+    "name": "Nikolausstraße"
+  },
+  {
+    "id": 4439,
+    "name": "Niobestraße"
+  },
+  {
+    "id": 11981,
+    "name": "Niobeweg"
+  },
+  {
+    "id": 11763,
+    "name": "Nordermole"
+  },
+  {
+    "id": 4440,
+    "name": "Norderneystraße"
+  },
+  {
+    "id": 5119,
+    "name": "NORDLANDKAI"
+  },
+  {
+    "id": 4441,
+    "name": "Nordlandring"
+  },
+  {
+    "id": 4442,
+    "name": "Nordmeerstraße"
+  },
+  {
+    "id": 11627,
+    "name": "Nordmeerstraße ( tlw. )"
+  },
+  {
+    "id": 12154,
+    "name": "Nordtangente"
+  },
+  {
+    "id": 4443,
+    "name": "Normannenweg"
+  },
+  {
+    "id": 4444,
+    "name": "Norwegenstraße"
+  },
+  {
+    "id": 4445,
+    "name": "Novgorodstraße"
+  },
+  {
+    "id": 4446,
+    "name": "Nuelsenstraße"
+  },
+  {
+    "id": 4447,
+    "name": "Nußbaumweg"
+  },
+  {
+    "id": 5244,
+    "name": "NÖLTINGS GANG"
+  },
+  {
+    "id": 11626,
+    "name": "Nördliche Wallhalbinsel"
+  },
+  {
+    "id": 4448,
+    "name": "Oberbüssauer Weg"
+  },
+  {
+    "id": 5120,
+    "name": "OBERTRAVEBRÜCKE"
+  },
+  {
+    "id": 11865,
+    "name": "Obst-Karree"
+  },
+  {
+    "id": 4451,
+    "name": "Oderstraße"
+  },
+  {
+    "id": 4452,
+    "name": "Oelbermannstraße"
+  },
+  {
+    "id": 4453,
+    "name": "Ohmstraße"
+  },
+  {
+    "id": 12140,
+    "name": "Okonek-Straße"
+  },
+  {
+    "id": 4454,
+    "name": "Oldenburger Straße"
+  },
+  {
+    "id": 4455,
+    "name": "Oldendorpstraße"
+  },
+  {
+    "id": 4456,
+    "name": "Olendiek"
+  },
+  {
+    "id": 11868,
+    "name": "Orchideenweg"
+  },
+  {
+    "id": 4458,
+    "name": "Orkneyweg"
+  },
+  {
+    "id": 4459,
+    "name": "Oslostraße"
+  },
+  {
+    "id": 11989,
+    "name": "Ossenbrook"
+  },
+  {
+    "id": 11917,
+    "name": "Osterkampsredder"
+  },
+  {
+    "id": 4460,
+    "name": "Osterweide"
+  },
+  {
+    "id": 4461,
+    "name": "Ostpreußenring"
+  },
+  {
+    "id": 4462,
+    "name": "Ostseestraße"
+  },
+  {
+    "id": 4463,
+    "name": "Otternweg"
+  },
+  {
+    "id": 12065,
+    "name": "Otteshudestraße"
+  },
+  {
+    "id": 12072,
+    "name": "Otto-Hahn-Straße"
+  },
+  {
+    "id": 4465,
+    "name": "Otto-Passarge-Straße"
+  },
+  {
+    "id": 4464,
+    "name": "Ottostraße"
+  },
+  {
+    "id": 4466,
+    "name": "Ovendorfer Hof"
+  },
+  {
+    "id": 4467,
+    "name": "Ovendorfer Straße"
+  },
+  {
+    "id": 4468,
+    "name": "Overbeckstraße"
+  },
+  {
+    "id": 11751,
+    "name": "P+R Parkplatz Lohmühle"
+  },
+  {
+    "id": 4470,
+    "name": "Padelügger Weg"
+  },
+  {
+    "id": 4471,
+    "name": "Pagönnienstraße"
+  },
+  {
+    "id": 4472,
+    "name": "Palinger Weg"
+  },
+  {
+    "id": 4473,
+    "name": "Pallasweg"
+  },
+  {
+    "id": 4474,
+    "name": "Pamirweg"
+  },
+  {
+    "id": 4475,
+    "name": "Pansdorfer Weg"
+  },
+  {
+    "id": 4476,
+    "name": "Parade"
+  },
+  {
+    "id": 4477,
+    "name": "Paradiesgarten"
+  },
+  {
+    "id": 4478,
+    "name": "Parchamstraße"
+  },
+  {
+    "id": 11993,
+    "name": "Pariner Berg"
+  },
+  {
+    "id": 11928,
+    "name": "Pariner Straße"
+  },
+  {
+    "id": 4479,
+    "name": "Parkallee"
+  },
+  {
+    "id": 5226,
+    "name": "PARKHAUS AALHOF"
+  },
+  {
+    "id": 5121,
+    "name": "PARKHAUS ROSENPFORTE"
+  },
+  {
+    "id": 11628,
+    "name": "Parkplatz (öffentl) neben ehem. Leuchturm"
+  },
+  {
+    "id": 11629,
+    "name": "Parkplatz Anschützstraße Parkstreifen und Inselparkflächen"
+  },
+  {
+    "id": 11630,
+    "name": "Parkplatz auf dem Baggersand"
+  },
+  {
+    "id": 11631,
+    "name": "Parkplatz Backbord"
+  },
+  {
+    "id": 11632,
+    "name": "Parkplatz Barkhof"
+  },
+  {
+    "id": 11633,
+    "name": "Parkplatz Bastion"
+  },
+  {
+    "id": 11634,
+    "name": "Parkplatz Bessemerstraße"
+  },
+  {
+    "id": 11748,
+    "name": "Parkplatz Br. Grimm-Ring"
+  },
+  {
+    "id": 11635,
+    "name": "Parkplatz Brüder-Grimm-Ring gegüber ALDI"
+  },
+  {
+    "id": 11636,
+    "name": "Parkplatz Godewind"
+  },
+  {
+    "id": 11637,
+    "name": "Parkplatz Hohelandstr.-Klosterstr."
+  },
+  {
+    "id": 11638,
+    "name": "Parkplatz Howingsbrook/Nordmeestr."
+  },
+  {
+    "id": 11639,
+    "name": "Parkplatz Kanalstr."
+  },
+  {
+    "id": 11640,
+    "name": "Parkplatz Kowitzberg"
+  },
+  {
+    "id": 11641,
+    "name": "Parkplatz Krähenstraße"
+  },
+  {
+    "id": 11642,
+    "name": "Parkplatz Lastadie"
+  },
+  {
+    "id": 11826,
+    "name": "Parkplatz Lastadie Bus"
+  },
+  {
+    "id": 11824,
+    "name": "Parkplatz Lastadie P 1"
+  },
+  {
+    "id": 11821,
+    "name": "Parkplatz Lastadie P 2"
+  },
+  {
+    "id": 11820,
+    "name": "Parkplatz Lastadie P 3"
+  },
+  {
+    "id": 11819,
+    "name": "Parkplatz Lastadie P 4"
+  },
+  {
+    "id": 11825,
+    "name": "Parkplatz Lastadie Sand"
+  },
+  {
+    "id": 11643,
+    "name": "Parkplatz Leuchtenfeld"
+  },
+  {
+    "id": 11644,
+    "name": "Parkplatz Moislinger Allee/Meierstraße"
+  },
+  {
+    "id": 11645,
+    "name": "Parkplatz Möwenstein"
+  },
+  {
+    "id": 11646,
+    "name": "Parkplatz Mühlbachtal"
+  },
+  {
+    "id": 11747,
+    "name": "Parkplatz P 5"
+  },
+  {
+    "id": 11648,
+    "name": "Parkplatz Schüsselbuden"
+  },
+  {
+    "id": 11649,
+    "name": "Parkplatz Schützenstr."
+  },
+  {
+    "id": 11650,
+    "name": "Parkplatz Senator Hotel öffentlicher Teil"
+  },
+  {
+    "id": 11651,
+    "name": "Parkplatz St. Hubertus P+R"
+  },
+  {
+    "id": 11652,
+    "name": "Parkplatz Vogteistraße"
+  },
+  {
+    "id": 11653,
+    "name": "Parkplatz Willy-Brandt-Allee"
+  },
+  {
+    "id": 11654,
+    "name": "Parkplatz Zum Mühlbachtal"
+  },
+  {
+    "id": 11647,
+    "name": "Parkplatz öffentlicher vor Senator Hotel"
+  },
+  {
+    "id": 11655,
+    "name": "Parkplatz, Kanalstr."
+  },
+  {
+    "id": 4480,
+    "name": "Parkstraße"
+  },
+  {
+    "id": 5187,
+    "name": "PARKWEG"
+  },
+  {
+    "id": 4481,
+    "name": "Passatweg"
+  },
+  {
+    "id": 4483,
+    "name": "Paul-Behncke-Straße"
+  },
+  {
+    "id": 4484,
+    "name": "Paul-Brümmer-Straße"
+  },
+  {
+    "id": 4485,
+    "name": "Paul-Ehrlich-Straße"
+  },
+  {
+    "id": 4486,
+    "name": "Paul-Gerhardt-Straße"
+  },
+  {
+    "id": 4487,
+    "name": "Paul-Steen-Straße"
+  },
+  {
+    "id": 4482,
+    "name": "Paulstraße"
+  },
+  {
+    "id": 4488,
+    "name": "Peenestieg"
+  },
+  {
+    "id": 4489,
+    "name": "Pegelaustraße"
+  },
+  {
+    "id": 4490,
+    "name": "Pellwormstraße"
+  },
+  {
+    "id": 5168,
+    "name": "PELZER GANG"
+  },
+  {
+    "id": 4491,
+    "name": "Pelzerstraße"
+  },
+  {
+    "id": 4492,
+    "name": "Pennmoor"
+  },
+  {
+    "id": 4493,
+    "name": "Pensebusch"
+  },
+  {
+    "id": 4494,
+    "name": "Percevalstraße"
+  },
+  {
+    "id": 4495,
+    "name": "Pergamentmachergang"
+  },
+  {
+    "id": 11867,
+    "name": "Perlmuttbirnenweg"
+  },
+  {
+    "id": 4500,
+    "name": "Peter-Monnik-Weg"
+  },
+  {
+    "id": 4496,
+    "name": "Peterhof"
+  },
+  {
+    "id": 5095,
+    "name": "PETERSENS GANG"
+  },
+  {
+    "id": 4497,
+    "name": "Petersilienstraße"
+  },
+  {
+    "id": 4498,
+    "name": "Petersilienstraße 10/"
+  },
+  {
+    "id": 4499,
+    "name": "Petersstraße"
+  },
+  {
+    "id": 12170,
+    "name": "Peterstraße"
+  },
+  {
+    "id": 4501,
+    "name": "Petrikirchhof"
+  },
+  {
+    "id": 4502,
+    "name": "Pfaffenstraße"
+  },
+  {
+    "id": 4503,
+    "name": "Pfeifengrasweg"
+  },
+  {
+    "id": 4504,
+    "name": "Pferdemarkt"
+  },
+  {
+    "id": 4505,
+    "name": "Pfingstbusch"
+  },
+  {
+    "id": 4507,
+    "name": "Philipp-Reis-Weg"
+  },
+  {
+    "id": 4508,
+    "name": "Philosophenweg"
+  },
+  {
+    "id": 4509,
+    "name": "Pilzweg"
+  },
+  {
+    "id": 4510,
+    "name": "Pinassenweg"
+  },
+  {
+    "id": 5122,
+    "name": "PINCIERS GANG"
+  },
+  {
+    "id": 4511,
+    "name": "Pingsheesch"
+  },
+  {
+    "id": 11803,
+    "name": "Pingsheesch"
+  },
+  {
+    "id": 4512,
+    "name": "Pirolweg"
+  },
+  {
+    "id": 4513,
+    "name": "Pirschweg"
+  },
+  {
+    "id": 11656,
+    "name": "Platz an der Priwallfähre"
+  },
+  {
+    "id": 11749,
+    "name": "Platz Malmöstraße"
+  },
+  {
+    "id": 4514,
+    "name": "Pleskowstraße"
+  },
+  {
+    "id": 4515,
+    "name": "Plessingstraße"
+  },
+  {
+    "id": 12021,
+    "name": "Plumstruk"
+  },
+  {
+    "id": 4518,
+    "name": "Plutostraße"
+  },
+  {
+    "id": 12026,
+    "name": "Plögergang"
+  },
+  {
+    "id": 4516,
+    "name": "Plöner Straße"
+  },
+  {
+    "id": 4517,
+    "name": "Plönniesstraße"
+  },
+  {
+    "id": 4519,
+    "name": "Poelring"
+  },
+  {
+    "id": 12152,
+    "name": "Pohnsdorfer Landstraße"
+  },
+  {
+    "id": 12131,
+    "name": "Pohnsdorfer Straße"
+  },
+  {
+    "id": 12032,
+    "name": "Pohnsdorfer Weg"
+  },
+  {
+    "id": 5281,
+    "name": "Polarisweg"
+  },
+  {
+    "id": 4520,
+    "name": "Polarweg"
+  },
+  {
+    "id": 4521,
+    "name": "Pommernring"
+  },
+  {
+    "id": 4522,
+    "name": "Pommersche Straße"
+  },
+  {
+    "id": 4523,
+    "name": "Popitzstraße"
+  },
+  {
+    "id": 4524,
+    "name": "Posener Straße"
+  },
+  {
+    "id": 5188,
+    "name": "POßEHL-HOF"
+  },
+  {
+    "id": 10874,
+    "name": "Possehlbrücke"
+  },
+  {
+    "id": 11671,
+    "name": "Possehlstr. - Wallstr. Verbindungsstraße"
+  },
+  {
+    "id": 4525,
+    "name": "Possehlstraße"
+  },
+  {
+    "id": 4526,
+    "name": "Postillionweg"
+  },
+  {
+    "id": 12020,
+    "name": "Poststraße"
+  },
+  {
+    "id": 4529,
+    "name": "Prassekstraße"
+  },
+  {
+    "id": 4530,
+    "name": "Pregelweg"
+  },
+  {
+    "id": 4531,
+    "name": "PREUSSENKOPPEL"
+  },
+  {
+    "id": 11804,
+    "name": "Preussenkoppel"
+  },
+  {
+    "id": 4532,
+    "name": "Prießnitzweg"
+  },
+  {
+    "id": 4533,
+    "name": "Prießstraße"
+  },
+  {
+    "id": 4534,
+    "name": "Primelpfad"
+  },
+  {
+    "id": 11866,
+    "name": "Prinzesskirschenweg"
+  },
+  {
+    "id": 11742,
+    "name": "Priwallfähre"
+  },
+  {
+    "id": 11850,
+    "name": "Priwallpromenade"
+  },
+  {
+    "id": 12180,
+    "name": "Promenadenweg"
+  },
+  {
+    "id": 4535,
+    "name": "Pulverhorn"
+  },
+  {
+    "id": 11805,
+    "name": "Pumpwerk an der Grönau"
+  },
+  {
+    "id": 4536,
+    "name": "Puppenbrücke"
+  },
+  {
+    "id": 4527,
+    "name": "Pöppendorfer Hauptstraße"
+  },
+  {
+    "id": 4528,
+    "name": "Pötenitzer Weg"
+  },
+  {
+    "id": 4537,
+    "name": "Quadebekstraße"
+  },
+  {
+    "id": 5207,
+    "name": "QUALMANNS GANG"
+  },
+  {
+    "id": 4538,
+    "name": "Quellenweg"
+  },
+  {
+    "id": 4539,
+    "name": "Quertrift"
+  },
+  {
+    "id": 11864,
+    "name": "Quittenweg "
+  },
+  {
+    "id": 4540,
+    "name": "Raabrede"
+  },
+  {
+    "id": 4541,
+    "name": "Rabenhorst"
+  },
+  {
+    "id": 4542,
+    "name": "Rabenstraße"
+  },
+  {
+    "id": 4543,
+    "name": "Radbergweg"
+  },
+  {
+    "id": 5209,
+    "name": "RADEMACHER GANG"
+  },
+  {
+    "id": 4544,
+    "name": "Rademacherstraße"
+  },
+  {
+    "id": 4545,
+    "name": "RAIFFEISENSTRASSE"
+  },
+  {
+    "id": 11806,
+    "name": "Raiffeisenstraße"
+  },
+  {
+    "id": 4546,
+    "name": "Rangenberg"
+  },
+  {
+    "id": 11943,
+    "name": "Rantzauallee"
+  },
+  {
+    "id": 4547,
+    "name": "Rapsacker"
+  },
+  {
+    "id": 4548,
+    "name": "Rastattstraße"
+  },
+  {
+    "id": 4549,
+    "name": "Ratekauer Weg"
+  },
+  {
+    "id": 12105,
+    "name": "Rathausgasse"
+  },
+  {
+    "id": 12128,
+    "name": "Rathausmarkt"
+  },
+  {
+    "id": 4550,
+    "name": "Rathenaustraße"
+  },
+  {
+    "id": 4552,
+    "name": "Ratzeburger Allee"
+  },
+  {
+    "id": 4553,
+    "name": "Ratzeburger Landstraße"
+  },
+  {
+    "id": 4554,
+    "name": "Rauher Dorn"
+  },
+  {
+    "id": 12199,
+    "name": "Ravensbusch"
+  },
+  {
+    "id": 12130,
+    "name": "Ravenshörn"
+  },
+  {
+    "id": 4555,
+    "name": "Reaumurweg"
+  },
+  {
+    "id": 4556,
+    "name": "Rebhuhnweg"
+  },
+  {
+    "id": 11843,
+    "name": "Recyclinghof Kanalstraße"
+  },
+  {
+    "id": 11950,
+    "name": "Redderbusch"
+  },
+  {
+    "id": 12095,
+    "name": "Redderkamp"
+  },
+  {
+    "id": 4557,
+    "name": "Redderkoppel"
+  },
+  {
+    "id": 4558,
+    "name": "Reecker Hauptstraße"
+  },
+  {
+    "id": 4559,
+    "name": "Reecker Heide"
+  },
+  {
+    "id": 11732,
+    "name": "Reederbrücke"
+  },
+  {
+    "id": 4560,
+    "name": "Reepschlägerstraße"
+  },
+  {
+    "id": 4561,
+    "name": "Reetwarder"
+  },
+  {
+    "id": 4562,
+    "name": "Reetweg"
+  },
+  {
+    "id": 4563,
+    "name": "Rehderbrücke"
+  },
+  {
+    "id": 5147,
+    "name": "REHHAGENS GANG"
+  },
+  {
+    "id": 4564,
+    "name": "Rehnaweg"
+  },
+  {
+    "id": 4565,
+    "name": "Rehsprung"
+  },
+  {
+    "id": 4566,
+    "name": "Reichweinstraße"
+  },
+  {
+    "id": 4567,
+    "name": "Reiferstraße"
+  },
+  {
+    "id": 4568,
+    "name": "Reiherstieg"
+  },
+  {
+    "id": 4569,
+    "name": "Reinsbeker Straße"
+  },
+  {
+    "id": 12024,
+    "name": "Reinsbeker Weg"
+  },
+  {
+    "id": 4570,
+    "name": "Reling"
+  },
+  {
+    "id": 4571,
+    "name": "Rennsahl"
+  },
+  {
+    "id": 12204,
+    "name": "Rensefelder Straße"
+  },
+  {
+    "id": 12068,
+    "name": "Rensefelder Weg"
+  },
+  {
+    "id": 4572,
+    "name": "Reppenholt"
+  },
+  {
+    "id": 11872,
+    "name": "Republikplatz"
+  },
+  {
+    "id": 11880,
+    "name": "Republikplatz"
+  },
+  {
+    "id": 4573,
+    "name": "Resebergweg"
+  },
+  {
+    "id": 4574,
+    "name": "Resedakante"
+  },
+  {
+    "id": 4575,
+    "name": "Resselweg"
+  },
+  {
+    "id": 4576,
+    "name": "Reußkamp"
+  },
+  {
+    "id": 4577,
+    "name": "Revalstraße"
+  },
+  {
+    "id": 4578,
+    "name": "Richard-Strauß-Ring"
+  },
+  {
+    "id": 4579,
+    "name": "Richard-Wagner-Straße"
+  },
+  {
+    "id": 11927,
+    "name": "Riesebusch"
+  },
+  {
+    "id": 4580,
+    "name": "Rigastraße"
+  },
+  {
+    "id": 12102,
+    "name": "Rilkestraße"
+  },
+  {
+    "id": 4581,
+    "name": "Rilkeweg"
+  },
+  {
+    "id": 4582,
+    "name": "Ringreiterweg"
+  },
+  {
+    "id": 4583,
+    "name": "Ringstedtenhof"
+  },
+  {
+    "id": 4584,
+    "name": "Ringstedtenweg"
+  },
+  {
+    "id": 4585,
+    "name": "Ringstraße"
+  },
+  {
+    "id": 4586,
+    "name": "Ritterspornweg"
+  },
+  {
+    "id": 4587,
+    "name": "Ritterstraße"
+  },
+  {
+    "id": 4588,
+    "name": "Robert-Koch-Straße"
+  },
+  {
+    "id": 11971,
+    "name": "Robert-Koch-Weg"
+  },
+  {
+    "id": 11939,
+    "name": "Robert-Schade-Weg"
+  },
+  {
+    "id": 4589,
+    "name": "Robert-Schumann-Weg"
+  },
+  {
+    "id": 12148,
+    "name": "Robinienweg"
+  },
+  {
+    "id": 4590,
+    "name": "Roddenkoppel"
+  },
+  {
+    "id": 4591,
+    "name": "Rodeland"
+  },
+  {
+    "id": 4592,
+    "name": "Roeckstraße"
+  },
+  {
+    "id": 4593,
+    "name": "Roggenbukstraße"
+  },
+  {
+    "id": 4594,
+    "name": "Roggenfeld"
+  },
+  {
+    "id": 4595,
+    "name": "Roggenhorster Straße"
+  },
+  {
+    "id": 12163,
+    "name": "Roggenkamp"
+  },
+  {
+    "id": 4596,
+    "name": "Roggenort"
+  },
+  {
+    "id": 4597,
+    "name": "Roggenstieg"
+  },
+  {
+    "id": 4598,
+    "name": "Rohrsängerweg"
+  },
+  {
+    "id": 4599,
+    "name": "Romintenweg"
+  },
+  {
+    "id": 4600,
+    "name": "Rondeshagener Weg"
+  },
+  {
+    "id": 4601,
+    "name": "Roonstraße"
+  },
+  {
+    "id": 4602,
+    "name": "Rosa-Luxemburg-Straße"
+  },
+  {
+    "id": 4257,
+    "name": "Rosalind-Franklin-Weg"
+  },
+  {
+    "id": 4603,
+    "name": "Rose"
+  },
+  {
+    "id": 5148,
+    "name": "ROSENGANG"
+  },
+  {
+    "id": 4604,
+    "name": "Rosengarten"
+  },
+  {
+    "id": 4605,
+    "name": "Rosengarten 8/"
+  },
+  {
+    "id": 5227,
+    "name": "ROSENHOF"
+  },
+  {
+    "id": 4606,
+    "name": "Rosenpforte"
+  },
+  {
+    "id": 11807,
+    "name": "Rosensiedlung"
+  },
+  {
+    "id": 4607,
+    "name": "Rosenstraße"
+  },
+  {
+    "id": 4608,
+    "name": "Rosenstraße 14/"
+  },
+  {
+    "id": 4609,
+    "name": "Rosenstraße 17/"
+  },
+  {
+    "id": 4610,
+    "name": "Rosenstraße 25/"
+  },
+  {
+    "id": 11934,
+    "name": "Rosenweg"
+  },
+  {
+    "id": 4611,
+    "name": "Rostockstraße"
+  },
+  {
+    "id": 4612,
+    "name": "Rotdornweg"
+  },
+  {
+    "id": 4613,
+    "name": "Rotenhauser Feld"
+  },
+  {
+    "id": 4615,
+    "name": "Rotkehlchenweg"
+  },
+  {
+    "id": 4614,
+    "name": "Rotkäppchenweg"
+  },
+  {
+    "id": 4616,
+    "name": "Rotlöscherstraße"
+  },
+  {
+    "id": 4621,
+    "name": "Rubinweg"
+  },
+  {
+    "id": 4622,
+    "name": "Ruderblatt"
+  },
+  {
+    "id": 11984,
+    "name": "Rudolf-Carsten-Straße"
+  },
+  {
+    "id": 11969,
+    "name": "Rudolf-Diesel-Straße"
+  },
+  {
+    "id": 4623,
+    "name": "Rudolf-Groth-Straße"
+  },
+  {
+    "id": 12070,
+    "name": "Rudolf-Harbig-Straße"
+  },
+  {
+    "id": 4624,
+    "name": "Ruhleben"
+  },
+  {
+    "id": 4625,
+    "name": "Rumpelstilzchenweg"
+  },
+  {
+    "id": 4627,
+    "name": "Ruschweg"
+  },
+  {
+    "id": 11808,
+    "name": "Ruschweg"
+  },
+  {
+    "id": 5208,
+    "name": "RÖDENWEG"
+  },
+  {
+    "id": 4617,
+    "name": "Rödsaal"
+  },
+  {
+    "id": 5123,
+    "name": "RÖMISCHES REICH"
+  },
+  {
+    "id": 12161,
+    "name": "Rönkkoppel"
+  },
+  {
+    "id": 11947,
+    "name": "Rönkweg"
+  },
+  {
+    "id": 4618,
+    "name": "Rönnauer Ring"
+  },
+  {
+    "id": 4619,
+    "name": "Rönnauer Weg"
+  },
+  {
+    "id": 4620,
+    "name": "Röntgenstraße"
+  },
+  {
+    "id": 11972,
+    "name": "Röntgenweg"
+  },
+  {
+    "id": 4628,
+    "name": "Rübenkoppel"
+  },
+  {
+    "id": 4629,
+    "name": "Rübezahlweg"
+  },
+  {
+    "id": 4630,
+    "name": "Rügenweg"
+  },
+  {
+    "id": 4632,
+    "name": "Saatweg"
+  },
+  {
+    "id": 4633,
+    "name": "Sachsenweg"
+  },
+  {
+    "id": 4634,
+    "name": "Sadowastraße"
+  },
+  {
+    "id": 4636,
+    "name": "Salzwiese"
+  },
+  {
+    "id": 4637,
+    "name": "Samlandstraße"
+  },
+  {
+    "id": 4638,
+    "name": "Sandberg"
+  },
+  {
+    "id": 5096,
+    "name": "SANDBERGBRÜCKE"
+  },
+  {
+    "id": 4639,
+    "name": "Sanddornweg"
+  },
+  {
+    "id": 4640,
+    "name": "Sandfeld"
+  },
+  {
+    "id": 11956,
+    "name": "Sandkamp"
+  },
+  {
+    "id": 4641,
+    "name": "Sandkrugskoppel"
+  },
+  {
+    "id": 4642,
+    "name": "Sandstraße"
+  },
+  {
+    "id": 5266,
+    "name": "Sandweg"
+  },
+  {
+    "id": 4643,
+    "name": "Sandwich"
+  },
+  {
+    "id": 5189,
+    "name": "SANKT-JÜRGEN-GANG"
+  },
+  {
+    "id": 5149,
+    "name": "SANKT-LORENZ-BRÜCKE"
+  },
+  {
+    "id": 4644,
+    "name": "Saphirweg"
+  },
+  {
+    "id": 11809,
+    "name": "Sarauer Strasse"
+  },
+  {
+    "id": 12003,
+    "name": "Sarkwitzer Weg"
+  },
+  {
+    "id": 4645,
+    "name": "Sattlerstraße"
+  },
+  {
+    "id": 4646,
+    "name": "Saturnstraße"
+  },
+  {
+    "id": 4647,
+    "name": "Sauerbruchweg"
+  },
+  {
+    "id": 12108,
+    "name": "Schaarbarg"
+  },
+  {
+    "id": 4649,
+    "name": "Schaluppenweg"
+  },
+  {
+    "id": 4650,
+    "name": "Schanzenbergweg"
+  },
+  {
+    "id": 4651,
+    "name": "Schanzenweg"
+  },
+  {
+    "id": 4652,
+    "name": "Scharhörnstraße"
+  },
+  {
+    "id": 4653,
+    "name": "Scharnhorststraße"
+  },
+  {
+    "id": 4654,
+    "name": "Schattiner Weg"
+  },
+  {
+    "id": 4655,
+    "name": "Schatzkiste"
+  },
+  {
+    "id": 4656,
+    "name": "Schauenburger Weg"
+  },
+  {
+    "id": 4660,
+    "name": "Scheidekoppel"
+  },
+  {
+    "id": 4661,
+    "name": "Schellingweg"
+  },
+  {
+    "id": 4662,
+    "name": "Schelphörn"
+  },
+  {
+    "id": 4663,
+    "name": "Schenkenberger Weg"
+  },
+  {
+    "id": 4664,
+    "name": "Schenkendorfstraße"
+  },
+  {
+    "id": 11957,
+    "name": "Schepersfeld"
+  },
+  {
+    "id": 4665,
+    "name": "Scheteligstraße"
+  },
+  {
+    "id": 5228,
+    "name": "SCHEUNE HOF"
+  },
+  {
+    "id": 4666,
+    "name": "Schevenbarg"
+  },
+  {
+    "id": 4667,
+    "name": "Schiereichenkoppel"
+  },
+  {
+    "id": 4668,
+    "name": "Schifferhof"
+  },
+  {
+    "id": 4669,
+    "name": "Schildfarneck"
+  },
+  {
+    "id": 4670,
+    "name": "Schildstraße"
+  },
+  {
+    "id": 4671,
+    "name": "Schillerstraße"
+  },
+  {
+    "id": 5246,
+    "name": "SCHILLINGS HOF"
+  },
+  {
+    "id": 4672,
+    "name": "Schillstraße"
+  },
+  {
+    "id": 5150,
+    "name": "SCHLACHTER-GANG"
+  },
+  {
+    "id": 11753,
+    "name": "Schlammentwässerung"
+  },
+  {
+    "id": 4673,
+    "name": "Schlehenweg"
+  },
+  {
+    "id": 4674,
+    "name": "Schlesienring"
+  },
+  {
+    "id": 12211,
+    "name": "Schlesische Straße"
+  },
+  {
+    "id": 12189,
+    "name": "Schleswiger Weg"
+  },
+  {
+    "id": 4675,
+    "name": "Schleusenstraße"
+  },
+  {
+    "id": 4676,
+    "name": "Schlosserstraße"
+  },
+  {
+    "id": 4678,
+    "name": "Schlumacherstraße"
+  },
+  {
+    "id": 4679,
+    "name": "Schlumacherstraße 19/"
+  },
+  {
+    "id": 4680,
+    "name": "Schlumacherstraße 29/"
+  },
+  {
+    "id": 4681,
+    "name": "Schlumacherstraße 35/"
+  },
+  {
+    "id": 4682,
+    "name": "Schlumacherstraße 5/"
+  },
+  {
+    "id": 4683,
+    "name": "Schlutuper Kirchstraße"
+  },
+  {
+    "id": 4684,
+    "name": "Schlutuper Straße"
+  },
+  {
+    "id": 4677,
+    "name": "Schlözerstraße"
+  },
+  {
+    "id": 4686,
+    "name": "Schmaler Lehmberg"
+  },
+  {
+    "id": 4687,
+    "name": "Schmaler Stieg"
+  },
+  {
+    "id": 4688,
+    "name": "Schmelzerstraße"
+  },
+  {
+    "id": 12012,
+    "name": "Schmiedeberg"
+  },
+  {
+    "id": 12098,
+    "name": "Schmiedekamp"
+  },
+  {
+    "id": 11983,
+    "name": "Schmiedekoppel"
+  },
+  {
+    "id": 4689,
+    "name": "Schmiederedder"
+  },
+  {
+    "id": 4690,
+    "name": "Schmiedestraße"
+  },
+  {
+    "id": 11810,
+    "name": "Schmiedeweg"
+  },
+  {
+    "id": 4691,
+    "name": "Schmugglerstieg"
+  },
+  {
+    "id": 5097,
+    "name": "SCHMÜTZ' GANG"
+  },
+  {
+    "id": 4692,
+    "name": "Schneewittchenweg"
+  },
+  {
+    "id": 4693,
+    "name": "Schneidemühlstraße"
+  },
+  {
+    "id": 4694,
+    "name": "Schneise"
+  },
+  {
+    "id": 4695,
+    "name": "Schnellmark"
+  },
+  {
+    "id": 4696,
+    "name": "Schnitterweg"
+  },
+  {
+    "id": 11941,
+    "name": "Schnoorstraße"
+  },
+  {
+    "id": 4697,
+    "name": "Schonenstraße"
+  },
+  {
+    "id": 4698,
+    "name": "Schopenhauerstraße"
+  },
+  {
+    "id": 5098,
+    "name": "SCHORNSTEINFEGER-GANG"
+  },
+  {
+    "id": 5099,
+    "name": "SCHORNSTEINGEHER GANG"
+  },
+  {
+    "id": 4703,
+    "name": "Schrangen"
+  },
+  {
+    "id": 5229,
+    "name": "SCHRÖDERS GANG"
+  },
+  {
+    "id": 4704,
+    "name": "Schubertstraße"
+  },
+  {
+    "id": 4705,
+    "name": "Schulgang"
+  },
+  {
+    "id": 5210,
+    "name": "SCHULMEISTER-GANG"
+  },
+  {
+    "id": 4706,
+    "name": "Schulstraße"
+  },
+  {
+    "id": 4707,
+    "name": "Schulweg"
+  },
+  {
+    "id": 11811,
+    "name": "Schulweg"
+  },
+  {
+    "id": 4708,
+    "name": "Schusterbreite"
+  },
+  {
+    "id": 12195,
+    "name": "Schusterhof"
+  },
+  {
+    "id": 4713,
+    "name": "Schwalbenbergweg"
+  },
+  {
+    "id": 11923,
+    "name": "Schwalbennest"
+  },
+  {
+    "id": 4714,
+    "name": "Schwalbenweg"
+  },
+  {
+    "id": 11812,
+    "name": "Schwalbenweg"
+  },
+  {
+    "id": 5169,
+    "name": "SCHWANS HOF"
+  },
+  {
+    "id": 4715,
+    "name": "Schwartauer Allee"
+  },
+  {
+    "id": 4717,
+    "name": "Schwartauer Landstraße"
+  },
+  {
+    "id": 12168,
+    "name": "Schwartauer Straße"
+  },
+  {
+    "id": 4718,
+    "name": "Schwarze Heide"
+  },
+  {
+    "id": 12039,
+    "name": "Schwarzer Weg"
+  },
+  {
+    "id": 4720,
+    "name": "Schwarzmühlenweg"
+  },
+  {
+    "id": 4721,
+    "name": "Schwedenstraße"
+  },
+  {
+    "id": 4722,
+    "name": "Schwerinstraße"
+  },
+  {
+    "id": 4723,
+    "name": "Schwertfegerstraße"
+  },
+  {
+    "id": 12089,
+    "name": "Schwinkenrade"
+  },
+  {
+    "id": 5190,
+    "name": "SCHWOLLS TORWEG"
+  },
+  {
+    "id": 4724,
+    "name": "Schwonsstieg"
+  },
+  {
+    "id": 4725,
+    "name": "Schwönekenquerstraße"
+  },
+  {
+    "id": 4726,
+    "name": "Schyrkamp"
+  },
+  {
+    "id": 4657,
+    "name": "Schäferkamp"
+  },
+  {
+    "id": 4658,
+    "name": "Schäferstraße"
+  },
+  {
+    "id": 12010,
+    "name": "Schäperwisch"
+  },
+  {
+    "id": 4659,
+    "name": "Schärenweg"
+  },
+  {
+    "id": 4699,
+    "name": "Schönberger Weg"
+  },
+  {
+    "id": 4700,
+    "name": "Schönböckener Hauptstraße"
+  },
+  {
+    "id": 4701,
+    "name": "Schönböckener Straße"
+  },
+  {
+    "id": 12017,
+    "name": "Schönkamp"
+  },
+  {
+    "id": 4702,
+    "name": "Schönkampstraße"
+  },
+  {
+    "id": 4709,
+    "name": "Schüsselbuden"
+  },
+  {
+    "id": 4710,
+    "name": "Schützenhof"
+  },
+  {
+    "id": 4711,
+    "name": "Schützenstraße"
+  },
+  {
+    "id": 4712,
+    "name": "Schützweg"
+  },
+  {
+    "id": 4727,
+    "name": "Sedanstraße"
+  },
+  {
+    "id": 4728,
+    "name": "Seeblick"
+  },
+  {
+    "id": 4729,
+    "name": "Seekamp"
+  },
+  {
+    "id": 4730,
+    "name": "Seelandstraße"
+  },
+  {
+    "id": 4731,
+    "name": "Seerosenstraße"
+  },
+  {
+    "id": 4732,
+    "name": "Seeweg"
+  },
+  {
+    "id": 4733,
+    "name": "Segeberger Landstraße"
+  },
+  {
+    "id": 4734,
+    "name": "Segeberger Straße"
+  },
+  {
+    "id": 4735,
+    "name": "Segebergstraße"
+  },
+  {
+    "id": 4736,
+    "name": "Seitenstraße"
+  },
+  {
+    "id": 4737,
+    "name": "Selmsdorfer Weg"
+  },
+  {
+    "id": 4738,
+    "name": "Senefelderweg"
+  },
+  {
+    "id": 12150,
+    "name": "Sereetzer Straße"
+  },
+  {
+    "id": 4739,
+    "name": "Sereetzer Weg"
+  },
+  {
+    "id": 4740,
+    "name": "Seydlitzstraße"
+  },
+  {
+    "id": 4741,
+    "name": "Sibeliusstraße"
+  },
+  {
+    "id": 4742,
+    "name": "Sibethstraße"
+  },
+  {
+    "id": 4743,
+    "name": "Sickingenweg"
+  },
+  {
+    "id": 4744,
+    "name": "Siebenberg"
+  },
+  {
+    "id": 4745,
+    "name": "Siebente Querstraße"
+  },
+  {
+    "id": 12005,
+    "name": "Siedlung"
+  },
+  {
+    "id": 12016,
+    "name": "Siedlungsweg"
+  },
+  {
+    "id": 4746,
+    "name": "Siegfriedstraße"
+  },
+  {
+    "id": 4747,
+    "name": "Siemensstraße"
+  },
+  {
+    "id": 4748,
+    "name": "Siemser Landstraße"
+  },
+  {
+    "id": 4749,
+    "name": "Siemser Mühlenweg"
+  },
+  {
+    "id": 5247,
+    "name": "SIEVERS TORWEG"
+  },
+  {
+    "id": 4750,
+    "name": "Silberstraße"
+  },
+  {
+    "id": 4751,
+    "name": "Sinterstraße"
+  },
+  {
+    "id": 11657,
+    "name": "Skandi-Kai Nord und Süd"
+  },
+  {
+    "id": 4752,
+    "name": "Skandinavienallee"
+  },
+  {
+    "id": 4753,
+    "name": "Skandinavienkai"
+  },
+  {
+    "id": 5151,
+    "name": "SKANDINAVIENKAI NORD"
+  },
+  {
+    "id": 4754,
+    "name": "Smaragdweg"
+  },
+  {
+    "id": 4755,
+    "name": "Soldatenweg"
+  },
+  {
+    "id": 4756,
+    "name": "Solmitzstraße"
+  },
+  {
+    "id": 4757,
+    "name": "Sonderburgstraße"
+  },
+  {
+    "id": 4758,
+    "name": "Sonnenau"
+  },
+  {
+    "id": 11921,
+    "name": "Sonnenweg"
+  },
+  {
+    "id": 4761,
+    "name": "Sophie-Germain-Straße"
+  },
+  {
+    "id": 4760,
+    "name": "Sophienstraße"
+  },
+  {
+    "id": 4762,
+    "name": "Souchaystraße"
+  },
+  {
+    "id": 4764,
+    "name": "Speckmoorstraße"
+  },
+  {
+    "id": 4765,
+    "name": "Spegelkamp"
+  },
+  {
+    "id": 4766,
+    "name": "Spenglerstraße"
+  },
+  {
+    "id": 4767,
+    "name": "Sperberweg"
+  },
+  {
+    "id": 11813,
+    "name": "Sperberweg"
+  },
+  {
+    "id": 4768,
+    "name": "Sperlingsgasse"
+  },
+  {
+    "id": 4769,
+    "name": "Spieringshorst"
+  },
+  {
+    "id": 4770,
+    "name": "Spieringshorster Straße"
+  },
+  {
+    "id": 4771,
+    "name": "Spillerstraße"
+  },
+  {
+    "id": 5170,
+    "name": "SPINNRADEMACHER-GANG"
+  },
+  {
+    "id": 4772,
+    "name": "Spitzbergenstraße"
+  },
+  {
+    "id": 5100,
+    "name": "SPÖNKEN HOF"
+  },
+  {
+    "id": 4834,
+    "name": "St.-Annen-Straße"
+  },
+  {
+    "id": 4835,
+    "name": "St.-Annen-Straße 14/"
+  },
+  {
+    "id": 5264,
+    "name": "St.-Jürgen Brücke"
+  },
+  {
+    "id": 4836,
+    "name": "St.-Jürgen-Platz"
+  },
+  {
+    "id": 4837,
+    "name": "St.-Jürgen-Ring"
+  },
+  {
+    "id": 4838,
+    "name": "St.-Jürgen-Straße"
+  },
+  {
+    "id": 11658,
+    "name": "St.-Lorenz-Brücke"
+  },
+  {
+    "id": 4839,
+    "name": "St.-Lorenz-Straße"
+  },
+  {
+    "id": 11659,
+    "name": "St.Lorenz-Brücke"
+  },
+  {
+    "id": 4776,
+    "name": "Stadtgüterweg"
+  },
+  {
+    "id": 4777,
+    "name": "Stadtweide"
+  },
+  {
+    "id": 4778,
+    "name": "Stalhofweg"
+  },
+  {
+    "id": 11922,
+    "name": "Starenweg"
+  },
+  {
+    "id": 4779,
+    "name": "Stargardstraße"
+  },
+  {
+    "id": 4780,
+    "name": "Stargasse"
+  },
+  {
+    "id": 4781,
+    "name": "Stauffenbergstraße"
+  },
+  {
+    "id": 4782,
+    "name": "Stavenstraße"
+  },
+  {
+    "id": 4783,
+    "name": "Stavenstraße 16/"
+  },
+  {
+    "id": 4785,
+    "name": "Stavenstraße 27/"
+  },
+  {
+    "id": 4786,
+    "name": "Stavenstraße 41/"
+  },
+  {
+    "id": 11875,
+    "name": "Steckling"
+  },
+  {
+    "id": 4787,
+    "name": "Stecknitzstraße"
+  },
+  {
+    "id": 11731,
+    "name": "Stecknitzweg"
+  },
+  {
+    "id": 11883,
+    "name": "Stecknitzweg"
+  },
+  {
+    "id": 4788,
+    "name": "Steenkamp"
+  },
+  {
+    "id": 12013,
+    "name": "Steenkoppel"
+  },
+  {
+    "id": 4789,
+    "name": "Stegelkoppel"
+  },
+  {
+    "id": 4790,
+    "name": "Stegenort"
+  },
+  {
+    "id": 4791,
+    "name": "Steinbrückerstraße"
+  },
+  {
+    "id": 4792,
+    "name": "Steinkrug"
+  },
+  {
+    "id": 4793,
+    "name": "Steinmetzstraße"
+  },
+  {
+    "id": 4794,
+    "name": "Steinrader Damm"
+  },
+  {
+    "id": 4795,
+    "name": "Steinrader Hauptstraße"
+  },
+  {
+    "id": 11871,
+    "name": "Steinrader Hauptstraße 23a"
+  },
+  {
+    "id": 4796,
+    "name": "Steinrader Mühlenberg"
+  },
+  {
+    "id": 4797,
+    "name": "Steinrader Weg"
+  },
+  {
+    "id": 4798,
+    "name": "Steinstraße"
+  },
+  {
+    "id": 4799,
+    "name": "Stellbrinkstraße"
+  },
+  {
+    "id": 4800,
+    "name": "Stellmacherstraße"
+  },
+  {
+    "id": 4801,
+    "name": "Stephanplatz"
+  },
+  {
+    "id": 4802,
+    "name": "Stephensonstraße"
+  },
+  {
+    "id": 5270,
+    "name": "Sternenring"
+  },
+  {
+    "id": 4803,
+    "name": "Sterntalerweg"
+  },
+  {
+    "id": 4804,
+    "name": "Stettiner Straße"
+  },
+  {
+    "id": 4805,
+    "name": "Steuerbord"
+  },
+  {
+    "id": 11660,
+    "name": "Stichstraße ohne Namen"
+  },
+  {
+    "id": 4806,
+    "name": "Stichweg"
+  },
+  {
+    "id": 4807,
+    "name": "Stieglitzweg"
+  },
+  {
+    "id": 4808,
+    "name": "Stiephörn"
+  },
+  {
+    "id": 5248,
+    "name": "STIETENS GANG"
+  },
+  {
+    "id": 4809,
+    "name": "Stiller Winkel"
+  },
+  {
+    "id": 4810,
+    "name": "Stitenstraße"
+  },
+  {
+    "id": 11201,
+    "name": "Stockelsdorfer Str. (einschl. vor Feuerwehr)"
+  },
+  {
+    "id": 4811,
+    "name": "Stockelsdorfer Straße"
+  },
+  {
+    "id": 11906,
+    "name": "Stockelsdorfer Weg"
+  },
+  {
+    "id": 4812,
+    "name": "Stockholmring"
+  },
+  {
+    "id": 4813,
+    "name": "Stoffershorster Weg"
+  },
+  {
+    "id": 12077,
+    "name": "Stolper Straße"
+  },
+  {
+    "id": 4814,
+    "name": "Stolpstraße"
+  },
+  {
+    "id": 4815,
+    "name": "Storchennest"
+  },
+  {
+    "id": 12166,
+    "name": "Stormarnweg"
+  },
+  {
+    "id": 5152,
+    "name": "STORMS GANG"
+  },
+  {
+    "id": 4817,
+    "name": "Stormweg"
+  },
+  {
+    "id": 4818,
+    "name": "Stralsunder Straße"
+  },
+  {
+    "id": 11955,
+    "name": "Strampfershof"
+  },
+  {
+    "id": 4819,
+    "name": "Strandblick"
+  },
+  {
+    "id": 4820,
+    "name": "Strandpromenade"
+  },
+  {
+    "id": 4821,
+    "name": "Strandredder"
+  },
+  {
+    "id": 4822,
+    "name": "Strandweg"
+  },
+  {
+    "id": 11661,
+    "name": "Straße an der Badeanstalt \"Beim Mövenstrein\""
+  },
+  {
+    "id": 11662,
+    "name": "Straße ohne Namen zwischen Auf den Baggersand und Fischereihafen"
+  },
+  {
+    "id": 11738,
+    "name": "Straße zum Salzplatz"
+  },
+  {
+    "id": 4824,
+    "name": "Straßenfeld"
+  },
+  {
+    "id": 4823,
+    "name": "Stratenkoppel"
+  },
+  {
+    "id": 11814,
+    "name": "Stratenkoppel"
+  },
+  {
+    "id": 4825,
+    "name": "Strecknitzer Feld"
+  },
+  {
+    "id": 4827,
+    "name": "Strecknitzer Tannen"
+  },
+  {
+    "id": 4828,
+    "name": "Strelitzweg"
+  },
+  {
+    "id": 4829,
+    "name": "Stresemannstraße"
+  },
+  {
+    "id": 4830,
+    "name": "Strohkatenstraße"
+  },
+  {
+    "id": 5211,
+    "name": "STRUß THORWEG"
+  },
+  {
+    "id": 4831,
+    "name": "Stumpfer Weg"
+  },
+  {
+    "id": 4832,
+    "name": "Sturbusch"
+  },
+  {
+    "id": 11663,
+    "name": "Stülper Huk"
+  },
+  {
+    "id": 4833,
+    "name": "Stülpnagelstraße"
+  },
+  {
+    "id": 5191,
+    "name": "STÜWES GANG"
+  },
+  {
+    "id": 4840,
+    "name": "Sudetenstraße"
+  },
+  {
+    "id": 4841,
+    "name": "Sundweg"
+  },
+  {
+    "id": 4842,
+    "name": "Surenfeld"
+  },
+  {
+    "id": 4843,
+    "name": "Susekoppel"
+  },
+  {
+    "id": 4844,
+    "name": "Suterland"
+  },
+  {
+    "id": 4846,
+    "name": "Syltstraße"
+  },
+  {
+    "id": 4648,
+    "name": "Sächsische Straße"
+  },
+  {
+    "id": 4763,
+    "name": "Söllbrock"
+  },
+  {
+    "id": 4845,
+    "name": "Süderstraße"
+  },
+  {
+    "id": 4847,
+    "name": "Takenhal"
+  },
+  {
+    "id": 4848,
+    "name": "Talweg"
+  },
+  {
+    "id": 5101,
+    "name": "TANKS GANG"
+  },
+  {
+    "id": 4849,
+    "name": "Tannenbergstraße"
+  },
+  {
+    "id": 4850,
+    "name": "Tannenkoppel"
+  },
+  {
+    "id": 4852,
+    "name": "Tannenschlag"
+  },
+  {
+    "id": 4853,
+    "name": "Tannenstraße"
+  },
+  {
+    "id": 4855,
+    "name": "TANNENWEG"
+  },
+  {
+    "id": 11815,
+    "name": "Tannenweg"
+  },
+  {
+    "id": 4856,
+    "name": "Taschenmacherstraße"
+  },
+  {
+    "id": 4857,
+    "name": "Taterweg"
+  },
+  {
+    "id": 11816,
+    "name": "Taterweg"
+  },
+  {
+    "id": 4858,
+    "name": "Taubenschlag"
+  },
+  {
+    "id": 4860,
+    "name": "Teichstraße"
+  },
+  {
+    "id": 11762,
+    "name": "Telefonweg"
+  },
+  {
+    "id": 4861,
+    "name": "Telemannweg"
+  },
+  {
+    "id": 11664,
+    "name": "Teller Burgfeld"
+  },
+  {
+    "id": 11964,
+    "name": "Tempelburger Straße"
+  },
+  {
+    "id": 4862,
+    "name": "Teschower Weg"
+  },
+  {
+    "id": 4863,
+    "name": "Tesdorpfstraße"
+  },
+  {
+    "id": 11954,
+    "name": "Teßdorffstraße"
+  },
+  {
+    "id": 4864,
+    "name": "Teutenbrink"
+  },
+  {
+    "id": 11888,
+    "name": "Teutenbrook"
+  },
+  {
+    "id": 4865,
+    "name": "Teutendorfer Weg"
+  },
+  {
+    "id": 4866,
+    "name": "Teutonenweg"
+  },
+  {
+    "id": 4867,
+    "name": "Theodor-Heuss-Straße"
+  },
+  {
+    "id": 12074,
+    "name": "Theodor-Storm-Straße"
+  },
+  {
+    "id": 4869,
+    "name": "Thomas-Mann-Straße"
+  },
+  {
+    "id": 4868,
+    "name": "Thomasstraße"
+  },
+  {
+    "id": 5230,
+    "name": "THORWEG"
+  },
+  {
+    "id": 4870,
+    "name": "Tilgenkrug"
+  },
+  {
+    "id": 12076,
+    "name": "Tilsiter Straße"
+  },
+  {
+    "id": 4871,
+    "name": "Tilsitstraße"
+  },
+  {
+    "id": 4872,
+    "name": "Timmendorfer Weg"
+  },
+  {
+    "id": 4873,
+    "name": "Tondernstraße"
+  },
+  {
+    "id": 4874,
+    "name": "Topasweg"
+  },
+  {
+    "id": 4875,
+    "name": "Torfgraben"
+  },
+  {
+    "id": 4876,
+    "name": "Torfmoosweg"
+  },
+  {
+    "id": 11761,
+    "name": "Torfweg"
+  },
+  {
+    "id": 4877,
+    "name": "Torneiweg"
+  },
+  {
+    "id": 4878,
+    "name": "Torstraße"
+  },
+  {
+    "id": 4881,
+    "name": "Trakehnenweg"
+  },
+  {
+    "id": 4882,
+    "name": "Trappenstraße"
+  },
+  {
+    "id": 4883,
+    "name": "Travelmannstraße"
+  },
+  {
+    "id": 5192,
+    "name": "TRAVEMÜNDE-GDYNIA"
+  },
+  {
+    "id": 5102,
+    "name": "TRAVEMÜNDE-HELSINKI"
+  },
+  {
+    "id": 5124,
+    "name": "TRAVEMÜNDE-LIEPAJA"
+  },
+  {
+    "id": 5171,
+    "name": "TRAVEMÜNDE-MALMÖ"
+  },
+  {
+    "id": 5125,
+    "name": "TRAVEMÜNDE-PRIWALL"
+  },
+  {
+    "id": 5212,
+    "name": "TRAVEMÜNDE-RIGA"
+  },
+  {
+    "id": 5153,
+    "name": "TRAVEMÜNDE-TRELLEBORG"
+  },
+  {
+    "id": 4884,
+    "name": "Travemünder Allee"
+  },
+  {
+    "id": 4885,
+    "name": "Travemünder Landstraße"
+  },
+  {
+    "id": 4886,
+    "name": "Travenstieg"
+  },
+  {
+    "id": 4887,
+    "name": "Travepromenade"
+  },
+  {
+    "id": 4888,
+    "name": "Traveweg"
+  },
+  {
+    "id": 4889,
+    "name": "Trelleborgallee"
+  },
+  {
+    "id": 4890,
+    "name": "Tremser Weg"
+  },
+  {
+    "id": 5193,
+    "name": "TREMSKAMP"
+  },
+  {
+    "id": 4891,
+    "name": "Trendelenburgstraße"
+  },
+  {
+    "id": 11760,
+    "name": "Triangel"
+  },
+  {
+    "id": 4892,
+    "name": "Triftstraße"
+  },
+  {
+    "id": 11665,
+    "name": "Tuchschererstraße"
+  },
+  {
+    "id": 4895,
+    "name": "Tulpenweg"
+  },
+  {
+    "id": 12035,
+    "name": "Turmblick"
+  },
+  {
+    "id": 11666,
+    "name": "Twiete"
+  },
+  {
+    "id": 4900,
+    "name": "Tycho-Brahe-Weg"
+  },
+  {
+    "id": 4859,
+    "name": "Täuferstraße"
+  },
+  {
+    "id": 12176,
+    "name": "Töpferberg"
+  },
+  {
+    "id": 4880,
+    "name": "Töpferweg"
+  },
+  {
+    "id": 4896,
+    "name": "Tünkenhagen"
+  },
+  {
+    "id": 4897,
+    "name": "Tünkenhagen 26/"
+  },
+  {
+    "id": 4898,
+    "name": "Türkisweg"
+  },
+  {
+    "id": 4899,
+    "name": "Tüschenbeker Mühle"
+  },
+  {
+    "id": 11667,
+    "name": "Uferweg Holstenhafen"
+  },
+  {
+    "id": 11668,
+    "name": "Uferweg Lastadie Willy-Brandt-Allee"
+  },
+  {
+    "id": 4912,
+    "name": "Uhlandstraße"
+  },
+  {
+    "id": 4913,
+    "name": "Uhlenhörn"
+  },
+  {
+    "id": 4914,
+    "name": "Ulmenweg"
+  },
+  {
+    "id": 4915,
+    "name": "unbekannt"
+  },
+  {
+    "id": 4916,
+    "name": "Undineweg"
+  },
+  {
+    "id": 5103,
+    "name": "Universitätsstraße"
+  },
+  {
+    "id": 4917,
+    "name": "Unter der Herrenbrücke"
+  },
+  {
+    "id": 4918,
+    "name": "Uranusweg"
+  },
+  {
+    "id": 4919,
+    "name": "Usedomweg"
+  },
+  {
+    "id": 4920,
+    "name": "Utechter Weg"
+  },
+  {
+    "id": 4921,
+    "name": "Uteweg"
+  },
+  {
+    "id": 4922,
+    "name": "Utkiek"
+  },
+  {
+    "id": 12067,
+    "name": "Veilchenweg"
+  },
+  {
+    "id": 4924,
+    "name": "Venusberg"
+  },
+  {
+    "id": 11669,
+    "name": "Verb.Str. Possehl-  -  Wallstraße"
+  },
+  {
+    "id": 11670,
+    "name": "Verb.Str. Possehl-Wallstraße"
+  },
+  {
+    "id": 11672,
+    "name": "Verbindung Possehlstr.-Wallstr."
+  },
+  {
+    "id": 11673,
+    "name": "Verbindungsstraße Fregattenstraße - Moislinger Allee"
+  },
+  {
+    "id": 11674,
+    "name": "Verbindungsstraße Fregattenstraße-Moislinger Allee"
+  },
+  {
+    "id": 11675,
+    "name": "Verbindungsstraße Lachswehrallee-Zur Sägemühle"
+  },
+  {
+    "id": 11676,
+    "name": "Verbindungsweg Artlenburger Straße - Vierlandenstraße"
+  },
+  {
+    "id": 11677,
+    "name": "Verbindungsweg Bergenstr.-Am Neuhof"
+  },
+  {
+    "id": 11678,
+    "name": "Verbindungsweg Brandenbaumer Landstr.-Am Ährenfeld"
+  },
+  {
+    "id": 11679,
+    "name": "Verbindungsweg Elswigstraße-Krummeck"
+  },
+  {
+    "id": 11680,
+    "name": "Verbindungsweg Fackenburger Allee - Ziegelstraße"
+  },
+  {
+    "id": 11681,
+    "name": "Verbindungsweg Havelstr.-Posenerstr."
+  },
+  {
+    "id": 11682,
+    "name": "Verbindungsweg Jerusalemsberg-Travemünder Allee"
+  },
+  {
+    "id": 11683,
+    "name": "Verbindungsweg Kirchwerderstr-Waisenallee"
+  },
+  {
+    "id": 11684,
+    "name": "Verbindungsweg Klipperstr.-Güterschlag"
+  },
+  {
+    "id": 11685,
+    "name": "Verbindungsweg Kreienkoppel-Rapsacker"
+  },
+  {
+    "id": 11686,
+    "name": "Verbindungsweg Plöner Str., Bosauer Str., Eutiner Str."
+  },
+  {
+    "id": 11687,
+    "name": "Verbindungsweg Possehlstr.-Wallstr."
+  },
+  {
+    "id": 11688,
+    "name": "Verbindungsweg Schönböckener Straße - Brahmstraße"
+  },
+  {
+    "id": 11689,
+    "name": "Verbindungsweg Schönböckener Straße-Brahmstraße"
+  },
+  {
+    "id": 11690,
+    "name": "Verbindungsweg Stockelsdorfer Str.-Bornhövedstr."
+  },
+  {
+    "id": 11691,
+    "name": "Verbindungsweg Tannenbergstraße - Schneidemühlstraße"
+  },
+  {
+    "id": 11692,
+    "name": "Verbindungsweg Tannenbergstraße-Schneidemühlstraße"
+  },
+  {
+    "id": 11693,
+    "name": "Verbindungsweg Tannenkoppel-Kaninchenbergweg"
+  },
+  {
+    "id": 11694,
+    "name": "Verbindungsweg Teutonenweg-Fregattenstr."
+  },
+  {
+    "id": 11695,
+    "name": "Verbindungsweg Travemünder Allee-Jerusalemsberg"
+  },
+  {
+    "id": 11696,
+    "name": "Verbindungsweg von Rapsacker bis Kreienkoppel"
+  },
+  {
+    "id": 11697,
+    "name": "Verbindungsweg Waisenallee-Kirchwerderstr"
+  },
+  {
+    "id": 11847,
+    "name": "Verbindungsweg Wisbystraße zum Havemeisterweg"
+  },
+  {
+    "id": 11698,
+    "name": "Verbindungsweg, Brandenbaumer Landstr. - Ährenfeld"
+  },
+  {
+    "id": 11699,
+    "name": "Verbindungsweg, Brandenbaumer Landstr.-Ährenfeld"
+  },
+  {
+    "id": 11700,
+    "name": "Verbindungsweg, Havelstr.-Posenerstr."
+  },
+  {
+    "id": 11701,
+    "name": "Verbindungsweg, Parkplatz Hohelandstr - Klosterstr"
+  },
+  {
+    "id": 11702,
+    "name": "Verbindungsweg, Parkplatz Hohelandstr. - Klosterstr."
+  },
+  {
+    "id": 11703,
+    "name": "Verbindungsweg, Parkplatz Hohelandstr.-Klosterstr."
+  },
+  {
+    "id": 11704,
+    "name": "Verbindungsweg, Plöner Str., Bosauer Str., Eutiner Str."
+  },
+  {
+    "id": 11705,
+    "name": "Verbindungsweg, Teutonenweg-Fregattenstr."
+  },
+  {
+    "id": 11706,
+    "name": "Verbindungsweg, Waisenallee-Kirchwerderstr"
+  },
+  {
+    "id": 11707,
+    "name": "Verbindungweg Hansestraße - Fregattenstraße"
+  },
+  {
+    "id": 5172,
+    "name": "VEREINIGUNGS-GANG"
+  },
+  {
+    "id": 5213,
+    "name": "VEREINIGUNGSGANG"
+  },
+  {
+    "id": 5126,
+    "name": "VEREINßTRAßE"
+  },
+  {
+    "id": 12181,
+    "name": "Verladestraße"
+  },
+  {
+    "id": 4925,
+    "name": "Vermehrenring"
+  },
+  {
+    "id": 11863,
+    "name": "Vierhörn"
+  },
+  {
+    "id": 4926,
+    "name": "Vierlandenstraße"
+  },
+  {
+    "id": 4927,
+    "name": "Vierruten"
+  },
+  {
+    "id": 12164,
+    "name": "Viertelkamp"
+  },
+  {
+    "id": 4928,
+    "name": "Viktoriastraße"
+  },
+  {
+    "id": 4929,
+    "name": "Vilmring"
+  },
+  {
+    "id": 4930,
+    "name": "Virchowstraße"
+  },
+  {
+    "id": 4931,
+    "name": "Vogteistraße"
+  },
+  {
+    "id": 4932,
+    "name": "Volkerstraße"
+  },
+  {
+    "id": 4933,
+    "name": "Volksfestplatz"
+  },
+  {
+    "id": 4934,
+    "name": "Voltastraße"
+  },
+  {
+    "id": 5249,
+    "name": "VON-HÖVELN-GANG"
+  },
+  {
+    "id": 4936,
+    "name": "Von-Morgen-Straße"
+  },
+  {
+    "id": 11932,
+    "name": "Von-Weber-Straße"
+  },
+  {
+    "id": 4938,
+    "name": "Vorbecks-Riehe"
+  },
+  {
+    "id": 4937,
+    "name": "Vorbeckstraße"
+  },
+  {
+    "id": 4939,
+    "name": "Vorderreihe"
+  },
+  {
+    "id": 4940,
+    "name": "Vorderste Fichteln"
+  },
+  {
+    "id": 4941,
+    "name": "Vorderteichweg"
+  },
+  {
+    "id": 4942,
+    "name": "Vorrader Hauptstraße"
+  },
+  {
+    "id": 4943,
+    "name": "Vorrader Straße"
+  },
+  {
+    "id": 4944,
+    "name": "Vorwerker Straße"
+  },
+  {
+    "id": 4945,
+    "name": "Vorwiesenweg"
+  },
+  {
+    "id": 12062,
+    "name": "Voßberg"
+  },
+  {
+    "id": 4946,
+    "name": "Voßbergbogen"
+  },
+  {
+    "id": 4947,
+    "name": "Voßberggrube"
+  },
+  {
+    "id": 4948,
+    "name": "Voßwinkel"
+  },
+  {
+    "id": 4949,
+    "name": "Wacholderweg"
+  },
+  {
+    "id": 4950,
+    "name": "Wachtelschlag"
+  },
+  {
+    "id": 4951,
+    "name": "Wachthauskoppel"
+  },
+  {
+    "id": 4952,
+    "name": "Wachtstraße"
+  },
+  {
+    "id": 4953,
+    "name": "Wahmstraße"
+  },
+  {
+    "id": 4954,
+    "name": "Wahmstraße 46/"
+  },
+  {
+    "id": 4955,
+    "name": "Wahmstraße 49/"
+  },
+  {
+    "id": 4957,
+    "name": "Waisenallee"
+  },
+  {
+    "id": 4958,
+    "name": "Waisenhofstraße"
+  },
+  {
+    "id": 5104,
+    "name": "WAKENITZBRÜCKE"
+  },
+  {
+    "id": 4959,
+    "name": "Wakenitzmauer"
+  },
+  {
+    "id": 4960,
+    "name": "Wakenitzmauer 132/"
+  },
+  {
+    "id": 4963,
+    "name": "Wakenitzstraße"
+  },
+  {
+    "id": 4964,
+    "name": "Wakenitzufer"
+  },
+  {
+    "id": 12083,
+    "name": "Waldenburger Straße"
+  },
+  {
+    "id": 4966,
+    "name": "Walderseestraße"
+  },
+  {
+    "id": 4967,
+    "name": "Waldhusener Weg"
+  },
+  {
+    "id": 4968,
+    "name": "Waldstraße"
+  },
+  {
+    "id": 4969,
+    "name": "Waldweg"
+  },
+  {
+    "id": 4970,
+    "name": "Walkmühlenweg"
+  },
+  {
+    "id": 4971,
+    "name": "Wallbrechtstraße"
+  },
+  {
+    "id": 4972,
+    "name": "Wallheckenweg"
+  },
+  {
+    "id": 4973,
+    "name": "Wallstraße"
+  },
+  {
+    "id": 12196,
+    "name": "Wanderweg"
+  },
+  {
+    "id": 4974,
+    "name": "Warendorpplatz"
+  },
+  {
+    "id": 4975,
+    "name": "Warendorpstraße"
+  },
+  {
+    "id": 5232,
+    "name": "WARNCKES GANG"
+  },
+  {
+    "id": 4976,
+    "name": "Warnowweg"
+  },
+  {
+    "id": 5105,
+    "name": "WARNSDORF STRAßE"
+  },
+  {
+    "id": 4977,
+    "name": "Warthestraße"
+  },
+  {
+    "id": 11750,
+    "name": "Waschboxen / Platz"
+  },
+  {
+    "id": 4978,
+    "name": "Wasserfahr"
+  },
+  {
+    "id": 4979,
+    "name": "Wasserfohr"
+  },
+  {
+    "id": 11817,
+    "name": "Wasserfohr"
+  },
+  {
+    "id": 12118,
+    "name": "Wasserstern"
+  },
+  {
+    "id": 4981,
+    "name": "Wattstraße"
+  },
+  {
+    "id": 4982,
+    "name": "Weberkoppel"
+  },
+  {
+    "id": 4983,
+    "name": "Weberstraße"
+  },
+  {
+    "id": 4984,
+    "name": "Wedenberg"
+  },
+  {
+    "id": 11708,
+    "name": "Weg ohne Namen zwischen Auf den Baggersand und Fischereihafen"
+  },
+  {
+    "id": 4986,
+    "name": "Wehrmannweg"
+  },
+  {
+    "id": 4987,
+    "name": "Weichselstraße"
+  },
+  {
+    "id": 4988,
+    "name": "Weidekamp"
+  },
+  {
+    "id": 4989,
+    "name": "Weidentrift"
+  },
+  {
+    "id": 4990,
+    "name": "Weidenweg"
+  },
+  {
+    "id": 5154,
+    "name": "WEIMANNS HOF"
+  },
+  {
+    "id": 4991,
+    "name": "Weinbergstraße"
+  },
+  {
+    "id": 5155,
+    "name": "WEINTRAUBENGANG"
+  },
+  {
+    "id": 12156,
+    "name": "Weißbuchenweg"
+  },
+  {
+    "id": 12043,
+    "name": "Weißdornweg"
+  },
+  {
+    "id": 4992,
+    "name": "Weiter Krambuden"
+  },
+  {
+    "id": 4993,
+    "name": "Weiter Lohberg"
+  },
+  {
+    "id": 4994,
+    "name": "Wellenschlag"
+  },
+  {
+    "id": 4995,
+    "name": "Wellmannstraße"
+  },
+  {
+    "id": 4996,
+    "name": "Welsbachstraße"
+  },
+  {
+    "id": 12014,
+    "name": "Wendenrund"
+  },
+  {
+    "id": 4998,
+    "name": "Wendische Straße"
+  },
+  {
+    "id": 5127,
+    "name": "WENDITZUFER"
+  },
+  {
+    "id": 4999,
+    "name": "WENZKIRCHHOF"
+  },
+  {
+    "id": 11818,
+    "name": "Wenzkirchhof"
+  },
+  {
+    "id": 5000,
+    "name": "Werderstraße"
+  },
+  {
+    "id": 5001,
+    "name": "Werftstieg"
+  },
+  {
+    "id": 5002,
+    "name": "Werftstraße"
+  },
+  {
+    "id": 5003,
+    "name": "Werkstraße"
+  },
+  {
+    "id": 4997,
+    "name": "Werner-Kock-Straße"
+  },
+  {
+    "id": 12126,
+    "name": "Werner-Lüdtke-Straße"
+  },
+  {
+    "id": 5004,
+    "name": "Wesenberger Straße"
+  },
+  {
+    "id": 5005,
+    "name": "Wesleystraße"
+  },
+  {
+    "id": 5007,
+    "name": "Wesloer Landstraße"
+  },
+  {
+    "id": 5008,
+    "name": "Wesloer Straße"
+  },
+  {
+    "id": 11734,
+    "name": "Wesloer Weg"
+  },
+  {
+    "id": 5010,
+    "name": "Westerstieg"
+  },
+  {
+    "id": 5011,
+    "name": "Westhoffstraße"
+  },
+  {
+    "id": 5012,
+    "name": "Westphalstraße"
+  },
+  {
+    "id": 5013,
+    "name": "Westpreußenring"
+  },
+  {
+    "id": 5014,
+    "name": "Wiborgstraße"
+  },
+  {
+    "id": 5015,
+    "name": "Wickedestraße"
+  },
+  {
+    "id": 5016,
+    "name": "Widsal"
+  },
+  {
+    "id": 5017,
+    "name": "Wiekstraße"
+  },
+  {
+    "id": 5106,
+    "name": "WIELANDBRÜCKE"
+  },
+  {
+    "id": 5018,
+    "name": "Wielandstraße"
+  },
+  {
+    "id": 5019,
+    "name": "Wiesengrund"
+  },
+  {
+    "id": 5020,
+    "name": "Wiesenweg"
+  },
+  {
+    "id": 5021,
+    "name": "Wieskoppel"
+  },
+  {
+    "id": 5022,
+    "name": "Wikingerweg"
+  },
+  {
+    "id": 5023,
+    "name": "Wildhüterweg"
+  },
+  {
+    "id": 11874,
+    "name": "Wildrosenring"
+  },
+  {
+    "id": 5025,
+    "name": "Wilhelm-Geusendam-Weg"
+  },
+  {
+    "id": 3809,
+    "name": "Wilhelm-Krohn-Platz"
+  },
+  {
+    "id": 12129,
+    "name": "Wilhelm-Maybach-Straße"
+  },
+  {
+    "id": 5026,
+    "name": "Wilhelm-Ohnesorge-Weg"
+  },
+  {
+    "id": 5027,
+    "name": "Wilhelm-Stahl-Weg"
+  },
+  {
+    "id": 12051,
+    "name": "Wilhelm-Westphal-Straße"
+  },
+  {
+    "id": 12075,
+    "name": "Wilhelm-Wisser-Straße"
+  },
+  {
+    "id": 5029,
+    "name": "Wilhelm-Wisser-Weg"
+  },
+  {
+    "id": 5024,
+    "name": "Wilhelmstraße"
+  },
+  {
+    "id": 5030,
+    "name": "Willy-Brandt-Allee"
+  },
+  {
+    "id": 11951,
+    "name": "Windberg"
+  },
+  {
+    "id": 5031,
+    "name": "Windgasse"
+  },
+  {
+    "id": 12036,
+    "name": "Windmühlenkoppel"
+  },
+  {
+    "id": 12117,
+    "name": "Wintergrün"
+  },
+  {
+    "id": 5233,
+    "name": "WINTERS GANG"
+  },
+  {
+    "id": 5032,
+    "name": "Wisbystraße"
+  },
+  {
+    "id": 12030,
+    "name": "Wischhof"
+  },
+  {
+    "id": 5033,
+    "name": "Wischhofweg"
+  },
+  {
+    "id": 5034,
+    "name": "Wismarweg"
+  },
+  {
+    "id": 5036,
+    "name": "Wissmannstraße"
+  },
+  {
+    "id": 5035,
+    "name": "Witzlebenstraße"
+  },
+  {
+    "id": 11709,
+    "name": "Wochenmarkt Hasenweg"
+  },
+  {
+    "id": 5037,
+    "name": "Wohrt"
+  },
+  {
+    "id": 11902,
+    "name": "Wolframweg"
+  },
+  {
+    "id": 5038,
+    "name": "Wollinweg"
+  },
+  {
+    "id": 5039,
+    "name": "Wossidloweg"
+  },
+  {
+    "id": 5128,
+    "name": "WULFFS GANG"
+  },
+  {
+    "id": 5040,
+    "name": "Wulfsdorfer Heide"
+  },
+  {
+    "id": 5041,
+    "name": "Wulfsdorfer Weg"
+  },
+  {
+    "id": 5042,
+    "name": "Wurzelweg"
+  },
+  {
+    "id": 5043,
+    "name": "Wüstenei"
+  },
+  {
+    "id": 5044,
+    "name": "Yorckstraße"
+  },
+  {
+    "id": 5045,
+    "name": "Zarnewenzweg"
+  },
+  {
+    "id": 5046,
+    "name": "Zeisigweg"
+  },
+  {
+    "id": 5047,
+    "name": "Zeißstraße"
+  },
+  {
+    "id": 11752,
+    "name": "Zentralklärwerk"
+  },
+  {
+    "id": 5048,
+    "name": "Zeppelinstraße"
+  },
+  {
+    "id": 5250,
+    "name": "ZERRAHNS GANG"
+  },
+  {
+    "id": 5049,
+    "name": "Ziegeleiweg"
+  },
+  {
+    "id": 5050,
+    "name": "Ziegelstraße"
+  },
+  {
+    "id": 5051,
+    "name": "Ziegenhorst"
+  },
+  {
+    "id": 5052,
+    "name": "Zietenstraße"
+  },
+  {
+    "id": 5053,
+    "name": "Zinngießerstraße"
+  },
+  {
+    "id": 11710,
+    "name": "ZOB"
+  },
+  {
+    "id": 5107,
+    "name": "ZOBELS GANG"
+  },
+  {
+    "id": 5108,
+    "name": "ZOBELS HOF"
+  },
+  {
+    "id": 11729,
+    "name": "Zufahrt Hornbach"
+  },
+  {
+    "id": 11728,
+    "name": "Zufahrt IKEA"
+  },
+  {
+    "id": 11711,
+    "name": "Zufahrt Parkfl. P+R Lohmühle"
+  },
+  {
+    "id": 5054,
+    "name": "Zum 1. Fischerbuden"
+  },
+  {
+    "id": 5156,
+    "name": "ZUM BAUHOF"
+  },
+  {
+    "id": 12028,
+    "name": "Zum Brook"
+  },
+  {
+    "id": 11727,
+    "name": "Zum Gartenbrook"
+  },
+  {
+    "id": 5056,
+    "name": "Zum Gogenberg"
+  },
+  {
+    "id": 5214,
+    "name": "ZUM GRÜNDERPARK"
+  },
+  {
+    "id": 5057,
+    "name": "Zum Hafenplatz"
+  },
+  {
+    "id": 5058,
+    "name": "Zum Herrenmoor"
+  },
+  {
+    "id": 12084,
+    "name": "Zum Landgraben"
+  },
+  {
+    "id": 12198,
+    "name": "Zum Lutterberg"
+  },
+  {
+    "id": 5059,
+    "name": "Zum Mühlbachtal"
+  },
+  {
+    "id": 5129,
+    "name": "ZUM SPORTPLATZ"
+  },
+  {
+    "id": 12167,
+    "name": "Zum Vorwerk"
+  },
+  {
+    "id": 12125,
+    "name": "Zum Waldrand"
+  },
+  {
+    "id": 11856,
+    "name": "Zum Wasserspeicher"
+  },
+  {
+    "id": 5060,
+    "name": "Zum Winderhitzer"
+  },
+  {
+    "id": 5157,
+    "name": "ZUR BAUWERKSTATT"
+  },
+  {
+    "id": 11724,
+    "name": "Zur Gießhalle"
+  },
+  {
+    "id": 5062,
+    "name": "Zur Sägemühle"
+  },
+  {
+    "id": 5063,
+    "name": "Zur Teerhofsinsel"
+  },
+  {
+    "id": 11852,
+    "name": "Zweite Düne"
+  },
+  {
+    "id": 5064,
+    "name": "Zweite Ochsenkoppel"
+  },
+  {
+    "id": 5065,
+    "name": "Zweiter Querweg"
+  },
+  {
+    "id": 5066,
+    "name": "Zwinglistraße"
+  },
+  {
+    "id": 5067,
+    "name": "Zwirngang"
+  },
+  {
+    "id": 5194,
+    "name": "ZÖLLNERS HOF"
+  },
+  {
+    "id": 11900,
+    "name": "Zündstein"
+  },
+  {
+    "id": 4923,
+    "name": "Ünnerdörch"
+  }
+]

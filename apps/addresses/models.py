@@ -46,6 +46,12 @@ class Street(TimeStampedModel):
     note = models.CharField("Hinweis", max_length=255, blank=True)
     origin = models.CharField(max_length=30, choices=Origin.choices, default=Origin.OFFICIAL_IMPORT)
     is_active = models.BooleanField("Aktiv", default=True)
+    # ID im Online-Abfallkalender der EBL (insert-it.de); nicht unique, weil
+    # Ortsteil-Varianten derselben physischen Straße dieselbe BMS-ID tragen.
+    bms_street_id = models.IntegerField(
+        "BMS-Straßen-ID", null=True, blank=True, db_index=True,
+        help_text="Straßen-ID im Online-Abfallkalender (insert-it.de).",
+    )
 
     class Meta:
         ordering = ["name"]
@@ -61,6 +67,31 @@ class Street(TimeStampedModel):
         if self.district:
             return f"{self.name} ({self.district.name})"
         return self.name
+
+
+class HouseNumber(TimeStampedModel):
+    """Official house numbers of a street from the EBL online calendar (BMS).
+
+    `bms_location_id` addresses the per-address calendar at insert-it.de and
+    is NOT unique: several house numbers can share one location (e.g. a common
+    waste collection point for Achternhof 21–31).
+    """
+
+    street = models.ForeignKey(Street, on_delete=models.CASCADE, related_name="house_numbers")
+    text = models.CharField("Hausnummer", max_length=20)
+    number = models.PositiveIntegerField(null=True, blank=True, db_index=True)
+    suffix = models.CharField(max_length=10, blank=True, default="")
+    bms_location_id = models.IntegerField("BMS-Location-ID", db_index=True)
+    origin = models.CharField(max_length=30, choices=Origin.choices, default=Origin.EXTERNAL_API)
+
+    class Meta:
+        unique_together = [("street", "text")]
+        ordering = ["number", "suffix", "text"]
+        verbose_name = "Hausnummer"
+        verbose_name_plural = "Hausnummern"
+
+    def __str__(self):
+        return f"{self.street.name} {self.text}"
 
 
 class StreetAlias(TimeStampedModel):

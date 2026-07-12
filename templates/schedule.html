@@ -190,6 +190,14 @@
               <span class="ak-badge ak-badge-success">offiziell importiert</span>
             </div>
           </div>
+          {% if official_calendar_url %}
+            <p class="mb-2">
+              <a href="{{ official_calendar_url }}" target="_blank" rel="noopener" class="ak-btn ak-btn-outline ak-btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                Offiziellen EBL-Kalender für diese Adresse öffnen
+              </a>
+            </p>
+          {% endif %}
           <p class="mb-0 mt-2">
             Alle Angaben ohne Gewähr. Verbindlich sind die Veröffentlichungen der
             Entsorgungsbetriebe Lübeck. Fehler entdeckt?
