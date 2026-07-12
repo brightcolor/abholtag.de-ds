@@ -107,10 +107,11 @@ def test_analytics_event_recorded(client, setup):
 
 def test_multi_waste_type_filter(client, setup):
     """Mehrfachauswahl: arten=… filtert Terminliste und Chips (§8, Mehrfachliste)."""
+    from datetime import date
+
     from apps.core.models import Origin
     from apps.schedules.models import CollectionDate, CollectionZone, ScheduleYear, ScheduleYearStatus
     from apps.waste_types.models import WasteType
-    from datetime import date
 
     bio = WasteType.objects.get(slug="bioabfall")
     bio.is_active = True
@@ -134,11 +135,12 @@ def test_multi_waste_type_filter(client, setup):
 
 
 def test_combined_feed_respects_arten_filter(client, setup):
+    from datetime import date
+
+    from apps.addresses.models import StreetAssignment
     from apps.core.models import Origin
     from apps.schedules.models import CollectionDate, CollectionZone, ScheduleYear, ScheduleYearStatus
     from apps.waste_types.models import WasteType
-    from apps.addresses.models import StreetAssignment
-    from datetime import date
 
     bio = WasteType.objects.get(slug="bioabfall")
     bio.is_active = True
