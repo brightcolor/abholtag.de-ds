@@ -20,7 +20,6 @@ from apps.core.models import Origin
 from apps.core.text import normalize_street_name
 from apps.schedules.models import (
     CollectionDate,
-    CollectionDateKind,
     CollectionZone,
     ScheduleYear,
     ScheduleYearStatus,

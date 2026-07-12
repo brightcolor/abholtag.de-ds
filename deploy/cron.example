@@ -1,0 +1,13 @@
+# Beispiel-Crontab für Betrieb ohne den Compose-cron-Container.
+# Pfade an die eigene Installation anpassen.
+
+# Offiziellen Plan täglich um 05:30 prüfen, neue Versionen parsen (Review-Gate bleibt)
+30 5 * * *  cd /srv/abfuhrkalender && ./.venv/bin/python manage_prod.py fetch_waste_source --import >> logs/cron.log 2>&1
+
+# Statistik: nachts aggregieren und Rohdaten nach Frist löschen
+15 3 * * *  cd /srv/abfuhrkalender && ./.venv/bin/python manage_prod.py aggregate_analytics >> logs/cron.log 2>&1
+30 3 * * 0  cd /srv/abfuhrkalender && ./.venv/bin/python manage_prod.py purge_old_analytics >> logs/cron.log 2>&1
+
+# Community: Quoren auswerten, alte ungeprüfte Beiträge verfallen lassen
+0 4 * * *   cd /srv/abfuhrkalender && ./.venv/bin/python manage_prod.py evaluate_quorums >> logs/cron.log 2>&1
+0 5 * * 0   cd /srv/abfuhrkalender && ./.venv/bin/python manage_prod.py expire_unverified_contributions >> logs/cron.log 2>&1

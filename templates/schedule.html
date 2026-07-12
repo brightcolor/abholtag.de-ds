@@ -110,17 +110,17 @@
       </div>
 
       {# ---------------- Jahresübersicht ---------------- #}
-      <div class="ak-card mb-4" x-data="{ show: false }">
+      <div class="ak-card mb-4">
         <div class="ak-card-header d-flex justify-content-between">
           <span><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Jahresübersicht
             {% if years %}{{ years|join:" / " }}{% endif %}
           </span>
-          <button type="button" class="ak-btn ak-btn-ghost ak-btn-sm" @click="show = !show"
-                  :aria-expanded="show" aria-controls="jahresliste">
-            <span x-text="show ? 'Einklappen' : 'Alle anzeigen'">Alle anzeigen</span>
+          <button type="button" class="ak-btn ak-btn-ghost ak-btn-sm" onclick="akToggle('jahresliste', this)"
+                  aria-expanded="false" aria-controls="jahresliste">
+            <span>Alle anzeigen</span>
           </button>
         </div>
-        <div class="ak-card-body pt-2" id="jahresliste" x-show="show" x-cloak>
+        <div class="ak-card-body pt-2" id="jahresliste" hidden>
           {% regroup all_dates by date.month as months %}
           {% for month in months %}
             <div class="ak-month-group">

@@ -260,7 +260,7 @@ class LuebeckGelberSackParser(BaseParser):
                 f"{len(columns)} statt 12 Monatsspalten erkannt – Kalenderlayout vermutlich geändert.",
             )
             return
-        pitch = statistics.median(b - a for a, b in zip(columns, columns[1:]))
+        pitch = statistics.median(b - a for a, b in zip(columns, columns[1:], strict=False))
 
         def column_month(x: float, max_offset_left: float = 20) -> int | None:
             for month_no, col_x in enumerate(columns, start=1):
@@ -374,9 +374,9 @@ class LuebeckGelberSackParser(BaseParser):
                 result, _ = ocr(rgb[y0:y1, x0:x1], use_det=False, use_cls=False)
                 if result:
                     first = result[0]
-                    text = str(first[0] if isinstance(first, (list, tuple)) else first).strip()
+                    text = str(first[0] if isinstance(first, list | tuple) else first).strip()
                     score = (
-                        float(first[1]) if isinstance(first, (list, tuple)) and len(first) > 1 else 0.0
+                        float(first[1]) if isinstance(first, list | tuple) and len(first) > 1 else 0.0
                     )
                     text = re.sub(r"[^A-Za-z0-9|]", "", text)
                     candidate = OCR_LETTER_FIXES.get(text, text)
@@ -446,7 +446,7 @@ class LuebeckGelberSackParser(BaseParser):
                     "warning", "zone_count",
                     f"Bezirk {zone}: ungewöhnliche Terminanzahl ({len(dates)}) – bitte prüfen.",
                 )
-            gaps = [(b - a).days for a, b in zip(dates, dates[1:])]
+            gaps = [(b - a).days for a, b in zip(dates, dates[1:], strict=False)]
             odd_gaps = [g for g in gaps if not 6 <= g <= 22]
             if odd_gaps:
                 plan.add_issue(

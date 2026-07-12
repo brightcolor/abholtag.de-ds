@@ -1,0 +1,56 @@
+# Compose-Setup der Root-Layout-Variante.
+# Aufruf aus dem Projektstamm:
+#   docker compose -f deploy/docker-compose.root.yml up -d --build
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.root
+    restart: unless-stopped
+    env_file: ../.env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      # Bind Mounts: Originaldateien und Uploads sichtbar neben dem Projekt
+      - ../docker-data/media:/app/media
+    ports:
+      - "127.0.0.1:8000:8000"
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-abfuhrkalender}
+      POSTGRES_USER: ${POSTGRES_USER:-abfuhrkalender}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD fehlt}
+    volumes:
+      - ../docker-data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Periodische Aufgaben ohne Celery (§4): schlichter Scheduler-Container
+  cron:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.root
+    restart: unless-stopped
+    env_file: ../.env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ../docker-data/media:/app/media
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        while true; do
+          python manage_prod.py fetch_waste_source --import || true
+          python manage_prod.py aggregate_analytics || true
+          python manage_prod.py purge_old_analytics || true
+          python manage_prod.py evaluate_quorums || true
+          sleep 21600
+        done

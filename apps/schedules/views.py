@@ -8,7 +8,7 @@ from apps.analytics.services import record_event
 from apps.core.text import parse_house_number
 from apps.waste_types.models import WasteType
 
-from .services import data_status, published_dates_for_address, upcoming_dates_for_address
+from .services import data_status, published_dates_for_address
 
 
 def home(request):

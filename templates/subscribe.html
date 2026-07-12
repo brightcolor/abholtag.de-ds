@@ -59,37 +59,37 @@
         </div>
       </div>
 
-      <div class="ak-card mb-4" x-data="{ tab: 'apple' }">
+      <div class="ak-card mb-4" data-tabs>
         <div class="ak-card-header">
           <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Anleitung für Ihren Kalender
         </div>
         <div class="ak-card-body">
           <div class="ak-tabs" role="tablist">
-            <button class="ak-tab" :class="{ active: tab === 'apple' }" @click="tab = 'apple'" role="tab">
+            <button class="ak-tab active" data-tab="apple" role="tab" aria-selected="true">
               <i class="fa-brands fa-apple" aria-hidden="true"></i> Apple
             </button>
-            <button class="ak-tab" :class="{ active: tab === 'google' }" @click="tab = 'google'" role="tab">
+            <button class="ak-tab" data-tab="google" role="tab" aria-selected="false">
               <i class="fa-brands fa-google" aria-hidden="true"></i> Google
             </button>
-            <button class="ak-tab" :class="{ active: tab === 'android' }" @click="tab = 'android'" role="tab">
+            <button class="ak-tab" data-tab="android" role="tab" aria-selected="false">
               <i class="fa-brands fa-android" aria-hidden="true"></i> Android
             </button>
-            <button class="ak-tab" :class="{ active: tab === 'outlook' }" @click="tab = 'outlook'" role="tab">
+            <button class="ak-tab" data-tab="outlook" role="tab" aria-selected="false">
               <i class="fa-brands fa-microsoft" aria-hidden="true"></i> Outlook
             </button>
-            <button class="ak-tab" :class="{ active: tab === 'thunderbird' }" @click="tab = 'thunderbird'" role="tab">
+            <button class="ak-tab" data-tab="thunderbird" role="tab" aria-selected="false">
               <i class="fa-solid fa-envelope" aria-hidden="true"></i> Thunderbird
             </button>
           </div>
 
-          <div class="ak-tab-panel" x-show="tab === 'apple'">
+          <div class="ak-tab-panel" data-panel="apple">
             <ol>
               <li>Tippen Sie oben auf <strong>„Direkt abonnieren (webcal)“</strong> – iPhone, iPad und Mac öffnen automatisch die Kalender-App.</li>
               <li>Bestätigen Sie mit „Abonnieren“.</li>
               <li>Alternativ: Kalender-App → Ablage → „Neues Kalenderabonnement“ → Adresse einfügen.</li>
             </ol>
           </div>
-          <div class="ak-tab-panel" x-show="tab === 'google'" x-cloak>
+          <div class="ak-tab-panel" data-panel="google" hidden>
             <ol>
               <li>Kopieren Sie die Kalender-Adresse oben.</li>
               <li>Öffnen Sie <strong>calendar.google.com</strong> am Computer.</li>
@@ -98,21 +98,21 @@
               <li>Der Kalender erscheint danach auch in der Google-Kalender-App auf dem Handy.</li>
             </ol>
           </div>
-          <div class="ak-tab-panel" x-show="tab === 'android'" x-cloak>
+          <div class="ak-tab-panel" data-panel="android" hidden>
             <ol>
               <li>Am einfachsten über Google Kalender (siehe Tab „Google“).</li>
               <li>Ohne Google-Konto: App <strong>ICSx⁵</strong> (kostenlos, Open Source) installieren.</li>
               <li>In ICSx⁵ „+“ wählen, Kalender-Adresse einfügen, Synchronisation aktivieren.</li>
             </ol>
           </div>
-          <div class="ak-tab-panel" x-show="tab === 'outlook'" x-cloak>
+          <div class="ak-tab-panel" data-panel="outlook" hidden>
             <ol>
               <li>Kopieren Sie die Kalender-Adresse oben.</li>
               <li><strong>Outlook.com / Outlook im Web:</strong> Kalender → „Kalender hinzufügen“ → „Aus dem Web abonnieren“ → Adresse einfügen.</li>
               <li><strong>Outlook (Desktop):</strong> Kalender → „Kalender öffnen“ → „Aus dem Internet“ → Adresse einfügen.</li>
             </ol>
           </div>
-          <div class="ak-tab-panel" x-show="tab === 'thunderbird'" x-cloak>
+          <div class="ak-tab-panel" data-panel="thunderbird" hidden>
             <ol>
               <li>Kopieren Sie die Kalender-Adresse oben.</li>
               <li>Kalenderansicht öffnen → Rechtsklick in die Kalenderliste → „Neuer Kalender“.</li>

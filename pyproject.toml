@@ -11,3 +11,4 @@ ignore = ["E501"]
 DJANGO_SETTINGS_MODULE = "config.settings.test"
 python_files = ["test_*.py"]
 testpaths = ["apps"]
+pythonpath = ["."]

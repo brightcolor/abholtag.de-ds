@@ -35,6 +35,78 @@
     setTimeout(function () { toast.remove(); }, 3500);
   };
 
+  // ----- Autocomplete (Startseite) ------------------------------------------
+  // Vanilla statt Alpine: die strikte CSP (ohne unsafe-eval) bleibt erhalten.
+  function initSearchForm() {
+    var form = document.querySelector("[data-search-form]");
+    if (!form) return;
+    var input = form.querySelector("#strasse");
+    var hidden = form.querySelector("#street_id");
+    var submit = form.querySelector("[data-search-submit]");
+    var box = form.querySelector("#vorschlaege");
+
+    function update() { submit.disabled = !hidden.value; }
+    update();
+
+    input.addEventListener("input", function () {
+      hidden.value = "";
+      update();
+    });
+    document.addEventListener("click", function (event) {
+      var pick = event.target.closest("[data-street-id]");
+      if (pick && form.contains(pick)) {
+        hidden.value = pick.dataset.streetId;
+        input.value = pick.dataset.streetName;
+        box.innerHTML = "";
+        update();
+        return;
+      }
+      if (!form.contains(event.target)) box.innerHTML = "";
+    });
+    input.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") box.innerHTML = "";
+    });
+  }
+
+  // ----- Collapse (Jahresübersicht) -----------------------------------------
+  window.akToggle = function (id, button) {
+    var panel = document.getElementById(id);
+    var hidden = panel.hasAttribute("hidden");
+    if (hidden) { panel.removeAttribute("hidden"); } else { panel.setAttribute("hidden", ""); }
+    button.setAttribute("aria-expanded", String(hidden));
+    var label = button.querySelector("span");
+    if (label) label.textContent = hidden ? "Einklappen" : "Alle anzeigen";
+  };
+
+  // ----- Tabs (Abo-Anleitungen) ----------------------------------------------
+  function initTabs() {
+    document.querySelectorAll("[data-tabs]").forEach(function (root) {
+      var tabs = root.querySelectorAll("[data-tab]");
+      var panels = root.querySelectorAll("[data-panel]");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (other) {
+            other.classList.toggle("active", other === tab);
+            other.setAttribute("aria-selected", String(other === tab));
+          });
+          panels.forEach(function (panel) {
+            if (panel.dataset.panel === tab.dataset.tab) {
+              panel.removeAttribute("hidden");
+            } else {
+              panel.setAttribute("hidden", "");
+            }
+          });
+        });
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () { initSearchForm(); initTabs(); });
+  } else {
+    initSearchForm(); initTabs();
+  }
+
   // ----- Copy to clipboard ---------------------------------------------------
   window.akCopy = function (text, message) {
     function done() { window.akToast(message || "In die Zwischenablage kopiert"); }

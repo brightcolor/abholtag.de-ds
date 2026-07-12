@@ -14,7 +14,7 @@ qrcode==8.2
 
 # PDF processing
 pdfplumber==0.11.7
-pypdfium2==4.30.1
+pypdfium2==4.30.0
 
 # OCR fallback for image-based calendar sections (pip-only, no system deps)
 rapidocr-onnxruntime==1.4.4

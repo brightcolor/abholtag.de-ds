@@ -32,7 +32,7 @@ class Command(BaseCommand):
             raise CommandError("Der Jahresplan enthält keine Termine.")
 
         for code, zone_dates in sorted(per_zone.items()):
-            for a, b in zip(zone_dates, zone_dates[1:]):
+            for a, b in zip(zone_dates, zone_dates[1:], strict=False):
                 gap = (b - a).days
                 if gap == 0:
                     self.stderr.write(f"Bezirk {code}: Duplikat am {a}.")

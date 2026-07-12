@@ -2,8 +2,7 @@
 <ul class="ak-suggestions" role="listbox" aria-label="Straßenvorschläge">
   {% for street in streets %}
     <li role="option">
-      <button type="button"
-              @click="streetId = '{{ street.pk }}'; streetLabel = '{{ street.name|escapejs }}'; open = false">
+      <button type="button" data-street-id="{{ street.pk }}" data-street-name="{{ street.name }}">
         <span>{{ street.name }}</span>
         {% if street.district %}<span class="ak-badge ak-badge-muted">{{ street.district.name }}</span>{% endif %}
       </button>

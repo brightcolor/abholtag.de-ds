@@ -37,9 +37,10 @@
           <label class="mr-2 mb-0">Gerät:</label>
           <select name="geraet" class="form-control form-control-sm" onchange="this.form.submit()">
             <option value="">alle</option>
-            {% for device in "desktop mobile tablet bot".split %}
-              <option value="{{ device }}" {% if device_filter == device %}selected{% endif %}>{{ device }}</option>
-            {% endfor %}
+            <option value="desktop" {% if device_filter == "desktop" %}selected{% endif %}>Desktop</option>
+            <option value="mobile" {% if device_filter == "mobile" %}selected{% endif %}>Mobil</option>
+            <option value="tablet" {% if device_filter == "tablet" %}selected{% endif %}>Tablet</option>
+            <option value="bot" {% if device_filter == "bot" %}selected{% endif %}>Bot</option>
           </select>
           <span class="ml-auto text-muted small">{{ start|date:"d.m.Y" }} – {{ end|date:"d.m.Y" }}</span>
         </form>

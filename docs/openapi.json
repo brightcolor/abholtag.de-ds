@@ -1,0 +1,94 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Abfuhrkalender Lübeck – Öffentliche API",
+    "version": "1.0.0",
+    "description": "Versionierte JSON-API für Abfuhrtermine der Hansestadt Lübeck. Keine internen IDs, keine Statistiken, keine Kontaktdaten. Rate-Limits gelten pro Client."
+  },
+  "servers": [{"url": "/api/v1"}],
+  "paths": {
+    "/waste-types": {
+      "get": {
+        "summary": "Aktive Abfallarten",
+        "responses": {"200": {"description": "Liste der Abfallarten", "content": {"application/json": {"schema": {"type": "object", "properties": {"results": {"type": "array", "items": {"$ref": "#/components/schemas/WasteType"}}}}}}}}
+      }
+    },
+    "/streets": {
+      "get": {
+        "summary": "Straßensuche (fehlertolerant)",
+        "parameters": [{"name": "q", "in": "query", "required": true, "schema": {"type": "string", "minLength": 2}}],
+        "responses": {"200": {"description": "Treffer"}, "400": {"$ref": "#/components/responses/Error"}, "429": {"$ref": "#/components/responses/Error"}}
+      }
+    },
+    "/address/resolve": {
+      "get": {
+        "summary": "Adresse auflösen",
+        "parameters": [
+          {"name": "street", "in": "query", "schema": {"type": "string"}},
+          {"name": "street_id", "in": "query", "schema": {"type": "integer"}},
+          {"name": "house_number", "in": "query", "schema": {"type": "string"}},
+          {"name": "district", "in": "query", "schema": {"type": "string"}}
+        ],
+        "responses": {
+          "200": {"description": "Aufgelöste Adresse mit public_id und Bezirken"},
+          "400": {"$ref": "#/components/responses/Error"},
+          "404": {"$ref": "#/components/responses/Error"}
+        }
+      }
+    },
+    "/addresses/{public_id}/collections": {
+      "get": {
+        "summary": "Abfuhrtermine einer Adresse",
+        "parameters": [
+          {"name": "public_id", "in": "path", "required": true, "schema": {"type": "string"}},
+          {"name": "year", "in": "query", "schema": {"type": "integer"}},
+          {"name": "waste_type", "in": "query", "schema": {"type": "string"}},
+          {"name": "limit", "in": "query", "schema": {"type": "integer", "default": 50, "maximum": 200}},
+          {"name": "offset", "in": "query", "schema": {"type": "integer", "default": 0}}
+        ],
+        "responses": {"200": {"description": "Paginierte Terminliste"}, "404": {"$ref": "#/components/responses/Error"}}
+      }
+    },
+    "/zones/{code}/collections": {
+      "get": {
+        "summary": "Termine eines Abfuhrbezirks",
+        "parameters": [
+          {"name": "code", "in": "path", "required": true, "schema": {"type": "string"}},
+          {"name": "year", "in": "query", "schema": {"type": "integer"}},
+          {"name": "waste_type", "in": "query", "schema": {"type": "string"}}
+        ],
+        "responses": {"200": {"description": "Paginierte Terminliste"}, "404": {"$ref": "#/components/responses/Error"}}
+      }
+    },
+    "/reports": {
+      "post": {
+        "summary": "Fehlermeldung einreichen",
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object", "required": ["category", "description"], "properties": {"category": {"type": "string"}, "description": {"type": "string", "minLength": 10}, "public_id": {"type": "string"}, "source": {"type": "string"}, "contact_email": {"type": "string"}}}}}},
+        "responses": {"201": {"description": "Meldung angelegt (liefert Vorgangs-Token)"}, "400": {"$ref": "#/components/responses/Error"}, "429": {"$ref": "#/components/responses/Error"}}
+      }
+    },
+    "/corrections": {
+      "post": {
+        "summary": "Strukturierten Korrekturvorschlag einreichen",
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object", "required": ["kind", "reason"], "properties": {"kind": {"type": "string"}, "reason": {"type": "string", "minLength": 10}, "old_value": {"type": "object"}, "new_value": {"type": "object"}, "source_url": {"type": "string"}}}}}},
+        "responses": {"201": {"description": "Vorschlag angelegt"}, "400": {"$ref": "#/components/responses/Error"}}
+      }
+    },
+    "/proposals/{id}/confirm": {
+      "post": {
+        "summary": "Vorschlag bestätigen (Quorum)",
+        "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "integer"}}],
+        "responses": {"200": {"description": "Bestätigung gezählt oder bereits vorhanden"}, "404": {"$ref": "#/components/responses/Error"}}
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "WasteType": {"type": "object", "properties": {"slug": {"type": "string"}, "name": {"type": "string"}, "icon": {"type": "string"}, "color": {"type": "string"}}},
+      "Error": {"type": "object", "properties": {"error": {"type": "object", "properties": {"code": {"type": "string"}, "message": {"type": "string"}}}}}
+    },
+    "responses": {
+      "Error": {"description": "Fehlerobjekt", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Error"}}}}
+    }
+  }
+}
