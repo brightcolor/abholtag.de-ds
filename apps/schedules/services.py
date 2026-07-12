@@ -10,9 +10,9 @@ from apps.addresses.services import zones_for_address_key
 from .models import CollectionDate, ScheduleYear, ScheduleYearStatus
 
 
-def published_dates_for_address(address_key: AddressKey, waste_type=None, year: int | None = None):
+def published_dates_for_address(address_key: AddressKey, waste_types=None, year: int | None = None):
     """All published, non-cancelled dates for an address (all matching zones)."""
-    zones = zones_for_address_key(address_key, waste_type=waste_type)
+    zones = zones_for_address_key(address_key, waste_types=waste_types)
     qs = (
         CollectionDate.objects.filter(
             zone__in=zones,
@@ -27,9 +27,9 @@ def published_dates_for_address(address_key: AddressKey, waste_type=None, year: 
     return qs
 
 
-def feed_dates_for_address(address_key: AddressKey, waste_type=None):
+def feed_dates_for_address(address_key: AddressKey, waste_types=None):
     """Dates for ICS feeds – includes cancelled dates so clients remove them."""
-    zones = zones_for_address_key(address_key, waste_type=waste_type)
+    zones = zones_for_address_key(address_key, waste_types=waste_types)
     return (
         CollectionDate.objects.filter(
             zone__in=zones, schedule_year__status=ScheduleYearStatus.PUBLISHED
@@ -39,9 +39,11 @@ def feed_dates_for_address(address_key: AddressKey, waste_type=None):
     )
 
 
-def upcoming_dates_for_address(address_key: AddressKey, waste_type=None, limit: int = 10):
+def upcoming_dates_for_address(address_key: AddressKey, waste_types=None, limit: int = 10):
     today = date_cls.today()
-    return list(published_dates_for_address(address_key, waste_type).filter(date__gte=today)[:limit])
+    return list(
+        published_dates_for_address(address_key, waste_types).filter(date__gte=today)[:limit]
+    )
 
 
 def data_status():

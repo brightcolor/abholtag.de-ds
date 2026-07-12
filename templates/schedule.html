@@ -34,16 +34,22 @@
                     Bezirk {{ zone.code }}
                   </span>
                 {% endfor %}
-                {% if waste_type %}
-                  <span class="ak-badge ak-badge-accent">
-                    <i class="{{ waste_type.icon }}" aria-hidden="true"></i>
-                    {{ waste_type.name }}
-                  </span>
-                {% endif %}
+              </div>
+              <div class="ak-type-chips mt-2" aria-label="Abfallarten filtern">
+                {% for chip in chips %}
+                  <a class="ak-type-chip-link {% if chip.active %}active{% endif %}"
+                     href="{{ chip.url }}"
+                     title="{{ chip.waste_type.name }} {% if chip.active %}ausblenden{% else %}einblenden{% endif %}">
+                    <span class="dot" style="background: {{ chip.waste_type.color }};" aria-hidden="true"></span>
+                    <i class="{{ chip.waste_type.icon }}" aria-hidden="true"></i>
+                    {{ chip.waste_type.name }}
+                    {% if chip.active %}<i class="fa-solid fa-check" aria-hidden="true"></i>{% endif %}
+                  </a>
+                {% endfor %}
               </div>
             </div>
             <a class="ak-btn ak-btn-primary"
-               href="/a/{{ address_key.public_id }}/kalender/{% if waste_type %}?abfallart={{ waste_type.slug }}{% endif %}">
+               href="/a/{{ address_key.public_id }}/kalender/{% if arten_param %}?arten={{ arten_param }}{% endif %}">
               <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>
               Kalender abonnieren
             </a>
@@ -150,11 +156,11 @@
         <div class="ak-card-header"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Aktionen</div>
         <div class="ak-card-body d-flex flex-wrap" style="gap: .5rem;">
           <a class="ak-btn ak-btn-primary"
-             href="/a/{{ address_key.public_id }}/kalender/{% if waste_type %}?abfallart={{ waste_type.slug }}{% endif %}">
+             href="/a/{{ address_key.public_id }}/kalender/{% if arten_param %}?arten={{ arten_param }}{% endif %}">
             <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> Kalender abonnieren
           </a>
           <a class="ak-btn ak-btn-outline"
-             href="/calendar/address/{{ address_key.public_id }}/{% if waste_type %}{{ waste_type.slug }}{% else %}all{% endif %}.ics?download=1">
+             href="/calendar/address/{{ address_key.public_id }}/all.ics?download=1{% if arten_param %}&arten={{ arten_param }}{% endif %}">
             <i class="fa-solid fa-download" aria-hidden="true"></i> ICS-Datei
           </a>
           <button type="button" class="ak-btn ak-btn-outline"
@@ -162,7 +168,7 @@
             <i class="fa-solid fa-link" aria-hidden="true"></i> Link kopieren
           </button>
           <a class="ak-btn ak-btn-outline"
-             href="/melden/?adresse={{ address_key.public_id }}{% if waste_type %}&abfallart={{ waste_type.slug }}{% endif %}">
+             href="/melden/?adresse={{ address_key.public_id }}">
             <i class="fa-solid fa-flag" aria-hidden="true"></i> Fehler melden
           </a>
         </div>

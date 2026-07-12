@@ -368,6 +368,39 @@ a:hover { color: var(--ak-brand-strong); text-decoration: none; }
   align-self: center;
 }
 
+/* --------------------------------------------------------------------------
+   Abfallarten-Chips (Mehrfachauswahl auf Start- und Terminseite)
+   -------------------------------------------------------------------------- */
+.ak-type-chips { display: flex; flex-wrap: wrap; gap: var(--ak-sp-2); }
+.ak-type-chip input { position: absolute; opacity: 0; pointer-events: none; }
+.ak-type-chip > span,
+.ak-type-chip-link {
+  display: inline-flex; align-items: center; gap: 0.45em;
+  padding: 0.45em 0.9em;
+  border-radius: 999px;
+  border: 1px solid var(--ak-border-strong);
+  background: var(--ak-bg-raised);
+  color: var(--ak-text-muted);
+  font-size: var(--ak-fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--ak-transition);
+  user-select: none;
+}
+.ak-type-chip .dot, .ak-type-chip-link .dot {
+  width: 10px; height: 10px; border-radius: 50%; flex: 0 0 10px;
+  display: inline-block; padding: 0; border: 0;
+}
+.ak-type-chip input:checked + span,
+.ak-type-chip-link.active {
+  border-color: var(--ak-brand);
+  background: var(--ak-brand-soft);
+  color: var(--ak-brand-strong);
+}
+.ak-type-chip input:focus-visible + span { outline: 3px solid var(--ak-brand); outline-offset: 2px; }
+.ak-type-chip-link:hover { border-color: var(--ak-brand); color: var(--ak-brand); text-decoration: none; }
+.ak-type-chip-link:not(.active) { opacity: 0.65; }
+
 /* Tabs (Abo-Anleitungen) */
 .ak-tabs { display: flex; gap: var(--ak-sp-1); flex-wrap: wrap; border-bottom: 1px solid var(--ak-border); }
 .ak-tab {

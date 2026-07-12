@@ -12,6 +12,28 @@ from apps.waste_types.models import WasteType
 from .services import data_status, published_dates_for_address
 
 
+def selected_waste_types(request):
+    """Parse the multi-select waste type filter.
+
+    Sources (in order): repeated ``arten`` values (checkboxes), a comma
+    separated ``arten`` value (links/feeds), legacy single ``abfallart``.
+    Returns (queryset, slugs) – empty slugs means "all active types".
+    """
+    raw: list[str] = []
+    for value in request.GET.getlist("arten"):
+        raw += [part.strip() for part in value.split(",") if part.strip()]
+    if not raw and request.GET.get("abfallart"):
+        raw = [request.GET["abfallart"]]
+    active = WasteType.objects.filter(is_active=True)
+    selected = active.filter(slug__in=raw) if raw else active.none()
+    slugs = sorted(wt.slug for wt in selected)
+    if slugs and len(slugs) == active.count():
+        return active, []  # alle ausgewählt = kein Filter
+    if not slugs:
+        return active, []
+    return selected, slugs
+
+
 def home(request):
     record_event(request, "page_view")
     # random real street names for the search field typewriter demo
@@ -33,7 +55,6 @@ def resolve(request):
     """Resolves street + house number and redirects to the address page."""
     street_id = request.GET.get("street_id")
     house_raw = request.GET.get("house_number", "")
-    waste_slug = request.GET.get("waste_type", "")
 
     street = Street.objects.filter(pk=street_id, is_active=True).first() if street_id else None
     if street is None:
@@ -41,8 +62,8 @@ def resolve(request):
         return render(request, "resolve_failed.html", {"error": "Bitte wählen Sie eine Straße aus der Vorschlagsliste aus."}, status=400)
 
     number, suffix = parse_house_number(house_raw)
-    waste_type = WasteType.objects.filter(slug=waste_slug, is_active=True).first()
-    result = resolve_address(street, number, suffix, waste_type=waste_type)
+    waste_types, selected_slugs = selected_waste_types(request)
+    result = resolve_address(street, number, suffix, waste_types=waste_types if selected_slugs else None)
 
     if result.needs_house_number:
         return render(
@@ -57,8 +78,8 @@ def resolve(request):
 
     record_event(request, "address_resolved", street=street, address_key=result.address_key)
     url = f"/a/{result.address_key.public_id}/"
-    if waste_type:
-        url += f"?abfallart={waste_type.slug}"
+    if selected_slugs:
+        url += "?arten=" + ",".join(selected_slugs)
     return redirect(url)
 
 
@@ -97,30 +118,47 @@ def address_schedule(request, public_id):
     except Exception:  # noqa: BLE001
         pass
 
-    waste_slug = request.GET.get("abfallart", "")
-    waste_type = WasteType.objects.filter(slug=waste_slug, is_active=True).first()
+    waste_types, selected_slugs = selected_waste_types(request)
+    filter_types = waste_types if selected_slugs else None
 
-    all_dates = list(published_dates_for_address(address_key, waste_type))
+    all_dates = list(published_dates_for_address(address_key, filter_types))
     today = date_cls.today()
     upcoming = [d for d in all_dates if d.date >= today]
     next_date = upcoming[0] if upcoming else None
     zones = sorted({d.zone for d in all_dates}, key=lambda z: z.code)
     years = sorted({d.schedule_year.year for d in all_dates})
 
+    # Filter-Chips: Klick schaltet die jeweilige Abfallart um
+    active_types = list(WasteType.objects.filter(is_active=True))
+    current = set(selected_slugs) if selected_slugs else {wt.slug for wt in active_types}
+    chips = []
+    for wt in active_types:
+        toggled = sorted(current - {wt.slug} if wt.slug in current else current | {wt.slug})
+        if not toggled:
+            toggled = [wt.slug]  # mindestens eine Art bleibt aktiv
+        param = "" if len(toggled) == len(active_types) else "?arten=" + ",".join(toggled)
+        chips.append({
+            "waste_type": wt,
+            "active": wt.slug in current,
+            "url": f"/a/{address_key.public_id}/{param}",
+        })
+    arten_param = ",".join(selected_slugs)
+
     record_event(
         request,
         "schedule_view",
         street=address_key.street,
         address_key=address_key,
-        waste_type=waste_type,
+        waste_type=waste_types.first() if selected_slugs else None,
     )
     return render(
         request,
         "schedule.html",
         {
             "address_key": address_key,
-            "waste_type": waste_type,
-            "waste_types": WasteType.objects.filter(is_active=True),
+            "selected_slugs": selected_slugs,
+            "arten_param": arten_param,
+            "chips": chips,
             "zones": zones,
             "next_date": next_date,
             "days_until_next": (next_date.date - today).days if next_date else None,

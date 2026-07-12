@@ -3,6 +3,115 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.5.0] - 2026-07-13
+
+### Hinzugefügt
+- **Mehrfachauswahl der Abfallarten**: Auf der Startseite ersetzt eine
+  Chip-Auswahl (alle standardmäßig aktiv) das Einzel-Dropdown; die Terminseite
+  hat umschaltbare Filter-Chips je Abfallart. Die Auswahl wandert als
+  `?arten=slug1,slug2` durch Terminliste, Jahresübersicht, Abo-Seite,
+  ICS-Download und den kombinierten Feed (`all.ics?arten=…`); die API
+  akzeptiert `waste_type` jetzt auch als Kommaliste. Einzel-Feeds und der
+  Legacy-Parameter `abfallart` funktionieren unverändert.
+
+## [0.4.0] - 2026-07-13
+
+### Hinzugefügt
+- **Live-Fallback mit Cache (BMS)**: Ruft eine Adresse eine Straße auf, der
+  für Restabfall/Bioabfall/Papier noch die Zuordnung fehlt, wird der
+  BMS-ICS-Feed einmalig live geholt und dauerhaft ins Zonenmodell übernommen
+  (identisches Terminmuster → bestehende Zone, sonst neue). Tagesdrossel je
+  Straße + Disk-Cache verhindern unnötige Anfragen an insert-it.de;
+  Upstream-Ausfälle beeinträchtigen den Seitenaufbau nicht. Ergänzt nur in
+  bereits veröffentlichte Jahrespläne (Review-Prinzip bleibt gewahrt).
+
+### Geändert
+- **Typewriter läuft immer**: Der statische prefers-reduced-motion-Fallback
+  entfiel als Produktentscheidung (unter Windows ist die Einstellung oft
+  systemweit aktiv, wodurch der Effekt „verschwand"). Screenreader erhalten
+  weiterhin den statischen sr-only-Text.
+
+## [0.3.0] - 2026-07-13
+
+### Hinzugefügt
+- **Restabfall, Bioabfall und Papier (PPK) sind live** – in Terminansicht,
+  Jahresübersicht, Druckansicht und allen ICS-Feeds (`all.ics` sowie je
+  Abfallart, z. B. `/calendar/address/<id>/restabfall.ics`).
+- Neues Command `import_bms_schedules --year <jahr>`: ruft den BMS-ICS-Feed
+  für eine Location je Straße ab (≤4 parallel, Disk-Cache, Retries), clustert
+  identische Terminmuster je Abfallart zu Abfuhrbezirken (2026: Restabfall 48,
+  Bioabfall 33, Papier 48 Zonen) und erzeugt Zuordnungen + Jahrespläne mit dem
+  gewohnten Review-/Publish-Gate. Re-Runs bauen die abgeleiteten
+  BMS-Zuordnungen neu auf; manuelle Korrekturen bleiben erhalten.
+- Kreuzvalidierung: gespeicherte Termine sind 1:1 identisch mit dem
+  EBL-Quell-ICS (stichprobenverifiziert).
+
+### Hinweis
+- Je Straße wird eine Location gesampelt; sollte eine Straße hausnummern-
+  abhängig auf mehrere Touren aufgeteilt sein, gilt das Muster der Probe.
+  Der Direktlink zum offiziellen EBL-Kalender dient als Gegencheck.
+
+## [0.2.0] - 2026-07-12
+
+### Hinzugefügt
+- **BMS-Adressstamm (EBL-Online-Abfallkalender)**: neues Management-Command
+  `import_bms_addresses` importiert 2.594 Straßen (bmsStreetId) und 45.054
+  Hausnummern (bmsLocationId) aus `data/bms/*.json` oder live per `--scrape`
+  (User-Agent, max. 4 parallel, Retries, 404-Sonderfall Geniner Ufer).
+  Neues Modell `HouseNumber`, `Street.bms_street_id`; geteilte Location-IDs
+  werden unterstützt. 1.705 PDF-Straßen automatisch verknüpft.
+- **Abfallarten vorbereitet**: Restabfall, Bioabfall, Papier (PPK) als inaktive
+  WasteTypes angelegt; der BMS-ICS-Endpunkt (`Main/Calender`) liefert deren
+  Termine je Adresse und ist in docs/ANALYSE.md dokumentiert (Zonen-Clustering
+  als nächster Schritt).
+- **Terminseite**: Direktlink zum offiziellen EBL-Kalender der aufgelösten
+  Adresse (bmsStreetId + bmsLocationId), sofern die Hausnummer im
+  BMS-Datenbestand existiert.
+
+### Behoben
+- 9 Artefakt-Straßen aus dem PDF-Import (verschmolzene Doppelnamen,
+  Bereichsfragmente) deaktiviert und zur Prüfung markiert.
+
+## [0.1.3] - 2026-07-12
+
+### Hinzugefügt
+- **Typewriter-Startseite**: Die Überschrift heißt jetzt korrekt
+  "Wann wird … abgeholt?" und tippt rotierend die Abfallarten (Gelber Sack,
+  Blaue/Graue/Braune/Gelbe Tonne, Restmüll, Bio-Tonne, Biomüll). Das Farbwort
+  erscheint in der Tonnenfarbe, "Tonne"/"Sack" in Standardfarbe; Gelb erhält
+  einen schwarzen, beim Tippen mitwachsenden Hintergrund (Lesbarkeit).
+- **Suchfeld-Typewriter**: Zufällige echte Straßennamen werden als Platzhalter
+  getippt und gelöscht, bis das Feld fokussiert wird oder Eingabe erfolgt.
+- Beide Effekte respektieren prefers-reduced-motion (statischer Fallback) und
+  sind für Screenreader ausgeblendet (statischer sr-only-Text).
+
+## [0.1.2] - 2026-07-12
+
+### Behoben
+- **Sperrschrift-Straßennamen**: ~1.300 Zeilen der PDF-Straßenliste sind gesperrt
+  gedruckt ("K a h l h o r s t s t r .") und wurden bisher fehlerhaft übernommen.
+  Der Parser rekonstruiert sie jetzt zuverlässig (Kollaps + Wortgrenzen an
+  Großbuchstaben/Ziffern, zusammengesetzte Präpositionen wie "An der",
+  Fragment-Zusammenführung); B/G-Doppelbezirke in Sperrschrift-Zeilen (99 statt
+  30 Innenstadt-Straßen) werden korrekt erkannt. Straßenstamm muss einmalig neu
+  geseedet werden (docs/BETRIEB.md).
+- Fehlende FontAwesome-TTF-Webfonts vendoriert (collectstatic/Manifest-Storage
+  schlug im Docker-Build fehl).
+
+## [0.1.1] – 2026-07-12
+
+### Hinzugefügt
+- Eigenständiges Repository `abholtag.de-claude` mit bereinigter Struktur
+  (nur Root-Layout: `manage.py`, `Dockerfile`, `docker-compose.yml` im Stamm).
+- CI baut und veröffentlicht Docker-Images nach
+  `ghcr.io/brightcolor/abholtag.de-claude` (latest auf main, SemVer bei Tags,
+  GHA-Layer-Cache).
+
+### Behoben
+- Autocomplete: Nach Auswahl eines Straßenvorschlags springt der Fokus in das
+  Hausnummernfeld (deutlicheres Feedback); Asset-Versionierung `?v=2` verhindert,
+  dass Browser ein veraltetes `app.js` aus dem Cache verwenden.
+
 ## [0.1.0] – 2026-07-12
 
 Erste lauffähige Version der Root-Layout-Variante (`config/` + `apps/`).

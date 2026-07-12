@@ -103,3 +103,54 @@ def test_analytics_event_recorded(client, setup):
 
     client.get("/")
     assert AnalyticsEvent.objects.filter(event_type="page_view").exists()
+
+
+def test_multi_waste_type_filter(client, setup):
+    """Mehrfachauswahl: arten=… filtert Terminliste und Chips (§8, Mehrfachliste)."""
+    from apps.core.models import Origin
+    from apps.schedules.models import CollectionDate, CollectionZone, ScheduleYear, ScheduleYearStatus
+    from apps.waste_types.models import WasteType
+    from datetime import date
+
+    bio = WasteType.objects.get(slug="bioabfall")
+    bio.is_active = True
+    bio.save()
+    zone = CollectionZone.objects.create(waste_type=bio, code="B01")
+    year = ScheduleYear.objects.create(waste_type=bio, year=2030, status=ScheduleYearStatus.PUBLISHED)
+    CollectionDate.objects.create(schedule_year=year, zone=zone, date=date(2030, 6, 1), origin=Origin.OFFICIAL_IMPORT)
+    from apps.addresses.models import StreetAssignment
+    StreetAssignment.objects.create(street=setup["street"], zone=zone)
+
+    public_id = setup["address_key"].public_id
+    # ohne Filter: beide Arten sichtbar
+    both = client.get(f"/a/{public_id}/").content.decode()
+    assert "06.05.2030" in both and "01.06.2030" in both
+    # nur Bioabfall
+    only_bio = client.get(f"/a/{public_id}/?arten=bioabfall").content.decode()
+    assert "01.06.2030" in only_bio and "06.05.2030" not in only_bio
+    # zwei Arten explizit
+    two = client.get(f"/a/{public_id}/?arten=bioabfall,gelber-sack").content.decode()
+    assert "01.06.2030" in two and "06.05.2030" in two
+
+
+def test_combined_feed_respects_arten_filter(client, setup):
+    from apps.core.models import Origin
+    from apps.schedules.models import CollectionDate, CollectionZone, ScheduleYear, ScheduleYearStatus
+    from apps.waste_types.models import WasteType
+    from apps.addresses.models import StreetAssignment
+    from datetime import date
+
+    bio = WasteType.objects.get(slug="bioabfall")
+    bio.is_active = True
+    bio.save()
+    zone = CollectionZone.objects.create(waste_type=bio, code="B01")
+    year = ScheduleYear.objects.create(waste_type=bio, year=2030, status=ScheduleYearStatus.PUBLISHED)
+    CollectionDate.objects.create(schedule_year=year, zone=zone, date=date(2030, 6, 1), origin=Origin.OFFICIAL_IMPORT)
+    StreetAssignment.objects.create(street=setup["street"], zone=zone)
+
+    public_id = setup["address_key"].public_id
+    full = client.get(f"/calendar/address/{public_id}/all.ics").content.decode()
+    assert full.count("BEGIN:VEVENT") == 2
+    filtered = client.get(f"/calendar/address/{public_id}/all.ics?arten=bioabfall").content.decode()
+    assert filtered.count("BEGIN:VEVENT") == 1
+    assert "Bioabfall" in filtered and "Gelber Sack" not in filtered

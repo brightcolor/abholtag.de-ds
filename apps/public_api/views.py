@@ -131,12 +131,13 @@ def collections(request, public_id):
             year = int(request.GET["year"])
         except ValueError:
             return _error("Ungültiges Jahr.")
-    waste_type = None
+    waste_types = None
     if request.GET.get("waste_type"):
-        waste_type = WasteType.objects.filter(slug=request.GET["waste_type"]).first()
-        if waste_type is None:
+        slugs = [part.strip() for part in request.GET["waste_type"].split(",") if part.strip()]
+        waste_types = list(WasteType.objects.filter(slug__in=slugs))
+        if len(waste_types) != len(slugs):
             return _error("Abfallart nicht gefunden.", status=404, code="not_found")
-    dates = published_dates_for_address(address_key, waste_type=waste_type, year=year)
+    dates = published_dates_for_address(address_key, waste_types=waste_types, year=year)
     payload = _paginate(
         request,
         dates,

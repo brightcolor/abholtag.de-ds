@@ -22,7 +22,7 @@
           </h1>
           <p style="color: var(--ak-text-muted);">
             Für <strong>{{ address_key.full_label }}</strong>
-            {% if waste_type %} – {{ waste_type.name }}{% endif %}.
+            {% if selected_types %} – {% for wt in selected_types %}{{ wt.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% else %} – alle Abfallarten{% endif %}.
             Einmal eingerichtet, aktualisiert sich der Kalender automatisch:
             Neue Jahrespläne und kurzfristige Änderungen erscheinen ohne weiteres Zutun.
           </p>

@@ -57,21 +57,28 @@
                     Auch „Strasse“, „Str.“ oder „St.“ werden verstanden.
                   </div>
                 </div>
-                <div class="col-md-3 col-6 mb-3">
+                <div class="col-md-6 col-6 mb-3">
                   <label class="ak-form-label" for="hausnr">Hausnummer</label>
                   <input type="text" id="hausnr" name="house_number" class="ak-input"
                          placeholder="z. B. 12a" inputmode="numeric" pattern="\d+\s*[A-Za-z]?"
                          maxlength="8">
                 </div>
-                <div class="col-md-3 col-6 mb-3">
-                  <label class="ak-form-label" for="abfallart">Abfallart</label>
-                  <select id="abfallart" name="waste_type" class="ak-input">
-                    {% for wt in waste_types %}
-                      <option value="{{ wt.slug }}">{{ wt.name }}</option>
-                    {% endfor %}
-                  </select>
-                </div>
               </div>
+              <fieldset class="mb-3">
+                <legend class="ak-form-label" style="font-size: var(--ak-fs-sm);">Abfallarten</legend>
+                <div class="ak-type-chips">
+                  {% for wt in waste_types %}
+                    <label class="ak-type-chip">
+                      <input type="checkbox" name="arten" value="{{ wt.slug }}" checked>
+                      <span>
+                        <span class="dot" style="background: {{ wt.color }};" aria-hidden="true"></span>
+                        <i class="{{ wt.icon }}" aria-hidden="true"></i>
+                        {{ wt.name }}
+                      </span>
+                    </label>
+                  {% endfor %}
+                </div>
+              </fieldset>
               <button type="submit" class="ak-btn ak-btn-primary ak-btn-lg btn-block"
                       data-search-submit title="Bitte zuerst eine Straße aus der Vorschlagsliste wählen">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>

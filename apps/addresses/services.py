@@ -46,14 +46,14 @@ def street_requires_house_number(street: Street) -> bool:
 
 
 def resolve_address(
-    street: Street, house_number: int | None, suffix: str = "", waste_type=None
+    street: Street, house_number: int | None, suffix: str = "", waste_types=None
 ) -> ResolutionResult:
     result = ResolutionResult(street=street)
     assignments = street.assignments.filter(status=AssignmentStatus.ACTIVE).select_related(
         "zone", "zone__waste_type"
     )
-    if waste_type is not None:
-        assignments = assignments.filter(zone__waste_type=waste_type)
+    if waste_types:
+        assignments = assignments.filter(zone__waste_type__in=waste_types)
 
     if street_requires_house_number(street) and house_number is None:
         result.needs_house_number = True
@@ -74,11 +74,11 @@ def resolve_address(
     return result
 
 
-def zones_for_address_key(address_key: AddressKey, waste_type=None):
+def zones_for_address_key(address_key: AddressKey, waste_types=None):
     assignments = StreetAssignment.objects.filter(
         street=address_key.street, status=AssignmentStatus.ACTIVE
     ).select_related("zone", "zone__waste_type")
-    if waste_type is not None:
-        assignments = assignments.filter(zone__waste_type=waste_type)
+    if waste_types:
+        assignments = assignments.filter(zone__waste_type__in=waste_types)
     zones = {a.zone_id: a.zone for a in assignments if a.matches(address_key.house_number)}
     return sorted(zones.values(), key=lambda z: z.code)
