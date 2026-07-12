@@ -1,0 +1,101 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}Systemstatus{% endblock %}
+
+{% block content %}
+<div class="content-header">
+  <div class="container-fluid">
+    <h1 class="m-0"><i class="fas fa-heart-pulse text-teal mr-2"></i>Systemstatus</h1>
+  </div>
+</div>
+
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="row">
+      {% for check in checks %}
+        <div class="col-md-4 col-sm-6">
+          <div class="info-box">
+            <span class="info-box-icon {% if check.ok %}bg-success{% else %}bg-danger{% endif %}">
+              <i class="fas {% if check.ok %}fa-check{% else %}fa-xmark{% endif %}"></i>
+            </span>
+            <div class="info-box-content">
+              <span class="info-box-text">{{ check.name }}</span>
+              <span class="info-box-number small">{{ check.detail }}</span>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header"><h3 class="card-title"><i class="fas fa-plug mr-2"></i>Datenquellen</h3></div>
+          <div class="card-body p-0">
+            <table class="table table-sm table-striped mb-0">
+              <thead><tr><th>Quelle</th><th>Letzte Prüfung</th><th>Ergebnis</th></tr></thead>
+              <tbody>
+                {% for source in sources %}
+                  <tr>
+                    <td>{{ source.name }}</td>
+                    <td>{{ source.last_checked_at|date:"d.m.Y H:i"|default:"–" }}</td>
+                    <td class="small">{{ source.last_status|default:"–" }}</td>
+                  </tr>
+                {% empty %}<tr><td colspan="3" class="text-muted p-3">Keine aktiven Quellen.</td></tr>{% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><h3 class="card-title"><i class="fas fa-file-pdf mr-2"></i>Archivierte Dokumente</h3></div>
+          <div class="card-body p-0">
+            <table class="table table-sm table-striped mb-0">
+              <thead><tr><th>Dokument</th><th>Jahr</th><th>Status</th></tr></thead>
+              <tbody>
+                {% for document in documents %}
+                  <tr>
+                    <td>{{ document.fetched_at|date:"d.m.Y H:i" }}</td>
+                    <td>{{ document.detected_year|default:"?" }}</td>
+                    <td><span class="badge badge-secondary">{{ document.get_status_display }}</span></td>
+                  </tr>
+                {% empty %}<tr><td colspan="3" class="text-muted p-3">Noch keine Dokumente archiviert.</td></tr>{% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header"><h3 class="card-title"><i class="fas fa-file-import mr-2"></i>Letzte Importläufe</h3></div>
+          <div class="card-body p-0">
+            <table class="table table-sm table-striped mb-0">
+              <thead><tr><th>#</th><th>Parser</th><th>Status</th><th>Zeit</th><th></th></tr></thead>
+              <tbody>
+                {% for run in import_runs %}
+                  <tr>
+                    <td>{{ run.pk }}</td>
+                    <td><code>{{ run.parser_key }}</code></td>
+                    <td>
+                      {% if run.status == "completed" %}<span class="badge badge-success">{{ run.get_status_display }}</span>
+                      {% elif run.status == "needs_review" %}<span class="badge badge-warning">{{ run.get_status_display }}</span>
+                      {% else %}<span class="badge badge-danger">{{ run.get_status_display }}</span>{% endif %}
+                    </td>
+                    <td class="small">{{ run.started_at|date:"d.m.Y H:i" }}</td>
+                    <td class="text-right">
+                      <a class="btn btn-xs btn-outline-primary" href="/admin/imports/importrun/{{ run.pk }}/change/">Details</a>
+                    </td>
+                  </tr>
+                {% empty %}<tr><td colspan="5" class="text-muted p-3">Noch keine Importläufe.</td></tr>{% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

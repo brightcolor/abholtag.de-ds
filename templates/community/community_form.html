@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Community-Erfassung – {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="row"><div class="col-lg-7 mx-auto">
+    <div class="ak-card"><div class="ak-card-body">
+      <h1 class="h3" style="font-weight: 800;">
+        <i class="fa-solid fa-hands-helping" style="color: var(--ak-brand);" aria-hidden="true"></i>
+        Termine gemeinsam erfassen
+      </h1>
+      <div class="ak-alert ak-alert-warning mb-3">
+        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+        <div>Der offizielle Plan kann derzeit nicht automatisch verarbeitet werden.
+        Helfen Sie mit, die Termine zu erfassen – alle Einträge werden vor Veröffentlichung geprüft.</div>
+      </div>
+      <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {{ form.website }}{{ form.form_started }}
+        {% if form.non_field_errors %}
+          <div class="ak-alert ak-alert-danger mb-3">{{ form.non_field_errors|join:" " }}</div>
+        {% endif %}
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label class="ak-form-label">Abfallart</label>{{ form.waste_type }}
+          </div>
+          <div class="col-md-3 col-6 mb-3">
+            <label class="ak-form-label">Jahr</label>{{ form.year }}
+          </div>
+          <div class="col-md-3 col-6 mb-3">
+            <label class="ak-form-label">Bezirk/Tour</label>{{ form.zone_code }}
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3"><label class="ak-form-label">Datum</label>{{ form.date }}</div>
+          <div class="col-md-8 mb-3"><label class="ak-form-label">Straße (optional)</label>{{ form.street_text }}</div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3"><label class="ak-form-label">Ortsteil (optional)</label>{{ form.district_text }}</div>
+          <div class="col-md-6 mb-3"><label class="ak-form-label">Hausnummernbereich (optional)</label>{{ form.house_range }}</div>
+        </div>
+        <div class="mb-3"><label class="ak-form-label">Anmerkung</label>{{ form.note }}</div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3"><label class="ak-form-label">Quelle</label>{{ form.source_hint }}</div>
+          <div class="col-md-6 mb-3">
+            <label class="ak-form-label">Beleg (Foto/PDF, optional)</label>{{ form.evidence }}
+            {% if form.evidence.errors %}<div class="ak-field-error">{{ form.evidence.errors|join:" " }}</div>{% endif %}
+          </div>
+        </div>
+        <div class="mb-4"><label class="ak-form-label">E-Mail (optional)</label>{{ form.contact_email }}</div>
+        <button type="submit" class="ak-btn ak-btn-primary ak-btn-lg btn-block">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Eintrag einreichen
+        </button>
+      </form>
+    </div></div>
+  </div></div>
+</div>
+{% endblock %}

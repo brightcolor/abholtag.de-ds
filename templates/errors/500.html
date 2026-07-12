@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Fehler – {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row"><div class="col-lg-6 mx-auto">
+    <div class="ak-card"><div class="ak-card-body text-center">
+      <i class="fa-solid fa-triangle-exclamation" style="font-size: 2.6rem; color: var(--ak-warning);" aria-hidden="true"></i>
+      <h1 class="h4 mt-3" style="font-weight: 800;">Da ist etwas schiefgelaufen</h1>
+      <p style="color: var(--ak-text-muted);">
+        Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es in wenigen Minuten erneut.
+      </p>
+      <a href="/" class="ak-btn ak-btn-primary mt-2">Zur Startseite</a>
+    </div></div>
+  </div></div>
+</div>
+{% endblock %}

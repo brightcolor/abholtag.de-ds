@@ -1,0 +1,212 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}Nutzungsstatistik{% endblock %}
+
+{% block content %}
+<div class="content-header">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <h1 class="m-0"><i class="fas fa-chart-line text-teal mr-2"></i>Nutzungsstatistik</h1>
+    <a class="btn btn-outline-secondary btn-sm" href="/intern/statistik/export.csv?zeitraum={{ request.GET.zeitraum|default:'30' }}">
+      <i class="fas fa-file-csv mr-1"></i> CSV-Export
+    </a>
+  </div>
+</div>
+
+<section class="content">
+  <div class="container-fluid">
+
+    {# ---------- Filter ---------- #}
+    <div class="card card-outline card-teal mb-3">
+      <div class="card-body py-2">
+        <form method="get" class="form-inline">
+          <label class="mr-2 mb-0">Zeitraum:</label>
+          <select name="zeitraum" class="form-control form-control-sm mr-3" onchange="this.form.submit()">
+            <option value="7" {% if request.GET.zeitraum == "7" %}selected{% endif %}>7 Tage</option>
+            <option value="30" {% if request.GET.zeitraum == "30" or not request.GET.zeitraum %}selected{% endif %}>30 Tage</option>
+            <option value="90" {% if request.GET.zeitraum == "90" %}selected{% endif %}>90 Tage</option>
+            <option value="365" {% if request.GET.zeitraum == "365" %}selected{% endif %}>1 Jahr</option>
+          </select>
+          <label class="mr-2 mb-0">Ereignis:</label>
+          <select name="ereignis" class="form-control form-control-sm mr-3" onchange="this.form.submit()">
+            <option value="">alle</option>
+            {% for value, label in event_types %}
+              <option value="{{ value }}" {% if event_filter == value %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+          </select>
+          <label class="mr-2 mb-0">Gerät:</label>
+          <select name="geraet" class="form-control form-control-sm" onchange="this.form.submit()">
+            <option value="">alle</option>
+            {% for device in "desktop mobile tablet bot".split %}
+              <option value="{{ device }}" {% if device_filter == device %}selected{% endif %}>{{ device }}</option>
+            {% endfor %}
+          </select>
+          <span class="ml-auto text-muted small">{{ start|date:"d.m.Y" }} – {{ end|date:"d.m.Y" }}</span>
+        </form>
+      </div>
+    </div>
+
+    {# ---------- Übersichtskarten ---------- #}
+    <div class="row">
+      <div class="col-md-3 col-sm-6"><div class="small-box bg-teal">
+        <div class="inner"><h3>{{ cards.views_today }}</h3><p>Aufrufe heute</p></div>
+        <div class="icon"><i class="fas fa-eye"></i></div></div></div>
+      <div class="col-md-3 col-sm-6"><div class="small-box bg-info">
+        <div class="inner"><h3>{{ cards.views_week }}</h3><p>Aufrufe diese Woche</p></div>
+        <div class="icon"><i class="fas fa-calendar-week"></i></div></div></div>
+      <div class="col-md-3 col-sm-6"><div class="small-box bg-primary">
+        <div class="inner"><h3>{{ cards.resolved_month }}</h3><p>Adressauflösungen (30 T.)</p></div>
+        <div class="icon"><i class="fas fa-house-circle-check"></i></div></div></div>
+      <div class="col-md-3 col-sm-6"><div class="small-box bg-warning">
+        <div class="inner"><h3>{{ cards.no_result_month }}</h3><p>Suchen ohne Ergebnis (30 T.)</p></div>
+        <div class="icon"><i class="fas fa-magnifying-glass-minus"></i></div></div></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6"><div class="info-box">
+        <span class="info-box-icon bg-success"><i class="fas fa-rss"></i></span>
+        <div class="info-box-content"><span class="info-box-text">Feed-Abrufe (30 T.)</span>
+        <span class="info-box-number">{{ cards.feed_month }}</span></div></div></div>
+      <div class="col-md-3 col-sm-6"><div class="info-box">
+        <span class="info-box-icon bg-success"><i class="fas fa-calendar-plus"></i></span>
+        <div class="info-box-content"><span class="info-box-text">Aktive Abos (geschätzt)</span>
+        <span class="info-box-number">{{ cards.active_subscriptions }}</span></div></div></div>
+      <div class="col-md-3 col-sm-6"><div class="info-box">
+        <span class="info-box-icon bg-danger"><i class="fas fa-bug"></i></span>
+        <div class="info-box-content"><span class="info-box-text">Offene Fehlermeldungen</span>
+        <span class="info-box-number">{{ cards.open_reports }}</span></div></div></div>
+      <div class="col-md-3 col-sm-6"><div class="info-box">
+        <span class="info-box-icon bg-secondary"><i class="fas fa-edit"></i></span>
+        <div class="info-box-content"><span class="info-box-text">Offene Vorschläge</span>
+        <span class="info-box-number">{{ cards.open_proposals }}</span></div></div></div>
+    </div>
+
+    {# ---------- Zeitverlauf ---------- #}
+    <div class="card">
+      <div class="card-header"><h3 class="card-title"><i class="fas fa-chart-area mr-2"></i>Nutzung im Zeitverlauf</h3></div>
+      <div class="card-body">
+        <canvas id="usageChart" height="80" role="img"
+                aria-label="Liniendiagramm der Ereignisse pro Tag; die Daten stehen in der Tabelle unterhalb."></canvas>
+        <details class="mt-2">
+          <summary class="text-muted small">Daten als Tabelle (barrierefrei)</summary>
+          <table class="table table-sm table-striped mt-2" style="max-width: 420px;">
+            <thead><tr><th>Ereignistyp</th><th class="text-right">Anzahl</th></tr></thead>
+            <tbody>
+              {% for row in per_type %}
+                <tr><td>{{ row.event_type }}</td><td class="text-right">{{ row.n }}</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </details>
+      </div>
+    </div>
+
+    {# ---------- Tabellen ---------- #}
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Meistgesuchte Ortsteile</h3></div>
+          <div class="card-body p-0">
+            <table class="table table-sm table-striped mb-0">
+              <tbody>
+                {% for row in top_districts %}
+                  <tr><td>{{ row.district__name }}</td><td class="text-right">{{ row.n }}</td></tr>
+                {% empty %}<tr><td class="text-muted p-3">Noch keine Daten.</td></tr>{% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Meistgesuchte Straßen</h3></div>
+          <div class="card-body p-0">
+            <table class="table table-sm table-striped mb-0">
+              <tbody>
+                {% for row in top_streets %}
+                  <tr><td>{{ row.street__name }}</td><td class="text-right">{{ row.n }}</td></tr>
+                {% empty %}<tr><td class="text-muted p-3">Noch keine Daten.</td></tr>{% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Suchen ohne Ergebnis</h3></div>
+          <div class="card-body p-0">
+            <table class="table table-sm table-striped mb-0">
+              <tbody>
+                {% for row in top_no_result %}
+                  <tr><td><code>{{ row.query }}</code></td><td class="text-right">{{ row.n }}</td></tr>
+                {% empty %}<tr><td class="text-muted p-3">Keine erfolglosen Suchen. 🎉</td></tr>{% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Kalender-Clients</h3></div>
+          <div class="card-body p-0">
+            <table class="table table-sm table-striped mb-0">
+              <tbody>
+                {% for row in clients %}
+                  <tr><td>{{ row.calendar_client }}</td><td class="text-right">{{ row.n }}</td></tr>
+                {% empty %}<tr><td class="text-muted p-3">Noch keine Feed-Abrufe.</td></tr>{% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card card-outline card-secondary">
+          <div class="card-header"><h3 class="card-title"><i class="fas fa-shield-halved mr-2"></i>Datenschutz</h3></div>
+          <div class="card-body text-muted small">
+            Diese Statistik basiert auf anonymen Ereignissen ohne IP-Adressen mit täglich rotierendem
+            Sitzungs-Hash. Roh-Ereignisse werden nach {{ 90 }} Tagen gelöscht (siehe
+            <code>purge_old_analytics</code>), langfristig bleiben nur Tagesaggregate.
+            „Aktive Abos“ ist eine Schätzung: Adress-Client-Paare mit Feed-Abrufen an mindestens
+            zwei verschiedenen Tagen innerhalb von drei Wochen.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="{% static 'vendor/chart.umd.js' %}"></script>
+<script>
+  (function () {
+    var isDark = document.body.classList.contains("dark-mode");
+    var grid = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.06)";
+    var text = isDark ? "#c2c7d0" : "#495057";
+    new Chart(document.getElementById("usageChart"), {
+      type: "line",
+      data: {
+        labels: {{ series_labels|safe }},
+        datasets: [{
+          label: "Ereignisse pro Tag",
+          data: {{ series_values|safe }},
+          borderColor: "#20c997",
+          backgroundColor: "rgba(32,201,151,0.12)",
+          fill: true,
+          tension: 0.25,
+          pointRadius: 2
+        }]
+      },
+      options: {
+        plugins: { legend: { labels: { color: text } } },
+        scales: {
+          x: { grid: { color: grid }, ticks: { color: text, maxTicksLimit: 14 } },
+          y: { grid: { color: grid }, ticks: { color: text, precision: 0 }, beginAtZero: true }
+        }
+      }
+    });
+  })();
+</script>
+{% endblock %}
+

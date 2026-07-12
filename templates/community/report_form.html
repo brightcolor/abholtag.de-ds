@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Fehler melden – {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+
+      <div class="ak-card">
+        <div class="ak-card-body">
+          <h1 class="h3" style="font-weight: 800;">
+            <i class="fa-solid fa-flag" style="color: var(--ak-brand);" aria-hidden="true"></i>
+            Fehler melden
+          </h1>
+          <p style="color: var(--ak-text-muted);">
+            Sie haben einen falschen Termin, eine fehlende Straße oder ein anderes Problem entdeckt?
+            Ihre Meldung hilft allen – danke! Eine Angabe von Kontaktdaten ist nicht erforderlich.
+          </p>
+
+          {% if address_key %}
+            <div class="ak-alert ak-alert-info mb-3">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <div>Ihre Meldung bezieht sich auf: <strong>{{ address_key.full_label }}</strong>
+                {% if waste_type %} ({{ waste_type.name }}){% endif %}</div>
+            </div>
+          {% endif %}
+
+          <div class="ak-steps mb-4" aria-hidden="true">
+            <div class="ak-step"><span class="ak-step-number">1</span><div><h3>Problem wählen</h3></div></div>
+            <div class="ak-step"><span class="ak-step-number">2</span><div><h3>Beschreiben</h3></div></div>
+            <div class="ak-step"><span class="ak-step-number">3</span><div><h3>Absenden</h3></div></div>
+          </div>
+
+          <form method="post" novalidate>
+            {% csrf_token %}
+            {% if address_key %}<input type="hidden" name="adresse" value="{{ address_key.public_id }}">{% endif %}
+            {% if waste_type %}<input type="hidden" name="abfallart" value="{{ waste_type.slug }}">{% endif %}
+            {{ form.website }}
+            {{ form.form_started }}
+
+            {% if form.non_field_errors %}
+              <div class="ak-alert ak-alert-danger mb-3" role="alert">
+                <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                <div>{{ form.non_field_errors|join:" " }}</div>
+              </div>
+            {% endif %}
+
+            <div class="mb-3">
+              <label class="ak-form-label" for="{{ form.category.id_for_label }}">Was ist das Problem?</label>
+              {{ form.category }}
+              {% if form.category.errors %}<div class="ak-field-error">{{ form.category.errors|join:" " }}</div>{% endif %}
+            </div>
+            <div class="mb-3">
+              <label class="ak-form-label" for="{{ form.description.id_for_label }}">Beschreibung</label>
+              {{ form.description }}
+              {% if form.description.errors %}<div class="ak-field-error">{{ form.description.errors|join:" " }}</div>{% endif %}
+            </div>
+            <div class="mb-3">
+              <label class="ak-form-label" for="{{ form.source_hint.id_for_label }}">Woher wissen Sie das? (optional)</label>
+              {{ form.source_hint }}
+            </div>
+            <div class="mb-4">
+              <label class="ak-form-label" for="{{ form.contact_email.id_for_label }}">E-Mail für Rückfragen (optional)</label>
+              {{ form.contact_email }}
+              <div class="ak-help mt-1">Wird nur für Rückfragen zu dieser Meldung verwendet und nicht veröffentlicht.</div>
+              {% if form.contact_email.errors %}<div class="ak-field-error">{{ form.contact_email.errors|join:" " }}</div>{% endif %}
+            </div>
+
+            <button type="submit" class="ak-btn ak-btn-primary ak-btn-lg btn-block">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Meldung absenden
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

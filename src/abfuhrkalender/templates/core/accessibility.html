@@ -1,0 +1,28 @@
+{% extends "base_public.html" %}
+{% load static %}
+{% block title %}Barrierefreiheit – Abfuhrkalender Lübeck{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="{% url 'core:home' %}">Startseite</a></li><li class="breadcrumb-item active">Barrierefreiheit</li></ol>
+  </nav>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <h1 class="fw-bold mb-4">Barrierefreiheit</h1>
+      <div class="card shadow-sm">
+        <div class="card-body p-5">
+          <p>Diese Anwendung ist nach WCAG 2.2 AA entwickelt.</p>
+          <ul class="text-secondary">
+            <li>Semantisches HTML</li>
+            <li>Vollständige Tastaturbedienbarkeit</li>
+            <li>Ausreichende Kontraste in Light- und Darkmode</li>
+            <li>Screenreader-Unterstützung</li>
+            <li>Unterstützung von prefers-reduced-motion</li>
+            <li>Skip-to-Content-Link</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -17,4 +17,6 @@ static_collected/
 Thumbs.db
 *.pdf
 !docs/*.pdf
+# Test-Fixture: lokale Kopie des offiziellen Plans (Tests dürfen nicht von der externen URL abhängen)
+!data/samples/*.pdf
 docker-data/

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Meldung {{ report.public_token }} – {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="ak-card">
+        <div class="ak-card-body text-center">
+          <i class="fa-solid fa-circle-check" style="font-size: 2.6rem; color: var(--ak-success);" aria-hidden="true"></i>
+          <h1 class="h4 mt-3" style="font-weight: 800;">Vielen Dank für Ihre Meldung!</h1>
+          <p style="color: var(--ak-text-muted);">
+            Ihre Vorgangsnummer – damit können Sie den Status jederzeit abrufen:
+          </p>
+          <div class="ak-feed-box mx-auto mb-3" style="max-width: 360px;">
+            <code>{{ report.public_token }}</code>
+            <button type="button" class="ak-btn ak-btn-primary ak-btn-sm"
+                    onclick="akCopy('{{ report.public_token }}', 'Vorgangsnummer kopiert')">
+              <i class="fa-solid fa-copy" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <dl class="row text-left mt-4" style="font-size: var(--ak-fs-sm);">
+            <dt class="col-sm-4">Status</dt>
+            <dd class="col-sm-8">
+              {% if report.status == "new" %}<span class="ak-badge ak-badge-info">eingegangen</span>
+              {% elif report.status == "in_review" %}<span class="ak-badge ak-badge-warning">in Prüfung</span>
+              {% elif report.status == "resolved" %}<span class="ak-badge ak-badge-success">gelöst</span>
+              {% elif report.status == "rejected" %}<span class="ak-badge ak-badge-danger">abgelehnt</span>
+              {% else %}<span class="ak-badge ak-badge-muted">{{ report.get_status_display }}</span>{% endif %}
+            </dd>
+            <dt class="col-sm-4">Kategorie</dt>
+            <dd class="col-sm-8">{{ report.get_category_display }}</dd>
+            <dt class="col-sm-4">Eingegangen</dt>
+            <dd class="col-sm-8">{{ report.created_at|date:"d.m.Y H:i" }} Uhr</dd>
+            {% if report.address_key %}
+              <dt class="col-sm-4">Adresse</dt>
+              <dd class="col-sm-8">{{ report.address_key.full_label }}</dd>
+            {% endif %}
+            {% if report.public_response %}
+              <dt class="col-sm-4">Antwort</dt>
+              <dd class="col-sm-8">{{ report.public_response|linebreaksbr }}</dd>
+            {% endif %}
+          </dl>
+
+          <a href="/" class="ak-btn ak-btn-outline mt-2">
+            <i class="fa-solid fa-house" aria-hidden="true"></i> Zur Startseite
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

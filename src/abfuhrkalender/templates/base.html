@@ -3,44 +3,78 @@
 <html lang="de" data-theme="light">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Abfuhrtermine für die Hansestadt Lübeck – Gelber Sack, Papier, Restmüll und mehr. Adresse eingeben, Termine prüfen, Kalender abonnieren.">
-<meta name="theme-color" content="#00508F">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Abfuhrtermine für die Hansestadt Lübeck – Gelber Sack, Papier, Restmüll und mehr.">
+<meta name="theme-color" content="#1d4ed8">
 <meta name="color-scheme" content="light dark">
 <title>{% block title %}Abfuhrkalender Lübeck{% endblock %}</title>
-
-{# Preload critical assets #}
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-
-{# AdminLTE 4 + Bootstrap 5 + Icons #}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0-beta3/dist/css/adminlte.min.css" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-{# Design System #}
 <link rel="stylesheet" href="{% static 'css/design-system.css' %}">
 {% block extra_css %}{% endblock %}
-
-{# Dark mode must be inline in head to prevent FOUC #}
 <script>
-(function(){var e="akl_theme";function n(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function t(){try{return localStorage.getItem(e)}catch(e){var t=document.cookie.match(new RegExp("(^| )"+e+"=([^;]+)"));return t?t[2]:null}}var r=t()||"system",i=r==="system"?n():r;document.documentElement.setAttribute("data-theme",i)})();
+(function(){var e='akl_theme';function n(){return window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'}function t(){try{return localStorage.getItem(e)}catch(e){return null}}var r=t()||'system',i=r==='system'?n():r;document.documentElement.setAttribute('data-theme',i)})();
 </script>
-{% block head_extra %}{% endblock %}
 </head>
-<body class="{% block body_class %}hold-transition{% endblock %}">
+<body>
 <a href="#main-content" class="skip-link">Direkt zum Inhalt springen</a>
-
-{# Theme Toggle Script #}
 <script src="{% static 'js/dark-mode.js' %}"></script>
 
-{% block layout %}{% endblock %}
+{% block layout %}
+<nav class="topnav" role="navigation" aria-label="Hauptnavigation">
+  <div class="topnav-inner">
+    <a href="{% url 'core:home' %}" class="topnav-brand">
+      <span class="brand-icon"><i class="bi bi-trash3"></i></span>
+      Abfuhrkalender <span style="color:var(--hl-600)">Lübeck</span>
+    </a>
+    <div class="topnav-links">
+      <button class="btn btn-ghost theme-toggle" onclick="aklToggleTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark')" aria-label="Farbschema umschalten">
+        <i class="theme-toggle-icon bi {% if theme == 'dark' %}bi-sun-fill{% elif theme == 'light' %}bi-moon-fill{% else %}bi-circle-half{% endif %}"></i>
+      </button>
+      <a href="{% url 'core:about' %}" class="d-none d-sm-inline">Über</a>
+    </div>
+  </div>
+</nav>
 
-{# Scripts #}
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0-beta3/dist/js/adminlte.min.js" crossorigin="anonymous"></script>
+<main id="main-content">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="max-w-1200" style="padding:0 var(--space-xl)">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h6><i class="bi bi-trash3" style="color:var(--hl-600);margin-right:6px"></i>Abfuhrkalender Lübeck</h6>
+        <p>Termine für Gelber Sack, Papier, Restmüll und mehr in der Hansestadt Lübeck.</p>
+      </div>
+      <div class="col-md-2">
+        <h6>Anwendung</h6>
+        <ul>
+          <li><a href="{% url 'core:home' %}">Startseite</a></li>
+          <li><a href="{% url 'core:about' %}">Über</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h6>Rechtliches</h6>
+        <ul>
+          <li><a href="{% url 'core:imprint' %}">Impressum</a></li>
+          <li><a href="{% url 'core:privacy' %}">Datenschutz</a></li>
+          <li><a href="{% url 'core:accessibility' %}">Barrierefreiheit</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6>Datenqualität</h6>
+        <p><i class="bi bi-check-circle-fill" style="color:var(--gr-500)"></i> Quelle: Entsorgungsbetriebe Lübeck<br>Stand: 06.01.2026</p>
+      </div>
+    </div>
+    <hr style="border-color:var(--border);margin:var(--space-xl) 0">
+    <div class="text-center small">&copy; {% now "Y" %} Abfuhrkalender Lübeck</div>
+  </div>
+</footer>
+{% endblock %}
+
 <script src="https://unpkg.com/htmx.org@2.0.3/dist/htmx.min.js" crossorigin="anonymous"></script>
 <script src="{% static 'js/public.js' %}"></script>
 {% block extra_js %}{% endblock %}

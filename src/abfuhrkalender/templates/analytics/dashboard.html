@@ -1,0 +1,8 @@
+{% extends "base_admin.html" %}{% load static %}{% block admin_title %}Analytics-Dashboard{% endblock %}{% block admin_content %}
+<div class="row g-4">
+  <div class="col-md-3"><div class="card stat-card border-primary border-start border-3"><div class="card-body"><i class="stat-icon bi bi-eye"></i><div class="stat-value">{{ today_count|default:"0" }}</div><div class="stat-label">Aufrufe heute</div></div></div></div>
+  <div class="col-md-3"><div class="card stat-card border-success border-start border-3"><div class="card-body"><i class="stat-icon bi bi-search"></i><div class="stat-value">{{ recent_searches|default:"0" }}</div><div class="stat-label">Suchanfragen</div></div></div></div>
+  <div class="col-md-3"><div class="card stat-card border-warning border-start border-3"><div class="card-body"><i class="stat-icon bi bi-flag"></i><div class="stat-value">{{ open_reports|default:"0" }}</div><div class="stat-label">Offene Meldungen</div></div></div></div>
+  <div class="col-md-3"><div class="card stat-card border-info border-start border-3"><div class="card-body"><i class="stat-icon bi bi-calendar-check"></i><div class="stat-value">{{ feed_requests|default:"0" }}</div><div class="stat-label">Feed-Abrufe</div></div></div></div>
+</div>
+{% endblock %}

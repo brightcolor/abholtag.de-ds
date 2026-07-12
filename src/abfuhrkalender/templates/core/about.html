@@ -1,0 +1,54 @@
+{% extends "base_public.html" %}
+{% load static %}
+{% block title %}Über die Anwendung – Abfuhrkalender Lübeck{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Startseite</a></li>
+      <li class="breadcrumb-item active">Über</li>
+    </ol>
+  </nav>
+  <div class="row g-5">
+    <div class="col-lg-8">
+      <h1 class="fw-bold mb-4">Über den Abfuhrkalender Lübeck</h1>
+      <p class="lead text-secondary">Eine moderne Open-Source-Anwendung für die Abfuhrtermine der Hansestadt Lübeck.</p>
+      <p>Der Abfuhrkalender Lübeck hilft Bürgerinnen und Bürgern, schnell und einfach die nächsten Abfuhrtermine für den Gelben Sack und weitere Abfallarten zu finden – ohne sich durch PDFs kämpfen zu müssen.</p>
+      <h3 class="fw-semibold mt-5 mb-3">Wie funktioniert es?</h3>
+      <div class="d-flex gap-4 flex-wrap">
+        <div class="card border-0 bg-secondary-subtle p-4 text-center" style="flex:1;min-width:160px">
+          <div class="fs-1 fw-bold text-primary mb-2">1</div>
+          <div class="fw-semibold">Adresse eingeben</div>
+          <div class="small text-secondary">Straße und Hausnummer</div>
+        </div>
+        <div class="card border-0 bg-secondary-subtle p-4 text-center" style="flex:1;min-width:160px">
+          <div class="fs-1 fw-bold text-primary mb-2">2</div>
+          <div class="fw-semibold">Termine prüfen</div>
+          <div class="small text-secondary">Nächster Termin + Jahresliste</div>
+        </div>
+        <div class="card border-0 bg-secondary-subtle p-4 text-center" style="flex:1;min-width:160px">
+          <div class="fs-1 fw-bold text-primary mb-2">3</div>
+          <div class="fw-semibold">Kalender abonnieren</div>
+          <div class="small text-secondary">iCal-Feed für Ihr Gerät</div>
+        </div>
+      </div>
+      <h3 class="fw-semibold mt-5 mb-3">Datenqualität</h3>
+      <p>Die Daten stammen aus den offiziellen PDF-Veröffentlichungen der Entsorgungsbetriebe Lübeck (Veolia). Bürger können Fehler melden und Korrekturen vorschlagen, die nach Prüfung übernommen werden.</p>
+    </div>
+    <div class="col-lg-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="fw-bold mb-3"><i class="bi bi-box-seam me-2 text-primary"></i>Open Source</h5>
+          <p class="small text-secondary mb-0">Der Quellcode ist auf GitHub verfügbar. Beiträge willkommen!</p>
+        </div>
+      </div>
+      <div class="card shadow-sm mt-3">
+        <div class="card-body">
+          <h5 class="fw-bold mb-3"><i class="bi bi-shield-check me-2 text-success"></i>Datenschutz</h5>
+          <p class="small text-secondary mb-0">Kein Google Analytics, keine Tracker, keine dauerhafte IP-Speicherung.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Datenschutz – {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row"><div class="col-lg-7 mx-auto">
+    <div class="ak-card"><div class="ak-card-body">
+      <h1 class="h3 mb-4" style="font-weight: 800;">Datenschutzerklärung</h1>
+
+      <h2 class="h5">Grundsatz</h2>
+      <p>
+        Diese Anwendung ist bewusst datensparsam gebaut: Die Terminabfrage funktioniert
+        vollständig ohne Konto, ohne Cookies zu Trackingzwecken und ohne Dienste Dritter.
+        Es werden keine externen Analyse- oder Werbedienste eingebunden.
+      </p>
+
+      <h2 class="h5 mt-4">Nutzungsstatistik (anonym)</h2>
+      <p>
+        Zur Verbesserung des Angebots erfassen wir intern anonyme Nutzungsereignisse
+        (z.&nbsp;B. „Suche durchgeführt“, „Kalender abgerufen“). Dabei gilt:
+      </p>
+      <ul>
+        <li>IP-Adressen werden <strong>nicht gespeichert</strong>.</li>
+        <li>Statt einer Nutzerkennung wird ein täglich wechselnder, nicht rückrechenbarer
+            Hash verwendet; eine Verkettung über Tage hinweg ist nicht möglich.</li>
+        <li>Roh-Ereignisse werden nach spätestens 90 Tagen gelöscht; langfristig bleiben
+            nur aggregierte Tageswerte (Zählwerte) erhalten.</li>
+        <li>Es findet keine Weitergabe an Dritte statt.</li>
+      </ul>
+
+      <h2 class="h5 mt-4">Kalender-Feeds</h2>
+      <p>
+        Beim Abruf eines Kalender-Feeds verarbeitet der Server technisch notwendige Daten
+        (abgerufene Adresse, Client-Typ). Gespeichert wird nur die anonymisierte Statistik
+        wie oben beschrieben.
+      </p>
+
+      <h2 class="h5 mt-4">Fehlermeldungen und Beiträge</h2>
+      <p>
+        Meldungen sind anonym möglich. Eine E-Mail-Adresse ist freiwillig, wird ausschließlich
+        für Rückfragen zu Ihrer Meldung verwendet, nicht veröffentlicht und auf Wunsch gelöscht
+        (Kontakt siehe Impressum).
+      </p>
+
+      <h2 class="h5 mt-4">Server-Logdateien</h2>
+      <p>
+        Der Webserver verarbeitet zur Betriebssicherheit kurzzeitig technische Logdaten
+        (Zeitpunkt, abgerufene Seite, Statuscode). Diese werden automatisch rotiert und gelöscht.
+      </p>
+
+      <h2 class="h5 mt-4">Ihre Rechte</h2>
+      <p>
+        Sie haben nach der DSGVO Rechte auf Auskunft, Berichtigung, Löschung und Einschränkung
+        der Verarbeitung. Wenden Sie sich dazu an die im Impressum genannte Stelle.
+      </p>
+    </div></div>
+  </div></div>
+</div>
+{% endblock %}

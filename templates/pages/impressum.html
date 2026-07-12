@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Impressum – {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row"><div class="col-lg-7 mx-auto">
+    <div class="ak-card"><div class="ak-card-body">
+      <h1 class="h3 mb-4" style="font-weight: 800;">Impressum</h1>
+      <h2 class="h5">Angaben gemäß § 5 DDG</h2>
+      {% if OPERATOR_NAME %}
+        <p>{{ OPERATOR_NAME }}<br>{{ OPERATOR_ADDRESS|linebreaksbr }}</p>
+        {% if OPERATOR_EMAIL %}<p>E-Mail: <a href="mailto:{{ OPERATOR_EMAIL }}">{{ OPERATOR_EMAIL }}</a></p>{% endif %}
+      {% else %}
+        <div class="ak-alert ak-alert-warning">
+          <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+          <div>Die Betreiberangaben sind noch nicht konfiguriert
+          (Umgebungsvariablen <code>OPERATOR_NAME</code>, <code>OPERATOR_ADDRESS</code>,
+          <code>OPERATOR_EMAIL</code>).</div>
+        </div>
+      {% endif %}
+      <h2 class="h5 mt-4">Hinweis</h2>
+      <p style="color: var(--ak-text-muted);">
+        Dies ist ein unabhängiges, offenes Bürgerprojekt und keine Seite der Hansestadt Lübeck
+        oder der Entsorgungsbetriebe Lübeck. Alle Termindaten stammen aus öffentlich
+        zugänglichen Abfuhrplänen; alle Angaben ohne Gewähr.
+      </p>
+    </div></div>
+  </div></div>
+</div>
+{% endblock %}

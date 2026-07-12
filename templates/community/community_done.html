@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row"><div class="col-lg-6 mx-auto">
+    <div class="ak-card"><div class="ak-card-body text-center">
+      <i class="fa-solid fa-circle-check" style="font-size: 2.4rem; color: var(--ak-success);" aria-hidden="true"></i>
+      <h1 class="h4 mt-3" style="font-weight: 800;">Eintrag eingereicht</h1>
+      <p style="color: var(--ak-text-muted);">
+        Vielen Dank! Ihr Eintrag wird von der Moderation geprüft, bevor er veröffentlicht wird.
+      </p>
+      <a href="/melden/community/" class="ak-btn ak-btn-primary mt-2">Weiteren Eintrag erfassen</a>
+      <a href="/" class="ak-btn ak-btn-outline mt-2">Zur Startseite</a>
+    </div></div>
+  </div></div>
+</div>
+{% endblock %}

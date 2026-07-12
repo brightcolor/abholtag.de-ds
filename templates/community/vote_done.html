@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row"><div class="col-lg-6 mx-auto">
+    <div class="ak-card"><div class="ak-card-body text-center">
+      {% if counted %}
+        <i class="fa-solid fa-circle-check" style="font-size: 2.4rem; color: var(--ak-success);" aria-hidden="true"></i>
+        <h1 class="h4 mt-3" style="font-weight: 800;">Bestätigung gezählt</h1>
+        <p style="color: var(--ak-text-muted);">Danke! Ihre Bestätigung zum Vorschlag #{{ proposal.pk }} wurde erfasst.</p>
+      {% else %}
+        <i class="fa-solid fa-circle-info" style="font-size: 2.4rem; color: var(--ak-info);" aria-hidden="true"></i>
+        <h1 class="h4 mt-3" style="font-weight: 800;">Bereits gezählt</h1>
+        <p style="color: var(--ak-text-muted);">Von diesem Gerät liegt bereits eine Bestätigung vor.</p>
+      {% endif %}
+      <a href="/" class="ak-btn ak-btn-primary mt-2">Zur Startseite</a>
+    </div></div>
+  </div></div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base_public.html" %}
+{% load static %}
+{% block title %}Datenschutz – Abfuhrkalender Lübeck{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="{% url 'core:home' %}">Startseite</a></li><li class="breadcrumb-item active">Datenschutz</li></ol>
+  </nav>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <h1 class="fw-bold mb-4">Datenschutzerklärung</h1>
+      <div class="card shadow-sm">
+        <div class="card-body p-5">
+          <h5 class="fw-semibold mb-3">1. Verantwortlicher</h5>
+          <p class="text-secondary small">Betreiber der Anwendung (siehe Impressum).</p>
+          <h5 class="fw-semibold mb-3 mt-4">2. Erhobene Daten</h5>
+          <p class="text-secondary small">Wir erheben ausschließlich anonymisierte Nutzungsstatistiken: Seitenaufrufe, Suchanfragen (ohne Klartext-Speicherung), Endgeräteklasse. IP-Adressen werden nicht gespeichert.</p>
+          <h5 class="fw-semibold mb-3 mt-4">3. Cookies</h5>
+          <p class="text-secondary small">Einzig für die Theme-Einstellung (Light/Dark) wird ein Cookie gesetzt. Keine Tracking-Cookies.</p>
+          <h5 class="fw-semibold mb-3 mt-4">4. Dritte</h5>
+          <p class="text-secondary small">Keine Weitergabe an Dritte. Hosting erfolgt in Deutschland.</p>
+          <h5 class="fw-semibold mb-3 mt-4">5. Kontakt</h5>
+          <p class="text-secondary small">Bei Fragen zum Datenschutz nutzen Sie die Kontaktdaten im Impressum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
