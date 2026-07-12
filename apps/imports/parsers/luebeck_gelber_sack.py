@@ -78,9 +78,10 @@ class LuebeckGelberSackParser(BaseParser):
     # ------------------------------------------------------------------
     def _parse_streets(self, pdf, plan: ParsedPlan) -> None:
         page = pdf.pages[-1]
-        # x_tolerance=6 merges letter-spaced street names ("K a h l h o r s t")
-        # while the gap to the Bezirk column stays far larger.
-        words = page.extract_words(keep_blank_chars=False, x_tolerance=6)
+        # Default tolerance: letter-spaced rows ("K a h l h o r s t") yield
+        # clean single-char tokens which collapse_letter_spacing reassembles;
+        # higher tolerances create unpredictable partial merges instead.
+        words = page.extract_words(keep_blank_chars=False, x_tolerance=3)
         if not words:
             plan.add_issue("error", "streets_no_text", "Straßenliste enthält keinen extrahierbaren Text.")
             return
@@ -109,6 +110,7 @@ class LuebeckGelberSackParser(BaseParser):
 
         for key in sorted(lines):
             line = sorted(lines[key], key=lambda w: w["x0"])
+            line = self._merge_split_zone_codes(line)
             name_tokens: list[str] = []
             for word in line:
                 text = word["text"].strip()
@@ -138,10 +140,39 @@ class LuebeckGelberSackParser(BaseParser):
         plan.add_issue("info", "streets_parsed", f"{len(plan.streets)} Straßeneinträge erkannt.")
 
     @staticmethod
+    def _merge_split_zone_codes(line: list[dict]) -> list[dict]:
+        """Re-join zone codes split by letter-spacing ("B", "/", "G" → "B/G")."""
+        merged: list[dict] = []
+        index = 0
+        while index < len(line):
+            if (
+                index + 2 < len(line)
+                and re.fullmatch(r"[A-J]", line[index]["text"].strip())
+                and line[index + 1]["text"].strip() == "/"
+                and re.fullmatch(r"[A-J]", line[index + 2]["text"].strip())
+                and line[index + 2]["x0"] - line[index]["x1"] < 20
+            ):
+                combined = dict(line[index])
+                combined["text"] = (
+                    f"{line[index]['text'].strip()}/{line[index + 2]['text'].strip()}"
+                )
+                combined["x1"] = line[index + 2]["x1"]
+                merged.append(combined)
+                index += 3
+            else:
+                merged.append(line[index])
+                index += 1
+        return merged
+
+    @staticmethod
     def _clean_street_name(raw: str) -> str:
+        from apps.core.text import collapse_letter_spacing
+
         # remove alphabetical section markers such as "- A -"
         value = re.sub(r"-\s*[A-ZÄÖÜ]\s*-", " ", raw)
         value = re.sub(r"\s+", " ", value).strip(" -")
+        # some rows are printed letter-spaced ("K a h l h o r s t s t r .")
+        value = collapse_letter_spacing(value)
         return value.strip()
 
     def _build_street_entry(self, raw_name: str, code: str) -> StreetEntry | None:

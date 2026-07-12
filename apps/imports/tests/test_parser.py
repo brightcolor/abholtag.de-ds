@@ -29,6 +29,11 @@ def test_known_streets_present(plan):
     names = {s.name for s in plan.streets}
     assert "Beethovenstr." in names
     assert "Achterdeck" in names
+    # letter-spaced rows of the source PDF must be reconstructed correctly
+    assert "Kahlhorststr." in names
+    assert "Am Bach" in names
+    assert "An der Bäk" in names
+    assert "Beckergrube" in names
 
 
 def test_zone_codes_valid(plan):
