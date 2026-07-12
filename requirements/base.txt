@@ -1,0 +1,16 @@
+django>=5.1,<5.2
+django-environ>=0.11
+django-csp>=3.8
+django-ratelimit>=4.1
+django-cors-headers>=4.4
+psycopg2-binary>=2.9
+gunicorn>=23.0
+whitenoise>=6.7
+Pillow>=10.4
+python-dateutil>=2.9
+icalendar>=5.0
+pdfminer.six>=20221105
+pdfplumber>=0.11
+requests>=2.32
+celery>=5.4  # optional, for future background tasks
+redis>=5.1  # optional, for future caching

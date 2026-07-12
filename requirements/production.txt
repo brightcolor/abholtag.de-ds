@@ -1,0 +1,6 @@
+-r base.txt
+
+# Production hardening
+django-sentry>=1.0  # optional error tracking
+python-json-logger>=2.0
+uvloop>=0.19

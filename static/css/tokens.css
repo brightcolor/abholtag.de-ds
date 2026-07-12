@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Design Tokens – Abfuhrkalender Lübeck
+   Zentrale CSS Custom Properties für Light- und Darkmode (§3.1, §3.4).
+   Kein Wert wird in Komponenten hart kodiert.
+   ========================================================================== */
+
+:root {
+  /* Markenfarben */
+  --ak-brand: #0f766e;            /* Petrol – Hanse, Wasser, sachlich-freundlich */
+  --ak-brand-strong: #115e59;
+  --ak-brand-soft: #ccfbf1;
+  --ak-accent: #f2c200;           /* Gelber Sack */
+  --ak-accent-soft: #fef9c3;
+
+  /* Flächen & Text (Light) */
+  --ak-bg: #f4f6f8;
+  --ak-bg-raised: #ffffff;
+  --ak-bg-sunken: #eceff3;
+  --ak-text: #1c2530;
+  --ak-text-muted: #5b6b7c;
+  --ak-text-faint: #8595a6;
+  --ak-border: #dde4ec;
+  --ak-border-strong: #c3cedb;
+
+  /* Status */
+  --ak-success: #15803d;
+  --ak-success-soft: #dcfce7;
+  --ak-warning: #b45309;
+  --ak-warning-soft: #fef3c7;
+  --ak-danger: #b91c1c;
+  --ak-danger-soft: #fee2e2;
+  --ak-info: #1d4ed8;
+  --ak-info-soft: #dbeafe;
+
+  /* Typografie */
+  --ak-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ak-font-mono: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
+  --ak-fs-xs: 0.78rem;
+  --ak-fs-sm: 0.875rem;
+  --ak-fs-base: 1rem;
+  --ak-fs-lg: 1.15rem;
+  --ak-fs-xl: 1.45rem;
+  --ak-fs-2xl: 1.9rem;
+  --ak-fs-3xl: 2.4rem;
+
+  /* Abstände */
+  --ak-sp-1: 0.25rem;
+  --ak-sp-2: 0.5rem;
+  --ak-sp-3: 0.75rem;
+  --ak-sp-4: 1rem;
+  --ak-sp-5: 1.5rem;
+  --ak-sp-6: 2rem;
+  --ak-sp-7: 3rem;
+
+  /* Rundungen & Schatten */
+  --ak-radius-sm: 8px;
+  --ak-radius: 14px;
+  --ak-radius-lg: 20px;
+  --ak-shadow-sm: 0 1px 2px rgb(16 24 40 / 0.06);
+  --ak-shadow: 0 1px 3px rgb(16 24 40 / 0.08), 0 4px 16px rgb(16 24 40 / 0.06);
+  --ak-shadow-lg: 0 4px 12px rgb(16 24 40 / 0.10), 0 12px 32px rgb(16 24 40 / 0.10);
+
+  /* Übergänge */
+  --ak-transition: 160ms ease;
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --ak-brand: #2dd4bf;
+  --ak-brand-strong: #5eead4;
+  --ak-brand-soft: #134e4a;
+  --ak-accent: #facc15;
+  --ak-accent-soft: #423e14;
+
+  --ak-bg: #0f1620;
+  --ak-bg-raised: #171f2b;
+  --ak-bg-sunken: #0b111a;
+  --ak-text: #e6edf5;
+  --ak-text-muted: #9fb0c2;
+  --ak-text-faint: #6e8093;
+  --ak-border: #2a3646;
+  --ak-border-strong: #3b495c;
+
+  --ak-success: #4ade80;
+  --ak-success-soft: #14351f;
+  --ak-warning: #fbbf24;
+  --ak-warning-soft: #3a2c10;
+  --ak-danger: #f87171;
+  --ak-danger-soft: #3d1515;
+  --ak-info: #60a5fa;
+  --ak-info-soft: #16294a;
+
+  --ak-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --ak-shadow: 0 1px 3px rgb(0 0 0 / 0.5), 0 4px 16px rgb(0 0 0 / 0.35);
+  --ak-shadow-lg: 0 4px 12px rgb(0 0 0 / 0.55), 0 12px 32px rgb(0 0 0 / 0.45);
+
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,419 @@
+/* ==========================================================================
+   Öffentliches Layout & Komponenten – aufbauend auf den Design Tokens.
+   Bootstrap liefert Grid/Utilities, die visuelle Sprache kommt von hier.
+   ========================================================================== */
+
+html { scroll-behavior: smooth; }
+
+body.ak-public {
+  font-family: var(--ak-font);
+  background: var(--ak-bg);
+  color: var(--ak-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background var(--ak-transition), color var(--ak-transition);
+}
+
+.ak-main { flex: 1 0 auto; }
+
+a { color: var(--ak-brand); }
+a:hover { color: var(--ak-brand-strong); text-decoration: none; }
+
+/* --------------------------------------------------------------------------
+   Top-Navigation (schlank, keine Admin-Sidebar – §3.2)
+   -------------------------------------------------------------------------- */
+.ak-navbar {
+  background: var(--ak-bg-raised);
+  border-bottom: 1px solid var(--ak-border);
+  box-shadow: var(--ak-shadow-sm);
+  padding: var(--ak-sp-3) 0;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+.ak-navbar .ak-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--ak-sp-2);
+  font-weight: 700;
+  font-size: var(--ak-fs-lg);
+  color: var(--ak-text);
+}
+.ak-brand-icon {
+  width: 38px; height: 38px;
+  border-radius: var(--ak-radius-sm);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--ak-brand), var(--ak-brand-strong));
+  color: #fff;
+  font-size: 1.05rem;
+}
+[data-theme="dark"] .ak-brand-icon { color: #06251f; }
+.ak-nav-links { display: flex; align-items: center; gap: var(--ak-sp-4); }
+.ak-nav-links a {
+  color: var(--ak-text-muted);
+  font-size: var(--ak-fs-sm);
+  font-weight: 500;
+  padding: var(--ak-sp-2) var(--ak-sp-2);
+  border-radius: var(--ak-radius-sm);
+}
+.ak-nav-links a:hover { color: var(--ak-text); background: var(--ak-bg-sunken); }
+
+/* Theme-Umschalter */
+.ak-theme-toggle {
+  border: 1px solid var(--ak-border);
+  background: var(--ak-bg-raised);
+  color: var(--ak-text-muted);
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all var(--ak-transition);
+}
+.ak-theme-toggle:hover { color: var(--ak-brand); border-color: var(--ak-brand); }
+[data-theme="light"] .ak-theme-icon-sun { display: none; }
+[data-theme="dark"] .ak-theme-icon-moon { display: none; }
+
+/* --------------------------------------------------------------------------
+   Cards
+   -------------------------------------------------------------------------- */
+.ak-card {
+  background: var(--ak-bg-raised);
+  border: 1px solid var(--ak-border);
+  border-radius: var(--ak-radius);
+  box-shadow: var(--ak-shadow-sm);
+  transition: box-shadow var(--ak-transition), transform var(--ak-transition);
+}
+.ak-card-hover:hover { box-shadow: var(--ak-shadow); transform: translateY(-1px); }
+.ak-card-body { padding: var(--ak-sp-5); }
+.ak-card-header {
+  padding: var(--ak-sp-4) var(--ak-sp-5);
+  border-bottom: 1px solid var(--ak-border);
+  display: flex; align-items: center; gap: var(--ak-sp-2);
+  font-weight: 600;
+}
+.ak-card-header .fa-solid, .ak-card-header .fas { color: var(--ak-brand); }
+
+/* Hero */
+.ak-hero { padding: var(--ak-sp-7) 0 var(--ak-sp-6); }
+.ak-hero h1 { font-size: var(--ak-fs-3xl); font-weight: 800; letter-spacing: -0.02em; }
+.ak-hero .ak-lead { color: var(--ak-text-muted); font-size: var(--ak-fs-lg); max-width: 640px; }
+@media (max-width: 576px) {
+  .ak-hero { padding: var(--ak-sp-5) 0 var(--ak-sp-4); }
+  .ak-hero h1 { font-size: var(--ak-fs-2xl); }
+}
+
+/* Statistikkarten */
+.ak-stat {
+  display: flex; align-items: center; gap: var(--ak-sp-3);
+  padding: var(--ak-sp-4);
+}
+.ak-stat-icon {
+  width: 44px; height: 44px; flex: 0 0 44px;
+  border-radius: var(--ak-radius-sm);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--ak-brand-soft);
+  color: var(--ak-brand-strong);
+  font-size: 1.1rem;
+}
+.ak-stat-value { font-size: var(--ak-fs-xl); font-weight: 700; line-height: 1.1; }
+.ak-stat-label { color: var(--ak-text-muted); font-size: var(--ak-fs-xs); }
+
+/* Badges */
+.ak-badge {
+  display: inline-flex; align-items: center; gap: 0.35em;
+  padding: 0.28em 0.7em;
+  border-radius: 999px;
+  font-size: var(--ak-fs-xs);
+  font-weight: 600;
+  line-height: 1.2;
+  border: 1px solid transparent;
+}
+.ak-badge-brand { background: var(--ak-brand-soft); color: var(--ak-brand-strong); }
+.ak-badge-accent { background: var(--ak-accent-soft); color: var(--ak-warning); }
+.ak-badge-success { background: var(--ak-success-soft); color: var(--ak-success); }
+.ak-badge-warning { background: var(--ak-warning-soft); color: var(--ak-warning); }
+.ak-badge-danger { background: var(--ak-danger-soft); color: var(--ak-danger); }
+.ak-badge-info { background: var(--ak-info-soft); color: var(--ak-info); }
+.ak-badge-muted { background: var(--ak-bg-sunken); color: var(--ak-text-muted); }
+.ak-badge-outline { border-color: var(--ak-border-strong); color: var(--ak-text-muted); background: transparent; }
+
+/* Hinweise */
+.ak-alert {
+  border-radius: var(--ak-radius-sm);
+  padding: var(--ak-sp-3) var(--ak-sp-4);
+  display: flex; gap: var(--ak-sp-3); align-items: flex-start;
+  font-size: var(--ak-fs-sm);
+  border: 1px solid transparent;
+}
+.ak-alert i { margin-top: 2px; }
+.ak-alert-info { background: var(--ak-info-soft); color: var(--ak-info); }
+.ak-alert-warning { background: var(--ak-warning-soft); color: var(--ak-warning); }
+.ak-alert-danger { background: var(--ak-danger-soft); color: var(--ak-danger); }
+.ak-alert-success { background: var(--ak-success-soft); color: var(--ak-success); }
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.ak-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
+  border-radius: var(--ak-radius-sm);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: var(--ak-fs-sm);
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  transition: all var(--ak-transition);
+  text-decoration: none;
+}
+.ak-btn:focus-visible { outline: 3px solid var(--ak-brand); outline-offset: 2px; }
+.ak-btn-primary { background: var(--ak-brand); color: #fff; }
+.ak-btn-primary:hover { background: var(--ak-brand-strong); color: #fff; }
+[data-theme="dark"] .ak-btn-primary { color: #06251f; }
+[data-theme="dark"] .ak-btn-primary:hover { color: #06251f; }
+.ak-btn-outline {
+  background: transparent; color: var(--ak-text);
+  border-color: var(--ak-border-strong);
+}
+.ak-btn-outline:hover { border-color: var(--ak-brand); color: var(--ak-brand); }
+.ak-btn-ghost { background: transparent; color: var(--ak-text-muted); }
+.ak-btn-ghost:hover { background: var(--ak-bg-sunken); color: var(--ak-text); }
+.ak-btn-lg { padding: 0.8rem 1.5rem; font-size: var(--ak-fs-base); }
+.ak-btn-sm { padding: 0.35rem 0.7rem; font-size: var(--ak-fs-xs); }
+.ak-btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+
+/* --------------------------------------------------------------------------
+   Formulare
+   -------------------------------------------------------------------------- */
+.ak-form-label { font-weight: 600; font-size: var(--ak-fs-sm); margin-bottom: var(--ak-sp-1); }
+.ak-input, .ak-public .form-control {
+  background: var(--ak-bg-raised);
+  border: 1px solid var(--ak-border-strong);
+  border-radius: var(--ak-radius-sm);
+  color: var(--ak-text);
+  padding: 0.6rem 0.9rem;
+  font-size: var(--ak-fs-base);
+  width: 100%;
+  transition: border-color var(--ak-transition), box-shadow var(--ak-transition);
+}
+.ak-input:focus, .ak-public .form-control:focus {
+  outline: none;
+  border-color: var(--ak-brand);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ak-brand) 25%, transparent);
+  background: var(--ak-bg-raised);
+  color: var(--ak-text);
+}
+.ak-input::placeholder, .ak-public .form-control::placeholder { color: var(--ak-text-faint); }
+.ak-field-error { color: var(--ak-danger); font-size: var(--ak-fs-xs); margin-top: var(--ak-sp-1); }
+.ak-help { color: var(--ak-text-faint); font-size: var(--ak-fs-xs); }
+
+/* Autocomplete */
+.ak-autocomplete { position: relative; }
+.ak-suggestions {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: var(--ak-bg-raised);
+  border: 1px solid var(--ak-border);
+  border-radius: var(--ak-radius-sm);
+  box-shadow: var(--ak-shadow-lg);
+  z-index: 1030;
+  max-height: 320px;
+  overflow-y: auto;
+  list-style: none; margin: 0; padding: var(--ak-sp-1);
+}
+.ak-suggestions li button {
+  display: flex; justify-content: space-between; align-items: center; gap: var(--ak-sp-3);
+  width: 100%;
+  padding: var(--ak-sp-2) var(--ak-sp-3);
+  border: 0; background: transparent; text-align: left;
+  color: var(--ak-text);
+  border-radius: var(--ak-radius-sm);
+  cursor: pointer;
+  font-size: var(--ak-fs-sm);
+}
+.ak-suggestions li button:hover,
+.ak-suggestions li button:focus-visible { background: var(--ak-bg-sunken); outline: none; }
+.ak-suggestions .ak-empty { padding: var(--ak-sp-3); color: var(--ak-text-muted); font-size: var(--ak-fs-sm); }
+
+/* --------------------------------------------------------------------------
+   Schrittfolge (1-2-3)
+   -------------------------------------------------------------------------- */
+.ak-steps { display: flex; gap: var(--ak-sp-4); flex-wrap: wrap; }
+.ak-step { flex: 1 1 200px; display: flex; gap: var(--ak-sp-3); align-items: flex-start; }
+.ak-step-number {
+  width: 34px; height: 34px; flex: 0 0 34px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--ak-brand); color: #fff;
+  font-weight: 700; font-size: var(--ak-fs-sm);
+}
+[data-theme="dark"] .ak-step-number { color: #06251f; }
+.ak-step h3 { font-size: var(--ak-fs-base); font-weight: 700; margin: 0 0 2px; }
+.ak-step p { color: var(--ak-text-muted); font-size: var(--ak-fs-sm); margin: 0; }
+
+/* --------------------------------------------------------------------------
+   Terminlisten & Timeline
+   -------------------------------------------------------------------------- */
+.ak-date-list { list-style: none; margin: 0; padding: 0; }
+.ak-date-list li {
+  display: flex; align-items: center; gap: var(--ak-sp-4);
+  padding: var(--ak-sp-3) 0;
+  border-bottom: 1px solid var(--ak-border);
+}
+.ak-date-list li:last-child { border-bottom: 0; }
+.ak-date-box {
+  width: 58px; flex: 0 0 58px;
+  text-align: center;
+  background: var(--ak-bg-sunken);
+  border-radius: var(--ak-radius-sm);
+  padding: var(--ak-sp-2) 0;
+  line-height: 1.15;
+}
+.ak-date-box .day { font-size: var(--ak-fs-lg); font-weight: 800; display: block; }
+.ak-date-box .month { font-size: var(--ak-fs-xs); color: var(--ak-text-muted); text-transform: uppercase; }
+.ak-date-meta { flex: 1; }
+.ak-date-meta .weekday { font-weight: 600; }
+.ak-date-meta .relative { color: var(--ak-text-muted); font-size: var(--ak-fs-sm); }
+
+/* Nächster Termin (Hauptkarte) */
+.ak-next-date {
+  background: linear-gradient(135deg, var(--ak-brand), var(--ak-brand-strong));
+  border-radius: var(--ak-radius);
+  color: #fff;
+  padding: var(--ak-sp-5);
+}
+[data-theme="dark"] .ak-next-date { color: #06251f; }
+.ak-next-date .label { opacity: 0.85; font-size: var(--ak-fs-sm); font-weight: 600; }
+.ak-next-date .value { font-size: var(--ak-fs-2xl); font-weight: 800; letter-spacing: -0.02em; }
+.ak-next-date .relative { font-size: var(--ak-fs-base); opacity: 0.9; }
+
+/* Monatsgruppen der Jahresübersicht */
+.ak-month-group h4 {
+  font-size: var(--ak-fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ak-text-faint);
+  margin: var(--ak-sp-4) 0 var(--ak-sp-2);
+}
+.ak-chip {
+  display: inline-flex; align-items: center; gap: 0.45em;
+  background: var(--ak-bg-sunken);
+  border: 1px solid var(--ak-border);
+  border-radius: var(--ak-radius-sm);
+  padding: 0.35em 0.7em;
+  font-size: var(--ak-fs-sm);
+  margin: 0 var(--ak-sp-1) var(--ak-sp-1) 0;
+}
+.ak-chip.past { opacity: 0.45; }
+.ak-chip .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ak-accent); }
+
+/* --------------------------------------------------------------------------
+   Feed-URL Box & Copy
+   -------------------------------------------------------------------------- */
+.ak-feed-box {
+  display: flex; gap: var(--ak-sp-2); align-items: stretch;
+  background: var(--ak-bg-sunken);
+  border: 1px solid var(--ak-border);
+  border-radius: var(--ak-radius-sm);
+  padding: var(--ak-sp-2);
+}
+.ak-feed-box code {
+  flex: 1;
+  font-family: var(--ak-font-mono);
+  font-size: var(--ak-fs-xs);
+  color: var(--ak-text);
+  padding: var(--ak-sp-2);
+  overflow-x: auto;
+  white-space: nowrap;
+  align-self: center;
+}
+
+/* Tabs (Abo-Anleitungen) */
+.ak-tabs { display: flex; gap: var(--ak-sp-1); flex-wrap: wrap; border-bottom: 1px solid var(--ak-border); }
+.ak-tab {
+  border: 0; background: transparent;
+  padding: var(--ak-sp-2) var(--ak-sp-3);
+  font-size: var(--ak-fs-sm); font-weight: 600;
+  color: var(--ak-text-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+}
+.ak-tab:hover { color: var(--ak-text); }
+.ak-tab.active { color: var(--ak-brand); border-bottom-color: var(--ak-brand); }
+.ak-tab-panel { padding: var(--ak-sp-4) 0; font-size: var(--ak-fs-sm); }
+.ak-tab-panel ol { padding-left: 1.2rem; margin: 0; }
+.ak-tab-panel li { margin-bottom: var(--ak-sp-2); }
+
+/* --------------------------------------------------------------------------
+   Skeleton Loader & HTMX-Zustände
+   -------------------------------------------------------------------------- */
+.ak-skeleton {
+  background: linear-gradient(90deg, var(--ak-bg-sunken) 25%, var(--ak-border) 50%, var(--ak-bg-sunken) 75%);
+  background-size: 200% 100%;
+  animation: ak-shimmer 1.4s infinite;
+  border-radius: var(--ak-radius-sm);
+  min-height: 1em;
+}
+@keyframes ak-shimmer { to { background-position: -200% 0; } }
+.htmx-indicator { display: none; }
+.htmx-request .htmx-indicator { display: inline-flex; }
+.htmx-request.ak-searching .ak-search-icon { display: none; }
+
+/* Leere Zustände */
+.ak-empty-state {
+  text-align: center;
+  padding: var(--ak-sp-7) var(--ak-sp-4);
+  color: var(--ak-text-muted);
+}
+.ak-empty-state i { font-size: 2.4rem; color: var(--ak-text-faint); margin-bottom: var(--ak-sp-3); }
+
+/* Toasts */
+.ak-toast-region { position: fixed; bottom: var(--ak-sp-4); right: var(--ak-sp-4); z-index: 1080; }
+.ak-toast {
+  background: var(--ak-bg-raised);
+  color: var(--ak-text);
+  border: 1px solid var(--ak-border);
+  border-left: 4px solid var(--ak-success);
+  border-radius: var(--ak-radius-sm);
+  box-shadow: var(--ak-shadow-lg);
+  padding: var(--ak-sp-3) var(--ak-sp-4);
+  margin-top: var(--ak-sp-2);
+  display: flex; gap: var(--ak-sp-2); align-items: center;
+  font-size: var(--ak-fs-sm);
+  animation: ak-toast-in 200ms ease;
+}
+@keyframes ak-toast-in { from { opacity: 0; transform: translateY(8px); } }
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.ak-footer {
+  border-top: 1px solid var(--ak-border);
+  background: var(--ak-bg-raised);
+  color: var(--ak-text-muted);
+  font-size: var(--ak-fs-sm);
+  padding: var(--ak-sp-5) 0;
+  margin-top: var(--ak-sp-7);
+}
+.ak-footer a { color: var(--ak-text-muted); margin-right: var(--ak-sp-4); }
+.ak-footer a:hover { color: var(--ak-brand); }
+
+/* --------------------------------------------------------------------------
+   Fokus & Barrierefreiheit
+   -------------------------------------------------------------------------- */
+:focus-visible { outline: 3px solid var(--ak-brand); outline-offset: 2px; border-radius: 2px; }
+.sr-only-focusable:focus {
+  position: fixed; top: 8px; left: 8px; z-index: 2000;
+  background: var(--ak-bg-raised); color: var(--ak-text);
+  padding: var(--ak-sp-2) var(--ak-sp-3); border-radius: var(--ak-radius-sm);
+  box-shadow: var(--ak-shadow-lg);
+}
+
+/* --------------------------------------------------------------------------
+   Druckansicht (§3.4: hell und lesbar)
+   -------------------------------------------------------------------------- */
+@media print {
+  body.ak-public { background: #fff !important; color: #000 !important; }
+  .ak-navbar, .ak-footer, .ak-no-print, .ak-theme-toggle { display: none !important; }
+  .ak-card { box-shadow: none; border: 1px solid #bbb; }
+}

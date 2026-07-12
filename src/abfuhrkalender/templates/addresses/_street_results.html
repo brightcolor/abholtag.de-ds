@@ -1,0 +1,34 @@
+{% if results %}
+  <div class="list-group shadow-sm" role="listbox" aria-label="Suchergebnisse">
+    {% for street in results %}
+    <button type="button"
+      class="list-group-item list-group-item-action d-flex align-items-center py-2 px-3"
+      hx-get="{% url 'addresses:resolve' %}?street={{ street.id }}&waste_type=gelber-sack"
+      hx-target="#schedule-result"
+      hx-indicator="#result-spinner"
+      role="option"
+      aria-selected="false">
+      <div>
+        <div class="fw-medium">{{ street.name }}</div>
+        {% if street.district %}
+        <small class="text-secondary">
+          <i class="bi bi-geo-alt me-1"></i>{{ street.district.name }}
+          {% if street.postal_code %}({{ street.postal_code }}){% endif %}
+        </small>
+        {% endif %}
+      </div>
+      <span class="ms-auto text-nowrap">
+        {% if street.has_number_ranges %}
+        <span class="badge bg-info-subtle text-info">Hausnummer erforderlich</span>
+        {% else %}
+        <i class="bi bi-arrow-right text-secondary"></i>
+        {% endif %}
+      </span>
+    </button>
+    {% endfor %}
+  </div>
+{% elif query|length >= 2 %}
+  <div class="text-center py-3 text-secondary">
+    <i class="bi bi-search me-2"></i>Keine Straßen gefunden für "{{ query }}"
+  </div>
+{% endif %}

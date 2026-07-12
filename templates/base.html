@@ -1,0 +1,82 @@
+{% load static %}<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
+  <meta name="description" content="{{ SITE_TAGLINE }}">
+  <script>
+    // Theme vor dem ersten Rendern setzen – kein Flackern (§3.4).
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem("ak-theme"); } catch (e) {}
+      var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendor/fontawesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/tokens.css' %}">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="ak-public">
+  <a class="sr-only sr-only-focusable" href="#hauptinhalt">Zum Inhalt springen</a>
+
+  <header class="ak-navbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="/" class="ak-brand" aria-label="{{ SITE_NAME }} – Startseite">
+        <span class="ak-brand-icon"><i class="fa-solid fa-recycle" aria-hidden="true"></i></span>
+        <span>{{ SITE_NAME }}</span>
+      </a>
+      <nav class="ak-nav-links" aria-label="Hauptnavigation">
+        <a href="/" class="d-none d-sm-inline">Start</a>
+        <a href="/melden/" class="d-none d-sm-inline">Fehler melden</a>
+        <a href="/status/" class="d-none d-md-inline">Datenstatus</a>
+        <button type="button" class="ak-theme-toggle" onclick="akToggleTheme()"
+                aria-label="Zwischen hellem und dunklem Design umschalten">
+          <i class="fa-solid fa-moon ak-theme-icon-moon" aria-hidden="true"></i>
+          <i class="fa-solid fa-sun ak-theme-icon-sun" aria-hidden="true"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="hauptinhalt" class="ak-main">
+    {% if messages %}
+      <div class="container mt-4">
+        {% for message in messages %}
+          <div class="ak-alert ak-alert-{{ message.tags|default:'info' }}" role="alert">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            <div>{{ message }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="ak-footer">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center" style="gap: 1rem;">
+        <div>
+          <a href="/impressum/">Impressum</a>
+          <a href="/datenschutz/">Datenschutz</a>
+          <a href="/api/v1/openapi.json">API</a>
+          <a href="/status/">Status</a>
+        </div>
+        <div class="text-right">
+          Offenes Bürgerprojekt – alle Angaben ohne Gewähr.<br>
+          Verbindlich sind die Veröffentlichungen der Entsorgungsbetriebe Lübeck.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ak-toast-region" role="status" aria-live="polite"></div>
+  <script src="{% static 'vendor/htmx.min.js' %}" defer></script>
+  <script src="{% static 'vendor/alpine.min.js' %}" defer></script>
+  <script src="{% static 'js/app.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

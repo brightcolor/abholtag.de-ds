@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% load ak_extras %}
+
+{% block title %}{{ address_key.label }} – {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+
+      <nav aria-label="Pfad" class="mb-3">
+        <a href="/" class="ak-btn ak-btn-ghost ak-btn-sm">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Neue Suche
+        </a>
+      </nav>
+
+      {# ---------------- Hauptkarte ---------------- #}
+      <div class="ak-card mb-4">
+        <div class="ak-card-body">
+          <div class="d-flex flex-wrap justify-content-between align-items-start" style="gap: .75rem;">
+            <div>
+              <h1 class="h3 mb-1" style="font-weight: 800;">{{ address_key.label }}</h1>
+              <div class="mb-2">
+                {% if address_key.street.district %}
+                  <span class="ak-badge ak-badge-muted">
+                    <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
+                    {{ address_key.street.district.name }}
+                  </span>
+                {% endif %}
+                <span class="ak-badge ak-badge-muted">{{ address_key.street.city.name }}</span>
+                {% for zone in zones %}
+                  <span class="ak-badge ak-badge-brand">
+                    <i class="fa-solid fa-route" aria-hidden="true"></i>
+                    Bezirk {{ zone.code }}
+                  </span>
+                {% endfor %}
+                {% if waste_type %}
+                  <span class="ak-badge ak-badge-accent">
+                    <i class="{{ waste_type.icon }}" aria-hidden="true"></i>
+                    {{ waste_type.name }}
+                  </span>
+                {% endif %}
+              </div>
+            </div>
+            <a class="ak-btn ak-btn-primary"
+               href="/a/{{ address_key.public_id }}/kalender/{% if waste_type %}?abfallart={{ waste_type.slug }}{% endif %}">
+              <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>
+              Kalender abonnieren
+            </a>
+          </div>
+
+          {% if next_date %}
+            <div class="ak-next-date mt-3">
+              <div class="label">Nächste Abholung</div>
+              <div class="value">{{ next_date.date|weekday_de }}, {{ next_date.date|date:"d.m.Y" }}</div>
+              <div class="relative">
+                {{ next_date.date|relative_days }}
+                {% if next_date.kind != "regular" %} · {{ next_date.get_kind_display }}{% endif %}
+                {% if next_date.note %} · {{ next_date.note }}{% endif %}
+              </div>
+            </div>
+          {% else %}
+            <div class="ak-alert ak-alert-warning mt-3" role="status">
+              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+              <div>Für diese Adresse liegen aktuell keine kommenden Termine vor.</div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      {# ---------------- Kommende Termine ---------------- #}
+      <div class="ak-card mb-4">
+        <div class="ak-card-header">
+          <i class="fa-solid fa-forward" aria-hidden="true"></i> Kommende Termine
+        </div>
+        <div class="ak-card-body pt-3">
+          {% if upcoming %}
+            <ul class="ak-date-list">
+              {% for record in upcoming %}
+                <li>
+                  <span class="ak-date-box" aria-hidden="true">
+                    <span class="day">{{ record.date|date:"d" }}</span>
+                    <span class="month">{{ record.date|month_short_de }}</span>
+                  </span>
+                  <span class="ak-date-meta">
+                    <span class="weekday">{{ record.date|weekday_de }}, {{ record.date|date:"d.m.Y" }}</span>
+                    <br><span class="relative">{{ record.date|relative_days }}</span>
+                  </span>
+                  <span class="text-right">
+                    <span class="ak-badge ak-badge-accent">
+                      <i class="{{ record.zone.waste_type.icon }}" aria-hidden="true"></i>
+                      {{ record.zone.waste_type.name }}
+                    </span>
+                    {% if record.kind == "shifted" %}
+                      <br><span class="ak-badge ak-badge-info mt-1" title="{{ record.note }}">Ersatztermin</span>
+                    {% elif record.kind == "special" %}
+                      <br><span class="ak-badge ak-badge-info mt-1">Sondertermin</span>
+                    {% endif %}
+                  </span>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <div class="ak-empty-state">
+              <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+              <p>Keine kommenden Termine gefunden.</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      {# ---------------- Jahresübersicht ---------------- #}
+      <div class="ak-card mb-4" x-data="{ show: false }">
+        <div class="ak-card-header d-flex justify-content-between">
+          <span><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Jahresübersicht
+            {% if years %}{{ years|join:" / " }}{% endif %}
+          </span>
+          <button type="button" class="ak-btn ak-btn-ghost ak-btn-sm" @click="show = !show"
+                  :aria-expanded="show" aria-controls="jahresliste">
+            <span x-text="show ? 'Einklappen' : 'Alle anzeigen'">Alle anzeigen</span>
+          </button>
+        </div>
+        <div class="ak-card-body pt-2" id="jahresliste" x-show="show" x-cloak>
+          {% regroup all_dates by date.month as months %}
+          {% for month in months %}
+            <div class="ak-month-group">
+              <h4>{{ month.list.0.date|month_de }} {{ month.list.0.date|date:"Y" }}</h4>
+              <div>
+                {% for record in month.list %}
+                  <span class="ak-chip {% if record.date|is_past %}past{% endif %}">
+                    <span class="dot" style="background: {{ record.zone.waste_type.color }};" aria-hidden="true"></span>
+                    {{ record.date|date:"D d.m." }}
+                    {% if record.kind == "shifted" %}<i class="fa-solid fa-shuffle" title="Ersatztermin" aria-hidden="true"></i>{% endif %}
+                  </span>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+          <div class="mt-3 ak-no-print">
+            <a class="ak-btn ak-btn-outline ak-btn-sm" target="_blank" rel="noopener"
+               href="/a/{{ address_key.public_id }}/druck/">
+              <i class="fa-solid fa-print" aria-hidden="true"></i> Druckansicht
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {# ---------------- Aktionen ---------------- #}
+      <div class="ak-card mb-4">
+        <div class="ak-card-header"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Aktionen</div>
+        <div class="ak-card-body d-flex flex-wrap" style="gap: .5rem;">
+          <a class="ak-btn ak-btn-primary"
+             href="/a/{{ address_key.public_id }}/kalender/{% if waste_type %}?abfallart={{ waste_type.slug }}{% endif %}">
+            <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> Kalender abonnieren
+          </a>
+          <a class="ak-btn ak-btn-outline"
+             href="/calendar/address/{{ address_key.public_id }}/{% if waste_type %}{{ waste_type.slug }}{% else %}all{% endif %}.ics?download=1">
+            <i class="fa-solid fa-download" aria-hidden="true"></i> ICS-Datei
+          </a>
+          <button type="button" class="ak-btn ak-btn-outline"
+                  onclick="akCopy(window.location.href, 'Link kopiert')">
+            <i class="fa-solid fa-link" aria-hidden="true"></i> Link kopieren
+          </button>
+          <a class="ak-btn ak-btn-outline"
+             href="/melden/?adresse={{ address_key.public_id }}{% if waste_type %}&abfallart={{ waste_type.slug }}{% endif %}">
+            <i class="fa-solid fa-flag" aria-hidden="true"></i> Fehler melden
+          </a>
+        </div>
+      </div>
+
+      {# ---------------- Dateninformationen ---------------- #}
+      <div class="ak-card">
+        <div class="ak-card-header"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Datenstand</div>
+        <div class="ak-card-body pt-3" style="font-size: var(--ak-fs-sm); color: var(--ak-text-muted);">
+          <div class="row">
+            <div class="col-sm-6 mb-2">
+              <strong style="color: var(--ak-text);">Quelle:</strong>
+              offizieller Abfuhrplan der Entsorgungsbetriebe Lübeck (PDF)
+            </div>
+            <div class="col-sm-6 mb-2">
+              <strong style="color: var(--ak-text);">Kalenderjahr{{ years|length|pluralize:"e" }}:</strong>
+              {{ years|join:", "|default:"–" }}
+            </div>
+            <div class="col-sm-6 mb-2">
+              <strong style="color: var(--ak-text);">Letzte Aktualisierung:</strong>
+              {{ status.last_update|date:"d.m.Y H:i"|default:"–" }} Uhr
+            </div>
+            <div class="col-sm-6 mb-2">
+              <strong style="color: var(--ak-text);">Herkunft:</strong>
+              <span class="ak-badge ak-badge-success">offiziell importiert</span>
+            </div>
+          </div>
+          <p class="mb-0 mt-2">
+            Alle Angaben ohne Gewähr. Verbindlich sind die Veröffentlichungen der
+            Entsorgungsbetriebe Lübeck. Fehler entdeckt?
+            <a href="/melden/?adresse={{ address_key.public_id }}">Bitte melden</a> – danke!
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

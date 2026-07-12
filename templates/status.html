@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Datenstatus – {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <h1 class="h3 mb-4" style="font-weight: 800;">Datenstatus</h1>
+      <div class="row">
+        <div class="col-sm-6 mb-3">
+          <div class="ak-card ak-stat">
+            <span class="ak-stat-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
+            <div>
+              <span class="ak-stat-value">{% if status.published_years %}{{ status.published_years|join:", " }}{% else %}–{% endif %}</span>
+              <div class="ak-stat-label">veröffentlichte Jahrespläne</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-3">
+          <div class="ak-card ak-stat">
+            <span class="ak-stat-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
+            <div>
+              <span class="ak-stat-value">{{ status.last_update|date:"d.m.Y"|default:"–" }}</span>
+              <div class="ak-stat-label">letzte Aktualisierung</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-3">
+          <div class="ak-card ak-stat">
+            <span class="ak-stat-icon"><i class="fa-solid fa-road" aria-hidden="true"></i></span>
+            <div>
+              <span class="ak-stat-value">{{ status.street_count }}</span>
+              <div class="ak-stat-label">Straßen im Datenbestand</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-3">
+          <div class="ak-card ak-stat">
+            <span class="ak-stat-icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></span>
+            <div>
+              <span class="ak-stat-value">{{ status.date_count }}</span>
+              <div class="ak-stat-label">Termine im Datenbestand</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="color: var(--ak-text-muted); font-size: var(--ak-fs-sm);" class="mt-2">
+        Die Daten stammen aus dem offiziellen Abfuhrplan der Entsorgungsbetriebe Lübeck und werden
+        regelmäßig automatisch geprüft. Alle Angaben ohne Gewähr.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,232 @@
+{% extends "base_public.html" %}
+{% load static %}
+
+{% block title %}Abfuhrtermine Lübeck – Gelber Sack & mehr{% endblock %}
+
+{% block content %}
+{# Hero Section #}
+<section class="hero-section" aria-labelledby="hero-title">
+  <div class="container">
+    <h1 id="hero-title">Wann wird bei Ihnen abgeholt?</h1>
+    <p>Finden Sie die nächsten Termine für den Gelben Sack und weitere Abfallarten in Lübeck. Einfach Adresse eingeben und sofort alle Termine sehen.</p>
+  </div>
+</section>
+
+{# Search Card #}
+<div class="container">
+  <div class="search-card" role="search" aria-label="Adresssuche">
+    <form hx-get="{% url 'addresses:search_streets' %}" hx-target="#street-results" hx-trigger="keyup delay:200ms" hx-indicator="#search-spinner">
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="street-search" class="form-label fw-semibold">Straße eingeben</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-text bg-transparent"><i class="bi bi-search"></i></span>
+            <input
+              type="text"
+              id="street-search"
+              name="q"
+              class="form-control form-control-lg"
+              placeholder="z. B. Musterstraße, Aegidienstr., ..."
+              autocomplete="off"
+              aria-describedby="search-help"
+              hx-get="{% url 'addresses:search_streets' %}"
+              hx-target="#street-results"
+              hx-trigger="keyup changed delay:300ms, search"
+              hx-indicator="#search-spinner"
+            >
+            <span id="search-spinner" class="input-group-text bg-transparent htmx-indicator">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            </span>
+          </div>
+          <div id="search-help" class="form-text mt-1">Mindestens 2 Zeichen. Suchergebnisse erscheinen während der Eingabe.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="house-number" class="form-label fw-semibold">Hausnummer <span class="text-secondary fw-normal">(optional)</span></label>
+          <input type="text" id="house-number" name="house_number" class="form-control" placeholder="z. B. 12, 14a, 20-24">
+        </div>
+
+        <div class="col-md-6">
+          <label for="waste-type" class="form-label fw-semibold">Abfallart</label>
+          <select id="waste-type" name="waste_type" class="form-select">
+            <option value="gelber-sack">Gelber Sack</option>
+            <option value="all" disabled class="text-secondary">Weitere folgen in Kürze</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary btn-lg w-100">
+            <i class="bi bi-calendar-check me-2"></i>Termine finden
+          </button>
+        </div>
+      </div>
+    </form>
+
+    {# Street results dropdown #}
+    <div id="street-results" class="mt-2"></div>
+
+    {# Quick links #}
+    <div class="mt-4 pt-3 border-top">
+      <div class="row g-2 text-center text-sm-start">
+        <div class="col-sm-6">
+          <small class="text-secondary">
+            <i class="bi bi-info-circle me-1"></i>
+            Die Abholung des Gelben Sacks erfolgt 14-täglich.
+          </small>
+        </div>
+        <div class="col-sm-6 text-sm-end">
+          <a href="{% url 'core:about' %}" class="small">
+            <i class="bi bi-arrow-right me-1"></i>Mehr erfahren
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# Steps #}
+<section class="container" aria-labelledby="steps-title">
+  <h2 id="steps-title" class="visually-hidden">So funktioniert's</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-number" aria-hidden="true">1</div>
+      <div class="step-title">Adresse auswählen</div>
+      <div class="step-desc">Straße und Hausnummer eingeben – wir finden den richtigen Abfuhrbezirk.</div>
+    </div>
+    <div class="step">
+      <div class="step-number" aria-hidden="true">2</div>
+      <div class="step-title">Termine prüfen</div>
+      <div class="step-desc">Nächster Termin, alle Termine des Jahres und eine übersichtliche Liste.</div>
+    </div>
+    <div class="step">
+      <div class="step-number" aria-hidden="true">3</div>
+      <div class="step-title">Kalender abonnieren</div>
+      <div class="step-desc">Per iCal-Feed direkt auf Ihr Smartphone oder in Ihre Kalender-App.</div>
+    </div>
+  </div>
+</section>
+
+{# Stat Cards #}
+<section class="container" aria-labelledby="stats-title">
+  <h2 id="stats-title" class="visually-hidden">Aktuelle Datenlage</h2>
+  <div class="row g-4">
+    <div class="col-6 col-md-3">
+      <div class="card stat-card border-primary border-start border-3">
+        <div class="card-body">
+          <i class="stat-icon bi bi-signpost-2"></i>
+          <div class="stat-value">1.200+</div>
+          <div class="stat-label">Straßen</div>
+          <div class="stat-footer">Im Stadtgebiet erfasst</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="card stat-card border-success border-start border-3">
+        <div class="card-body">
+          <i class="stat-icon bi bi-trash3"></i>
+          <div class="stat-value">1</div>
+          <div class="stat-label">Abfallart</div>
+          <div class="stat-footer">Gelber Sack – weitere folgen</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="card stat-card border-info border-start border-3">
+        <div class="card-body">
+          <i class="stat-icon bi bi-calendar3"></i>
+          <div class="stat-value">2026</div>
+          <div class="stat-label">Kalenderjahr</div>
+          <div class="stat-footer">Aktueller Jahresplan</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="card stat-card border-warning border-start border-3">
+        <div class="card-body">
+          <i class="stat-icon bi bi-calendar-check"></i>
+          <div class="stat-value">12.000+</div>
+          <div class="stat-label">Termine</div>
+          <div class="stat-footer">Bereitgestellt</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Info Cards #}
+<section class="container mt-5" aria-labelledby="info-title">
+  <h2 id="info-title" class="visually-hidden">Weitere Informationen</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-3">
+            <div class="bg-primary bg-opacity-10 rounded-3 p-3 me-3">
+              <i class="bi bi-calendar-plus text-primary fs-4"></i>
+            </div>
+            <h5 class="card-title mb-0">iCalendar-Feed</h5>
+          </div>
+          <p class="card-text text-secondary small">
+            Abonnieren Sie Ihre persönliche Kalender-URL. Die Termine werden automatisch aktualisiert, sobald ein neuer Jahresplan veröffentlicht wird.
+          </p>
+          <ul class="list-unstyled small text-secondary mb-0">
+            <li class="mb-1"><i class="bi bi-apple text-dark me-2"></i>Apple Kalender</li>
+            <li class="mb-1"><i class="bi bi-google text-danger me-2"></i>Google Kalender</li>
+            <li class="mb-1"><i class="bi bi-windows text-primary me-2"></i>Outlook / Thunderbird</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-3">
+            <div class="bg-success bg-opacity-10 rounded-3 p-3 me-3">
+              <i class="bi bi-megaphone text-success fs-4"></i>
+            </div>
+            <h5 class="card-title mb-0">Fehler melden</h5>
+          </div>
+          <p class="card-text text-secondary small">
+            Stimmt ein Termin nicht oder fehlt eine Straße? Melden Sie es uns direkt – wir prüfen und korrigieren die Daten.
+          </p>
+          <span class="badge bg-secondary-subtle text-secondary">Bald verfügbar</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-3">
+            <div class="bg-info bg-opacity-10 rounded-3 p-3 me-3">
+              <i class="bi bi-people text-info fs-4"></i>
+            </div>
+            <h5 class="card-title mb-0">Community</h5>
+          </div>
+          <p class="card-text text-secondary small">
+            Helfen Sie mit, die Daten aktuell zu halten. Bestätigen Sie Termine oder erfassen Sie fehlende Informationen gemeinsam mit anderen.
+          </p>
+          <span class="badge bg-secondary-subtle text-secondary">Bald verfügbar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Data freshness notice #}
+<div class="container mt-5">
+  <div class="card bg-transparent border-dashed">
+    <div class="card-body text-center py-4">
+      <p class="small text-secondary mb-0">
+        <i class="bi bi-check-circle text-success me-1"></i>
+        Datenstand: <strong>06.01.2026</strong> –
+        Quelle: Entsorgungsbetriebe Lübeck (Veolia) –
+        Nächste Prüfung: automatisch
+        <span class="mx-2">·</span>
+        <a href="{% url 'core:privacy' %}" class="small">Datenschutz</a>
+        <span class="mx-1">·</span>
+        <a href="{% url 'core:imprint' %}" class="small">Impressum</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

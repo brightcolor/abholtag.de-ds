@@ -1,0 +1,121 @@
+<div class="card mt-4 border-0 shadow-lg" id="schedule-result">
+  <div class="card-body">
+    <div class="row g-4">
+      {# Main Address Card #}
+      <div class="col-lg-5">
+        <div class="address-result h-100">
+          <div class="d-flex align-items-center mb-3">
+            <span class="badge badge-official me-2">Offizielle Daten</span>
+            <span class="badge bg-info-subtle text-info">Gelber Sack</span>
+          </div>
+          <div class="address-line">
+            <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+            {{ street.name }} {{ address_key.house_number }}
+          </div>
+          {% if street.district %}
+          <div class="address-info">
+            <i class="bi bi-building me-1"></i>{{ street.district.name }}
+            {% if street.postal_code %} · {{ street.postal_code }}{% endif %}
+          </div>
+          {% endif %}
+          <div class="mb-3">
+            <span class="badge bg-light text-dark border">
+              <i class="bi bi-pin-map me-1"></i>Abfuhrbezirk {{ assignment.zone.letter }}
+            </span>
+          </div>
+
+          {% if next_date %}
+          <div class="next-collection mb-3">
+            <i class="bi bi-calendar-check fs-5"></i>
+            <div>
+              <div>Nächster Termin</div>
+              <div class="fs-5">{{ next_date.collection_date|date:"l, d. F Y" }}</div>
+              <div class="fs-6 opacity-75">
+                {% if next_date.is_special %}<span class="me-2">⚠️ Sondertermin</span>{% endif %}
+                in {{ next_date.collection_date|timeuntil }}
+              </div>
+            </div>
+          </div>
+          {% else %}
+          <div class="alert alert-warning mb-3">
+            <i class="bi bi-exclamation-triangle me-2"></i>Keine Termine gefunden für das aktuelle Jahr.
+          </div>
+          {% endif %}
+
+          {# Actions #}
+          <div class="d-grid gap-2 mt-4">
+            <a href="{% url 'calendars:subscribe' address_key_id=address_key.id %}" class="btn btn-primary">
+              <i class="bi bi-calendar-plus me-2"></i>Kalender abonnieren
+            </a>
+            <div class="btn-group">
+              <a href="{% url 'calendars:feed' address_key_id=address_key.id waste_type_slug=waste_type_slug %}" class="btn btn-outline-primary">
+                <i class="bi bi-download me-2"></i>ICS herunterladen
+              </a>
+              <button class="btn btn-outline-secondary" onclick="navigator.clipboard.writeText(window.location.origin + '{% url 'calendars:feed' address_key_id=address_key.id waste_type_slug=waste_type_slug %}')">
+                <i class="bi bi-link-45deg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {# Timeline #}
+      <div class="col-lg-7">
+        <h5 class="fw-semibold mb-3">
+          <i class="bi bi-list-check me-2 text-primary"></i>Kommende Termine
+        </h5>
+        <ul class="timeline">
+          {% for date in dates %}
+          <li class="timeline-item {% if forloop.first %}today{% endif %}">
+            <div class="timeline-date">{{ date.collection_date|date:"l, d. F Y" }}</div>
+            <div class="timeline-relative">
+              {% if forloop.first %}
+                <span class="badge bg-success me-2">Heute</span>
+              {% elif date.collection_date == today %}
+                <span class="badge bg-success me-2">Heute</span>
+              {% else %}
+                {{ date.collection_date|timeuntil }} entfernt
+              {% endif %}
+            </div>
+            <div class="mt-1">
+              <span class="timeline-zone">Bezirk {{ assignment.zone.letter }}</span>
+              {% if date.is_special %}
+              <span class="badge bg-warning-subtle text-warning ms-2">Sondertermin</span>
+              {% endif %}
+              {% if date.note %}
+              <span class="d-block small text-secondary mt-1">{{ date.note }}</span>
+              {% endif %}
+            </div>
+          </li>
+          {% empty %}
+          <li class="text-center py-4 text-secondary">
+            <i class="bi bi-inbox fs-2 d-block mb-2"></i>
+            Keine Termine verfügbar
+          </li>
+          {% endfor %}
+        </ul>
+
+        {# Data info #}
+        <div class="mt-4 p-3 bg-light rounded-3 border small text-secondary">
+          <div class="row">
+            <div class="col-sm-6">
+              <i class="bi bi-database me-1"></i>Quelle: Entsorgungsbetriebe Lübeck<br>
+              <i class="bi bi-calendar me-1"></i>Jahr: {{ calendar_year|default:"-" }}
+            </div>
+            <div class="col-sm-6">
+              <i class="bi bi-check-circle text-success me-1"></i>Datenstand: 06.01.2026<br>
+              <i class="bi bi-shield-check me-1"></i>Offizielle Daten
+            </div>
+          </div>
+        </div>
+
+        {# Error report link #}
+        <div class="mt-2 text-end">
+          <a href="{% url 'community:error_report' %}" class="small text-decoration-none text-secondary">
+            <i class="bi bi-flag me-1"></i>Fehler melden
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

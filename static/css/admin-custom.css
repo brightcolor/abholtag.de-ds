@@ -1,0 +1,9 @@
+/* Feinschliff für den Jazzmin/AdminLTE-Verwaltungsbereich (§3.3) */
+
+.content-wrapper .card { border-radius: 10px; box-shadow: 0 1px 3px rgb(16 24 40 / 0.08); }
+.small-box { border-radius: 10px; }
+.brand-link .brand-image { border-radius: 8px; }
+
+/* Statuskarten der Systemseite */
+.ak-check-ok { color: #15803d; }
+.ak-check-fail { color: #b91c1c; }

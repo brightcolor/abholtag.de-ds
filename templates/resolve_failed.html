@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Adresse nicht gefunden – {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="ak-card">
+        <div class="ak-card-body text-center">
+          {% if needs_house_number %}
+            <i class="fa-solid fa-house-circle-exclamation" style="font-size: 2.4rem; color: var(--ak-warning);" aria-hidden="true"></i>
+            <h1 class="h4 mt-3" style="font-weight: 800;">Hausnummer benötigt</h1>
+            <p style="color: var(--ak-text-muted);">
+              {{ street.name }} ist je nach Hausnummer unterschiedlichen Abfuhrbezirken zugeordnet.
+              Bitte geben Sie Ihre Hausnummer an, damit wir die richtigen Termine anzeigen können.
+            </p>
+          {% else %}
+            <i class="fa-solid fa-magnifying-glass-minus" style="font-size: 2.4rem; color: var(--ak-text-faint);" aria-hidden="true"></i>
+            <h1 class="h4 mt-3" style="font-weight: 800;">Keine eindeutige Zuordnung</h1>
+            <p style="color: var(--ak-text-muted);">{{ error }}</p>
+            <p style="color: var(--ak-text-muted); font-size: var(--ak-fs-sm);">
+              Wir raten bewusst nicht: Lieber keine Termine anzeigen als falsche.
+            </p>
+          {% endif %}
+          <div class="d-flex justify-content-center flex-wrap mt-3" style="gap: .5rem;">
+            <a href="/" class="ak-btn ak-btn-primary">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Zur Suche
+            </a>
+            <a href="/melden/" class="ak-btn ak-btn-outline">
+              <i class="fa-solid fa-flag" aria-hidden="true"></i> Problem melden
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

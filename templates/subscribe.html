@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load ak_extras %}
+
+{% block title %}Kalender abonnieren – {{ address_key.label }} – {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+
+      <nav aria-label="Pfad" class="mb-3">
+        <a href="/a/{{ address_key.public_id }}/" class="ak-btn ak-btn-ghost ak-btn-sm">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Zurück zu den Terminen
+        </a>
+      </nav>
+
+      <div class="ak-card mb-4">
+        <div class="ak-card-body">
+          <h1 class="h3" style="font-weight: 800;">
+            <i class="fa-solid fa-calendar-plus" style="color: var(--ak-brand);" aria-hidden="true"></i>
+            Kalender abonnieren
+          </h1>
+          <p style="color: var(--ak-text-muted);">
+            Für <strong>{{ address_key.full_label }}</strong>
+            {% if waste_type %} – {{ waste_type.name }}{% endif %}.
+            Einmal eingerichtet, aktualisiert sich der Kalender automatisch:
+            Neue Jahrespläne und kurzfristige Änderungen erscheinen ohne weiteres Zutun.
+          </p>
+
+          <div class="ak-alert ak-alert-info mb-3">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            <div>
+              <strong>Abonnieren</strong> (empfohlen) hält den Kalender aktuell.
+              Der <strong>Download</strong> ist eine Momentaufnahme, die sich nicht aktualisiert.
+            </div>
+          </div>
+
+          <label class="ak-form-label" for="feed-url">Kalender-Adresse (ICS-Feed)</label>
+          <div class="ak-feed-box mb-3">
+            <code id="feed-url">{{ SITE_BASE_URL }}{{ feed_path }}</code>
+            <button type="button" class="ak-btn ak-btn-primary ak-btn-sm"
+                    onclick="akCopy('{{ SITE_BASE_URL }}{{ feed_path }}', 'Kalender-Adresse kopiert')">
+              <i class="fa-solid fa-copy" aria-hidden="true"></i> Kopieren
+            </button>
+          </div>
+
+          <div class="d-flex flex-wrap mb-2" style="gap: .5rem;">
+            <a class="ak-btn ak-btn-primary" href="webcal://{{ SITE_BASE_URL|cut:'https://'|cut:'http://' }}{{ feed_path }}">
+              <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> Direkt abonnieren (webcal)
+            </a>
+            <a class="ak-btn ak-btn-outline" href="{{ feed_path }}?download=1">
+              <i class="fa-solid fa-download" aria-hidden="true"></i> ICS herunterladen
+            </a>
+            <a class="ak-btn ak-btn-outline" href="{{ feed_path }}?erinnerung=1&download=1"
+               title="Mit Erinnerung am Vorabend">
+              <i class="fa-solid fa-bell" aria-hidden="true"></i> Mit Erinnerung
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ak-card mb-4" x-data="{ tab: 'apple' }">
+        <div class="ak-card-header">
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Anleitung für Ihren Kalender
+        </div>
+        <div class="ak-card-body">
+          <div class="ak-tabs" role="tablist">
+            <button class="ak-tab" :class="{ active: tab === 'apple' }" @click="tab = 'apple'" role="tab">
+              <i class="fa-brands fa-apple" aria-hidden="true"></i> Apple
+            </button>
+            <button class="ak-tab" :class="{ active: tab === 'google' }" @click="tab = 'google'" role="tab">
+              <i class="fa-brands fa-google" aria-hidden="true"></i> Google
+            </button>
+            <button class="ak-tab" :class="{ active: tab === 'android' }" @click="tab = 'android'" role="tab">
+              <i class="fa-brands fa-android" aria-hidden="true"></i> Android
+            </button>
+            <button class="ak-tab" :class="{ active: tab === 'outlook' }" @click="tab = 'outlook'" role="tab">
+              <i class="fa-brands fa-microsoft" aria-hidden="true"></i> Outlook
+            </button>
+            <button class="ak-tab" :class="{ active: tab === 'thunderbird' }" @click="tab = 'thunderbird'" role="tab">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i> Thunderbird
+            </button>
+          </div>
+
+          <div class="ak-tab-panel" x-show="tab === 'apple'">
+            <ol>
+              <li>Tippen Sie oben auf <strong>„Direkt abonnieren (webcal)“</strong> – iPhone, iPad und Mac öffnen automatisch die Kalender-App.</li>
+              <li>Bestätigen Sie mit „Abonnieren“.</li>
+              <li>Alternativ: Kalender-App → Ablage → „Neues Kalenderabonnement“ → Adresse einfügen.</li>
+            </ol>
+          </div>
+          <div class="ak-tab-panel" x-show="tab === 'google'" x-cloak>
+            <ol>
+              <li>Kopieren Sie die Kalender-Adresse oben.</li>
+              <li>Öffnen Sie <strong>calendar.google.com</strong> am Computer.</li>
+              <li>Links neben „Weitere Kalender“ auf <strong>+</strong> → „Per URL“.</li>
+              <li>Adresse einfügen und „Kalender hinzufügen“ wählen.</li>
+              <li>Der Kalender erscheint danach auch in der Google-Kalender-App auf dem Handy.</li>
+            </ol>
+          </div>
+          <div class="ak-tab-panel" x-show="tab === 'android'" x-cloak>
+            <ol>
+              <li>Am einfachsten über Google Kalender (siehe Tab „Google“).</li>
+              <li>Ohne Google-Konto: App <strong>ICSx⁵</strong> (kostenlos, Open Source) installieren.</li>
+              <li>In ICSx⁵ „+“ wählen, Kalender-Adresse einfügen, Synchronisation aktivieren.</li>
+            </ol>
+          </div>
+          <div class="ak-tab-panel" x-show="tab === 'outlook'" x-cloak>
+            <ol>
+              <li>Kopieren Sie die Kalender-Adresse oben.</li>
+              <li><strong>Outlook.com / Outlook im Web:</strong> Kalender → „Kalender hinzufügen“ → „Aus dem Web abonnieren“ → Adresse einfügen.</li>
+              <li><strong>Outlook (Desktop):</strong> Kalender → „Kalender öffnen“ → „Aus dem Internet“ → Adresse einfügen.</li>
+            </ol>
+          </div>
+          <div class="ak-tab-panel" x-show="tab === 'thunderbird'" x-cloak>
+            <ol>
+              <li>Kopieren Sie die Kalender-Adresse oben.</li>
+              <li>Kalenderansicht öffnen → Rechtsklick in die Kalenderliste → „Neuer Kalender“.</li>
+              <li>„Im Netzwerk“ wählen, Format <strong>iCalendar (ICS)</strong>, Adresse einfügen.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="ak-card">
+        <div class="ak-card-header">
+          <i class="fa-solid fa-eye" aria-hidden="true"></i> Vorschau – so sieht es im Kalender aus
+        </div>
+        <div class="ak-card-body pt-3">
+          {% if upcoming %}
+            <ul class="ak-date-list">
+              {% for record in upcoming %}
+                <li>
+                  <span class="ak-date-box" aria-hidden="true">
+                    <span class="day">{{ record.date|date:"d" }}</span>
+                    <span class="month">{{ record.date|month_short_de }}</span>
+                  </span>
+                  <span class="ak-date-meta">
+                    <span class="weekday">{{ record.zone.waste_type.calendar_summary }}</span><br>
+                    <span class="relative">{{ record.date|weekday_de }}, ganztägig · {{ record.date|relative_days }}</span>
+                  </span>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <div class="ak-empty-state"><i class="fa-regular fa-calendar" aria-hidden="true"></i>
+              <p>Noch keine kommenden Termine im Feed.</p></div>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

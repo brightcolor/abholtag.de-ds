@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load ak_extras %}
+
+{% block content %}
+<section class="ak-hero">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        <h1>Wann kommt der <span style="color: var(--ak-brand);">Gelbe Sack</span>?</h1>
+        <p class="ak-lead mx-auto mt-3">
+          Abfuhrtermine für die Hansestadt Lübeck – Adresse eingeben, Termine prüfen
+          und den Kalender dauerhaft abonnieren. Aktualisiert sich jedes Jahr automatisch.
+        </p>
+        {% if status.published_years %}
+          <p class="mt-2">
+            <span class="ak-badge ak-badge-success">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              Plan {{ status.published_years|last }} veröffentlicht
+            </span>
+            {% if status.last_update %}
+              <span class="ak-badge ak-badge-muted ml-1">
+                Stand {{ status.last_update|date:"d.m.Y" }}
+              </span>
+            {% endif %}
+          </p>
+        {% else %}
+          <p class="mt-2">
+            <span class="ak-badge ak-badge-warning">
+              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+              Noch kein Jahresplan veröffentlicht
+            </span>
+          </p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-lg-9">
+        <div class="ak-card">
+          <div class="ak-card-body">
+            <form action="/termine/" method="get" x-data="{ streetId: '', streetLabel: '', open: false }"
+                  @click.outside="open = false" autocomplete="off">
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label class="ak-form-label" for="strasse">Straße</label>
+                  <div class="ak-autocomplete ak-searching">
+                    <input type="text" id="strasse" class="ak-input" name="q"
+                           placeholder="z. B. Beethovenstraße"
+                           x-model="streetLabel"
+                           @input="streetId = ''; open = true"
+                           hx-get="/suche/vorschlaege/" hx-trigger="input changed delay:250ms"
+                           hx-target="#vorschlaege"
+                           role="combobox" aria-expanded="false" aria-controls="vorschlaege"
+                           aria-describedby="strasse-hilfe" required>
+                    <div id="vorschlaege" x-show="open" x-cloak></div>
+                    <input type="hidden" name="street_id" x-model="streetId" x-ref="streetId">
+                  </div>
+                  <div id="strasse-hilfe" class="ak-help mt-1">
+                    Auch „Strasse“, „Str.“ oder „St.“ werden verstanden.
+                  </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                  <label class="ak-form-label" for="hausnr">Hausnummer</label>
+                  <input type="text" id="hausnr" name="house_number" class="ak-input"
+                         placeholder="z. B. 12a" inputmode="numeric" pattern="\d+\s*[A-Za-z]?"
+                         maxlength="8">
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                  <label class="ak-form-label" for="abfallart">Abfallart</label>
+                  <select id="abfallart" name="waste_type" class="ak-input">
+                    {% for wt in waste_types %}
+                      <option value="{{ wt.slug }}">{{ wt.name }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="ak-btn ak-btn-primary ak-btn-lg btn-block"
+                      :disabled="!streetId" x-bind:title="streetId ? '' : 'Bitte zuerst eine Straße aus der Liste wählen'">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                Termine anzeigen
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-9">
+        <div class="ak-steps" aria-label="So funktioniert es">
+          <div class="ak-step">
+            <span class="ak-step-number" aria-hidden="true">1</span>
+            <div><h3>Adresse auswählen</h3><p>Straße suchen und Hausnummer eingeben.</p></div>
+          </div>
+          <div class="ak-step">
+            <span class="ak-step-number" aria-hidden="true">2</span>
+            <div><h3>Termine prüfen</h3><p>Nächste Abholungen und Jahresübersicht ansehen.</p></div>
+          </div>
+          <div class="ak-step">
+            <span class="ak-step-number" aria-hidden="true">3</span>
+            <div><h3>Kalender abonnieren</h3><p>Einmal einrichten – aktualisiert sich von selbst.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container pb-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-6 col-md-3 mb-3">
+          <div class="ak-card ak-stat">
+            <span class="ak-stat-icon"><i class="fa-solid fa-road" aria-hidden="true"></i></span>
+            <div>
+              <span class="ak-stat-value">{{ status.street_count }}</span>
+              <div class="ak-stat-label">unterstützte Straßen</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="ak-card ak-stat">
+            <span class="ak-stat-icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></span>
+            <div>
+              <span class="ak-stat-value">{{ status.date_count }}</span>
+              <div class="ak-stat-label">bereitgestellte Termine</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="ak-card ak-stat">
+            <span class="ak-stat-icon"><i class="fa-solid fa-recycle" aria-hidden="true"></i></span>
+            <div>
+              <span class="ak-stat-value">{{ status.waste_type_count }}</span>
+              <div class="ak-stat-label">Abfallart{{ status.waste_type_count|pluralize:"en" }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="ak-card ak-stat">
+            <span class="ak-stat-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
+            <div>
+              <span class="ak-stat-value">{% if status.published_years %}{{ status.published_years|join:", " }}{% else %}–{% endif %}</span>
+              <div class="ak-stat-label">Kalenderjahr{{ status.published_years|length|pluralize:"e" }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

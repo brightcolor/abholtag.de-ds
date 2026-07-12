@@ -1,0 +1,107 @@
+{% extends "base_public.html" %}
+{% load static %}
+
+{% block title %}Kalender abonnieren – {{ address_key }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Startseite</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Kalender abonnieren</li>
+    </ol>
+  </nav>
+
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body p-5">
+          <div class="d-flex align-items-center mb-4">
+            <div class="bg-primary bg-opacity-10 rounded-3 p-3 me-3">
+              <i class="bi bi-calendar-plus text-primary fs-2"></i>
+            </div>
+            <div>
+              <h3 class="fw-bold mb-1">Kalender abonnieren</h3>
+              <p class="text-secondary mb-0">Automatische Aktualisierung auf all Ihren Geräten</p>
+            </div>
+          </div>
+
+          <div class="address-result mb-4 p-3">
+            <div class="fw-semibold">
+              <i class="bi bi-geo-alt-fill text-primary me-2"></i>{{ address_key.street.name }} {{ address_key.house_number }}
+            </div>
+            <div class="small text-secondary">
+              Gelber Sack · Abfuhrbezirk {{ address_key.street.assignments.first.zone.letter|default:"-" }}
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label fw-semibold">Feed-URL</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="feed-url" readonly
+                value="{{ request.scheme }}://{{ request.get_host }}{% url 'calendars:feed' address_key_id=address_key.id waste_type_slug='gelber-sack' %}">
+              <button class="btn btn-primary btn-copy" data-clipboard-target="#feed-url">
+                <i class="bi bi-clipboard me-2"></i>Kopieren
+              </button>
+            </div>
+            <div class="form-text">
+              <i class="bi bi-info-circle me-1"></i>
+              Diese URL bleibt dauerhaft gültig. Neue Termine erscheinen automatisch nach Veröffentlichung des Jahresplans.
+            </div>
+          </div>
+
+          <div class="d-flex gap-2">
+            <a href="{% url 'calendars:feed' address_key_id=address_key.id waste_type_slug='gelber-sack' %}" class="btn btn-outline-primary">
+              <i class="bi bi-download me-2"></i>ICS-Datei herunterladen
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h5 class="mb-0"><i class="bi bi-question-circle me-2"></i>Anleitungen</h5>
+        </div>
+        <div class="card-body">
+          <div class="accordion" id="guideAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#appleGuide">Apple Kalender</button></h2>
+              <div id="appleGuide" class="accordion-collapse collapse" data-bs-parent="#guideAccordion">
+                <div class="accordion-body small">Einstellungen > Kalender > Accounts > Kalender-Abo hinzufügen > URL einfügen</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#googleGuide">Google Kalender</button></h2>
+              <div id="googleGuide" class="accordion-collapse collapse" data-bs-parent="#guideAccordion">
+                <div class="accordion-body small">Andere Kalender > Via URL hinzufügen > URL einfügen</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#outlookGuide">Outlook</button></h2>
+              <div id="outlookGuide" class="accordion-collapse collapse" data-bs-parent="#guideAccordion">
+                <div class="accordion-body small">Kalender > Kalender hinzufügen > Aus dem Internet > URL einfügen</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#thunderbirdGuide">Thunderbird</button></h2>
+              <div id="thunderbirdGuide" class="accordion-collapse collapse" data-bs-parent="#guideAccordion">
+                <div class="accordion-body small">Termine > Kalender > Neuer Kalender > Im Netzwerk > URL einfügen</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-4">
+        <div class="card-body">
+          <h6 class="fw-semibold mb-2"><i class="bi bi-shield-check text-success me-2"></i>Datenqualität</h6>
+          <p class="small text-secondary mb-1">Quelle: Entsorgungsbetriebe Lübeck</p>
+          <p class="small text-secondary mb-0">Stand: 06.01.2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
