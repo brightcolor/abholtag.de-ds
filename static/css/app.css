@@ -98,6 +98,44 @@ a:hover { color: var(--ak-brand-strong); text-decoration: none; }
 .ak-hero { padding: var(--ak-sp-7) 0 var(--ak-sp-6); }
 .ak-hero h1 { font-size: var(--ak-fs-3xl); font-weight: 800; letter-spacing: -0.02em; }
 .ak-hero .ak-lead { color: var(--ak-text-muted); font-size: var(--ak-fs-lg); max-width: 640px; }
+
+/* --------------------------------------------------------------------------
+   Typewriter (Überschrift & Suchfeld)
+   -------------------------------------------------------------------------- */
+.ak-tw { white-space: nowrap; }
+.ak-tw-caret {
+  display: inline-block;
+  width: 3px;
+  height: 0.95em;
+  margin-left: 2px;
+  vertical-align: -0.08em;
+  background: currentColor;
+  animation: ak-blink 1s steps(1) infinite;
+}
+@keyframes ak-blink { 50% { opacity: 0; } }
+
+/* Tonnen-/Sackfarben – nur das Farbwort ist eingefärbt */
+.ak-c-blue  { color: #2563eb; }
+.ak-c-gray  { color: #6b7280; }
+.ak-c-brown { color: #92400e; }
+.ak-c-green { color: #16a34a; }
+/* Gelb auf Weiß ist unlesbar: schwarzer Hintergrund, wächst beim Tippen mit */
+.ak-c-yellow {
+  color: #f2c200;
+  background: #111111;
+  padding: 0 0.12em;
+  border-radius: 6px;
+  box-decoration-break: clone;
+}
+[data-theme="dark"] .ak-c-blue  { color: #60a5fa; }
+[data-theme="dark"] .ak-c-gray  { color: #9ca3af; }
+[data-theme="dark"] .ak-c-brown { color: #d97706; }
+[data-theme="dark"] .ak-c-green { color: #4ade80; }
+[data-theme="dark"] .ak-c-yellow { background: #000000; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ak-tw-caret { animation: none; }
+}
 @media (max-width: 576px) {
   .ak-hero { padding: var(--ak-sp-5) 0 var(--ak-sp-4); }
   .ak-hero h1 { font-size: var(--ak-fs-2xl); }

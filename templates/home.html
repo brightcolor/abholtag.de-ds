@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-9 text-center">
-        <h1>Wann kommt der <span style="color: var(--ak-brand);">Gelbe Sack</span>?</h1>
+        <h1>Wann wird <span class="ak-tw" id="wt-typewriter" aria-hidden="true"></span><span class="sr-only">der Gelbe Sack, die Blaue Tonne, der Restmüll, die Bio-Tonne</span> abgeholt?</h1>
         <p class="ak-lead mx-auto mt-3">
           Abfuhrtermine für die Hansestadt Lübeck – Adresse eingeben, Termine prüfen
           und den Kalender dauerhaft abonnieren. Aktualisiert sich jedes Jahr automatisch.
@@ -45,6 +45,7 @@
                   <div class="ak-autocomplete ak-searching">
                     <input type="text" id="strasse" class="ak-input" name="q"
                            placeholder="z. B. Beethovenstraße"
+                           data-demo-streets="{{ demo_streets_json }}"
                            hx-get="/suche/vorschlaege/" hx-trigger="input changed delay:250ms"
                            hx-target="#vorschlaege"
                            role="combobox" aria-expanded="false" aria-controls="vorschlaege"

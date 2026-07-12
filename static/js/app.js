@@ -103,10 +103,147 @@
     });
   }
 
+  // ----- Typewriter: Abfallarten in der Überschrift ---------------------------
+  // Segmente: Farbwort in Tonnenfarbe, "Tonne"/"Sack" in Standard-Textfarbe.
+  // Gelb bekommt einen schwarzen Hintergrund, der beim Tippen mitwächst.
+  var WASTE_ITEMS = [
+    [{ t: "der " }, { t: "Gelbe", c: "ak-c-yellow" }, { t: " Sack" }],
+    [{ t: "die " }, { t: "Blaue", c: "ak-c-blue" }, { t: " Tonne" }],
+    [{ t: "der Restmüll" }],
+    [{ t: "die " }, { t: "Graue", c: "ak-c-gray" }, { t: " Tonne" }],
+    [{ t: "die " }, { t: "Bio", c: "ak-c-green" }, { t: "-Tonne" }],
+    [{ t: "der " }, { t: "Bio", c: "ak-c-green" }, { t: "müll" }],
+    [{ t: "die " }, { t: "Braune", c: "ak-c-brown" }, { t: " Tonne" }],
+    [{ t: "die " }, { t: "Gelbe", c: "ak-c-yellow" }, { t: " Tonne" }],
+  ];
+
+  function reducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function renderSegments(host, item, count, withCaret) {
+    host.textContent = "";
+    var remaining = count;
+    for (var i = 0; i < item.length && remaining > 0; i++) {
+      var take = Math.min(item[i].t.length, remaining);
+      var node;
+      if (item[i].c) {
+        node = document.createElement("span");
+        node.className = item[i].c;
+        node.textContent = item[i].t.slice(0, take);
+      } else {
+        node = document.createTextNode(item[i].t.slice(0, take));
+      }
+      host.appendChild(node);
+      remaining -= take;
+    }
+    if (withCaret) {
+      var caret = document.createElement("span");
+      caret.className = "ak-tw-caret";
+      host.appendChild(caret);
+    }
+  }
+
+  function itemLength(item) {
+    return item.reduce(function (sum, seg) { return sum + seg.t.length; }, 0);
+  }
+
+  function initWasteTypewriter() {
+    var host = document.getElementById("wt-typewriter");
+    if (!host) return;
+    if (reducedMotion()) {
+      renderSegments(host, WASTE_ITEMS[0], itemLength(WASTE_ITEMS[0]), false);
+      return;
+    }
+    var index = 0, count = 0, deleting = false;
+    function tick() {
+      var item = WASTE_ITEMS[index];
+      var total = itemLength(item);
+      if (!deleting) {
+        count++;
+        renderSegments(host, item, count, true);
+        if (count >= total) {
+          deleting = true;
+          setTimeout(tick, 1800);
+          return;
+        }
+        setTimeout(tick, 65 + Math.random() * 55);
+      } else {
+        count--;
+        renderSegments(host, item, count, true);
+        if (count <= 0) {
+          deleting = false;
+          index = (index + 1) % WASTE_ITEMS.length;
+          setTimeout(tick, 350);
+          return;
+        }
+        setTimeout(tick, 32);
+      }
+    }
+    tick();
+  }
+
+  // ----- Typewriter: Straßennamen im Suchfeld-Placeholder ---------------------
+  // Läuft, bis das Feld fokussiert wird oder Eingabe erfolgt.
+  function initStreetTypewriter() {
+    var input = document.getElementById("strasse");
+    if (!input) return;
+    var names;
+    try { names = JSON.parse(input.dataset.demoStreets || "[]"); } catch (e) { names = []; }
+    if (!names.length || reducedMotion()) return;
+
+    var defaultPlaceholder = input.getAttribute("placeholder") || "";
+    var stopped = false;
+
+    function stop() {
+      if (stopped) return;
+      stopped = true;
+      input.setAttribute("placeholder", defaultPlaceholder);
+    }
+    input.addEventListener("focus", stop, { once: true });
+    input.addEventListener("input", stop, { once: true });
+
+    var index = Math.floor(Math.random() * names.length);
+    var count = 0, deleting = false;
+    function tick() {
+      if (stopped) return;
+      if (document.activeElement === input || input.value) { stop(); return; }
+      var name = names[index];
+      if (!deleting) {
+        count++;
+        input.setAttribute("placeholder", name.slice(0, count));
+        if (count >= name.length) {
+          deleting = true;
+          setTimeout(tick, 1500);
+          return;
+        }
+        setTimeout(tick, 70 + Math.random() * 60);
+      } else {
+        count--;
+        input.setAttribute("placeholder", count ? name.slice(0, count) : "");
+        if (count <= 0) {
+          deleting = false;
+          index = (index + 1) % names.length;
+          setTimeout(tick, 400);
+          return;
+        }
+        setTimeout(tick, 35);
+      }
+    }
+    setTimeout(tick, 900);
+  }
+
+  function initAll() {
+    initSearchForm();
+    initTabs();
+    initWasteTypewriter();
+    initStreetTypewriter();
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () { initSearchForm(); initTabs(); });
+    document.addEventListener("DOMContentLoaded", initAll);
   } else {
-    initSearchForm(); initTabs();
+    initAll();
   }
 
   // ----- Copy to clipboard ---------------------------------------------------

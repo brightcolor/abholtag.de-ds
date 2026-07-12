@@ -1,3 +1,4 @@
+import json
 from datetime import date as date_cls
 
 from django.shortcuts import get_object_or_404, redirect, render
@@ -13,12 +14,17 @@ from .services import data_status, published_dates_for_address
 
 def home(request):
     record_event(request, "page_view")
+    # random real street names for the search field typewriter demo
+    demo_streets = list(
+        Street.objects.filter(is_active=True).order_by("?").values_list("name", flat=True)[:12]
+    )
     return render(
         request,
         "home.html",
         {
             "status": data_status(),
             "waste_types": WasteType.objects.filter(is_active=True),
+            "demo_streets_json": json.dumps(demo_streets, ensure_ascii=False),
         },
     )
 
