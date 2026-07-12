@@ -59,6 +59,8 @@
         input.value = pick.dataset.streetName;
         box.innerHTML = "";
         update();
+        var house = form.querySelector("#hausnr");
+        if (house) house.focus();  // spürbares Feedback nach der Auswahl
         return;
       }
       if (!form.contains(event.target)) box.innerHTML = "";
