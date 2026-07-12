@@ -133,8 +133,11 @@ a:hover { color: var(--ak-brand-strong); text-decoration: none; }
 [data-theme="dark"] .ak-c-green { color: #4ade80; }
 [data-theme="dark"] .ak-c-yellow { background: #000000; }
 
+/* Der Typewriter ist ein bewusstes Gestaltungselement und läuft auch bei
+   prefers-reduced-motion (Produktentscheidung); Screenreader erhalten
+   stattdessen den statischen sr-only-Text. */
 @media (prefers-reduced-motion: reduce) {
-  .ak-tw-caret { animation: none; }
+  .ak-tw-caret { animation: ak-blink 1s steps(1) infinite !important; }
 }
 @media (max-width: 576px) {
   .ak-hero { padding: var(--ak-sp-5) 0 var(--ak-sp-4); }

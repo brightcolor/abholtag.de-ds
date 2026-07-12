@@ -69,3 +69,83 @@ def test_zone_codes_deterministic_by_first_date():
     b = (date(2026, 1, 6),)
     codes = zone_codes_for({b: [2], a: [1]}, "R")
     assert codes == {a: "R01", b: "R02"}
+
+
+# ---------------------------------------------------------------------------
+# Live-Fallback (ensure_bms_schedule_for_street) – ohne Netz über den Disk-Cache
+# ---------------------------------------------------------------------------
+
+import pytest  # noqa: E402
+
+from apps.imports.bms_schedule import ensure_bms_schedule_for_street  # noqa: E402
+
+
+@pytest.fixture
+def live_setup(db, tmp_path):
+    from django.core.cache import cache
+
+    from apps.addresses.models import City, HouseNumber, Street
+    from apps.schedules.models import CollectionZone, ScheduleYear, ScheduleYearStatus
+    from apps.waste_types.models import WasteType
+
+    cache.clear()  # Tagesdrossel aus vorherigen Tests zurücksetzen (LocMem)
+    city = City.objects.create(name="Lübeck", slug="luebeck")
+    street = Street.objects.create(city=city, name="Frischer Weg", bms_street_id=4711)
+    HouseNumber.objects.create(street=street, text="1", number=1, bms_location_id=77001)
+    bio = WasteType.objects.get(slug="bioabfall")
+    year = ScheduleYear.objects.create(
+        waste_type=bio, year=2026, status=ScheduleYearStatus.PUBLISHED
+    )
+    # bestehende Zone mit identischem Muster wie im Beispiel-ICS (13.01./27.01.)
+    zone = CollectionZone.objects.create(waste_type=bio, code="B01")
+    from apps.core.models import Origin
+    from apps.schedules.models import CollectionDate
+
+    CollectionDate.objects.create(
+        schedule_year=year, zone=zone, date=date(2026, 1, 13), origin=Origin.OFFICIAL_IMPORT
+    )
+    CollectionDate.objects.create(
+        schedule_year=year, zone=zone, date=date(2026, 1, 27), origin=Origin.OFFICIAL_IMPORT
+    )
+    (tmp_path / "77001-2026.ics").write_text(SAMPLE_ICS, encoding="utf-8")
+    return {"street": street, "zone": zone, "cache": tmp_path}
+
+
+def test_live_fallback_reuses_matching_zone(live_setup):
+    street = live_setup["street"]
+    added = ensure_bms_schedule_for_street(street, year=2026, cache_dir=live_setup["cache"])
+    assert added
+    assignment = street.assignments.get(zone__waste_type__slug="bioabfall")
+    assert assignment.zone == live_setup["zone"]  # Muster identisch → Zone wiederverwendet
+    assert "live ergänzt" in assignment.note
+
+
+def test_live_fallback_creates_new_zone_for_new_pattern(live_setup):
+    from apps.schedules.models import ScheduleYear, ScheduleYearStatus
+    from apps.waste_types.models import WasteType
+
+    rest = WasteType.objects.get(slug="restabfall")
+    ScheduleYear.objects.create(waste_type=rest, year=2026, status=ScheduleYearStatus.PUBLISHED)
+    street = live_setup["street"]
+    ensure_bms_schedule_for_street(street, year=2026, cache_dir=live_setup["cache"])
+    zone = street.assignments.get(zone__waste_type__slug="restabfall").zone
+    assert zone.code == "R01"  # neue Zone, fortlaufende Nummer
+    assert zone.dates.count() == 1  # 19.01. aus dem Beispiel-ICS
+
+
+def test_live_fallback_noop_when_assigned(live_setup):
+    street = live_setup["street"]
+    ensure_bms_schedule_for_street(street, year=2026, cache_dir=live_setup["cache"])
+    from django.core.cache import cache
+    cache.clear()  # Tagesdrossel zurücksetzen
+    assert ensure_bms_schedule_for_street(street, year=2026, cache_dir=live_setup["cache"]) is False
+
+
+def test_live_fallback_throttled(live_setup):
+    street = live_setup["street"]
+    from django.core.cache import cache
+    cache.clear()
+    ensure_bms_schedule_for_street(street, year=2026, cache_dir=live_setup["cache"])
+    street.assignments.all().delete()
+    # zweiter Aufruf am selben Tag: gedrosselt, kein erneuter Abruf
+    assert ensure_bms_schedule_for_street(street, year=2026, cache_dir=live_setup["cache"]) is False

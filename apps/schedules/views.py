@@ -87,6 +87,16 @@ def address_schedule(request, public_id):
         AddressKey.objects.select_related("street", "street__district", "street__city"),
         public_id=public_id,
     )
+    # Self-healing: fehlt einer BMS-Abfallart die Zuordnung dieser Straße,
+    # wird sie einmalig live geholt und dauerhaft übernommen (tagesweise
+    # gedrosselt; Seitenaufbau bleibt bei Upstream-Problemen unberührt).
+    try:
+        from apps.imports.bms_schedule import ensure_bms_schedule_for_street
+
+        ensure_bms_schedule_for_street(address_key.street)
+    except Exception:  # noqa: BLE001
+        pass
+
     waste_slug = request.GET.get("abfallart", "")
     waste_type = WasteType.objects.filter(slug=waste_slug, is_active=True).first()
 

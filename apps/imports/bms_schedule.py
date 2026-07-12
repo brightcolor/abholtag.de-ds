@@ -62,7 +62,9 @@ def parse_bms_ics(content: str) -> tuple[dict[str, list[date]], set[str]]:
     return per_type, unknown
 
 
-def fetch_location_ics(location_id: int, year: int, cache_dir=None, retries: int = 3) -> str:
+def fetch_location_ics(
+    location_id: int, year: int, cache_dir=None, retries: int = 3, timeout: int = 30
+) -> str:
     """Fetch (and cache) the ICS for one bmsLocationId."""
     import requests
 
@@ -74,7 +76,7 @@ def fetch_location_ics(location_id: int, year: int, cache_dir=None, retries: int
     url = f"{BMS_BASE}/Main/Calender?bmsLocationId={location_id}&year={year}"
     for attempt in range(retries):
         try:
-            response = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=30)
+            response = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=timeout)
             if response.status_code == 404:
                 return ""
             response.raise_for_status()
@@ -101,3 +103,122 @@ def zone_codes_for(clusters: dict, prefix: str) -> dict[tuple, str]:
     """Deterministic zone codes: ordered by first collection date, then size."""
     ordered = sorted(clusters.items(), key=lambda kv: (kv[0][0] if kv[0] else date.max, kv[0]))
     return {signature: f"{prefix}{index:02d}" for index, (signature, _) in enumerate(ordered, 1)}
+
+
+# ---------------------------------------------------------------------------
+# Self-healing live lookup: streets without a BMS zone assignment get their
+# dates fetched on first page view and persisted ("cached") in the regular
+# zone model, so no address triggers more than one upstream request.
+# ---------------------------------------------------------------------------
+
+def ensure_bms_schedule_for_street(street, year: int | None = None, cache_dir=None) -> bool:
+    """Fetch + persist BMS dates for a street that has no zone assignment yet.
+
+    Only fills into already *published* ScheduleYears (the bulk import went
+    through review; a single street joining an existing plan is the same data
+    from the same source). Returns True if anything was added. Fail-silent:
+    the page must render regardless of upstream availability.
+    """
+    from pathlib import Path
+
+    from django.core.cache import cache
+
+    from apps.addresses.models import AssignmentStatus, StreetAssignment
+    from apps.core.models import Origin
+    from apps.schedules.models import (
+        CollectionDate,
+        CollectionZone,
+        ScheduleYear,
+        ScheduleYearStatus,
+    )
+    from apps.waste_types.models import WasteType
+
+    year = year or date.today().year
+    if not street.bms_street_id:
+        return False
+
+    missing = [
+        slug for slug in ZONE_PREFIX
+        if not StreetAssignment.objects.filter(
+            street=street, zone__waste_type__slug=slug, status=AssignmentStatus.ACTIVE
+        ).exists()
+    ]
+    if not missing:
+        return False
+
+    # negative cache: one upstream attempt per street and day
+    guard_key = f"bms-live:{street.pk}:{year}"
+    if cache.get(guard_key):
+        return False
+    cache.set(guard_key, True, timeout=60 * 60 * 24)
+
+    house = street.house_numbers.order_by("number", "text").first()
+    if house is None:
+        return False
+
+    try:
+        content = fetch_location_ics(
+            house.bms_location_id, year,
+            cache_dir=Path(cache_dir) if cache_dir else Path("data/bms/ics_cache"),
+            retries=1, timeout=6,
+        )
+    except Exception:  # noqa: BLE001 – upstream problems must not break the page
+        logger.warning("BMS-Live-Abruf fehlgeschlagen (Straße %s)", street, exc_info=True)
+        return False
+    if not content:
+        return False
+
+    parsed, _unknown = parse_bms_ics(content)
+    added = False
+    for slug in missing:
+        dates = [d for d in parsed.get(slug, []) if d.year == year]
+        if not dates:
+            continue
+        waste_type = WasteType.objects.filter(slug=slug).first()
+        schedule_year = ScheduleYear.objects.filter(
+            waste_type=waste_type, year=year, status=ScheduleYearStatus.PUBLISHED
+        ).first()
+        if schedule_year is None:
+            continue
+
+        signature = tuple(dates)
+        # reuse a zone with the identical date set, else create the next one
+        zone = None
+        for candidate in CollectionZone.objects.filter(waste_type=waste_type):
+            candidate_dates = tuple(
+                candidate.dates.filter(schedule_year=schedule_year)
+                .order_by("date").values_list("date", flat=True)
+            )
+            if candidate_dates == signature:
+                zone = candidate
+                break
+        if zone is None:
+            prefix = ZONE_PREFIX[slug]
+            numbers = [
+                int(code[len(prefix):])
+                for code in CollectionZone.objects.filter(
+                    waste_type=waste_type, code__startswith=prefix
+                ).values_list("code", flat=True)
+                if code[len(prefix):].isdigit()
+            ]
+            zone = CollectionZone.objects.create(
+                waste_type=waste_type, code=f"{prefix}{(max(numbers) if numbers else 0) + 1:02d}"
+            )
+            CollectionDate.objects.bulk_create(
+                CollectionDate(
+                    schedule_year=schedule_year, zone=zone, date=day,
+                    origin=Origin.OFFICIAL_IMPORT,
+                )
+                for day in signature
+            )
+        StreetAssignment.objects.get_or_create(
+            street=street, zone=zone,
+            defaults={
+                "origin": Origin.EXTERNAL_API,
+                "status": AssignmentStatus.ACTIVE,
+                "note": "live ergänzt (BMS-Abruf)",
+            },
+        )
+        added = True
+        logger.info("BMS-Live: %s → %s %s ergänzt", street, slug, zone.code)
+    return added

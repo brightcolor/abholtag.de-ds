@@ -117,10 +117,6 @@
     [{ t: "die " }, { t: "Gelbe", c: "ak-c-yellow" }, { t: " Tonne" }],
   ];
 
-  function reducedMotion() {
-    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  }
-
   function renderSegments(host, item, count, withCaret) {
     host.textContent = "";
     var remaining = count;
@@ -151,10 +147,6 @@
   function initWasteTypewriter() {
     var host = document.getElementById("wt-typewriter");
     if (!host) return;
-    if (reducedMotion()) {
-      renderSegments(host, WASTE_ITEMS[0], itemLength(WASTE_ITEMS[0]), false);
-      return;
-    }
     var index = 0, count = 0, deleting = false;
     function tick() {
       var item = WASTE_ITEMS[index];
@@ -190,7 +182,7 @@
     if (!input) return;
     var names;
     try { names = JSON.parse(input.dataset.demoStreets || "[]"); } catch (e) { names = []; }
-    if (!names.length || reducedMotion()) return;
+    if (!names.length) return;
 
     var defaultPlaceholder = input.getAttribute("placeholder") || "";
     var stopped = false;
