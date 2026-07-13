@@ -3,6 +3,14 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.7.2] - 2026-07-13
+
+### Geändert
+- Abo-Seite: Google-Anleitung erklärt jetzt, dass URL-Abos bei Google immer
+  als eigener Kalender erscheinen (Ziel-Kalender nur beim einmaligen Import
+  über „Importieren & Exportieren" wählbar) und dass die erste
+  Synchronisation bei Google dauern kann.
+
 ## [0.7.1] - 2026-07-13
 
 ### Behoben
