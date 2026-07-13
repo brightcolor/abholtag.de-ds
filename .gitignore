@@ -1,22 +1,23 @@
 __pycache__/
 *.py[cod]
 *.egg-info/
-dist/
-build/
 .venv/
 venv/
 .env
 *.sqlite3
 media/
 staticfiles/
-static_collected/
+.pytest_cache/
+.ruff_cache/
+htmlcov/
+.coverage
 .idea/
 .vscode/
-*.swp
 .DS_Store
 Thumbs.db
-*.pdf
-!docs/*.pdf
-# Test-Fixture: lokale Kopie des offiziellen Plans (Tests dürfen nicht von der externen URL abhängen)
-!data/samples/*.pdf
 docker-data/
+*.pdf
+# Test-Fixture: archivierte Kopie des offiziellen Plans (Tests ohne Netzzugriff)
+!data/samples/*.pdf
+data/bms/ics_cache/
+*.bak-*

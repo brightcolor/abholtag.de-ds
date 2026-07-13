@@ -92,3 +92,59 @@ def parse_house_number(raw: str) -> tuple[int | None, str]:
     if not match:
         return None, ""
     return int(match.group(1)), match.group(2).lower()
+
+
+# House-number ranges as printed in the EBL "Wegweiser" street index, e.g.
+#   "1-23 + 2-22a"          odd 1–23 and even 2–22
+#   "1-3 + 7-13 + 2-Ende"   odd 1–3, odd 7–13, even 2–open
+#   "24-Ende + 25-Ende"     even 24–open and odd 25–open
+#   "5 + 13a"               the single numbers 5 and 13
+_RANGE_SEG_RE = re.compile(
+    r"^\s*(\d+)\s*[a-z]?\s*(?:[-–]\s*(\d+\s*[a-z]?|Ende))?\s*$",
+    re.IGNORECASE,
+)
+_END_TOKENS = {"ende", "end"}
+
+
+def _parity_of(low: int, high: int | None) -> str:
+    """EBL lists odd and even sides as separate ranges; derive which one."""
+    if high is None or low == high:
+        return "odd" if low % 2 else "even"
+    if low % 2 == high % 2:
+        return "odd" if low % 2 else "even"
+    return "all"  # mixed endpoints → spans both sides
+
+
+def parse_house_ranges(raw: str) -> list[dict] | None:
+    """Parse an EBL house-number range string into assignment segments.
+
+    Returns a list of ``{"house_from", "house_to", "parity"}`` dicts
+    (``house_to`` is ``None`` for open "…-Ende" ranges), or ``None`` if any
+    part cannot be parsed with confidence – the caller then keeps the raw
+    text for human review instead of guessing (§10).
+    """
+    if not raw or not raw.strip() or raw.strip() == "—":
+        return None
+    segments: list[dict] = []
+    for chunk in re.split(r"[+&]", raw):
+        chunk = chunk.strip()
+        if not chunk:
+            continue
+        match = _RANGE_SEG_RE.match(chunk)
+        if not match:
+            return None
+        low = int(match.group(1))
+        upper = match.group(2)
+        if upper is None:
+            high: int | None = low
+        elif upper.strip().lower() in _END_TOKENS:
+            high = None
+        else:
+            high_match = re.match(r"(\d+)", upper.strip())
+            if not high_match:
+                return None
+            high = int(high_match.group(1))
+        if high is not None and high < low:
+            return None
+        segments.append({"house_from": low, "house_to": high, "parity": _parity_of(low, high)})
+    return segments or None

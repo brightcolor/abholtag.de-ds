@@ -42,5 +42,11 @@ class Command(BaseCommand):
                 f"SHA-256: {document.sha256}\nBitte im Adminbereich prüfen und freigeben.",
             )
             if options["run_import"]:
-                import_run = run_import(document, source.waste_type)
+                if source.parser_key == "luebeck_ebl":
+                    # one PDF → all four waste types; staged for review
+                    from apps.imports.ebl_import import run_ebl_import
+
+                    import_run = run_ebl_import(document.file.path, source_document=document)
+                else:
+                    import_run = run_import(document, source.waste_type)
                 self.stdout.write(f"  Importlauf #{import_run.pk}: {import_run.get_status_display()}")

@@ -5,8 +5,10 @@ Adresse suchen, Termine prüfen, Kalender dauerhaft abonnieren – mit automatis
 Import des offiziellen Abfuhrplans (PDF), Bürger-Fehlermeldungen und moderierter
 Datenpflege.
 
-**Erste Abfallart:** Gelber Sack (Ausgabe 2026 vollständig importiert und verifiziert).
-Weitere Abfallarten (Papier, Restmüll, Bio, …) sind architektonisch vorbereitet.
+**Alle vier Abfallarten** (Restabfall, Bioabfall, Papier, Gelber Sack) werden aus dem
+offiziellen EBL-Abfuhrplan importiert – hausnummern-genau, inkl. der nach Hausnummer
+geteilten Touren. Der Veolia-OCR-Plan und die BMS-Live-Abfrage bleiben als
+Kreuzprüfung bzw. Fallback erhalten.
 
 ## Funktionen
 
@@ -17,8 +19,9 @@ Weitere Abfallarten (Papier, Restmüll, Bio, …) sind architektonisch vorbereit
 - 🔗 **iCalendar-Feeds (RFC 5545)** – stabile URLs über Jahreswechsel, stabile UIDs,
   Änderungen per SEQUENCE/CANCELLED, ETag/304, kompatibel mit Apple/Google/
   Outlook/Thunderbird; Anleitunge­n auf der Abo-Seite
-- 🤖 **Automatischer PDF-Import** – täglicher Abruf, Archivierung, OCR-Parser für
-  den Kalenderteil, Validierung mit Review-Gate (nichts geht ungeprüft live)
+- 🤖 **Automatischer PDF-Import** – täglicher Abruf, Archivierung, Validierung mit
+  Review-Gate (nichts geht ungeprüft live); textbasierter EBL-Parser für alle
+  Abfallarten plus OCR-Parser für den Veolia-Gelber-Sack-Plan als Kreuzprüfung
 - 🧑‍🤝‍🧑 **Bürgerbeteiligung** – Fehlermeldungen mit Vorgangsnummer, strukturierte
   Korrekturvorschläge, konfigurierbares Quorum, Community-Fallback-Erfassung
 - 📊 **Interne Statistik** – datenschutzfreundlich (keine IPs, rotierende Hashes,
@@ -76,6 +79,7 @@ Backup: [deploy/backup.sh](deploy/backup.sh)
 | [docs/ARCHITEKTUR.md](docs/ARCHITEKTUR.md) | Module, Datenmodell, Rollen, Statusmodelle, Konfliktregeln |
 | [docs/DESIGNSYSTEM.md](docs/DESIGNSYSTEM.md) | Tokens, Komponenten, Light/Dark, Barrierefreiheit |
 | [docs/IMPORT-UND-FALLBACK.md](docs/IMPORT-UND-FALLBACK.md) | Import-Pipeline, Diff, Community-Fallback |
+| [docs/EBL-IMPORT.md](docs/EBL-IMPORT.md) | EBL-Plan-Parser (alle Abfallarten), Hausnummernbereiche, Jahreswechsel |
 | [docs/ANALYTICS-DATENSCHUTZ.md](docs/ANALYTICS-DATENSCHUTZ.md) | Ereignisse, Pseudonymisierung, Löschkonzept |
 | [docs/MODERATION-QUORUM.md](docs/MODERATION-QUORUM.md) | Moderationshandbuch, Quorum-Regeln |
 | [docs/BETRIEB.md](docs/BETRIEB.md) | Deployment, Backup/Restore, Monitoring, Admin-Handbuch |
