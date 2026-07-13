@@ -3,6 +3,14 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.9.1] - 2026-07-13
+
+### Geändert
+- Abo-Seite: Die Google-Anleitung erklärt den entscheidenden Android-Schritt –
+  neue URL-Abos blendet die Google-Kalender-App zunächst aus, bis in den
+  App-Einstellungen die Synchronisierung für den Kalender aktiviert wird.
+  Android-Nutzer sehen den Hinweis zusätzlich direkt unter dem Abo-Button.
+
 ## [0.9.0] - 2026-07-13
 
 ### Geändert

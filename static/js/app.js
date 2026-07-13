@@ -264,7 +264,9 @@
       selectTab("apple");
     } else if (isAndroid) {
       apple.hidden = true;
-      selectTab("android");
+      selectTab("google");
+      var hint = document.getElementById("abo-hinweis-google");
+      if (hint) hint.hidden = false;
     }
   }
 
