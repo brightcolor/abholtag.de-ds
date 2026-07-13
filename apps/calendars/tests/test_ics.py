@@ -96,3 +96,12 @@ def test_feed_view_http_caching(setup, client):
     assert response["Content-Type"].startswith("text/calendar")
     etag = response["ETag"]
     assert client.get(url, HTTP_IF_NONE_MATCH=etag).status_code == 304
+
+
+def test_subscribe_page_one_tap_links(setup, client):
+    """Smartphone-Abo: webcal- und Google-Kalender-Link auf der Abo-Seite."""
+    response = client.get(f"/a/{setup['address_key'].public_id}/kalender/")
+    content = response.content.decode()
+    assert response.status_code == 200
+    assert 'href="webcal://' in content
+    assert "calendar.google.com/calendar/render?cid=webcal%3A%2F%2F" in content

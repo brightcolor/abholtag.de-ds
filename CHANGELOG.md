@@ -3,6 +3,15 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.7.0] - 2026-07-13
+
+### Hinzugefügt
+- **Ein-Klick-Kalender-Abo fürs Smartphone**: Die Abo-Seite bietet
+  "Zum Kalender hinzufügen" (webcal, iPhone/iPad/Mac) und "Zu Google Kalender
+  hinzufügen" (cid-Link, Android/Google) als direkte Buttons; die Plattform
+  wird erkannt, der passende Button hervorgehoben und die zugehörige
+  Anleitung vorgewählt.
+
 ## [0.6.1] - 2026-07-13
 
 ### Behoben

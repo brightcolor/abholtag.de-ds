@@ -78,6 +78,16 @@ def subscribe_page(request, public_id):
         request, "calendar_subscription_page_view", address_key=address_key,
         waste_type=waste_types[0] if waste_types and len(waste_types) == 1 else None,
     )
+
+    # Ein-Klick-Abo fürs Smartphone: webcal:// (Apple) und Google-Kalender-Link
+    from urllib.parse import quote
+
+    from django.conf import settings
+
+    host = settings.SITE_BASE_URL.replace("https://", "").replace("http://", "").rstrip("/")
+    webcal_url = f"webcal://{host}{feed_path}"
+    google_url = "https://calendar.google.com/calendar/render?cid=" + quote(webcal_url, safe="")
+
     return render(
         request,
         "subscribe.html",
@@ -85,6 +95,8 @@ def subscribe_page(request, public_id):
             "address_key": address_key,
             "selected_types": waste_types,
             "feed_path": feed_path,
+            "webcal_url": webcal_url,
+            "google_url": google_url,
             "upcoming": upcoming_dates_for_address(address_key, waste_types, limit=5),
             "today": date_cls.today(),
         },

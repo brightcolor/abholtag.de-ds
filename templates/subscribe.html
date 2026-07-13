@@ -44,18 +44,26 @@
             </button>
           </div>
 
-          <div class="d-flex flex-wrap mb-2" style="gap: .5rem;">
-            <a class="ak-btn ak-btn-primary" href="webcal://{{ SITE_BASE_URL|cut:'https://'|cut:'http://' }}{{ feed_path }}">
-              <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> Direkt abonnieren (webcal)
+          <div class="d-flex flex-wrap mb-2" style="gap: .5rem;" id="abo-buttons">
+            <a class="ak-btn ak-btn-primary" id="abo-apple" href="{{ webcal_url }}">
+              <i class="fa-brands fa-apple" aria-hidden="true"></i> Zum Kalender hinzufügen
             </a>
-            <a class="ak-btn ak-btn-outline" href="{{ feed_path }}?download=1">
+            <a class="ak-btn ak-btn-primary" id="abo-google" href="{{ google_url }}"
+               target="_blank" rel="noopener">
+              <i class="fa-brands fa-google" aria-hidden="true"></i> Zu Google Kalender hinzufügen
+            </a>
+            <a class="ak-btn ak-btn-outline" href="{{ feed_path }}{% if '?' in feed_path %}&{% else %}?{% endif %}download=1">
               <i class="fa-solid fa-download" aria-hidden="true"></i> ICS herunterladen
             </a>
-            <a class="ak-btn ak-btn-outline" href="{{ feed_path }}?erinnerung=1&download=1"
+            <a class="ak-btn ak-btn-outline" href="{{ feed_path }}{% if '?' in feed_path %}&{% else %}?{% endif %}erinnerung=1&download=1"
                title="Mit Erinnerung am Vorabend">
               <i class="fa-solid fa-bell" aria-hidden="true"></i> Mit Erinnerung
             </a>
           </div>
+          <p class="ak-help mb-0" id="abo-hinweis">
+            Ein Tipp genügt: iPhone/iPad/Mac über den Apple-Button, Android über den
+            Google-Button – der Kalender aktualisiert sich danach automatisch.
+          </p>
         </div>
       </div>
 

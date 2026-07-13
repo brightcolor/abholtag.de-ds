@@ -243,11 +243,40 @@
     setTimeout(tick, 900);
   }
 
+  // ----- Abo-Seite: passenden Ein-Klick-Button je Plattform hervorheben ------
+  function initSubscribePlatform() {
+    var buttons = document.getElementById("abo-buttons");
+    if (!buttons) return;
+    var ua = navigator.userAgent || "";
+    var isApple = /iPhone|iPad|iPod|Macintosh/.test(ua);
+    var isAndroid = /Android/.test(ua);
+    var apple = document.getElementById("abo-apple");
+    var google = document.getElementById("abo-google");
+
+    function demote(button) {
+      button.classList.remove("ak-btn-primary");
+      button.classList.add("ak-btn-outline");
+    }
+    function selectTab(name) {
+      var tab = document.querySelector('[data-tab="' + name + '"]');
+      if (tab) tab.click();
+    }
+    if (isApple) {
+      demote(google);
+      selectTab("apple");
+    } else if (isAndroid) {
+      demote(apple);
+      selectTab("android");
+    }
+    // Desktop: beide Wege gleichwertig anbieten
+  }
+
   function initAll() {
     initSearchForm();
     initTabs();
     initWasteTypewriter();
     initStreetTypewriter();
+    initSubscribePlatform();
   }
 
   if (document.readyState === "loading") {

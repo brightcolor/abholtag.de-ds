@@ -1,45 +1,31 @@
-# Use Python 3.12 slim
-FROM python:3.12-slim-bookworm AS base
+FROM python:3.11-slim
 
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    DJANGO_SETTINGS_MODULE=config.settings.prod
 
 WORKDIR /app
 
-# Install system deps
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    gcc \
-    libpq-dev \
-    curl \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install uv for fast pip sync
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+COPY requirements.txt .
+# rapidocr zieht das GUI-opencv als Dependency mit; im Slim-Image fehlt dessen
+# libxcb und das geteilte cv2-Paket zerbricht -> nur headless behalten.
+RUN pip install --no-cache-dir -r requirements.txt     && pip uninstall -y opencv-python     && pip install --no-cache-dir --force-reinstall --no-deps opencv-python-headless==4.11.0.86
 
-# Copy requirements
-COPY requirements/ /app/requirements/
+COPY . .
 
-# Create venv and install deps
-RUN uv venv /app/.venv && \
-    . /app/.venv/bin/activate && \
-    uv pip install -r /app/requirements/base.txt
+RUN DJANGO_SECRET_KEY=build-only python manage.py collectstatic --noinput --settings=config.settings.prod
 
-FROM base AS dev
-RUN . /app/.venv/bin/activate && \
-    uv pip install -r /app/requirements/local.txt
-COPY . /app/
+RUN useradd --create-home appuser \
+    && mkdir -p /app/media \
+    && chown -R appuser:appuser /app/media
+USER appuser
 
-FROM base AS production
-RUN . /app/.venv/bin/activate && \
-    uv pip install -r /app/requirements/production.txt
-COPY . /app/
-RUN . /app/.venv/bin/activate && \
-    python manage.py collectstatic --noinput --settings=config.settings.production
+EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+  CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/live')"
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-    CMD curl -f http://localhost:8000/health/ || exit 1
-
-CMD ["/app/.venv/bin/gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "4", "--timeout", "120"]
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "120"]
