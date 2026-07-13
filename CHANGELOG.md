@@ -3,6 +3,23 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.9.0] - 2026-07-13
+
+### Geändert
+- **Admin-UI-Neuaufbau nach Screenshot-Review** (Kontraste + Verständlichkeit):
+  - Durchgängig helles Theme: das dark_mode_theme erzeugte einen unlesbaren
+    Mischzustand (dunkle Karten auf hellem Layout) und entfiel.
+  - Flatlys kontrastschwaches Grün (#18bc9c) vollständig durch die
+    Teal-Markenpalette ersetzt (Links, Buttons, Tabellenköpfe, Pagination,
+    Brand-Header); KPI-Zahlen und Pills in dunkler Textfarbe.
+  - Dashboard: ruhige, einheitliche weiße KPI-Karten mit farbigen
+    Icon-Kacheln statt vierfarbiger small-boxes; sanfte Warnleiste;
+    klare Kopfzeile (Titel + Untertitel links, Pill-Aktionen rechts).
+  - **Deutsche Feldnamen** überall in Listen/Filtern (Abfallart, Status,
+    Quelldokument, Jahresplan, Bezirk, Herkunft, Straße, …).
+  - **Farbige Status-Badges** in den Änderungslisten (Jahrespläne,
+    Importläufe, Meldungen, Vorschläge, Tourenzuordnungen) statt nacktem Text.
+
 ## [0.8.0] - 2026-07-13
 
 ### Hinzugefügt

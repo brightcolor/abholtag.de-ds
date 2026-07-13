@@ -66,7 +66,7 @@ def admin_dashboard(request):
             {
                 "title": "Adress-Stammdaten",
                 "icon": "fas fa-road",
-                "color": "primary",
+                "color": "blue",
                 "text": "Straßen, Hausnummern und ihre Zuordnung zu Abfuhrbezirken. Diese Daten "
                         "bleiben über Jahre stabil und werden von Importen nie automatisch "
                         "überschrieben. Zuordnungen mit Status „in Prüfung“ (mehrdeutige "
@@ -81,7 +81,7 @@ def admin_dashboard(request):
             {
                 "title": "Abfallarten",
                 "icon": "fas fa-recycle",
-                "color": "warning",
+                "color": "amber",
                 "text": "Gelber Sack, Restabfall, Bioabfall, Papier – mit Farbe, Icon und den "
                         "Texten für die Kalendereinträge. Nur aktive Abfallarten erscheinen in "
                         "Suche, Terminlisten und Feeds.",
@@ -90,7 +90,7 @@ def admin_dashboard(request):
             {
                 "title": "Datenquellen & Importe",
                 "icon": "fas fa-file-import",
-                "color": "info",
+                "color": "violet",
                 "text": "Woher die Daten kommen: der offizielle Gelber-Sack-PDF (täglich "
                         "automatisch geprüft) und der EBL-Online-Kalender. Jeder Importlauf "
                         "protokolliert Statistik, Warnungen und Diffs – nichts geht ungeprüft "
@@ -104,7 +104,7 @@ def admin_dashboard(request):
             {
                 "title": "Community & Moderation",
                 "icon": "fas fa-comments",
-                "color": "danger",
+                "color": "red",
                 "text": "Fehlermeldungen und Korrekturvorschläge aus der Bürgerschaft. Die "
                         "Moderationsqueue bündelt alles, was Aufmerksamkeit braucht; "
                         "Quorum-Regeln steuern das Gewicht von Bestätigungen "
@@ -119,7 +119,7 @@ def admin_dashboard(request):
             {
                 "title": "Statistik",
                 "icon": "fas fa-chart-line",
-                "color": "success",
+                "color": "green",
                 "text": "Datenschutzfreundliche Nutzungszahlen (keine IP-Adressen, täglich "
                         "rotierende Hashes): Suchen, Terminaufrufe, Feed-Abrufe, geschätzte "
                         "Abonnements, erfolglose Suchbegriffe. Nur intern sichtbar.",
@@ -128,7 +128,7 @@ def admin_dashboard(request):
             {
                 "title": "System & Sicherheit",
                 "icon": "fas fa-shield-halved",
-                "color": "secondary",
+                "color": "slate",
                 "text": "Benutzer und Rollen (Datenmanager, Moderator, Analyst, Auditor), das "
                         "unveränderliche Audit-Log aller Datenänderungen und der technische "
                         "Systemstatus (Quellen-Freshness, Speicher, offene Prüfungen).",

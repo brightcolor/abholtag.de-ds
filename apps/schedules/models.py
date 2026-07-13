@@ -7,7 +7,8 @@ class CollectionZone(TimeStampedModel):
     """Tour / Abfuhrbezirk, e.g. letter A–J for the Gelber Sack (§6)."""
 
     waste_type = models.ForeignKey(
-        "waste_types.WasteType", on_delete=models.CASCADE, related_name="zones"
+        "waste_types.WasteType", on_delete=models.CASCADE, related_name="zones",
+        verbose_name="Abfallart",
     )
     code = models.CharField("Kennung", max_length=10)
     name = models.CharField("Name", max_length=100, blank=True)
@@ -45,19 +46,21 @@ class ScheduleYear(TimeStampedModel):
     """One waste type's plan for one calendar year (§7)."""
 
     waste_type = models.ForeignKey(
-        "waste_types.WasteType", on_delete=models.CASCADE, related_name="schedule_years"
+        "waste_types.WasteType", on_delete=models.CASCADE, related_name="schedule_years",
+        verbose_name="Abfallart",
     )
     year = models.PositiveIntegerField("Kalenderjahr")
     status = models.CharField(
-        max_length=20, choices=ScheduleYearStatus.choices, default=ScheduleYearStatus.DISCOVERED
+        "Status", max_length=20, choices=ScheduleYearStatus.choices,
+        default=ScheduleYearStatus.DISCOVERED,
     )
     source_document = models.ForeignKey(
         "data_sources.SourceDocument", on_delete=models.SET_NULL, null=True, blank=True,
-        related_name="schedule_years",
+        related_name="schedule_years", verbose_name="Quelldokument",
     )
     import_run = models.ForeignKey(
         "imports.ImportRun", on_delete=models.SET_NULL, null=True, blank=True,
-        related_name="schedule_years",
+        related_name="schedule_years", verbose_name="Importlauf",
     )
     published_at = models.DateTimeField("Veröffentlicht am", null=True, blank=True)
     notes = models.TextField("Interne Notizen", blank=True)
@@ -85,14 +88,21 @@ class CollectionDateKind(models.TextChoices):
 class CollectionDate(TimeStampedModel):
     """A single collection day for one zone (§7)."""
 
-    schedule_year = models.ForeignKey(ScheduleYear, on_delete=models.CASCADE, related_name="dates")
-    zone = models.ForeignKey(CollectionZone, on_delete=models.CASCADE, related_name="dates")
+    schedule_year = models.ForeignKey(
+        ScheduleYear, on_delete=models.CASCADE, related_name="dates", verbose_name="Jahresplan"
+    )
+    zone = models.ForeignKey(
+        CollectionZone, on_delete=models.CASCADE, related_name="dates", verbose_name="Bezirk"
+    )
     date = models.DateField("Datum", db_index=True)
     kind = models.CharField(
-        max_length=10, choices=CollectionDateKind.choices, default=CollectionDateKind.REGULAR
+        "Art", max_length=10, choices=CollectionDateKind.choices,
+        default=CollectionDateKind.REGULAR,
     )
     note = models.CharField("Hinweis", max_length=255, blank=True)
-    origin = models.CharField(max_length=30, choices=Origin.choices, default=Origin.OFFICIAL_IMPORT)
+    origin = models.CharField(
+        "Herkunft", max_length=30, choices=Origin.choices, default=Origin.OFFICIAL_IMPORT
+    )
     is_cancelled = models.BooleanField("Entfällt", default=False)
     sequence = models.PositiveIntegerField(default=0, help_text="ICS SEQUENCE, wird bei Änderungen erhöht.")
 

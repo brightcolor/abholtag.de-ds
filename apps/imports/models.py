@@ -24,13 +24,15 @@ class ImportRun(TimeStampedModel):
 
     source_document = models.ForeignKey(
         "data_sources.SourceDocument", on_delete=models.CASCADE, related_name="import_runs",
-        null=True, blank=True,
+        null=True, blank=True, verbose_name="Quelldokument",
     )
-    parser_key = models.CharField(max_length=100)
-    kind = models.CharField(max_length=20, choices=ImportKind.choices, default=ImportKind.FULL)
-    status = models.CharField(max_length=20, choices=ImportRunStatus.choices, default=ImportRunStatus.RUNNING)
-    started_at = models.DateTimeField(auto_now_add=True)
-    finished_at = models.DateTimeField(null=True, blank=True)
+    parser_key = models.CharField("Parser", max_length=100)
+    kind = models.CharField("Art", max_length=20, choices=ImportKind.choices, default=ImportKind.FULL)
+    status = models.CharField(
+        "Status", max_length=20, choices=ImportRunStatus.choices, default=ImportRunStatus.RUNNING
+    )
+    started_at = models.DateTimeField("Gestartet", auto_now_add=True)
+    finished_at = models.DateTimeField("Beendet", null=True, blank=True)
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True
     )

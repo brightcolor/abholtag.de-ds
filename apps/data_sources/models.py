@@ -14,7 +14,8 @@ class DataSource(TimeStampedModel):
     """Where the data of a waste type comes from (§8, §14)."""
 
     waste_type = models.ForeignKey(
-        "waste_types.WasteType", on_delete=models.CASCADE, related_name="data_sources"
+        "waste_types.WasteType", on_delete=models.CASCADE, related_name="data_sources",
+        verbose_name="Abfallart",
     )
     name = models.CharField("Name", max_length=150)
     kind = models.CharField("Art", max_length=20, choices=SourceKind.choices, default=SourceKind.PDF_URL)
@@ -49,7 +50,9 @@ class DocumentStatus(models.TextChoices):
 class SourceDocument(TimeStampedModel):
     """An archived original file (e.g. the yearly PDF) – §14 step 1."""
 
-    data_source = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name="documents")
+    data_source = models.ForeignKey(
+        DataSource, on_delete=models.CASCADE, related_name="documents", verbose_name="Datenquelle"
+    )
     file = models.FileField("Datei", upload_to="source_documents/%Y/")
     sha256 = models.CharField(max_length=64, unique=True)
     size_bytes = models.PositiveBigIntegerField(default=0)
@@ -57,10 +60,10 @@ class SourceDocument(TimeStampedModel):
     etag = models.CharField(max_length=200, blank=True)
     last_modified_header = models.CharField(max_length=100, blank=True)
     fetched_at = models.DateTimeField("Abgerufen am")
-    page_count = models.PositiveIntegerField(null=True, blank=True)
-    detected_year = models.PositiveIntegerField(null=True, blank=True)
+    page_count = models.PositiveIntegerField("Seiten", null=True, blank=True)
+    detected_year = models.PositiveIntegerField("Erkanntes Jahr", null=True, blank=True)
     status = models.CharField(
-        max_length=20, choices=DocumentStatus.choices, default=DocumentStatus.ACTIVE
+        "Status", max_length=20, choices=DocumentStatus.choices, default=DocumentStatus.ACTIVE
     )
 
     class Meta:

@@ -321,12 +321,14 @@ JAZZMIN_SETTINGS = {
     "show_ui_builder": False,
 }
 
+# Bewusst KEIN dark_mode_theme: die Mischung aus dunklen Bootswatch-Karten
+# und hellem Layout erzeugte unlesbare Kontraste. Der Admin ist durchgängig
+# hell; die Markenfarben kommen aus admin-custom.css.
 JAZZMIN_UI_TWEAKS = {
     "theme": "flatly",
-    "dark_mode_theme": "darkly",
     "navbar": "navbar-white navbar-light",
     "sidebar": "sidebar-dark-primary",
-    "brand_colour": "navbar-success",
+    "brand_colour": False,
     "accent": "accent-teal",
 }
 

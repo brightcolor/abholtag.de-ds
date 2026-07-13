@@ -36,15 +36,18 @@ class District(TimeStampedModel):
 class Street(TimeStampedModel):
     """Master data street record (§6) – never overwritten by imports."""
 
-    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="streets")
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="streets", verbose_name="Stadt")
     district = models.ForeignKey(
-        District, on_delete=models.SET_NULL, null=True, blank=True, related_name="streets"
+        District, on_delete=models.SET_NULL, null=True, blank=True, related_name="streets",
+        verbose_name="Ortsteil",
     )
     name = models.CharField("Name", max_length=150)
     normalized_name = models.CharField(max_length=150, db_index=True, editable=False)
     postal_code = models.CharField("PLZ", max_length=5, blank=True)
     note = models.CharField("Hinweis", max_length=255, blank=True)
-    origin = models.CharField(max_length=30, choices=Origin.choices, default=Origin.OFFICIAL_IMPORT)
+    origin = models.CharField(
+        "Herkunft", max_length=30, choices=Origin.choices, default=Origin.OFFICIAL_IMPORT
+    )
     is_active = models.BooleanField("Aktiv", default=True)
     # ID im Online-Abfallkalender der EBL (insert-it.de); nicht unique, weil
     # Ortsteil-Varianten derselben physischen Straße dieselbe BMS-ID tragen.
@@ -77,12 +80,16 @@ class HouseNumber(TimeStampedModel):
     waste collection point for Achternhof 21–31).
     """
 
-    street = models.ForeignKey(Street, on_delete=models.CASCADE, related_name="house_numbers")
+    street = models.ForeignKey(
+        Street, on_delete=models.CASCADE, related_name="house_numbers", verbose_name="Straße"
+    )
     text = models.CharField("Hausnummer", max_length=20)
     number = models.PositiveIntegerField(null=True, blank=True, db_index=True)
     suffix = models.CharField(max_length=10, blank=True, default="")
     bms_location_id = models.IntegerField("BMS-Location-ID", db_index=True)
-    origin = models.CharField(max_length=30, choices=Origin.choices, default=Origin.EXTERNAL_API)
+    origin = models.CharField(
+        "Herkunft", max_length=30, choices=Origin.choices, default=Origin.EXTERNAL_API
+    )
 
     class Meta:
         unique_together = [("street", "text")]
@@ -132,9 +139,12 @@ class StreetAssignment(TimeStampedModel):
     Lübeck old town) or different zones per house number range.
     """
 
-    street = models.ForeignKey(Street, on_delete=models.CASCADE, related_name="assignments")
+    street = models.ForeignKey(
+        Street, on_delete=models.CASCADE, related_name="assignments", verbose_name="Straße"
+    )
     zone = models.ForeignKey(
-        "schedules.CollectionZone", on_delete=models.PROTECT, related_name="assignments"
+        "schedules.CollectionZone", on_delete=models.PROTECT, related_name="assignments",
+        verbose_name="Bezirk",
     )
     house_from = models.PositiveIntegerField("Hausnummer von", null=True, blank=True)
     house_to = models.PositiveIntegerField("Hausnummer bis (leer = offen)", null=True, blank=True)
@@ -144,9 +154,12 @@ class StreetAssignment(TimeStampedModel):
         help_text="Unveränderte Bereichsangabe aus der Quelle, z. B. „1-32/43“.",
     )
     note = models.CharField("Hinweis", max_length=255, blank=True)
-    origin = models.CharField(max_length=30, choices=Origin.choices, default=Origin.OFFICIAL_IMPORT)
+    origin = models.CharField(
+        "Herkunft", max_length=30, choices=Origin.choices, default=Origin.OFFICIAL_IMPORT
+    )
     status = models.CharField(
-        max_length=10, choices=AssignmentStatus.choices, default=AssignmentStatus.ACTIVE
+        "Status", max_length=10, choices=AssignmentStatus.choices,
+        default=AssignmentStatus.ACTIVE,
     )
     valid_from = models.DateField("Gültig ab", null=True, blank=True)
     valid_to = models.DateField("Gültig bis", null=True, blank=True)

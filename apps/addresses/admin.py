@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from apps.schedules.admin import status_badge
+
 from .models import (
     AddressKey,
     City,
@@ -53,7 +55,7 @@ class StreetAdmin(admin.ModelAdmin):
 
 @admin.register(StreetAssignment)
 class StreetAssignmentAdmin(admin.ModelAdmin):
-    list_display = ("street", "zone", "house_from", "house_to", "parity", "status", "origin")
+    list_display = ("street", "zone", "house_from", "house_to", "parity", status_badge, "origin")
     list_filter = ("zone", "status", "parity", "origin")
     search_fields = ("street__name", "raw_range")
     autocomplete_fields = ("street", "zone")

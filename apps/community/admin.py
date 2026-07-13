@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from apps.schedules.admin import status_badge
+
 from .models import (
     CommunityContribution,
     CorrectionProposal,
@@ -11,16 +13,15 @@ from .models import (
 
 @admin.register(ErrorReport)
 class ErrorReportAdmin(admin.ModelAdmin):
-    list_display = ("public_token", "category", "status", "street", "waste_type", "created_at")
+    list_display = ("public_token", "category", status_badge, "street", "waste_type", "created_at")
     list_filter = ("status", "category", "waste_type")
     search_fields = ("public_token", "description", "street__name")
     readonly_fields = ("public_token", "session_hash", "created_at", "updated_at")
-    list_editable = ("status",)
 
 
 @admin.register(CorrectionProposal)
 class CorrectionProposalAdmin(admin.ModelAdmin):
-    list_display = ("id", "kind", "status", "street", "confirmations", "objections", "created_at")
+    list_display = ("id", "kind", status_badge, "street", "confirmations", "objections", "created_at")
     list_filter = ("status", "kind", "waste_type")
     search_fields = ("reason", "street__name")
     readonly_fields = ("confirmations", "objections", "session_hash", "created_at", "updated_at")

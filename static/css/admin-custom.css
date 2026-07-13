@@ -1,121 +1,212 @@
 /* ==========================================================================
-   Admin-Feinschliff (Jazzmin/AdminLTE 3) – Abfuhrkalender Lübeck
-   Ziel: ruhiges, konsistentes Verwaltungs-UI mit der Petrol/Gelb-Markenwelt
-   der öffentlichen Seite.
+   Admin-Designsystem (Jazzmin/AdminLTE 3 auf Flatly-Basis) – abholtag.de
+   Durchgängig helles, ruhiges UI in der Petrol/Gelb-Markenwelt.
+   Flatlys knalliges Grün (#18bc9c) wird vollständig durch Teal ersetzt.
    ========================================================================== */
 
 :root {
-  --ak-admin-brand: #0f766e;
-  --ak-admin-brand-strong: #115e59;
-  --ak-admin-accent: #f2c200;
-  --ak-admin-radius: 12px;
-  --ak-admin-shadow: 0 1px 3px rgba(16, 24, 40, .08), 0 4px 16px rgba(16, 24, 40, .06);
+  --akx-brand: #0f766e;
+  --akx-brand-strong: #0b5852;
+  --akx-brand-soft: #e6f4f2;
+  --akx-accent: #f2c200;
+  --akx-text: #1f2a37;
+  --akx-muted: #64748b;
+  --akx-border: #e5eaf0;
+  --akx-bg: #f5f7fa;
+  --akx-radius: 12px;
+  --akx-shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 3px 12px rgba(16, 24, 40, .05);
 }
 
-/* ---------- Grundflächen ---------- */
-body { font-size: .92rem; }
-.content-wrapper { background: #f4f6f8; }
-.content-header h1 { font-weight: 800; letter-spacing: -.01em; }
+/* ---------- Grundflächen & Typografie ---------- */
+body { font-size: .92rem; color: var(--akx-text); }
+.content-wrapper { background: var(--akx-bg); }
+.content-header { padding-bottom: 0; }
+.content-header h1 { font-weight: 800; letter-spacing: -.01em; font-size: 1.55rem; }
+.text-muted { color: var(--akx-muted) !important; }
+
+/* ---------- Flatly-Grün global ersetzen ---------- */
+a { color: var(--akx-brand); }
+a:hover { color: var(--akx-brand-strong); }
+.text-teal { color: var(--akx-brand) !important; }
+.btn-success, .btn-primary, .btn-info.btn-primary, .bg-teal {
+  background-color: var(--akx-brand) !important;
+  border-color: var(--akx-brand) !important;
+  color: #fff !important;
+}
+.btn-success:hover, .btn-primary:hover, .btn-success:focus, .btn-primary:focus {
+  background-color: var(--akx-brand-strong) !important;
+  border-color: var(--akx-brand-strong) !important;
+}
+.btn-outline-primary { color: var(--akx-brand); border-color: var(--akx-brand); }
+.btn-outline-primary:hover { background: var(--akx-brand); border-color: var(--akx-brand); }
+.page-item.active .page-link { background: var(--akx-brand); border-color: var(--akx-brand); }
+.page-link { color: var(--akx-brand); }
+
+/* Tabellenkopf/Sortier-Links: dunkel statt Grün */
+#result_list thead th, #result_list thead th a,
+.table thead th, .table thead th a {
+  color: var(--akx-text) !important;
+  font-weight: 700;
+}
+#result_list tbody th a, #result_list tbody td a { color: var(--akx-brand); font-weight: 600; }
+.breadcrumb-item a { color: var(--akx-muted); }
+.breadcrumb-item.active { color: var(--akx-text); }
 
 /* ---------- Sidebar & Brand ---------- */
-.main-sidebar { box-shadow: 2px 0 8px rgba(0, 0, 0, .12); }
-.brand-link { border-bottom: 1px solid rgba(255, 255, 255, .08) !important; }
-.brand-link .brand-image.ak-admin-logo,
-.brand-link .brand-image {
-  border-radius: 8px;
-  box-shadow: none;
-  background: #fff;
-  padding: 2px;
+.main-sidebar { box-shadow: 2px 0 10px rgba(0, 0, 0, .15); }
+.brand-link {
+  background: linear-gradient(135deg, var(--akx-brand), var(--akx-brand-strong)) !important;
+  border-bottom: 0 !important;
+  font-weight: 700;
 }
-.nav-sidebar .nav-item > .nav-link { border-radius: 8px; margin: 1px 6px; }
+.brand-link .brand-image { border-radius: 8px; background: #fff; padding: 2px; box-shadow: none; }
+.nav-sidebar .nav-item > .nav-link { border-radius: 8px; margin: 1px 8px; width: auto; }
 .nav-sidebar .nav-item > .nav-link.active {
-  background: var(--ak-admin-brand) !important;
-  box-shadow: none;
+  background: var(--akx-brand) !important;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, .4);
 }
 .nav-sidebar .nav-header {
-  font-size: .72rem;
-  letter-spacing: .08em;
+  font-size: .7rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  opacity: .65;
+  color: #7f93a8 !important;
+  padding-top: .9rem;
 }
-.sidebar .nav-link p { font-size: .9rem; }
+.sidebar .user-panel { border-bottom: 1px solid rgba(255, 255, 255, .08); }
 
 /* ---------- Topbar ---------- */
-.main-header.navbar { box-shadow: 0 1px 4px rgba(16, 24, 40, .06); }
-.main-header .nav-link { border-radius: 8px; }
-.main-header .nav-link:hover { background: rgba(15, 118, 110, .08); color: var(--ak-admin-brand); }
+.main-header.navbar { box-shadow: 0 1px 4px rgba(16, 24, 40, .07); }
+.main-header .nav-link { border-radius: 8px; color: var(--akx-text); }
+.main-header .nav-link:hover { background: var(--akx-brand-soft); color: var(--akx-brand); }
+.navbar-search-block .form-control, .main-header .form-control { border-radius: 8px; }
 
 /* ---------- Cards ---------- */
-.card {
-  border-radius: var(--ak-admin-radius);
-  box-shadow: var(--ak-admin-shadow);
-  border: 1px solid #e6ebf1;
-}
+.card { border-radius: var(--akx-radius); box-shadow: var(--akx-shadow); border: 1px solid var(--akx-border); }
 .card-header {
-  border-top-left-radius: var(--ak-admin-radius) !important;
-  border-top-right-radius: var(--ak-admin-radius) !important;
+  border-top-left-radius: var(--akx-radius) !important;
+  border-top-right-radius: var(--akx-radius) !important;
   background: transparent;
-  font-weight: 600;
+  font-weight: 700;
+  border-bottom: 1px solid var(--akx-border);
 }
 .card-outline { border-top-width: 3px; }
 
-/* ---------- Dashboard-Widgets ---------- */
-.small-box {
-  border-radius: var(--ak-admin-radius);
-  box-shadow: var(--ak-admin-shadow);
-  overflow: hidden;
+/* ==========================================================================
+   Dashboard
+   ========================================================================== */
+
+/* Kopfbereich: Titel + Untertitel links, Aktionen rechts, klare Luft */
+.ak-dash-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.25rem; }
+.ak-dash-head .sub { color: var(--akx-muted); margin: 0; }
+.ak-quick-actions { display: flex; flex-wrap: wrap; gap: .45rem; }
+.ak-quick-actions .btn { border-radius: 999px; font-weight: 600; }
+.btn-teal { background: var(--akx-brand); border-color: var(--akx-brand); color: #fff; }
+.btn-teal:hover { background: var(--akx-brand-strong); border-color: var(--akx-brand-strong); color: #fff; }
+
+/* Ruhige, einheitliche KPI-Karten statt bunter small-boxes */
+.ak-kpi {
+  background: #fff;
+  border: 1px solid var(--akx-border);
+  border-radius: var(--akx-radius);
+  box-shadow: var(--akx-shadow);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+  transition: box-shadow .15s ease, transform .15s ease;
 }
-.small-box .icon { transition: transform .2s ease; opacity: .25; }
-.small-box:hover .icon { transform: scale(1.08); }
-.small-box .small-box-footer { background: rgba(0, 0, 0, .12); font-weight: 600; }
-.small-box p { font-size: .85rem; }
-.ak-box-teal { background: linear-gradient(135deg, #0f766e, #115e59) !important; color: #fff; }
-.info-box { border-radius: var(--ak-admin-radius); box-shadow: var(--ak-admin-shadow); }
-.info-box-icon { border-radius: var(--ak-admin-radius) 0 0 var(--ak-admin-radius); }
+a.ak-kpi { color: inherit; text-decoration: none; }
+a.ak-kpi:hover { box-shadow: 0 4px 16px rgba(16, 24, 40, .12); transform: translateY(-1px); color: inherit; }
+.ak-kpi .kpi-icon {
+  width: 52px; height: 52px; flex: 0 0 52px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.35rem;
+  color: #fff;
+}
+.ak-kpi .kpi-value { font-size: 1.7rem; font-weight: 800; line-height: 1.1; color: var(--akx-text) !important; }
+.ak-kpi .kpi-label { color: var(--akx-muted); font-size: .82rem; line-height: 1.35; }
+.kpi-teal { background: linear-gradient(135deg, #0f766e, #0b5852); }
+.kpi-blue { background: linear-gradient(135deg, #2563eb, #1e40af); }
+.kpi-amber { background: linear-gradient(135deg, #f2c200, #ca9d04); }
+.kpi-red { background: linear-gradient(135deg, #dc2626, #991b1b); }
+.kpi-green { background: linear-gradient(135deg, #16a34a, #15803d); }
+.ak-kpi.attention { border-left: 3px solid var(--akx-accent); }
+.ak-kpi.attention-red { border-left: 3px solid #dc2626; }
+.ak-warnbar a { color: #991b1b !important; text-decoration: underline; font-weight: 600; }
 
-/* Bereichskarten (Dashboard-Explainer) */
-.ak-section-heading { font-weight: 700; color: #5b6b7c; margin: .25rem 0 1rem; }
-.ak-area-card .card-body p { min-height: 5.2em; }
+/* Sanfte Warnleiste statt Vollrot */
+.ak-warnbar {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 4px solid #dc2626;
+  color: #991b1b;
+  border-radius: var(--akx-radius);
+  padding: .8rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Bereichskarten */
+.ak-section-heading { font-weight: 800; color: var(--akx-text); margin: 1.4rem 0 1rem; font-size: 1.05rem; }
+.ak-area-card .card-header { display: flex; align-items: center; gap: .6rem; }
+.ak-area-icon {
+  width: 34px; height: 34px; flex: 0 0 34px;
+  border-radius: 9px;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #fff; font-size: .95rem;
+}
+.ak-area-card .card-body { display: flex; flex-direction: column; }
+.ak-area-card .card-body p { color: var(--akx-muted); flex: 1 0 auto; }
 .ak-area-links { display: flex; flex-wrap: wrap; gap: .35rem; }
-.ak-area-links .btn { border-radius: 999px; }
-.ak-quick-actions { display: flex; flex-wrap: wrap; gap: .4rem; }
-.btn-teal { background: var(--ak-admin-brand); border-color: var(--ak-admin-brand); color: #fff; }
-.btn-teal:hover { background: var(--ak-admin-brand-strong); border-color: var(--ak-admin-brand-strong); color: #fff; }
+.ak-pill {
+  display: inline-flex; align-items: center;
+  padding: .3rem .8rem;
+  border-radius: 999px;
+  border: 1px solid var(--akx-border);
+  background: #fff;
+  color: var(--akx-text) !important;
+  font-size: .82rem;
+  font-weight: 600;
+  transition: all .12s ease;
+}
+.ak-pill:hover { border-color: var(--akx-brand); color: var(--akx-brand) !important; background: var(--akx-brand-soft); text-decoration: none; }
+.bgx-teal { background: #0f766e; } .bgx-blue { background: #2563eb; }
+.bgx-amber { background: #d99e00; } .bgx-red { background: #dc2626; }
+.bgx-green { background: #16a34a; } .bgx-slate { background: #475569; }
+.bgx-violet { background: #7c3aed; }
 
-/* ---------- Tabellen & Listen ---------- */
-.table th { border-top: 0; font-weight: 600; color: #5b6b7c; }
-.table-hover tbody tr:hover { background: rgba(15, 118, 110, .05); }
+/* ---------- Tabellen & Changelist ---------- */
+.table-hover tbody tr:hover { background: var(--akx-brand-soft); }
 .table td, .table th { vertical-align: middle; }
 #result_list thead th { background: #f8fafc; position: sticky; top: 0; z-index: 5; }
 .paginator { padding: .75rem 1rem; }
+#changelist-filter { border-radius: var(--akx-radius); box-shadow: var(--akx-shadow); border: 1px solid var(--akx-border); }
+#changelist-filter h2 { border-radius: var(--akx-radius) var(--akx-radius) 0 0; background: #f8fafc; color: var(--akx-text); font-weight: 700; }
+#changelist .actions { border-radius: var(--akx-radius); background: #fff; }
+.object-tools .btn, #changelist-form .btn { border-radius: 8px; }
 
-/* Changelist-Filter als Karte */
-#changelist-filter {
-  border-radius: var(--ak-admin-radius);
-  box-shadow: var(--ak-admin-shadow);
-  border: 1px solid #e6ebf1;
-}
-
-/* ---------- Buttons & Formulare ---------- */
-.btn { border-radius: 8px; }
-.btn-primary, .btn-info.btn-primary { background: var(--ak-admin-brand); border-color: var(--ak-admin-brand); }
-.btn-primary:hover, .btn-primary:focus { background: var(--ak-admin-brand-strong); border-color: var(--ak-admin-brand-strong); }
+/* ---------- Formulare ---------- */
 .form-control { border-radius: 8px; }
-.form-control:focus { border-color: var(--ak-admin-brand); box-shadow: 0 0 0 3px rgba(15, 118, 110, .18); }
+.form-control:focus { border-color: var(--akx-brand); box-shadow: 0 0 0 3px rgba(15, 118, 110, .16); }
 .select2-container--default .select2-selection--single { border-radius: 8px; }
-.nav-tabs .nav-link.active { border-top: 2px solid var(--ak-admin-brand); font-weight: 600; }
+.nav-tabs .nav-link.active { border-top: 2px solid var(--akx-brand); font-weight: 700; }
+label { font-weight: 600; }
+.form-group .form-text, .help-block { color: var(--akx-muted); }
 
-/* ---------- Badges & Status ---------- */
-.badge { border-radius: 999px; padding: .35em .7em; font-weight: 600; }
-.badge-success { background: #15803d; }
-.badge-warning { background: #f2c200; color: #1c2530; }
-.badge-info { background: #1d4ed8; }
+/* ---------- Badges ---------- */
+.badge { border-radius: 999px; padding: .38em .75em; font-weight: 600; letter-spacing: .01em; }
+.badge-success { background: #dcfce7; color: #166534; }
+.badge-warning { background: #fef3c7; color: #92400e; }
+.badge-info { background: #dbeafe; color: #1e40af; }
+.badge-danger { background: #fee2e2; color: #991b1b; }
+.badge-secondary { background: #e2e8f0; color: #334155; }
 
-/* ---------- Login-Seite ---------- */
-.login-page { background: linear-gradient(160deg, #0f766e 0%, #0b4f4a 60%, #083f3b 100%); }
-.login-box .card { border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 0, 0, .35); }
-.login-logo img { border-radius: 12px; }
-.login-box .btn-primary { background: var(--ak-admin-brand); border-color: var(--ak-admin-brand); }
+/* ---------- Login ---------- */
+.login-page { background: linear-gradient(160deg, #0f766e 0%, #0b4f4a 55%, #083a36 100%); }
+.login-box .card { border-radius: 16px; box-shadow: 0 16px 48px rgba(0, 0, 0, .35); border: 0; }
+.login-logo, .login-logo a { color: #fff; font-weight: 700; }
+.login-logo img { border-radius: 12px; background: #fff; padding: 4px; }
 
 /* Statuskarten der Systemseite */
 .ak-check-ok { color: #15803d; }
@@ -123,4 +214,6 @@ body { font-size: .92rem; }
 
 /* Kleinigkeiten */
 ::selection { background: rgba(242, 194, 0, .4); }
-.content-wrapper .alert { border-radius: var(--ak-admin-radius); }
+.alert { border-radius: var(--akx-radius); }
+.small-box { border-radius: var(--akx-radius); box-shadow: var(--akx-shadow); }
+.info-box { border-radius: var(--akx-radius); box-shadow: var(--akx-shadow); }
