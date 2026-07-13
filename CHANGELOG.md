@@ -3,6 +3,15 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.7.1] - 2026-07-13
+
+### Behoben
+- **Google Kalender blieb leer**: Googles Kalender-Crawler normalisiert
+  webcal:// zu http:// und scheitert dort am HTTPS-Redirect. Der
+  Google-Button übergibt jetzt die https-URL direkt (cid), und die
+  /calendar/-Feeds werden zusätzlich über http ohne Redirect ausgeliefert
+  (nginx-Ausnahme; alle übrigen Seiten leiten weiter auf HTTPS um).
+
 ## [0.7.0] - 2026-07-13
 
 ### Hinzugefügt

@@ -86,7 +86,10 @@ def subscribe_page(request, public_id):
 
     host = settings.SITE_BASE_URL.replace("https://", "").replace("http://", "").rstrip("/")
     webcal_url = f"webcal://{host}{feed_path}"
-    google_url = "https://calendar.google.com/calendar/render?cid=" + quote(webcal_url, safe="")
+    # Google bekommt die https-URL direkt: webcal wird von Google zu http://
+    # normalisiert und der Redirect auf https lässt den Kalender leer bleiben.
+    https_url = f"{settings.SITE_BASE_URL.rstrip('/')}{feed_path}"
+    google_url = "https://calendar.google.com/calendar/render?cid=" + quote(https_url, safe="")
 
     return render(
         request,
