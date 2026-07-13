@@ -3,6 +3,14 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.6.1] - 2026-07-13
+
+### Behoben
+- **Docker-Image**: rapidocr installiert das GUI-`opencv-python` als Dependency,
+  dessen fehlende libxcb im Slim-Image den OCR-Import (und nach Uninstall das
+  geteilte cv2-Paket) zerbrach – das Image behält jetzt nur
+  `opencv-python-headless` (sauber neu installiert).
+
 ## [0.6.0] - 2026-07-13
 
 ### Hinzugefügt
