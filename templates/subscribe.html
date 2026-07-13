@@ -136,7 +136,12 @@
                     <span class="month">{{ record.date|month_short_de }}</span>
                   </span>
                   <span class="ak-date-meta">
-                    <span class="weekday">{{ record.zone.waste_type.calendar_summary }}</span><br>
+                    <span class="weekday">
+                      <span class="ak-type-badge" style="--wt: {{ record.zone.waste_type.color }};">
+                        <span class="dot" aria-hidden="true"></span>
+                        {{ record.zone.waste_type.calendar_summary }}
+                      </span>
+                    </span><br>
                     <span class="relative">{{ record.date|weekday_de }}, ganztägig · {{ record.date|relative_days }}</span>
                   </span>
                 </li>

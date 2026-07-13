@@ -93,7 +93,8 @@
                     <br><span class="relative">{{ record.date|relative_days }}</span>
                   </span>
                   <span class="text-right">
-                    <span class="ak-badge ak-badge-accent">
+                    <span class="ak-type-badge" style="--wt: {{ record.zone.waste_type.color }};">
+                      <span class="dot" aria-hidden="true"></span>
                       <i class="{{ record.zone.waste_type.icon }}" aria-hidden="true"></i>
                       {{ record.zone.waste_type.name }}
                     </span>

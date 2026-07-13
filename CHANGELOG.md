@@ -3,6 +3,16 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.5.2] - 2026-07-13
+
+### Geändert
+- **Termin-Markierungen in Tonnenfarbe**: Die Badges der kommenden Termine
+  (und der Abo-Vorschau) tragen jetzt Farbpunkt, Rahmen und Hintergrund-Tönung
+  in der Farbe der jeweiligen Tonne/des Sacks (`--wt` aus WasteType.color,
+  color-mix). Der Text bleibt in Standardfarbe, damit auch dunkle Tonnenfarben
+  (Restabfall-Grau) im Darkmode lesbar sind.
+- Darkmode per Kontrast-Audit verifiziert (alle geprüften Elemente ≥ 6,4:1).
+
 ## [0.5.1] - 2026-07-13
 
 ### Behoben

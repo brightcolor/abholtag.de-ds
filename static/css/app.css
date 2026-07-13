@@ -179,6 +179,31 @@ a:hover { color: var(--ak-brand-strong); text-decoration: none; }
 .ak-badge-muted { background: var(--ak-bg-sunken); color: var(--ak-text-muted); }
 .ak-badge-outline { border-color: var(--ak-border-strong); color: var(--ak-text-muted); background: transparent; }
 
+/* Typ-Badge: Markierung in der Termin-Liste in der Farbe der Tonne/des Sacks.
+   --wt kommt inline aus WasteType.color; Text bleibt in Standardfarbe, damit
+   auch dunkle Tonnenfarben (Restabfall-Grau) im Darkmode lesbar sind. */
+.ak-type-badge {
+  display: inline-flex; align-items: center; gap: 0.45em;
+  padding: 0.28em 0.7em;
+  border-radius: 999px;
+  font-size: var(--ak-fs-xs);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ak-text);
+  background: color-mix(in srgb, var(--wt) 16%, var(--ak-bg-raised));
+  border: 1px solid color-mix(in srgb, var(--wt) 55%, transparent);
+}
+.ak-type-badge .dot {
+  width: 9px; height: 9px; border-radius: 50%; flex: 0 0 9px;
+  background: var(--wt);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--ak-text) 25%, transparent);
+}
+.ak-type-badge i { color: color-mix(in srgb, var(--wt) 70%, var(--ak-text)); }
+[data-theme="dark"] .ak-type-badge {
+  background: color-mix(in srgb, var(--wt) 24%, var(--ak-bg-raised));
+  border-color: color-mix(in srgb, var(--wt) 65%, transparent);
+}
+
 /* Hinweise */
 .ak-alert {
   border-radius: var(--ak-radius-sm);
