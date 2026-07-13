@@ -3,6 +3,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
+from apps.core import views as core_views
+
 urlpatterns = [
     path("", include("apps.core.urls")),
     path("", include("apps.addresses.urls")),
@@ -14,6 +16,9 @@ urlpatterns = [
     path("intern/statistik/", include("apps.analytics.urls")),
     path("intern/status/", include("apps.system_status.admin_urls")),
     path("", include("apps.system_status.urls")),
+    # Eigene Admin-Startseite (Dashboard) faengt exakt /admin/ ab;
+    # alle Detailseiten laufen weiter ueber den Django-Admin darunter.
+    path("admin/", core_views.admin_dashboard),
     path("admin/", admin.site.urls),
 ]
 

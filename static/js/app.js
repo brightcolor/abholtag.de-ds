@@ -253,22 +253,19 @@
     var apple = document.getElementById("abo-apple");
     var google = document.getElementById("abo-google");
 
-    function demote(button) {
-      button.classList.remove("ak-btn-primary");
-      button.classList.add("ak-btn-outline");
-    }
     function selectTab(name) {
       var tab = document.querySelector('[data-tab="' + name + '"]');
       if (tab) tab.click();
     }
+    // Auf dem Smartphone nur den relevanten Button zeigen;
+    // am Desktop bleiben beide Wege sichtbar.
     if (isApple) {
-      demote(google);
+      google.hidden = true;
       selectTab("apple");
     } else if (isAndroid) {
-      demote(apple);
+      apple.hidden = true;
       selectTab("android");
     }
-    // Desktop: beide Wege gleichwertig anbieten
   }
 
   function initAll() {

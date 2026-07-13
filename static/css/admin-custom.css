@@ -1,9 +1,126 @@
-/* Feinschliff für den Jazzmin/AdminLTE-Verwaltungsbereich (§3.3) */
+/* ==========================================================================
+   Admin-Feinschliff (Jazzmin/AdminLTE 3) – Abfuhrkalender Lübeck
+   Ziel: ruhiges, konsistentes Verwaltungs-UI mit der Petrol/Gelb-Markenwelt
+   der öffentlichen Seite.
+   ========================================================================== */
 
-.content-wrapper .card { border-radius: 10px; box-shadow: 0 1px 3px rgb(16 24 40 / 0.08); }
-.small-box { border-radius: 10px; }
-.brand-link .brand-image { border-radius: 8px; }
+:root {
+  --ak-admin-brand: #0f766e;
+  --ak-admin-brand-strong: #115e59;
+  --ak-admin-accent: #f2c200;
+  --ak-admin-radius: 12px;
+  --ak-admin-shadow: 0 1px 3px rgba(16, 24, 40, .08), 0 4px 16px rgba(16, 24, 40, .06);
+}
+
+/* ---------- Grundflächen ---------- */
+body { font-size: .92rem; }
+.content-wrapper { background: #f4f6f8; }
+.content-header h1 { font-weight: 800; letter-spacing: -.01em; }
+
+/* ---------- Sidebar & Brand ---------- */
+.main-sidebar { box-shadow: 2px 0 8px rgba(0, 0, 0, .12); }
+.brand-link { border-bottom: 1px solid rgba(255, 255, 255, .08) !important; }
+.brand-link .brand-image.ak-admin-logo,
+.brand-link .brand-image {
+  border-radius: 8px;
+  box-shadow: none;
+  background: #fff;
+  padding: 2px;
+}
+.nav-sidebar .nav-item > .nav-link { border-radius: 8px; margin: 1px 6px; }
+.nav-sidebar .nav-item > .nav-link.active {
+  background: var(--ak-admin-brand) !important;
+  box-shadow: none;
+}
+.nav-sidebar .nav-header {
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .65;
+}
+.sidebar .nav-link p { font-size: .9rem; }
+
+/* ---------- Topbar ---------- */
+.main-header.navbar { box-shadow: 0 1px 4px rgba(16, 24, 40, .06); }
+.main-header .nav-link { border-radius: 8px; }
+.main-header .nav-link:hover { background: rgba(15, 118, 110, .08); color: var(--ak-admin-brand); }
+
+/* ---------- Cards ---------- */
+.card {
+  border-radius: var(--ak-admin-radius);
+  box-shadow: var(--ak-admin-shadow);
+  border: 1px solid #e6ebf1;
+}
+.card-header {
+  border-top-left-radius: var(--ak-admin-radius) !important;
+  border-top-right-radius: var(--ak-admin-radius) !important;
+  background: transparent;
+  font-weight: 600;
+}
+.card-outline { border-top-width: 3px; }
+
+/* ---------- Dashboard-Widgets ---------- */
+.small-box {
+  border-radius: var(--ak-admin-radius);
+  box-shadow: var(--ak-admin-shadow);
+  overflow: hidden;
+}
+.small-box .icon { transition: transform .2s ease; opacity: .25; }
+.small-box:hover .icon { transform: scale(1.08); }
+.small-box .small-box-footer { background: rgba(0, 0, 0, .12); font-weight: 600; }
+.small-box p { font-size: .85rem; }
+.ak-box-teal { background: linear-gradient(135deg, #0f766e, #115e59) !important; color: #fff; }
+.info-box { border-radius: var(--ak-admin-radius); box-shadow: var(--ak-admin-shadow); }
+.info-box-icon { border-radius: var(--ak-admin-radius) 0 0 var(--ak-admin-radius); }
+
+/* Bereichskarten (Dashboard-Explainer) */
+.ak-section-heading { font-weight: 700; color: #5b6b7c; margin: .25rem 0 1rem; }
+.ak-area-card .card-body p { min-height: 5.2em; }
+.ak-area-links { display: flex; flex-wrap: wrap; gap: .35rem; }
+.ak-area-links .btn { border-radius: 999px; }
+.ak-quick-actions { display: flex; flex-wrap: wrap; gap: .4rem; }
+.btn-teal { background: var(--ak-admin-brand); border-color: var(--ak-admin-brand); color: #fff; }
+.btn-teal:hover { background: var(--ak-admin-brand-strong); border-color: var(--ak-admin-brand-strong); color: #fff; }
+
+/* ---------- Tabellen & Listen ---------- */
+.table th { border-top: 0; font-weight: 600; color: #5b6b7c; }
+.table-hover tbody tr:hover { background: rgba(15, 118, 110, .05); }
+.table td, .table th { vertical-align: middle; }
+#result_list thead th { background: #f8fafc; position: sticky; top: 0; z-index: 5; }
+.paginator { padding: .75rem 1rem; }
+
+/* Changelist-Filter als Karte */
+#changelist-filter {
+  border-radius: var(--ak-admin-radius);
+  box-shadow: var(--ak-admin-shadow);
+  border: 1px solid #e6ebf1;
+}
+
+/* ---------- Buttons & Formulare ---------- */
+.btn { border-radius: 8px; }
+.btn-primary, .btn-info.btn-primary { background: var(--ak-admin-brand); border-color: var(--ak-admin-brand); }
+.btn-primary:hover, .btn-primary:focus { background: var(--ak-admin-brand-strong); border-color: var(--ak-admin-brand-strong); }
+.form-control { border-radius: 8px; }
+.form-control:focus { border-color: var(--ak-admin-brand); box-shadow: 0 0 0 3px rgba(15, 118, 110, .18); }
+.select2-container--default .select2-selection--single { border-radius: 8px; }
+.nav-tabs .nav-link.active { border-top: 2px solid var(--ak-admin-brand); font-weight: 600; }
+
+/* ---------- Badges & Status ---------- */
+.badge { border-radius: 999px; padding: .35em .7em; font-weight: 600; }
+.badge-success { background: #15803d; }
+.badge-warning { background: #f2c200; color: #1c2530; }
+.badge-info { background: #1d4ed8; }
+
+/* ---------- Login-Seite ---------- */
+.login-page { background: linear-gradient(160deg, #0f766e 0%, #0b4f4a 60%, #083f3b 100%); }
+.login-box .card { border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 0, 0, .35); }
+.login-logo img { border-radius: 12px; }
+.login-box .btn-primary { background: var(--ak-admin-brand); border-color: var(--ak-admin-brand); }
 
 /* Statuskarten der Systemseite */
 .ak-check-ok { color: #15803d; }
 .ak-check-fail { color: #b91c1c; }
+
+/* Kleinigkeiten */
+::selection { background: rgba(242, 194, 0, .4); }
+.content-wrapper .alert { border-radius: var(--ak-admin-radius); }

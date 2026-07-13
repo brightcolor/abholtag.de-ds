@@ -107,10 +107,13 @@ def dashboard(request):
     )
     per_type = events.values("event_type").annotate(n=Count("id")).order_by("-n")
 
+    from django.contrib import admin as django_admin
+
     return render(
         request,
         "analytics/dashboard.html",
         {
+            **django_admin.site.each_context(request),
             "cards": cards,
             "start": start,
             "end": end,

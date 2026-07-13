@@ -32,6 +32,8 @@ def public_status(request):
 
 @staff_member_required
 def admin_status(request):
+    from django.contrib import admin as django_admin
+
     from apps.data_sources.models import DataSource, SourceDocument
     from apps.imports.models import ImportRun
 
@@ -39,6 +41,7 @@ def admin_status(request):
         request,
         "system_status/status.html",
         {
+            **django_admin.site.each_context(request),
             "title": "Systemstatus",
             "checks": run_all_checks(),
             "sources": DataSource.objects.filter(is_active=True),

@@ -3,6 +3,28 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.8.0] - 2026-07-13
+
+### Hinzugefügt
+- **Neues Admin-Dashboard** als /admin/-Startseite: Zustands-KPIs
+  (Termine/Jahrespläne, Straßen, offene Vorgänge, Systemstatus mit
+  Warn-Banner), Schnellzugriffe, „Bereiche – was finde ich wo?" mit
+  Erklärkarten zu allen sieben Admin-Bereichen sowie „zuletzt passiert"
+  (Importläufe, Fehlermeldungen).
+
+### Geändert
+- **Admin-UI-Überarbeitung (AdminLTE-Polish)**: kuratierte Seitenleiste in
+  fachlicher Reihenfolge (Rohdaten-/Zwischentabellen ausgeblendet, über
+  Dashboard/Statistik erreichbar), Marken-Farbwelt (Petrol/Gelb), runde
+  Karten/Buttons, Sticky-Tabellenköpfe, gestylte Login-Seite, Logo,
+  Related-Modals und Tab-Formulare; eigene Seiten (Statistik, Moderation,
+  Systemstatus) tragen jetzt die vollständige Admin-Navigation.
+- **Abo-Seite**: Auf dem Smartphone erscheint nur noch der zur Plattform
+  passende Button (Apple bzw. Google); am Desktop weiterhin beide.
+
+### Behoben
+- LOGIN_REDIRECT_URL gesetzt (Login ohne next-Parameter lief auf 404).
+
 ## [0.7.2] - 2026-07-13
 
 ### Geändert

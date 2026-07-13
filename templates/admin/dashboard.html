@@ -1,0 +1,144 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="content-header">
+  <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
+    <h1 class="m-0"><i class="fas fa-gauge-high text-teal mr-2"></i>Dashboard</h1>
+    <div class="ak-quick-actions">
+      <a class="btn btn-teal btn-sm" href="/intern/moderation/"><i class="fas fa-clipboard-check mr-1"></i>Moderation</a>
+      <a class="btn btn-outline-secondary btn-sm" href="/intern/statistik/"><i class="fas fa-chart-line mr-1"></i>Statistik</a>
+      <a class="btn btn-outline-secondary btn-sm" href="/intern/status/"><i class="fas fa-heart-pulse mr-1"></i>Systemstatus</a>
+      <a class="btn btn-outline-secondary btn-sm" href="/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square mr-1"></i>Öffentliche Seite</a>
+    </div>
+  </div>
+</div>
+
+<section class="content">
+  <div class="container-fluid">
+
+    {# ---------- Zustand auf einen Blick ---------- #}
+    <div class="row">
+      <div class="col-lg-3 col-6">
+        <div class="small-box ak-box-teal">
+          <div class="inner">
+            <h3>{{ status.date_count }}</h3>
+            <p>veröffentlichte Termine · {{ status.published_years|join:", "|default:"–" }}</p>
+          </div>
+          <div class="icon"><i class="fas fa-calendar-days"></i></div>
+          <a href="/admin/schedules/scheduleyear/" class="small-box-footer">Jahrespläne <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="small-box bg-primary">
+          <div class="inner">
+            <h3>{{ status.street_count }}</h3>
+            <p>unterstützte Straßen · {{ status.waste_type_count }} Abfallarten</p>
+          </div>
+          <div class="icon"><i class="fas fa-road"></i></div>
+          <a href="/admin/addresses/street/" class="small-box-footer">Stammdaten <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="small-box {% if open_reports or open_proposals or review_imports %}bg-warning{% else %}bg-success{% endif %}">
+          <div class="inner">
+            <h3>{{ open_reports|add:open_proposals|add:review_imports }}</h3>
+            <p>offene Vorgänge ({{ open_reports }} Meldungen · {{ open_proposals }} Vorschläge · {{ review_imports }} Importe)</p>
+          </div>
+          <div class="icon"><i class="fas fa-inbox"></i></div>
+          <a href="/intern/moderation/" class="small-box-footer">Zur Moderation <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="small-box {% if checks_ok %}bg-success{% else %}bg-danger{% endif %}">
+          <div class="inner">
+            <h3>{% if checks_ok %}OK{% else %}Achtung{% endif %}</h3>
+            <p>Systemstatus · {{ feed_week }} Feed-Abrufe, {{ views_week }} Besuche (7 Tage)</p>
+          </div>
+          <div class="icon"><i class="fas {% if checks_ok %}fa-heart-pulse{% else %}fa-triangle-exclamation{% endif %}"></i></div>
+          <a href="/intern/status/" class="small-box-footer">Details <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    {% if not checks_ok %}
+      <div class="alert alert-danger">
+        <i class="fas fa-triangle-exclamation mr-1"></i>
+        {% for check in checks %}{% if not check.ok %}<strong>{{ check.name }}:</strong> {{ check.detail }} {% endif %}{% endfor %}
+      </div>
+    {% endif %}
+
+    {# ---------- Bereiche: was ist was? ---------- #}
+    <div class="row">
+      <div class="col-12"><h5 class="ak-section-heading"><i class="fas fa-compass mr-2"></i>Bereiche – was finde ich wo?</h5></div>
+      {% for section in sections %}
+        <div class="col-xl-4 col-md-6 d-flex">
+          <div class="card ak-area-card card-outline card-{{ section.color }} flex-fill">
+            <div class="card-header">
+              <h3 class="card-title"><i class="{{ section.icon }} mr-2 text-{{ section.color }}"></i><strong>{{ section.title }}</strong></h3>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">{{ section.text }}</p>
+              <div class="ak-area-links">
+                {% for label, url in section.links %}
+                  <a class="btn btn-xs btn-outline-{{ section.color }}" href="{{ url }}">{{ label }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {# ---------- Zuletzt passiert ---------- #}
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header"><h3 class="card-title"><i class="fas fa-file-import mr-2"></i>Letzte Importläufe</h3></div>
+          <div class="card-body p-0">
+            <table class="table table-sm table-hover mb-0">
+              <tbody>
+                {% for run in recent_imports %}
+                  <tr>
+                    <td><a href="/admin/imports/importrun/{{ run.pk }}/change/">#{{ run.pk }} {{ run.parser_key }}</a></td>
+                    <td>
+                      {% if run.status == "completed" %}<span class="badge badge-success">{{ run.get_status_display }}</span>
+                      {% elif run.status == "needs_review" %}<span class="badge badge-warning">{{ run.get_status_display }}</span>
+                      {% else %}<span class="badge badge-danger">{{ run.get_status_display }}</span>{% endif %}
+                    </td>
+                    <td class="text-muted small text-right">{{ run.started_at|date:"d.m.Y H:i" }}</td>
+                  </tr>
+                {% empty %}<tr><td class="text-muted p-3">Noch keine Importläufe.</td></tr>{% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header"><h3 class="card-title"><i class="fas fa-bug mr-2"></i>Letzte Fehlermeldungen</h3></div>
+          <div class="card-body p-0">
+            <table class="table table-sm table-hover mb-0">
+              <tbody>
+                {% for report in recent_reports %}
+                  <tr>
+                    <td><a href="/admin/community/errorreport/{{ report.pk }}/change/"><code>{{ report.public_token }}</code></a> {{ report.get_category_display }}</td>
+                    <td>
+                      {% if report.status == "new" %}<span class="badge badge-info">neu</span>
+                      {% else %}<span class="badge badge-secondary">{{ report.get_status_display }}</span>{% endif %}
+                    </td>
+                    <td class="text-muted small text-right">{{ report.created_at|date:"d.m.Y H:i" }}</td>
+                  </tr>
+                {% empty %}<tr><td class="text-muted p-3">Keine Meldungen – gut so! 🎉</td></tr>{% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

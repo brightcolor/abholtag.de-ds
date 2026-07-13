@@ -156,3 +156,17 @@ def test_combined_feed_respects_arten_filter(client, setup):
     filtered = client.get(f"/calendar/address/{public_id}/all.ics?arten=bioabfall").content.decode()
     assert filtered.count("BEGIN:VEVENT") == 1
     assert "Bioabfall" in filtered and "Gelber Sack" not in filtered
+
+
+def test_admin_dashboard(client, setup):
+    """Eigene Admin-Startseite: KPIs + Bereichs-Erklärungen (nur für Staff)."""
+    from apps.accounts.models import User
+
+    assert client.get("/admin/").status_code == 302  # Login-Redirect
+    staff = User.objects.create_user("chef", password="x", is_staff=True, is_superuser=True)
+    client.force_login(staff)
+    response = client.get("/admin/")
+    content = response.content.decode()
+    assert response.status_code == 200
+    assert "Bereiche" in content and "Moderationsqueue" in content
+    assert "Jahrespläne" in content and "Audit-Log" in content

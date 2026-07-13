@@ -113,6 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LOGIN_URL = "/admin/login/"
+LOGIN_REDIRECT_URL = "/admin/"
 
 # ---------------------------------------------------------------------------
 # I18N
@@ -276,7 +277,13 @@ JAZZMIN_SETTINGS = {
     ],
     "order_with_respect_to": [
         "schedules",
+        "schedules.scheduleyear",
+        "schedules.collectiondate",
+        "schedules.collectionzone",
         "addresses",
+        "addresses.street",
+        "addresses.streetassignment",
+        "addresses.housenumber",
         "waste_types",
         "imports",
         "data_sources",
@@ -287,6 +294,29 @@ JAZZMIN_SETTINGS = {
         "accounts",
         "auth",
     ],
+    # Rohdaten- und Zwischentabellen aus der Seitenleiste heraushalten –
+    # erreichbar bleiben sie über Dashboard, Statistik und Direktlinks.
+    "hide_models": [
+        "analytics.analyticsevent",
+        "analytics.analyticsaggregate",
+        "addresses.addresskey",
+        "addresses.streetalias",
+        "addresses.city",
+        "community.proposalvote",
+        "moderation.moderationcomment",
+        "audit.changeset",
+        "accounts.usertrustprofile",
+        "otp_totp.totpdevice",
+    ],
+    "site_logo": "favicon.svg",
+    "site_logo_classes": "ak-admin-logo",
+    "login_logo": "favicon.svg",
+    "related_modal_active": True,
+    "changeform_format": "horizontal_tabs",
+    "changeform_format_overrides": {
+        "schedules.collectiondate": "single",
+        "waste_types.wastetype": "collapsible",
+    },
     "custom_css": "css/admin-custom.css",
     "show_ui_builder": False,
 }

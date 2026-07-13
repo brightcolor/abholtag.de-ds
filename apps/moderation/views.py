@@ -45,10 +45,13 @@ def queue(request):
         ]
     ).select_related("waste_type")
 
+    from django.contrib import admin as django_admin
+
     return render(
         request,
         "moderation/queue.html",
         {
+            **django_admin.site.each_context(request),
             "title": "Moderation",
             "status_filter": status_filter,
             "reports": reports.order_by("-created_at")[:50],
