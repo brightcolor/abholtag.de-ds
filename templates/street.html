@@ -5,6 +5,7 @@
 {% block og_title %}Abfuhrtermine {{ street.name }}, Lübeck{% endblock %}
 {% block og_description %}Nächste Müllabfuhr in der {{ street.name }}: Termine für alle Tonnen ansehen und als Kalender abonnieren.{% endblock %}
 {% block canonical_path %}/strasse/{{ street.slug }}/{% endblock %}
+{% block robots %}{% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}{% endblock %}
 
 {% block jsonld %}
 <script type="application/ld+json">

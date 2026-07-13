@@ -6,6 +6,7 @@ and show street-level schedules where the assignment is unambiguous.
 
 from datetime import date as date_cls
 
+from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 
 from apps.addresses.models import AssignmentStatus, Street, StreetAssignment
@@ -50,11 +51,17 @@ def street_page(request, slug):
     street = get_object_or_404(Street.objects.select_related("district", "city"), slug=slug, is_active=True)
     today = date_cls.today()
 
-    assignments = StreetAssignment.objects.filter(
-        street=street, status=AssignmentStatus.ACTIVE
-    ).select_related("zone", "zone__waste_type")
+    assignments = list(
+        StreetAssignment.objects.filter(
+            street=street, status=AssignmentStatus.ACTIVE
+        ).select_related("zone", "zone__waste_type")
+    )
+    if not assignments:
+        # Nicht unterstützte Straßen sollen keine leeren Seiten liefern
+        # (Soft-404-Risiko) — sie stehen auch nicht in Sitemap/Verzeichnis.
+        raise Http404
     street_wide = [a for a in assignments if a.house_from is None]
-    house_dependent = len(street_wide) != len(list(assignments))
+    house_dependent = len(street_wide) != len(assignments)
 
     zones = sorted({a.zone for a in street_wide}, key=lambda z: z.code)
     dates = (
@@ -90,6 +97,8 @@ def street_page(request, slug):
             "street": street,
             "per_type": sorted(per_type.values(), key=lambda e: e["waste_type"].sort_order),
             "house_dependent": house_dependent,
+            # Ohne straßenweite Termine ist die Seite zu dünn für den Index
+            "noindex": not per_type,
             "years": years,
             "today": today,
             "status": data_status(),

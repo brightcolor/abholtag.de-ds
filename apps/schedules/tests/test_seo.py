@@ -54,6 +54,23 @@ def test_street_page_404(client, db):
     assert client.get("/strasse/gibt-es-nicht/").status_code == 404
 
 
+def test_street_without_assignment_404(client, db):
+    city = City.objects.create(name="Lübeck", slug="luebeck")
+    Street.objects.create(city=city, name="Leerweg")
+    assert client.get("/strasse/leerweg/").status_code == 404
+
+
+def test_street_house_dependent_only_noindex(client, seo_setup):
+    city = seo_setup.city
+    street = Street.objects.create(city=city, name="Teilweg")
+    zone = CollectionZone.objects.get(code="A")
+    StreetAssignment.objects.create(street=street, zone=zone, house_from=1, house_to=20)
+    response = client.get("/strasse/teilweg/")
+    content = response.content.decode()
+    assert response.status_code == 200
+    assert 'name="robots" content="noindex' in content
+
+
 def test_sitemap(client, seo_setup):
     response = client.get("/sitemap.xml")
     content = response.content.decode()

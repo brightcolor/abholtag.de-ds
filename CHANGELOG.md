@@ -3,6 +3,13 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.10.1] - 2026-07-13
+
+### Behoben
+- Straßenseiten liefern keine leeren Hüllen mehr: Straßen ohne aktive
+  Tourenzuordnung antworten mit 404 (Soft-404-Vermeidung), Seiten mit
+  ausschließlich hausnummernabhängigen Zuordnungen stehen auf noindex.
+
 ## [0.10.0] - 2026-07-13
 
 ### Hinzugefügt
