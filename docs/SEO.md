@@ -31,6 +31,9 @@ Stand: Juli 2026. Ziel: Sichtbarkeit für Suchanfragen wie „Müllabfuhr Lübec
    - Auf dem Server in `/opt/abholtag.de/.env` setzen: `INDEXNOW_KEY=<key>`
    - Einreichen: `docker compose exec -T web python manage.py indexnow_submit`
    - Der Schlüssel wird automatisch unter `https://abholtag.de/<key>.txt` ausgeliefert.
+   - Hinweis: Der allererste Submit liefert `403 SiteVerificationNotCompleted` –
+     die Suchmaschinen prüfen die Key-Datei asynchron. Nach ein paar Stunden
+     (spätestens 1–2 Tagen) den Command einfach erneut ausführen.
 2. **Google Search Console**:
    - Property `https://abholtag.de` anlegen (Domain- oder URL-Präfix).
    - Bei Meta-Tag-Verifizierung: Token in `.env` als
