@@ -168,7 +168,7 @@ class StreetAssignment(TimeStampedModel):
     house_to = models.PositiveIntegerField("Hausnummer bis (leer = offen)", null=True, blank=True)
     parity = models.CharField("Seite", max_length=5, choices=Parity.choices, default=Parity.ALL)
     raw_range = models.CharField(
-        "Original-Bereichsangabe", max_length=100, blank=True,
+        "Original-Bereichsangabe", max_length=255, blank=True,
         help_text="Unveränderte Bereichsangabe aus der Quelle, z. B. „1-32/43“.",
     )
     note = models.CharField("Hinweis", max_length=255, blank=True)

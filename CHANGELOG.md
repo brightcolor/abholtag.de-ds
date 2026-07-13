@@ -3,6 +3,15 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.11.2] - 2026-07-14
+
+### Behoben
+- EBL-Import auf PostgreSQL: Sehr lange, aber gültige Hausnummernlisten
+  (z. B. Beckergrube, Königstraße mit >100 Zeichen) sprengten die
+  `raw_range`-Spalte (varchar(100)). Feld auf 255 erweitert (Migration
+  0005) und defensiv gekappt; ein einzelner Ausreißer bricht den Import
+  nicht mehr ab. (SQLite ignoriert das Limit, PostgreSQL erzwingt es.)
+
 ## [0.11.1] - 2026-07-13
 
 ### Behoben

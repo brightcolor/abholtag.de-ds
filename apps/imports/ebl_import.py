@@ -182,6 +182,9 @@ def _apply_assignments(plan, waste_type, zones, city, street_cache) -> dict:
             new_streets += 1
             continue
 
+        # guard the DB column limits so one odd row can never abort the import
+        entry.raw_range = entry.raw_range[:255]
+        entry.note = entry.note[:255]
         review_note = entry.note.startswith("REVIEW")
         segments = parse_house_ranges(entry.raw_range)
         if entry.raw_range and entry.raw_range != "—" and segments is None:

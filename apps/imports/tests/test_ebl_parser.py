@@ -126,3 +126,12 @@ def test_house_ranges_extracted(plans):
 def test_old_town_split_codes(plans):
     aegidien = [s for s in plans["gelber-sack"].streets if s.name.startswith("Aegidienstraße")]
     assert any(len(s.zone_codes) == 2 for s in aegidien)
+
+
+@needs_sample
+def test_raw_range_within_column_limit(plans):
+    # long but valid house-number lists (Beckergrube, Königstraße) must fit the
+    # StreetAssignment.raw_range column – SQLite ignores the limit, Postgres does not
+    for plan in plans.values():
+        for s in plan.streets:
+            assert len(s.raw_range) <= 255, (s.name, s.raw_range)
