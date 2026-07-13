@@ -8,7 +8,29 @@
     <div class="col-lg-7 mx-auto">
       <div class="ak-card">
         <div class="ak-card-body text-center">
-          {% if needs_house_number %}
+          {% if unknown_house_number %}
+            <i class="fa-solid fa-house-circle-xmark" style="font-size: 2.4rem; color: var(--ak-warning);" aria-hidden="true"></i>
+            <h1 class="h4 mt-3" style="font-weight: 800;">Hausnummer nicht gefunden</h1>
+            <p style="color: var(--ak-text-muted);">
+              Die Hausnummer <strong>{{ entered_number }}</strong> gibt es laut dem offiziellen
+              Verzeichnis der Entsorgungsbetriebe in der {{ street.name }} nicht.
+            </p>
+            {% if suggestions %}
+              <p class="ak-help">Vorhandene Hausnummern in der Nähe:</p>
+              <div class="d-flex justify-content-center flex-wrap mb-3" style="gap: .5rem;">
+                {% for hn in suggestions %}
+                  <a class="ak-btn ak-btn-outline ak-btn-sm"
+                     href="/termine/?street_id={{ street.pk }}&house_number={{ hn.text|urlencode }}{% if arten_query %}&arten={{ arten_query }}{% endif %}">
+                    {{ street.name }} {{ hn.text }}
+                  </a>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <p style="color: var(--ak-text-muted); font-size: var(--ak-fs-sm);">
+              Fehlt Ihre Hausnummer im Verzeichnis?
+              <a href="/melden/">Bitte melden Sie es uns.</a>
+            </p>
+          {% elif needs_house_number %}
             <i class="fa-solid fa-house-circle-exclamation" style="font-size: 2.4rem; color: var(--ak-warning);" aria-hidden="true"></i>
             <h1 class="h4 mt-3" style="font-weight: 800;">Hausnummer benötigt</h1>
             <p style="color: var(--ak-text-muted);">

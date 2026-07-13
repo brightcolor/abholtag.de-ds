@@ -3,6 +3,23 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.6.0] - 2026-07-13
+
+### Hinzugefügt
+- **Hausnummern-Abgleich gegen den offiziellen BMS-Bestand** (44.690 Nummern):
+  - Eingegebene Hausnummern werden bei der Auflösung validiert; unbekannte
+    Nummern (z. B. Beethovenstr. 12 – existiert nicht) erhalten eine
+    freundliche Fehlseite mit den nächstliegenden vorhandenen Nummern als
+    Klick-Vorschläge und einem Melden-Link.
+  - Bereichseinträge („21-31", gemeinsame Müllplätze) decken enthaltene
+    Nummern paritätsbewusst ab und sind auch als exakter Text auflösbar.
+  - **Hausnummern-Autovervollständigung**: Nach der Straßenwahl lädt das
+    Nummernfeld die offiziellen Hausnummern als native Vorschlagsliste
+    (neuer Endpunkt /suche/hausnummern/).
+  - Bestands-Adressen mit laut Verzeichnis unbekannter Nummer zeigen einen
+    Hinweis auf der Terminseite (Feed-URLs bleiben stabil).
+  - Straßen ohne BMS-Daten werden wie bisher ohne Validierung aufgelöst.
+
 ## [0.5.2] - 2026-07-13
 
 ### Geändert

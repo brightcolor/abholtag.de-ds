@@ -23,3 +23,18 @@ def street_suggestions(request):
         "partials/street_suggestions.html",
         {"streets": streets, "query": query},
     )
+
+
+def house_number_list(request):
+    """JSON list of official house numbers of a street (BMS) for the datalist."""
+    from django.http import JsonResponse
+
+    from .models import Street
+
+    if is_rate_limited(request, "search"):
+        return HttpResponse(status=429)
+    street = Street.objects.filter(pk=request.GET.get("street_id"), is_active=True).first()
+    if street is None:
+        return JsonResponse({"results": []})
+    texts = list(street.house_numbers.values_list("text", flat=True)[:400])
+    return JsonResponse({"results": texts})

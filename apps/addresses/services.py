@@ -82,3 +82,45 @@ def zones_for_address_key(address_key: AddressKey, waste_types=None):
         assignments = assignments.filter(zone__waste_type__in=waste_types)
     zones = {a.zone_id: a.zone for a in assignments if a.matches(address_key.house_number)}
     return sorted(zones.values(), key=lambda z: z.code)
+
+
+# ---------------------------------------------------------------------------
+# Hausnummern-Abgleich gegen den BMS-Bestand (EBL-Online-Kalender)
+# ---------------------------------------------------------------------------
+
+_RANGE_RE = __import__("re").compile(r"^(\d+)[a-z]?-(\d+)([a-z]?)$")
+
+
+def find_house_number(street: Street, number: int | None, suffix: str = ""):
+    """Match an entered house number against the official BMS list.
+
+    Order: exact number+suffix, then range rows ("21-31" covers 23 when the
+    parity of both ends matches). Returns the HouseNumber row or None.
+    Streets without BMS data return None – callers must treat that as
+    "no validation possible", not as invalid.
+    """
+    if number is None:
+        return None
+    exact = street.house_numbers.filter(number=number, suffix=(suffix or "")).first()
+    if exact:
+        return exact
+    # range rows were stored with number=None (raw text like "21-31")
+    for row in street.house_numbers.filter(number__isnull=True):
+        match = _RANGE_RE.match(row.text.strip().lower())
+        if not match:
+            continue
+        start, end = int(match.group(1)), int(match.group(2))
+        if not start <= number <= end:
+            continue
+        if start % 2 == end % 2 and number % 2 != start % 2:
+            continue  # einseitiger Bereich (nur gerade/ungerade)
+        return row
+    return None
+
+
+def house_number_suggestions(street: Street, number: int | None, limit: int = 6):
+    """Closest existing house numbers, for the "not found" hint."""
+    rows = list(street.house_numbers.exclude(number__isnull=True))
+    rows.sort(key=lambda r: (abs((r.number or 0) - (number or 0)), r.suffix))
+    ranges = list(street.house_numbers.filter(number__isnull=True))[:2]
+    return (rows[: limit - len(ranges)] + ranges) if rows or ranges else []

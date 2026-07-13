@@ -60,8 +60,9 @@
                 <div class="col-md-6 col-6 mb-3">
                   <label class="ak-form-label" for="hausnr">Hausnummer</label>
                   <input type="text" id="hausnr" name="house_number" class="ak-input"
-                         placeholder="z. B. 12a" inputmode="numeric" pattern="\d+\s*[A-Za-z]?"
-                         maxlength="8">
+                         placeholder="z. B. 12a" inputmode="numeric"
+                         maxlength="8" list="hausnr-liste">
+                  <datalist id="hausnr-liste"></datalist>
                 </div>
               </div>
               <fieldset class="mb-3">

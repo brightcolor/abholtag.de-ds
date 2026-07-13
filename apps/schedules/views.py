@@ -62,6 +62,38 @@ def resolve(request):
         return render(request, "resolve_failed.html", {"error": "Bitte wählen Sie eine Straße aus der Vorschlagsliste aus."}, status=400)
 
     number, suffix = parse_house_number(house_raw)
+
+    # Bereichstexte aus der Vorschlagsliste ("21-31") exakt akzeptieren:
+    # für die Tourenzuordnung zählt die erste Nummer des Bereichs.
+    if number is None and house_raw.strip():
+        import re as _re
+
+        exact_row = street.house_numbers.filter(text__iexact=house_raw.strip()).first()
+        if exact_row:
+            first_int = _re.match(r"(\d+)", exact_row.text)
+            number = int(first_int.group(1)) if first_int else None
+            suffix = ""
+
+    # Hausnummern-Abgleich gegen den offiziellen BMS-Bestand: existiert die
+    # Nummer laut EBL nicht, zeigen wir Vorschläge statt falscher Termine.
+    from apps.addresses.services import find_house_number, house_number_suggestions
+
+    if number is not None and street.house_numbers.exists():
+        if find_house_number(street, number, suffix) is None:
+            record_event(request, "street_search_no_result", street=street, status="no_house_number")
+            return render(
+                request,
+                "resolve_failed.html",
+                {
+                    "unknown_house_number": True,
+                    "entered_number": house_raw.strip(),
+                    "street": street,
+                    "suggestions": house_number_suggestions(street, number),
+                    "arten_query": ",".join(request.GET.getlist("arten")),
+                },
+                status=200,
+            )
+
     waste_types, selected_slugs = selected_waste_types(request)
     result = resolve_address(street, number, suffix, waste_types=waste_types if selected_slugs else None)
 
@@ -144,6 +176,15 @@ def address_schedule(request, public_id):
         })
     arten_param = ",".join(selected_slugs)
 
+    # Hinweis, falls eine früher aufgelöste Adresse laut BMS-Bestand nicht existiert
+    from apps.addresses.services import find_house_number
+
+    house_unknown = bool(
+        address_key.house_number is not None
+        and address_key.street.house_numbers.exists()
+        and find_house_number(address_key.street, address_key.house_number, address_key.suffix) is None
+    )
+
     record_event(
         request,
         "schedule_view",
@@ -168,6 +209,7 @@ def address_schedule(request, public_id):
             "today": today,
             "status": data_status(),
             "official_calendar_url": _official_calendar_url(address_key, years),
+            "house_unknown": house_unknown,
         },
     )
 

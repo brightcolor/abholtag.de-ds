@@ -61,6 +61,7 @@
         update();
         var house = form.querySelector("#hausnr");
         if (house) house.focus();  // spürbares Feedback nach der Auswahl
+        loadHouseNumbers(pick.dataset.streetId);
         return;
       }
       if (!form.contains(event.target)) box.innerHTML = "";
@@ -68,6 +69,23 @@
     input.addEventListener("keydown", function (event) {
       if (event.key === "Escape") box.innerHTML = "";
     });
+
+    // Offizielle Hausnummern der gewählten Straße als native Vorschlagsliste
+    function loadHouseNumbers(streetId) {
+      var list = document.getElementById("hausnr-liste");
+      if (!list) return;
+      fetch("/suche/hausnummern/?street_id=" + encodeURIComponent(streetId))
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+          list.innerHTML = "";
+          (data.results || []).forEach(function (text) {
+            var option = document.createElement("option");
+            option.value = text;
+            list.appendChild(option);
+          });
+        })
+        .catch(function () { /* Vorschläge sind optional */ });
+    }
   }
 
   // ----- Collapse (Jahresübersicht) -----------------------------------------

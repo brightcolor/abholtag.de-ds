@@ -55,6 +55,14 @@
             </a>
           </div>
 
+          {% if house_unknown %}
+            <div class="ak-alert ak-alert-warning mt-3" role="status">
+              <i class="fa-solid fa-house-circle-xmark" aria-hidden="true"></i>
+              <div>Diese Hausnummer ist im offiziellen Verzeichnis der Entsorgungsbetriebe
+              nicht bekannt – die Termine gelten für die Straße insgesamt.
+              <a href="/melden/?adresse={{ address_key.public_id }}">Stimmt etwas nicht?</a></div>
+            </div>
+          {% endif %}
           {% if next_date %}
             <div class="ak-next-date mt-3">
               <div class="label">Nächste Abholung</div>
