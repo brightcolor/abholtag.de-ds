@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Alle Straßen in Lübeck – Abfuhrtermine nach Straße | Abfuhrkalender Lübeck{% endblock %}
+{% block meta_description %}Straßenverzeichnis für den Abfuhrkalender Lübeck: {{ total }} Straßen von A bis Z. Straße wählen und alle Müllabfuhr-Termine für Gelber Sack, Restabfall, Bio und Papier ansehen.{% endblock %}
+{% block og_title %}Straßenverzeichnis – Abfuhrkalender Lübeck{% endblock %}
+{% block canonical_path %}/strassen/{% endblock %}
+
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Start", "item": "{{ SITE_BASE_URL }}/"},
+    {"@type": "ListItem", "position": 2, "name": "Alle Straßen", "item": "{{ SITE_BASE_URL }}/strassen/"}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <nav aria-label="Brotkrumen" class="ak-breadcrumb mb-2">
+        <a href="/">Start</a> <span aria-hidden="true">›</span> <span>Alle Straßen</span>
+      </nav>
+      <h1>Abfuhrtermine nach Straße</h1>
+      <p class="ak-lead">
+        {{ total }} Straßen in der Hansestadt Lübeck – wählen Sie Ihre Straße und sehen Sie
+        alle Termine für Gelber Sack, Restabfall, Bioabfall und Papiertonne.
+      </p>
+
+      <form method="get" action="/strassen/" class="mb-4" role="search">
+        <div class="form-row">
+          <div class="col-md-8 mb-2">
+            <label class="sr-only" for="strassen-q">Straße suchen</label>
+            <input type="search" id="strassen-q" name="q" class="ak-input"
+                   value="{{ query }}" placeholder="Straße suchen, z. B. Beethovenstraße">
+          </div>
+          <div class="col-md-4 mb-2">
+            <button type="submit" class="ak-btn ak-btn-primary btn-block">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Suchen
+            </button>
+          </div>
+        </div>
+      </form>
+
+      {% if groups %}
+        <nav class="ak-alpha-nav mb-4" aria-label="Alphabet">
+          {% for letter, streets in groups %}<a href="#buchstabe-{{ letter }}">{{ letter }}</a>{% endfor %}
+        </nav>
+        {% for letter, streets in groups %}
+          <section id="buchstabe-{{ letter }}" class="mb-4">
+            <h2 class="ak-alpha-heading">{{ letter }}</h2>
+            <ul class="ak-street-list">
+              {% for street in streets %}
+                <li>
+                  <a href="/strasse/{{ street.slug }}/">{{ street.name }}</a>
+                  {% if street.district %}<span class="ak-help">({{ street.district.name }})</span>{% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endfor %}
+      {% else %}
+        <div class="ak-card"><div class="ak-card-body">
+          <p class="mb-0">Keine Straße gefunden. Prüfen Sie die Schreibweise – auch „Str.“ oder „Strasse“ werden verstanden.</p>
+        </div></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

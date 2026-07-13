@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
     "django_otp",
     "django_otp.plugins.otp_totp",
     # project apps
@@ -205,6 +206,10 @@ SITE_BASE_URL = env("SITE_BASE_URL", "http://localhost:8000")
 OPERATOR_NAME = env("OPERATOR_NAME", "")
 OPERATOR_ADDRESS = env("OPERATOR_ADDRESS", "")
 OPERATOR_EMAIL = env("OPERATOR_EMAIL", "")
+
+# SEO: Search-Console-Verifizierung (Meta-Tag) und IndexNow-Schlüssel
+GOOGLE_SITE_VERIFICATION = env("GOOGLE_SITE_VERIFICATION", "")
+INDEXNOW_KEY = env("INDEXNOW_KEY", "")
 
 # Analytics privacy configuration
 ANALYTICS_ENABLED = env_bool("ANALYTICS_ENABLED", True)

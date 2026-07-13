@@ -55,6 +55,10 @@ class Street(TimeStampedModel):
         "BMS-Straßen-ID", null=True, blank=True, db_index=True,
         help_text="Straßen-ID im Online-Abfallkalender (insert-it.de).",
     )
+    slug = models.SlugField(
+        "URL-Slug", max_length=180, unique=True, null=True, blank=True,
+        help_text="Für die öffentliche Straßen-Seite (/strasse/<slug>/).",
+    )
 
     class Meta:
         ordering = ["name"]
@@ -64,7 +68,21 @@ class Street(TimeStampedModel):
 
     def save(self, *args, **kwargs):
         self.normalized_name = normalize_street_name(self.name)
+        if not self.slug:
+            self.slug = self.build_slug()
         super().save(*args, **kwargs)
+
+    def build_slug(self) -> str:
+        from django.utils.text import slugify
+
+        base = slugify(self.name)
+        if self.district:
+            base = f"{base}-{slugify(self.district.name)}"
+        slug, counter = base, 2
+        while Street.objects.filter(slug=slug).exclude(pk=self.pk).exists():
+            slug = f"{base}-{counter}"
+            counter += 1
+        return slug[:180]
 
     def __str__(self):
         if self.district:

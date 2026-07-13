@@ -3,6 +3,26 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.10.0] - 2026-07-13
+
+### Hinzugefügt
+- **SEO-Ausbau (On-Page + Off-Page-Anbindung):**
+  - Straßen-Landingpages `/strasse/<slug>/` für alle unterstützten Straßen
+    (nächste Termine je Abfallart, Bezirk, Hausnummern-Hinweis, Abo-CTA,
+    BreadcrumbList-Schema); neues Slug-Feld am Straßenmodell.
+  - Straßenverzeichnis `/strassen/` von A bis Z mit Suche – Crawl-Pfad und
+    Ziel der Schema.org-SearchAction.
+  - SEO-Head in allen Seiten: Title-/Description-Blöcke, Canonical, Open
+    Graph + Twitter Card, theme-color, OG-Bild (1200×630).
+  - Startseite: sichtbare FAQ-Sektion + FAQPage-Schema, SEO-Textblock,
+    WebSite/SearchAction-JSON-LD.
+  - `sitemap.xml` (statische Seiten + alle Straßenseiten) und `robots.txt`;
+    personalisierte Adress-, Abo- und Druckseiten auf `noindex`.
+  - IndexNow-Integration: Schlüssel-Route `/<key>.txt` und Management-Command
+    `indexnow_submit` (Bing/Yandex/Seznam/Naver); Search-Console-Verifizierung
+    per `GOOGLE_SITE_VERIFICATION`-Umgebungsvariable.
+  - Neues Dokument [docs/SEO.md](docs/SEO.md) mit Off-Page-Playbook.
+
 ## [0.9.1] - 2026-07-13
 
 ### Geändert

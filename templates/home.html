@@ -1,6 +1,63 @@
 {% extends "base.html" %}
 {% load ak_extras %}
 
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ SITE_BASE_URL }}/#website",
+      "url": "{{ SITE_BASE_URL }}/",
+      "name": "Abfuhrkalender Lübeck",
+      "description": "Abfuhrtermine der Hansestadt Lübeck für Gelber Sack, Restabfall, Bioabfall und Papier",
+      "inLanguage": "de",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ SITE_BASE_URL }}/strassen/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ SITE_BASE_URL }}/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wann wird in Lübeck der Gelbe Sack abgeholt?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Der Gelbe Sack wird in Lübeck alle zwei Wochen abgeholt. Der genaue Wochentag hängt von Ihrem Abfuhrbezirk ab. Geben Sie oben Ihre Straße und Hausnummer ein, um Ihre persönlichen Termine zu sehen."}
+        },
+        {
+          "@type": "Question",
+          "name": "Wie oft werden Restabfall, Bioabfall und Papiertonne geleert?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Restabfall und Bioabfall werden in Lübeck in der Regel alle zwei Wochen geleert, die Papiertonne (Blaue Tonne) alle vier Wochen. Die genauen Termine für Ihre Adresse finden Sie über die Adresssuche."}
+        },
+        {
+          "@type": "Question",
+          "name": "Wie abonniere ich den Abfuhrkalender auf dem Smartphone?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Nach der Adresssuche erhalten Sie einen persönlichen Kalender-Link (iCal/ICS), den Sie mit einem Tipp in Apple Kalender, Google Kalender oder Outlook abonnieren können. Der Kalender aktualisiert sich automatisch, sobald neue Jahrespläne veröffentlicht werden."}
+        },
+        {
+          "@type": "Question",
+          "name": "Verschieben sich Abfuhrtermine an Feiertagen?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Ja, in Feiertagswochen verschieben sich Abholungen häufig um einen Tag. Die hier angezeigten Termine stammen aus den offiziellen Abfuhrplänen der Entsorgungsbetriebe Lübeck und enthalten diese Verschiebungen bereits."}
+        },
+        {
+          "@type": "Question",
+          "name": "Ist der Abfuhrkalender Lübeck kostenlos?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Ja. abholtag.de ist ein kostenloses, werbefreies und quelloffenes Angebot – ohne Anmeldung, ohne Tracking durch Dritte."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <section class="ak-hero">
   <div class="container">
@@ -152,6 +209,63 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container pb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+      <h2 class="mb-3">Häufige Fragen zur Müllabfuhr in Lübeck</h2>
+      <div class="ak-faq">
+        <details>
+          <summary>Wann wird in Lübeck der Gelbe Sack abgeholt?</summary>
+          <p>Der Gelbe Sack wird alle zwei Wochen abgeholt. Der genaue Wochentag hängt von
+          Ihrem Abfuhrbezirk ab – geben Sie oben Ihre Straße und Hausnummer ein, um Ihre
+          persönlichen Termine zu sehen.</p>
+        </details>
+        <details>
+          <summary>Wie oft werden Restabfall, Bioabfall und Papiertonne geleert?</summary>
+          <p>Restabfall und Bioabfall werden in der Regel alle zwei Wochen geleert, die
+          Papiertonne (Blaue Tonne) alle vier Wochen. Die genauen Termine für Ihre Adresse
+          finden Sie über die Adresssuche.</p>
+        </details>
+        <details>
+          <summary>Wie abonniere ich den Abfuhrkalender auf dem Smartphone?</summary>
+          <p>Nach der Adresssuche erhalten Sie einen persönlichen Kalender-Link (iCal/ICS),
+          den Sie mit einem Tipp in Apple Kalender, Google Kalender oder Outlook abonnieren.
+          Der Kalender aktualisiert sich automatisch, sobald neue Jahrespläne veröffentlicht werden.</p>
+        </details>
+        <details>
+          <summary>Verschieben sich Abfuhrtermine an Feiertagen?</summary>
+          <p>Ja, in Feiertagswochen verschieben sich Abholungen häufig um einen Tag. Die hier
+          angezeigten Termine stammen aus den offiziellen Abfuhrplänen der Entsorgungsbetriebe
+          Lübeck und enthalten diese Verschiebungen bereits.</p>
+        </details>
+        <details>
+          <summary>Ist der Abfuhrkalender Lübeck kostenlos?</summary>
+          <p>Ja. abholtag.de ist kostenlos, werbefrei und quelloffen – ohne Anmeldung und
+          ohne Tracking durch Dritte.</p>
+        </details>
+      </div>
+
+      <div class="ak-seo-text mt-5">
+        <h2>Abfuhrkalender für die Hansestadt Lübeck</h2>
+        <p>
+          abholtag.de zeigt die Abfuhrtermine der Müllabfuhr in Lübeck für alle vier
+          Abfallarten: <strong>Gelber Sack</strong> (Leichtverpackungen),
+          <strong>Restabfall</strong> (Graue Tonne), <strong>Bioabfall</strong> (Braune Tonne)
+          und <strong>Papier</strong> (Blaue Tonne). Die Daten stammen aus den offiziellen
+          Abfuhrplänen der Entsorgungsbetriebe Lübeck und werden regelmäßig aktualisiert.
+        </p>
+        <p>
+          Sie können Ihre Termine als Liste ansehen, ausdrucken oder als iCal-Kalender
+          abonnieren – auf dem iPhone, unter Android, in Outlook oder Thunderbird.
+          Ein einmal eingerichtetes Abo aktualisiert sich jedes Jahr von selbst.
+          Alle unterstützten Straßen finden Sie im
+          <a href="/strassen/">Straßenverzeichnis von A bis Z</a>.
+        </p>
       </div>
     </div>
   </div>

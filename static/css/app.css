@@ -516,3 +516,64 @@ a:hover { color: var(--ak-brand-strong); text-decoration: none; }
   .ak-navbar, .ak-footer, .ak-no-print, .ak-theme-toggle { display: none !important; }
   .ak-card { box-shadow: none; border: 1px solid #bbb; }
 }
+
+
+/* --------------------------------------------------------------------------
+   SEO-Seiten: Breadcrumb, Straßenverzeichnis, FAQ
+   -------------------------------------------------------------------------- */
+.ak-breadcrumb { font-size: var(--ak-fs-sm); color: var(--ak-text-muted); }
+.ak-breadcrumb a { color: var(--ak-brand); text-decoration: none; }
+.ak-breadcrumb a:hover { text-decoration: underline; }
+.ak-breadcrumb span[aria-hidden] { margin: 0 var(--ak-sp-1); }
+
+.ak-alpha-nav {
+  display: flex; flex-wrap: wrap; gap: var(--ak-sp-1);
+}
+.ak-alpha-nav a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 34px; height: 34px; padding: 0 var(--ak-sp-2);
+  border-radius: var(--ak-radius-sm);
+  background: var(--ak-bg-sunken);
+  color: var(--ak-text);
+  font-weight: 600; text-decoration: none;
+  border: 1px solid var(--ak-border);
+}
+.ak-alpha-nav a:hover { background: var(--ak-brand); color: #fff; border-color: var(--ak-brand); }
+
+.ak-alpha-heading {
+  font-size: var(--ak-fs-lg);
+  border-bottom: 2px solid var(--ak-brand);
+  display: inline-block;
+  padding: 0 var(--ak-sp-2) var(--ak-sp-1) 0;
+  margin-bottom: var(--ak-sp-3);
+  scroll-margin-top: 80px;
+}
+.ak-street-list {
+  list-style: none; margin: 0; padding: 0;
+  columns: 3; column-gap: var(--ak-sp-6);
+}
+@media (max-width: 767px) { .ak-street-list { columns: 1; } }
+.ak-street-list li { padding: var(--ak-sp-1) 0; break-inside: avoid; }
+.ak-street-list a { color: var(--ak-text); text-decoration: none; }
+.ak-street-list a:hover { color: var(--ak-brand); text-decoration: underline; }
+
+.ak-faq details {
+  border: 1px solid var(--ak-border);
+  border-radius: var(--ak-radius-sm);
+  background: var(--ak-bg-raised);
+  padding: var(--ak-sp-3) var(--ak-sp-4);
+  margin-bottom: var(--ak-sp-3);
+}
+.ak-faq summary {
+  font-weight: 600; cursor: pointer;
+  list-style: none; position: relative; padding-right: 28px;
+}
+.ak-faq summary::-webkit-details-marker { display: none; }
+.ak-faq summary::after {
+  content: "+"; position: absolute; right: 0; top: 0;
+  font-size: var(--ak-fs-lg); color: var(--ak-brand); font-weight: 700;
+}
+.ak-faq details[open] summary::after { content: "\2212"; }
+.ak-faq details p { margin: var(--ak-sp-3) 0 0; color: var(--ak-text-muted); }
+.ak-seo-text h2 { font-size: var(--ak-fs-xl); }
+.ak-seo-text p { color: var(--ak-text-muted); }

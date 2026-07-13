@@ -10,4 +10,5 @@ def site_settings(request):
         "OPERATOR_ADDRESS": settings.OPERATOR_ADDRESS,
         "OPERATOR_EMAIL": settings.OPERATOR_EMAIL,
         "COMMUNITY_MODE_ENABLED": settings.COMMUNITY_MODE_ENABLED,
+        "GOOGLE_SITE_VERIFICATION": settings.GOOGLE_SITE_VERIFICATION,
     }

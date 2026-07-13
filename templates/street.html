@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Müllabfuhr {{ street.name }} Lübeck – Abfuhrtermine {% if years %}{{ years|join:"/" }}{% endif %} | Abfuhrkalender{% endblock %}
+{% block meta_description %}Wann wird in der {{ street.name }} in Lübeck der Müll abgeholt? Alle Abfuhrtermine {% if years %}{{ years|join:" und " }} {% endif %}für Gelber Sack, Restabfall, Bioabfall und Papiertonne – kostenlos als Kalender abonnieren.{% endblock %}
+{% block og_title %}Abfuhrtermine {{ street.name }}, Lübeck{% endblock %}
+{% block og_description %}Nächste Müllabfuhr in der {{ street.name }}: Termine für alle Tonnen ansehen und als Kalender abonnieren.{% endblock %}
+{% block canonical_path %}/strasse/{{ street.slug }}/{% endblock %}
+
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Start", "item": "{{ SITE_BASE_URL }}/"},
+    {"@type": "ListItem", "position": 2, "name": "Alle Straßen", "item": "{{ SITE_BASE_URL }}/strassen/"},
+    {"@type": "ListItem", "position": 3, "name": "{{ street.name|escapejs }}", "item": "{{ SITE_BASE_URL }}/strasse/{{ street.slug }}/"}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <nav aria-label="Brotkrumen" class="ak-breadcrumb mb-2">
+        <a href="/">Start</a> <span aria-hidden="true">›</span>
+        <a href="/strassen/">Alle Straßen</a> <span aria-hidden="true">›</span>
+        <span>{{ street.name }}</span>
+      </nav>
+      <h1>Abfuhrtermine {{ street.name }}, Lübeck</h1>
+      <p class="ak-lead">
+        Müllabfuhr-Termine für die {{ street.name }}{% if street.district %} im Stadtteil {{ street.district.name }}{% endif %}
+        in der Hansestadt Lübeck{% if years %} für {{ years|join:" und " }}{% endif %}.
+      </p>
+
+      {% if house_dependent %}
+        <div class="ak-alert ak-alert-info mb-4" role="note">
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          In dieser Straße hängen einzelne Termine von der Hausnummer ab.
+          Geben Sie unten Ihre Hausnummer ein, um die exakten Termine zu sehen.
+        </div>
+      {% endif %}
+
+      {% if per_type %}
+        <div class="row">
+          {% for entry in per_type %}
+            <div class="col-md-6 mb-4">
+              <div class="ak-card h-100">
+                <div class="ak-card-body">
+                  <h2 class="ak-type-badge" style="--wt: {{ entry.waste_type.color }};">
+                    <span class="dot" aria-hidden="true"></span>
+                    <i class="{{ entry.waste_type.icon }}" aria-hidden="true"></i>
+                    {{ entry.waste_type.name }}
+                  </h2>
+                  {% if entry.next %}
+                    <p class="mb-2 mt-2">
+                      Nächste Abholung:
+                      <strong>{{ entry.next.date|date:"l, d.m.Y" }}</strong>
+                    </p>
+                  {% endif %}
+                  {% if entry.upcoming %}
+                    <h3 class="ak-help mb-1">Kommende Termine</h3>
+                    <ul class="ak-date-list mb-2" style="--wt: {{ entry.waste_type.color }};">
+                      {% for d in entry.upcoming %}
+                        <li>{{ d.date|date:"D, d.m.Y" }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                  <p class="ak-help mb-0">{{ entry.total }} Termin{{ entry.total|pluralize:"e" }} insgesamt · Bezirk {{ entry.zone.code }}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="ak-alert ak-alert-warning mb-4">
+          <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+          Für diese Straße hängen die Termine von der Hausnummer ab oder liegen noch nicht vor.
+          Geben Sie unten Ihre Hausnummer ein.
+        </div>
+      {% endif %}
+
+      <div class="ak-card mt-2">
+        <div class="ak-card-body">
+          <h2 class="h5">Alle Termine für Ihre Adresse – mit Kalender-Abo</h2>
+          <p>
+            Mit Hausnummer sehen Sie die vollständige Jahresübersicht, können sie drucken
+            und den Kalender kostenlos abonnieren (iPhone, Android, Outlook) –
+            er aktualisiert sich jedes Jahr automatisch.
+          </p>
+          <form action="/termine/" method="get" autocomplete="off">
+            <input type="hidden" name="q" value="{{ street.name }}">
+            <input type="hidden" name="street_id" value="{{ street.pk }}">
+            <div class="form-row align-items-end">
+              <div class="col-sm-5 mb-2">
+                <label class="ak-form-label" for="hausnr">Hausnummer</label>
+                <input type="text" id="hausnr" name="house_number" class="ak-input"
+                       placeholder="z. B. 12a" inputmode="numeric" maxlength="8">
+              </div>
+              <div class="col-sm-7 mb-2">
+                <button type="submit" class="ak-btn ak-btn-primary btn-block">
+                  <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                  Alle Termine &amp; Kalender-Abo
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <p class="ak-help mt-4 mb-0">
+        Quelle: offizielle Abfuhrpläne der Entsorgungsbetriebe Lübeck.
+        Alle Angaben ohne Gewähr – maßgeblich sind die amtlichen Pläne.
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}
