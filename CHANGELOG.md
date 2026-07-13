@@ -3,6 +3,15 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.5.1] - 2026-07-13
+
+### Behoben
+- **Kennzahl „unterstützte Straßen"** zählt jetzt nur noch tatsächlich
+  auflösbare Straßen (aktiv + mindestens eine aktive Tourenzuordnung) statt
+  aller aktiven Stammdatensätze; BMS-Sondereinträge ohne Termine (gemeinsame
+  Müllplätze, Herreninsel-Wege) zählen nicht mehr mit. Weiteres
+  PDF-Artefakt („Zum") deaktiviert.
+
 ## [0.5.0] - 2026-07-13
 
 ### Hinzugefügt
