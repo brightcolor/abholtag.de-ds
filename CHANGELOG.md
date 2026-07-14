@@ -3,6 +3,15 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.11.4] - 2026-07-14
+
+### Behoben
+- Performance: Die Straßen-Landingpage (`/strasse/<slug>/`, die von Crawlern
+  am häufigsten besuchte Seite) erzeugte pro Aufruf ~100 DB-Queries, weil die
+  Jahres-Ermittlung `schedule_year` nicht mit `select_related` lud (N+1).
+  Jetzt ~9 Queries (~6× schneller). Wichtig für viele gleichzeitige Anfragen
+  auf kleiner Hardware.
+
 ## [0.11.3] - 2026-07-14
 
 ### Geändert

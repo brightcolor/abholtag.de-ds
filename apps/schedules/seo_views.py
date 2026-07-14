@@ -70,7 +70,7 @@ def street_page(request, slug):
             schedule_year__status=ScheduleYearStatus.PUBLISHED,
             is_cancelled=False,
         )
-        .select_related("zone", "zone__waste_type")
+        .select_related("zone", "zone__waste_type", "schedule_year")
         .order_by("date")
     )
 
