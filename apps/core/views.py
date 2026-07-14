@@ -21,6 +21,22 @@ def privacy(request):
     return render(request, "pages/datenschutz.html")
 
 
+def api_docs(request):
+    from apps.addresses.models import AddressKey
+    from apps.waste_types.models import WasteType
+
+    # a real, resolvable example address for copy-paste examples (fallback: none)
+    example = AddressKey.objects.filter(house_number__isnull=False).order_by("pk").first()
+    return render(
+        request,
+        "pages/api.html",
+        {
+            "waste_types": WasteType.objects.filter(is_active=True),
+            "example_public_id": example.public_id if example else "<public_id>",
+        },
+    )
+
+
 def admin_dashboard(request):
     """Custom /admin/ start page: KPIs, quick actions and an explainer for
     every admin area ("was ist das und wozu brauche ich das?")."""

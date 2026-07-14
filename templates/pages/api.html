@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block title %}API – Abfuhrtermine als JSON | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}Offene JSON-API des Abfuhrkalenders Lübeck: Abfuhrtermine, Straßen und Bezirke frei und ohne Anmeldung als JSON abrufen. Mit Beispielen (curl, JavaScript, Python).{% endblock %}
+{% block canonical_path %}/api/{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row"><div class="col-lg-9 mx-auto ak-seo-text">
+
+    <nav aria-label="Brotkrumen" class="ak-breadcrumb mb-2">
+      <a href="/">Start</a> <span aria-hidden="true">›</span> <span>API</span>
+    </nav>
+    <h1>API – alle Daten als JSON</h1>
+    <p class="ak-lead">
+      Sämtliche Termindaten sind offene Daten und lassen sich frei als JSON abrufen –
+      <strong>ohne Anmeldung, ohne API-Schlüssel</strong>. Ideal, um eigene Anzeigen,
+      Skripte oder Apps zu bauen.
+    </p>
+
+    <div class="ak-card mb-4"><div class="ak-card-body">
+      <table class="ak-kv">
+        <tr><th>Basis-URL</th><td><code>{{ SITE_BASE_URL }}/api/v1/</code></td></tr>
+        <tr><th>Format</th><td>JSON (UTF-8)</td></tr>
+        <tr><th>Authentifizierung</th><td>keine</td></tr>
+        <tr><th>CORS</th><td><code>Access-Control-Allow-Origin: *</code> – auch direkt aus dem Browser nutzbar</td></tr>
+        <tr><th>Rate-Limit</th><td>faire Nutzung; bei Überschreitung <code>429</code></td></tr>
+        <tr><th>Spezifikation</th><td><a href="/api/v1/openapi.json">openapi.json</a> (OpenAPI 3, maschinenlesbar)</td></tr>
+      </table>
+    </div></div>
+
+    <h2>Schnellstart: Termine einer Adresse holen</h2>
+    <p>In drei Schritten von der Straße zu den Terminen als JSON:</p>
+
+    <p><strong>1. Straße suchen</strong> → liefert eine <code>id</code>:</p>
+    <pre class="ak-code"><code>curl "{{ SITE_BASE_URL }}/api/v1/streets?q=beethoven"</code></pre>
+    <pre class="ak-code"><code>{
+  "results": [
+    { "id": 123, "name": "Beethovenstraße", "district": null, "city": "Lübeck" }
+  ]
+}</code></pre>
+
+    <p><strong>2. Adresse auflösen</strong> (mit <code>id</code> und Hausnummer) → liefert eine
+      dauerhafte <code>public_id</code> und die Bezirke je Abfallart:</p>
+    <pre class="ak-code"><code>curl "{{ SITE_BASE_URL }}/api/v1/address/resolve?street_id=123&house_number=11"</code></pre>
+    <pre class="ak-code"><code>{
+  "public_id": "azx87qx5bxra",
+  "address": "Beethovenstraße 11, Lübeck",
+  "zones": [
+    { "code": "A", "waste_type": "gelber-sack" },
+    { "code": "A", "waste_type": "restabfall" },
+    { "code": "A", "waste_type": "bioabfall" },
+    { "code": "J", "waste_type": "papier" }
+  ]
+}</code></pre>
+
+    <p><strong>3. Termine abrufen</strong> (mit der <code>public_id</code>):</p>
+    <pre class="ak-code"><code>curl "{{ SITE_BASE_URL }}/api/v1/addresses/{{ example_public_id }}/collections"</code></pre>
+    <pre class="ak-code"><code>{
+  "count": 105,
+  "limit": 50,
+  "offset": 0,
+  "public_id": "{{ example_public_id }}",
+  "results": [
+    { "date": "2026-01-05", "waste_type": "gelber-sack", "zone": "A", "kind": "regular", "note": "" },
+    { "date": "2026-01-08", "waste_type": "restabfall",  "zone": "A", "kind": "regular", "note": "" }
+  ]
+}</code></pre>
+    <p class="ak-help">
+      Die <code>public_id</code> ist stabil – einmal ermittelt, kannst du Schritt 3 dauerhaft
+      wiederverwenden (auch über den Jahreswechsel hinweg).
+    </p>
+
+    <h2>Endpunkte</h2>
+    <div style="overflow-x:auto;">
+    <table class="ak-endpoints">
+      <thead><tr><th>Methode &amp; Pfad</th><th>Beschreibung</th><th>Parameter</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>GET /waste-types</code></td>
+          <td>Alle Abfallarten (Slug, Name, Farbe, Icon).</td>
+          <td>–</td>
+        </tr>
+        <tr>
+          <td><code>GET /streets</code></td>
+          <td>Straßensuche.</td>
+          <td><code>q</code> (min. 2 Zeichen, erforderlich)</td>
+        </tr>
+        <tr>
+          <td><code>GET /address/resolve</code></td>
+          <td>Adresse zu <code>public_id</code> + Bezirken auflösen.</td>
+          <td><code>street_id</code> oder <code>street</code>; <code>house_number</code>; optional <code>district</code></td>
+        </tr>
+        <tr>
+          <td><code>GET /addresses/{public_id}/collections</code></td>
+          <td>Abfuhrtermine einer Adresse.</td>
+          <td>optional <code>year</code>, <code>waste_type</code> (Slugs, komma-getrennt), <code>limit</code>, <code>offset</code></td>
+        </tr>
+        <tr>
+          <td><code>GET /zones/{code}/collections</code></td>
+          <td>Termine eines Bezirks (Tourbuchstabe, z.&nbsp;B. <code>A</code>).</td>
+          <td>optional <code>year</code>, <code>waste_type</code>, <code>limit</code>, <code>offset</code></td>
+        </tr>
+        <tr>
+          <td><code>POST /reports</code></td>
+          <td>Fehler melden.</td>
+          <td>JSON: <code>category</code>, <code>description</code>, optional <code>public_id</code></td>
+        </tr>
+        <tr>
+          <td><code>POST /corrections</code></td>
+          <td>Korrekturvorschlag einreichen.</td>
+          <td>JSON: <code>kind</code>, <code>reason</code>, …</td>
+        </tr>
+        <tr>
+          <td><code>GET /openapi.json</code></td>
+          <td>Vollständige OpenAPI-3-Spezifikation.</td>
+          <td>–</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Direkt filtern</h2>
+    <p>Nur den Gelben Sack für 2026:</p>
+    <pre class="ak-code"><code>curl "{{ SITE_BASE_URL }}/api/v1/addresses/{{ example_public_id }}/collections?waste_type=gelber-sack&year=2026"</code></pre>
+    <p>Verfügbare Abfallart-Slugs:
+      {% for wt in waste_types %}<code>{{ wt.slug }}</code>{% if not forloop.last %}, {% endif %}{% endfor %}.
+    </p>
+
+    <h2>Beispiele in JavaScript und Python</h2>
+    <p><strong>JavaScript (im Browser, dank CORS):</strong></p>
+    <pre class="ak-code"><code>const r = await fetch("{{ SITE_BASE_URL }}/api/v1/addresses/{{ example_public_id }}/collections");
+const data = await r.json();
+console.log(data.results);</code></pre>
+    <p><strong>Python:</strong></p>
+    <pre class="ak-code"><code>import requests
+r = requests.get("{{ SITE_BASE_URL }}/api/v1/addresses/{{ example_public_id }}/collections")
+for t in r.json()["results"]:
+    print(t["date"], t["waste_type"])</code></pre>
+
+    <h2>Lieber ein Kalender-Abo?</h2>
+    <p>
+      Wer die Termine nur in seinen Kalender möchte, braucht keine API: Jede Adresse hat einen
+      <a href="/">iCal-Feed (.ics)</a>, den man abonnieren kann – er aktualisiert sich automatisch.
+      Suche einfach deine Adresse und wähle „Kalender abonnieren“.
+    </p>
+
+    <h2>Fehler &amp; Antwortformat</h2>
+    <p>Fehler kommen als JSON mit HTTP-Statuscode:</p>
+    <pre class="ak-code"><code>{ "error": { "code": "not_found", "message": "Adresse nicht gefunden." } }</code></pre>
+    <p class="ak-help">Codes u.&nbsp;a.: <code>bad_request</code> (400), <code>not_found</code> (404),
+      <code>ambiguous</code> (mehrdeutige Straße), <code>rate_limited</code> (429).</p>
+
+    <div class="ak-alert ak-alert-info mt-4">
+      <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+      <div>
+        <strong>Nutzung:</strong> Offenes Bürgerprojekt, alle Angaben ohne Gewähr – verbindlich
+        sind die Veröffentlichungen der Entsorgungsbetriebe Lübeck. Bei Weiterverwendung freuen wir
+        uns über einen Hinweis auf <a href="/">abholtag.de</a>. Bitte fair nutzen (Ergebnisse
+        cachen statt in Schleife pollen).
+      </div>
+    </div>
+
+  </div></div>
+</div>
+{% endblock %}

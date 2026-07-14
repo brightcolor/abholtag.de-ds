@@ -85,7 +85,7 @@ Backup: [deploy/backup.sh](deploy/backup.sh)
 | [docs/BETRIEB.md](docs/BETRIEB.md) | Deployment, Backup/Restore, Monitoring, Admin-Handbuch |
 | [docs/SEO.md](docs/SEO.md) | On-Page-Maßnahmen, IndexNow, Search-Console, Off-Page-Playbook |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Umsetzungsstand und nächste Schritte |
-| [docs/openapi.json](docs/openapi.json) | API-Spezifikation (auch unter `/api/v1/openapi.json`) |
+| [API-Doku](https://abholtag.de/api/) · [docs/openapi.json](docs/openapi.json) | Öffentliche JSON-API: Anleitung unter `/api/`, Spezifikation unter `/api/v1/openapi.json` |
 
 ## Rechtliches
 

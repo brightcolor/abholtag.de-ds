@@ -3,6 +3,17 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.12.0] - 2026-07-14
+
+### Hinzugefügt
+- **Menschenlesbare API-Dokumentation unter `/api/`** (Footer-Link „API“ zeigt
+  jetzt dorthin statt auf die rohe `openapi.json`). Erklärt Basis-URL,
+  Schnellstart (Straße → Adresse auflösen → Termine), alle Endpunkte und
+  Beispiele in curl, JavaScript und Python – mit einer echten Beispiel-Adresse.
+- **CORS für die öffentliche API**: read-only JSON-Endpunkte senden
+  `Access-Control-Allow-Origin: *` (inkl. OPTIONS-Preflight), sodass die
+  Offenen Daten auch direkt aus dem Browser nutzbar sind.
+
 ## [0.11.5] - 2026-07-14
 
 ### Geändert

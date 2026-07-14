@@ -70,3 +70,30 @@ def test_create_report(client, db):
 def test_create_report_validation(client, db):
     response = client.post("/api/v1/reports", "{}", content_type="application/json")
     assert response.status_code == 400
+
+
+def test_api_docs_page(client, db):
+    response = client.get("/api/")
+    content = response.content.decode()
+    assert response.status_code == 200
+    assert "alle Daten als JSON" in content
+    assert "/api/v1/" in content
+    assert "openapi.json" in content
+
+
+def test_api_cors_header(client, db):
+    response = client.get("/api/v1/waste-types")
+    assert response.status_code == 200
+    assert response.headers["Access-Control-Allow-Origin"] == "*"
+
+
+def test_api_cors_preflight(client, db):
+    response = client.options("/api/v1/address/resolve")
+    assert response.status_code == 204
+    assert response.headers["Access-Control-Allow-Origin"] == "*"
+    assert "GET" in response.headers["Access-Control-Allow-Methods"]
+
+
+def test_non_api_has_no_cors(client, db):
+    response = client.get("/impressum/")
+    assert "Access-Control-Allow-Origin" not in response.headers
