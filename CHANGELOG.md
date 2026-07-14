@@ -3,6 +3,17 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.11.3] - 2026-07-14
+
+### Geändert
+- Abo-Seite, Google-Kalender: ehrliche, zuverlässige Anleitung. Die
+  Google-Kalender-App auf dem Handy kann abonnierte Kalender bauartbedingt
+  nicht selbst hinzufügen (meldet „hinzugefügt“, zeigt sie aber nicht an –
+  bekannte Google-Einschränkung). Der Google-Tab führt jetzt zuerst die zwei
+  Wege, die wirklich funktionieren: einmalig am Computer per URL einrichten
+  (synct dann aufs Handy) oder die App ICSx⁵ auf Android. Der ICS-Feed selbst
+  ist unverändert korrekt (200, text/calendar, ohne Redirect, für Bots abrufbar).
+
 ## [0.11.2] - 2026-07-14
 
 ### Behoben

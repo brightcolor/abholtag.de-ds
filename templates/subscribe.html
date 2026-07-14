@@ -64,10 +64,10 @@
           </div>
           <p class="ak-help mb-0" id="abo-hinweis">
             Ein Tipp genügt – der Kalender aktualisiert sich danach automatisch.
-            <span id="abo-hinweis-google" hidden><strong>Android-Hinweis:</strong> Falls der Kalender
-            in der App nicht auftaucht, in der Google-Kalender-App unter
-            Einstellungen die <strong>Synchronisierung</strong> für den neuen Kalender
-            einschalten (Anleitung unten im Google-Tab).</span>
+            <span id="abo-hinweis-google" hidden><strong>Google am Handy:</strong> Die
+            Google-Kalender-App kann Abo-Kalender nicht selbst hinzufügen. Richten Sie ihn
+            einmal am Computer ein (synct dann aufs Handy) oder nutzen Sie die App
+            <strong>ICSx⁵</strong> – Schritt für Schritt im Google-Tab unten.</span>
           </p>
         </div>
       </div>
@@ -103,25 +103,43 @@
             </ol>
           </div>
           <div class="ak-tab-panel" data-panel="google" hidden>
-            <ol>
-              <li>Oben auf <strong>„Zu Google Kalender hinzufügen“</strong> tippen, Konto wählen und bestätigen.</li>
-              <li><strong>Wichtig in der Kalender-App auf dem Handy:</strong> Neue Abo-Kalender blendet
-                Google dort zunächst aus. Öffnen Sie die Google-Kalender-App →
-                <strong>☰ Menü → Einstellungen</strong> → unter Ihrem Konto den neuen Kalender
-                („Abfuhrtermine …“) antippen → <strong>„Synchronisieren“ einschalten</strong>.
-                Danach ggf. im ☰-Menü noch das Häkchen beim Kalender setzen.</li>
-              <li>Am Computer (calendar.google.com) erscheint er sofort links unter
-                „Weitere Kalender“ – dort können Sie ihn auch umbenennen und einfärben.</li>
-              <li>Die ersten Termine können bei Google einige Minuten bis Stunden brauchen.</li>
+            <div class="ak-alert ak-alert-warning mb-3">
+              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+              <div>
+                <strong>Wichtig vorweg:</strong> Die Google-Kalender-<em>App</em> auf dem Handy
+                kann abonnierte Kalender <strong>nicht selbst hinzufügen</strong>. Sie meldet zwar
+                „hinzugefügt“, zeigt den Kalender dann aber nicht an – das ist eine bekannte
+                Google-Einschränkung, kein Fehler des Feeds. Zuverlässig geht es so:
+              </div>
+            </div>
+            <p class="mb-1"><strong>1. Weg – einmal am Computer einrichten (empfohlen, gilt dann auch fürs Handy):</strong></p>
+            <ol class="mb-3">
+              <li>Oben auf <strong>„Kopieren“</strong> tippen (Kalender-Adresse).</li>
+              <li>Am Computer <a href="https://calendar.google.com/calendar/u/0/r/settings/addbyurl" target="_blank" rel="noopener">calendar.google.com</a>
+                öffnen → links neben <strong>„Weitere Kalender“</strong> auf <strong>+</strong> →
+                <strong>„Per URL“</strong> → Adresse einfügen → <strong>„Kalender hinzufügen“</strong>.</li>
+              <li>Fertig – der Kalender synchronisiert sich anschließend automatisch auf Ihr Handy
+                (dort ggf. einmal in der App unter <strong>Einstellungen</strong> die
+                <strong>Synchronisierung</strong> für den neuen Kalender einschalten).</li>
             </ol>
-            <div class="ak-alert ak-alert-info mt-2">
+            <p class="mb-1"><strong>2. Weg – direkt am Android-Handy, ohne Computer:</strong></p>
+            <ol class="mb-3">
+              <li>Kostenlose App <strong>ICSx⁵</strong> (Open Source, im Play Store) installieren.</li>
+              <li>Kalender-Adresse oben kopieren, in ICSx⁵ mit „+“ einfügen, Synchronisation
+                aktivieren – erscheint dann zuverlässig in Google Kalender.</li>
+            </ol>
+            <p class="ak-help mb-0">
+              Der Button „Zu Google Kalender hinzufügen“ oben funktioniert vor allem
+              <strong>am Computer</strong> zuverlässig; am Handy nutzen Sie besser einen der beiden
+              Wege oben.
+            </p>
+            <div class="ak-alert ak-alert-info mt-3">
               <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
               <div>
                 <strong>Gut zu wissen:</strong> Abonnierte Kalender legt Google immer als eigenen
                 Kalender unter „Weitere Kalender“ an – ein Ziel-Kalender innerhalb des Kontos ist
-                bei Abos nicht wählbar (Google-Einschränkung; das Konto wechseln Sie oben über Ihr
-                Profilbild). Sollen die Termine in einen <em>bestehenden</em> Kalender, nutzen Sie
-                „ICS herunterladen“ und in Google die Einstellung
+                bei Abos nicht wählbar (Google-Einschränkung). Sollen die Termine in einen
+                <em>bestehenden</em> Kalender, nutzen Sie „ICS herunterladen“ und in Google
                 „Importieren &amp; Exportieren“ – dort ist der Zielkalender frei wählbar,
                 allerdings ohne automatische Aktualisierung.
               </div>
