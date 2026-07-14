@@ -157,7 +157,9 @@ def address_schedule(request, public_id):
     today = date_cls.today()
     upcoming = [d for d in all_dates if d.date >= today]
     next_date = upcoming[0] if upcoming else None
-    zones = sorted({d.zone for d in all_dates}, key=lambda z: z.code)
+    # Nur eindeutige Bezirks-Codes fürs Badge: die Tourbuchstaben werden je
+    # Abfallart vergeben, dieselbe Adresse liegt daher oft mehrfach in „A“.
+    zone_codes = sorted({d.zone.code for d in all_dates})
     years = sorted({d.schedule_year.year for d in all_dates})
 
     # Filter-Chips: Klick schaltet die jeweilige Abfallart um
@@ -200,7 +202,7 @@ def address_schedule(request, public_id):
             "selected_slugs": selected_slugs,
             "arten_param": arten_param,
             "chips": chips,
-            "zones": zones,
+            "zone_codes": zone_codes,
             "next_date": next_date,
             "days_until_next": (next_date.date - today).days if next_date else None,
             "upcoming": upcoming[:10],

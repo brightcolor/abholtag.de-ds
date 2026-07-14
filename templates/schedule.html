@@ -30,10 +30,10 @@
                   </span>
                 {% endif %}
                 <span class="ak-badge ak-badge-muted">{{ address_key.street.city.name }}</span>
-                {% for zone in zones %}
+                {% for code in zone_codes %}
                   <span class="ak-badge ak-badge-brand">
                     <i class="fa-solid fa-route" aria-hidden="true"></i>
-                    Bezirk {{ zone.code }}
+                    Bezirk {{ code }}
                   </span>
                 {% endfor %}
               </div>

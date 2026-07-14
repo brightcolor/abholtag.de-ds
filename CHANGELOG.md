@@ -3,6 +3,13 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.11.5] - 2026-07-14
+
+### Geändert
+- Adress-Terminseite: doppelte Bezirks-Badges entfernt. Da die Tourbuchstaben
+  je Abfallart vergeben werden, lag dieselbe Adresse oft mehrfach in „Bezirk A“
+  – angezeigt werden jetzt nur die eindeutigen Bezirke (z. B. „A“ und „J“).
+
 ## [0.11.4] - 2026-07-14
 
 ### Behoben
