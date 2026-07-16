@@ -3,6 +3,14 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.14.4] - 2026-07-16
+
+### Geändert
+- Seite „Datenquelle & Nutzung": Statt vage „suchen den Kontakt" wird nun
+  konkret und datiert ausgewiesen, dass die Nutzungsanfrage am 16. Juli 2026
+  an die Entsorgungsbetriebe Lübeck gerichtet wurde – transparenter Nachweis
+  des Good-Faith-Vorgehens vor der Veröffentlichung.
+
 ## [0.14.3] - 2026-07-16
 
 ### Geändert
