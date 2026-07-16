@@ -3,6 +3,15 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.14.2] - 2026-07-16
+
+### Geändert
+- Seite „Datenquelle & Nutzung": Abschnitt „Warum ein eigenständiges Angebot?"
+  ergänzt – benennt die MeinLübeck-App als bestehendes offizielles Angebot und
+  grenzt abholtag.de als offene, technisch weiternutzbare Ergänzung ab
+  (kein jährliches Neu-Importieren, iCal + JSON-API für Automatisierungen,
+  eigenständiger abonnierbarer „Müllkalender"). Konsistent zur EBL-Anfrage.
+
 ## [0.14.1] - 2026-07-16
 
 ### Geändert
