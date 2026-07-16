@@ -3,6 +3,15 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.14.1] - 2026-07-16
+
+### Geändert
+- Seite „Datenquelle & Nutzung": Formulierung zur Nutzungserlaubnis
+  richtiggestellt – es besteht (noch) kein Kontakt/keine Abstimmung mit der
+  EBL. Ehrlich: eine ausdrückliche Erlaubnis liegt bislang nicht vor, wir
+  streben sie an und würden einer Anpassung/Einstellung auf Wunsch der EBL
+  selbstverständlich nachkommen.
+
 ## [0.14.0] - 2026-07-16
 
 ### Hinzugefügt
