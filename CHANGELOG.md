@@ -3,6 +3,14 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.14.3] - 2026-07-16
+
+### Geändert
+- Seite „Datenquelle & Nutzung": deutlicher Status-Hinweis „Vorab- und
+  Testphase" ergänzt – das Angebot ist erreichbar, aber noch nicht offiziell
+  veröffentlicht; die öffentliche Veröffentlichung erfolgt erst nach Klärung
+  der Datennutzung mit der EBL. Damit stimmt die Seite mit der EBL-Anfrage überein.
+
 ## [0.14.2] - 2026-07-16
 
 ### Geändert
