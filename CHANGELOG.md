@@ -3,6 +3,31 @@
 Alle nennenswerten Änderungen dieses Projekts. Format angelehnt an
 [Keep a Changelog](https://keepachangelog.com/de/), Versionierung nach SemVer.
 
+## [0.14.0] - 2026-07-16
+
+### Hinzugefügt
+- **Seite „Datenquelle & Nutzung"** (`/datenquelle/`, im Footer verlinkt): legt
+  transparent offen, dass alle Termine aus dem offiziellen Abfuhrplan der
+  Entsorgungsbetriebe Lübeck (EBL) stammen (mit Link zum Quell-PDF und zu
+  entsorgung.luebeck.de), erklärt die maschinelle Aufbereitung, den
+  unabhängigen/gemeinnützigen/werbefreien Charakter, den Haftungsausschluss
+  („ohne Gewähr“, verbindlich sind die EBL-Pläne) und den Stand zur
+  Nutzungserlaubnis/Datenlizenz.
+
+## [0.13.0] - 2026-07-14
+
+### Hinzugefügt
+- **Status-Abruf per Vorgangsnummer**: Neue Seite `/melden/status/` mit Eingabefeld – Bürger:innen können mit
+  ihrer Vorgangsnummer jederzeit den Bearbeitungsstand ihrer Meldung abrufen (vorher nur über den Direktlink
+  der Bestätigungsseite erreichbar). Verlinkt von der Melde-Seite und der Bestätigungs-/Statusseite,
+  rate-limitiert, Eingabe unabhängig von Groß-/Kleinschreibung.
+
+### Geändert
+- **2FA im Admin ist jetzt opt-in statt harter Pflicht**: Bei aktiviertem `ADMIN_OTP_REQUIRED` müssen nur noch
+  Admins mit **eingerichtetem** TOTP-Gerät den zweiten Faktor bestätigen; Konten ohne Gerät melden sich weiter
+  mit Passwort an und können 2FA später hinzufügen. Behebt das Aussperren/Henne-Ei-Problem
+  (`SoftOTPAdminSite`).
+
 ## [0.12.0] - 2026-07-14
 
 ### Hinzugefügt

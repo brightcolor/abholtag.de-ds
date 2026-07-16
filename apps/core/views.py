@@ -21,6 +21,13 @@ def privacy(request):
     return render(request, "pages/datenschutz.html")
 
 
+def data_provenance(request):
+    from apps.data_sources.models import DataSource, SourceKind
+
+    sources = DataSource.objects.filter(kind=SourceKind.PDF_URL).order_by("pk")
+    return render(request, "pages/datenquelle.html", {"sources": sources})
+
+
 def api_docs(request):
     from apps.addresses.models import AddressKey
     from apps.waste_types.models import WasteType

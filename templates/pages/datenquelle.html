@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Datenquelle &amp; Nutzung – {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}Woher die Abfuhrtermine stammen: offizieller Abfuhrplan der Entsorgungsbetriebe Lübeck (EBL). Unabhängiges, werbefreies Bürgerprojekt – alle Angaben ohne Gewähr.{% endblock %}
+{% block canonical_path %}/datenquelle/{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row"><div class="col-lg-8 mx-auto ak-seo-text">
+
+    <nav aria-label="Brotkrumen" class="ak-breadcrumb mb-2">
+      <a href="/">Start</a> <span aria-hidden="true">›</span> <span>Datenquelle &amp; Nutzung</span>
+    </nav>
+    <h1>Datenquelle &amp; Nutzung</h1>
+    <p class="ak-lead">
+      Diese Seite legt offen, woher die hier angezeigten Abfuhrtermine stammen, wie sie verarbeitet
+      werden und unter welchen Bedingungen sie genutzt werden.
+    </p>
+
+    <h2>Woher die Termine stammen</h2>
+    <p>
+      Sämtliche Abfuhrtermine – <strong>Restabfall, Bioabfall, Papier (Kommunale Lübecker
+      Altpapiertonne) und Gelber Sack</strong> – stammen aus dem offiziellen Abfuhrplan der
+      <strong>Entsorgungsbetriebe Lübeck (EBL)</strong>, dem jährlich veröffentlichten
+      „Wegweiser". Er ist öffentlich abrufbar unter
+      <a href="https://entsorgung.luebeck.de" target="_blank" rel="noopener">entsorgung.luebeck.de</a>.
+    </p>
+    <ul>
+      <li>
+        Aktueller Jahresplan (PDF):
+        <a href="https://entsorgung.luebeck.de/files/Abfuhrplan/abfuhrplan-ebl-web.pdf"
+           target="_blank" rel="noopener">abfuhrplan-ebl-web.pdf</a>
+      </li>
+      <li>
+        Die Abholung des <strong>Gelben Sacks</strong> führt die Firma
+        <strong>Veolia Umweltservice Nord GmbH</strong> im Auftrag durch; die zugehörigen
+        Termine sind ebenfalls Teil des EBL-Abfuhrplans.
+      </li>
+    </ul>
+
+    <h2>Wie die Daten aufbereitet werden</h2>
+    <p>
+      Der offizielle PDF-Plan wird automatisiert eingelesen (Straßenverzeichnis und Kalender),
+      maschinell strukturiert und den Adressen zugeordnet – inklusive der nach Hausnummern
+      geteilten Touren. <strong>Die Termine selbst werden dabei nicht verändert</strong>; wir
+      geben ausschließlich die amtlichen Angaben in besser durchsuchbarer Form wieder.
+      Neue Planversionen werden regelmäßig geprüft und übernommen.
+    </p>
+
+    <h2>Was dieses Angebot ist – und was nicht</h2>
+    <ul>
+      <li><strong>Unabhängiges, gemeinnütziges Bürgerprojekt</strong> – <em>keine</em> offizielle
+        Seite der Hansestadt Lübeck oder der Entsorgungsbetriebe Lübeck.</li>
+      <li><strong>Werbefrei und kostenlos</strong>, keine kommerzielle Verwertung, kein Verkauf
+        der Daten, kein Tracking durch Dritte.</li>
+      <li><strong>Quelloffen</strong> – der gesamte Quellcode ist einsehbar auf
+        <a href="https://github.com/brightcolor/abholtag.de-claude" target="_blank" rel="noopener">GitHub</a>.</li>
+    </ul>
+
+    <h2>Verbindlichkeit &amp; Haftung</h2>
+    <p>
+      Alle Angaben erfolgen <strong>ohne Gewähr</strong>. Maßgeblich und rechtsverbindlich sind
+      ausschließlich die amtlichen Veröffentlichungen der Entsorgungsbetriebe Lübeck. Bei
+      Abweichungen – etwa durch kurzfristige Tour-Änderungen – gelten die
+      <a href="https://entsorgung.luebeck.de" target="_blank" rel="noopener">offiziellen EBL-Pläne</a>.
+      Einen Fehler entdeckt? <a href="/melden/">Bitte melden</a> – danke!
+    </p>
+
+    <h2>Rechte an den Daten</h2>
+    <p>
+      Die Abfuhrtermine sind Sachinformationen aus einem öffentlich zugänglichen Plan. Die Rechte
+      am zugrunde liegenden Abfuhrplan und der Datenbank liegen bei den Entsorgungsbetrieben
+      Lübeck; die EBL werden hier durchgehend als Quelle genannt. Wir stimmen die Nutzung mit den
+      Entsorgungsbetrieben Lübeck ab und sind an einer ausdrücklichen Nutzungserlaubnis bzw. einer
+      offenen Datenlizenz interessiert.
+    </p>
+    <p class="ak-help">
+      Wer die hier bereitgestellten Daten weiterverwenden möchte, wendet sich dazu bitte direkt
+      an die Entsorgungsbetriebe Lübeck.
+    </p>
+
+    {% if sources %}
+      <h2>Verwendete Datenquellen (technisch)</h2>
+      <div style="overflow-x:auto;">
+      <table class="ak-kv">
+        {% for s in sources %}
+          <tr>
+            <th>{{ s.name }}</th>
+            <td>{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.url }}</a>{% else %}—{% endif %}</td>
+          </tr>
+        {% endfor %}
+      </table>
+      </div>
+    {% endif %}
+
+    <div class="ak-alert ak-alert-info mt-4">
+      <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+      <div>
+        Fragen zur Datennutzung oder eine Kooperationsanfrage? Über das
+        <a href="/impressum/">Impressum</a> erreichen Sie den Betreiber dieses Projekts.
+      </div>
+    </div>
+
+  </div></div>
+</div>
+{% endblock %}
