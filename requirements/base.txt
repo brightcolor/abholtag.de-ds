@@ -1,4 +1,4 @@
-django>=5.1,<5.2
+django>=5.2.17,<5.3
 django-environ>=0.11
 django-csp>=3.8
 django-ratelimit>=4.1
@@ -11,6 +11,6 @@ python-dateutil>=2.9
 icalendar>=5.0
 pdfminer.six>=20221105
 pdfplumber>=0.11
-requests>=2.32
+requests>=2.33.0
 celery>=5.4  # optional, for future background tasks
 redis>=5.1  # optional, for future caching
